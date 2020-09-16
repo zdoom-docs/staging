@@ -6,7 +6,7 @@
 [LevelLocals]: LevelLocals.md
 
 <!-- api-declaration -->
-class SectorTagIterator : Object clearscope;
+class SectorTagIterator : Object clearScope;
 
 <!-- api-definition -->
 Iterates over sector indices with a specified tag.

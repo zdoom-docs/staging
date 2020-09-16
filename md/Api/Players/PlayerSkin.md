@@ -5,7 +5,7 @@
 [EPlayerGender]: EPlayerGender.md
 
 <!-- api-declaration -->
-struct PlayerSkin clearscope;
+struct PlayerSkin clearScope;
 
 <!-- api-definition -->
 A player skin as defined in [SKININFO or S_SKIN][skins].

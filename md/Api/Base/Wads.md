@@ -8,7 +8,7 @@
 [WadNamespace]: Wads/WadNamespace.md
 
 <!-- api-declaration -->
-struct Wads clearscope;
+struct Wads clearScope;
 
 <!-- api-definition -->
 The Wads group of functions allow you to access the [virtual file

@@ -1,7 +1,7 @@
 # BrokenLines
 
 <!-- api-declaration -->
-class BrokenLines : Object clearscope;
+class BrokenLines : Object clearScope;
 
 <!-- api-definition -->
 A container representing an array of lines of text that have been

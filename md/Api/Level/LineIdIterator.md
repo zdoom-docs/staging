@@ -5,7 +5,7 @@
 [LevelLocals]: LevelLocals.md
 
 <!-- api-declaration -->
-class LineIdIterator : Object clearscope;
+class LineIdIterator : Object clearScope;
 
 <!-- api-definition -->
 Iterates over line indices with a specified tag.

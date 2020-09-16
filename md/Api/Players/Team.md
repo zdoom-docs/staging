@@ -3,7 +3,7 @@
 [teaminfo]: ../../Data/TeamInfo.md
 
 <!-- api-declaration -->
-struct Team clearscope;
+struct Team clearScope;
 
 <!-- api-definition -->
 A team as defined in [TEAMINFO].

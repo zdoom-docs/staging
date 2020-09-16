@@ -6,7 +6,7 @@
 [Shape2D]: Shape2D.md
 
 <!-- api-declaration -->
-struct Screen clearscope;
+struct Screen clearScope;
 
 <!-- api-definition -->
 Functions for drawing various things to the screen.

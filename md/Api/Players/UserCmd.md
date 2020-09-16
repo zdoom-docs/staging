@@ -6,7 +6,7 @@
 [PlayerPawn]: PlayerPawn.md
 
 <!-- api-declaration -->
-struct UserCmd clearscope;
+struct UserCmd clearScope;
 
 <!-- api-definition -->
 A networked command packet to be handled each frame by [the

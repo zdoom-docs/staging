@@ -6,7 +6,7 @@
 [StaticEventHandler]: StaticEventHandler.md
 
 <!-- api-declaration -->
-struct ReplacedEvent clearscope version("3.7");
+struct ReplacedEvent clearScope version("3.7");
 
 <!-- api-definition -->
 The information for a [StaticEventHandler].[CheckReplacee] event. You

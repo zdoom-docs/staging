@@ -5,7 +5,7 @@
 [SNDSEQ]: ../../Data/SndSeq.md
 
 <!-- api-declaration -->
-class SeqNode : Object clearscope;
+class SeqNode : Object clearScope;
 
 <!-- api-definition -->
 A [SNDSEQ] node.

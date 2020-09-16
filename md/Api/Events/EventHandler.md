@@ -21,13 +21,13 @@ be overridden on this type.
 
 <!-- api-class-methods -->
 #-
-clearscope static [StaticEventHandler] {Find}(class\<StaticEventHandler> type)
+clearScope static [StaticEventHandler] {Find}(class\<StaticEventHandler> type)
 
 This is exactly the same as the function on [StaticEventHandler].
 -#
 
 #-
-clearscope static void {SendNetworkEvent}(string name, int arg1 = 0, int arg2 = 0, int arg3 = 0)
+clearScope static void {SendNetworkEvent}(string name, int arg1 = 0, int arg2 = 0, int arg3 = 0)
 
 Sends a network event with no activator.
 -#

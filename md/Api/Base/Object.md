@@ -16,7 +16,7 @@
 [Thinker]: Thinker.md
 
 <!-- api-declaration -->
-class Object clearscope;
+class Object clearScope;
 
 <!-- api-definition -->
 The base class of all classes except itself.
@@ -162,14 +162,14 @@ Returns the class type of this object's parent class.
 -#
 
 #-
-virtualscope void {Destroy}()
+virtualScope void {Destroy}()
 
 Marks this object to be garbage collected. Do not use the object after
 calling this. References to it will be invalidated.
 -#
 
 #-
-virtual virtualscope void {OnDestroy}()
+virtual virtualScope void {OnDestroy}()
 
 {{#include ../../Labels/Nondeterministic.md}} Called just before the
 object is collected by the garbage collector. Nondeterministic unless

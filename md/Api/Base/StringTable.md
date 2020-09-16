@@ -3,7 +3,7 @@
 [LANGUAGE]: ../../Data/Language.md
 
 <!-- api-declaration -->
-struct StringTable clearscope;
+struct StringTable clearScope;
 
 <!-- api-definition -->
 The localized string table as defined by [LANGUAGE].

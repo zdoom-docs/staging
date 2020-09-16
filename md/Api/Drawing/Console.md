@@ -13,7 +13,7 @@
 [msgmidcolor]: ../../CVars.md#cvar-msgmidcolor
 
 <!-- api-declaration -->
-struct Console clearscope;
+struct Console clearScope;
 
 <!-- api-definition -->
 Basic access to console functionality.

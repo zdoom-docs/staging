@@ -8,7 +8,7 @@
 [Shape2DTransform]: Shape2DTransform.md
 
 <!-- api-declaration -->
-class Shape2D : Object clearscope;
+class Shape2D : Object clearScope;
 
 <!-- api-definition -->
 Represents an arbitrary polygonal 2D shape.

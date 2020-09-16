@@ -6,7 +6,7 @@
 [Actor]: ../Base/Actor.md
 
 <!-- api-declaration -->
-struct PlayerClass clearscope;
+struct PlayerClass clearScope;
 
 <!-- api-definition -->
 A player class as defined in either [MAPINFO GameInfo] or [KEYCONF].

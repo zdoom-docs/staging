@@ -8,7 +8,7 @@
 [EColorRange]: Font/EColorRange.md
 
 <!-- api-declaration -->
-struct Font clearscope;
+struct Font clearScope;
 
 <!-- api-definition -->
 {{#include ../../Labels/Unserializable.md}}

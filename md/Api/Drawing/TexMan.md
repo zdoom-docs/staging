@@ -8,7 +8,7 @@
 [EUseTypes]: TexMan/EUseTypes.md
 
 <!-- api-declaration -->
-struct TexMan clearscope;
+struct TexMan clearScope;
 
 <!-- api-definition -->
 The **Tex**ture **Man**ager is used for loading, finding, replacing and getting

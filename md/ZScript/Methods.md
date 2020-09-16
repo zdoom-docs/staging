@@ -64,7 +64,7 @@ class="label label-purple">3.3.0+</span> unless the function is marked
 | Keyword        | Description
 | :------        | :----------
 | `action`       | Method may have implicit `invoker` and `stateinfo` parameters.
-| `clearscope`   | Method has Data scope.
+| `clearScope`   | Method has Data scope.
 | `deprecated`   | If accessed, a script warning will occur on load if the archive version is greater than `ver`, with the reason `reason` specified in the message.
 | `final`        | Virtual method cannot be further overridden from derived classes.
 | `native`       | Method is from the engine. Only usable internally.
@@ -77,12 +77,12 @@ class="label label-purple">3.3.0+</span> unless the function is marked
 | `vararg`       | Method doesn't type-check arguments after `...`. Only usable internally.
 | `version`      | Restricted to ZScript version `ver` or higher.
 | `virtual`      | Method can be overridden in derived classes.
-| `virtualscope` | Method has scope of the type of the object it's being called on.
+| `virtualScope` | Method has scope of the type of the object it's being called on.
 
 <dl class="syn"><dt>MethodDeclarationFlag</dt><dd>
 
 * `action` (`(` [ActionScope] (`,` [ActionScope])* `)`)?
-* `clearscope`
+* `clearScope`
 * `deprecated` `(` [StringLiteral] (`,` [StringLiteral])? `)`
 * `final`
 * `native`
@@ -95,7 +95,7 @@ class="label label-purple">3.3.0+</span> unless the function is marked
 * `vararg`
 * `version` `(` [StringLiteral] `)`
 * `virtual`
-* `virtualscope`
+* `virtualScope`
 
 </dd></dl>
 

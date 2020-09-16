@@ -7,7 +7,7 @@
 [StaticEventHandler]: StaticEventHandler.md
 
 <!-- api-declaration -->
-struct ConsoleEvent clearscope version("2.4");
+struct ConsoleEvent clearScope version("2.4");
 
 <!-- api-definition -->
 The information for a [StaticEventHandler].[ConsoleProcess] or

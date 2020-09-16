@@ -54,7 +54,7 @@ and cause a desync.
 
 <!-- api-class-methods -->
 #-
-clearscope static StaticEventHandler {Find}(class\<StaticEventHandler> type)
+clearScope static StaticEventHandler {Find}(class\<StaticEventHandler> type)
 
 Finds and returns the static event handler with the type `type` if it
 is registered, or `null` if it does not exist.

@@ -119,7 +119,7 @@ Flags defined in ZScript are usable from `DECORATE`.
 
 <dl class="syn"><dt>FlagDefinition</dt><dd>
 
-`flagdef` [Identifier] `:` [Identifier] `,` [IntegerLiteral] `;`
+`flagDef` [Identifier] `:` [Identifier] `,` [IntegerLiteral] `;`
 
 </dd></dl>
 
@@ -201,8 +201,8 @@ scoping] if explicitly specified.
 * `bright`
 * `fast`
 * `slow`
-* `nodelay`
-* `canraise`
+* `noDelay`
+* `canRaise`
 * `offset` `(` [IntegerLiteral] `,` [IntegerLiteral] `)`
 * `light` `(` [StringLiteral] (`,` [StringLiteral])* `)`
 
@@ -345,9 +345,9 @@ class MyCoolActorWithFlags : Actor
 	int m_Flags;
 
 	// Declare the flags, one at a time...
-	flagdef ThisOneIsOn: m_Flags, 0;
-	flagdef ThisOneIsOff: m_Flags, 1;
-	flagdef ThisOneAliasesOn: m_Flags, 0;
+	flagDef ThisOneIsOn: m_Flags, 0;
+	flagDef ThisOneIsOff: m_Flags, 1;
+	flagDef ThisOneAliasesOn: m_Flags, 0;
 
 	// Unnecessary, since you can just access it directly, but this demonstrates
 	// how declared flags can be used in methods.

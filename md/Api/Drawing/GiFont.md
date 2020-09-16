@@ -3,7 +3,7 @@
 [mapinfo gameinfo]: ../../Data/MapInfo.md#gameinfo
 
 <!-- api-declaration -->
-struct GiFont clearscope;
+struct GiFont clearScope;
 
 <!-- api-definition -->
 A font as defined in [MAPINFO GameInfo].

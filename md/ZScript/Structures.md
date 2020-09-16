@@ -28,7 +28,7 @@ Structures are subject to [object scoping].
 
 | Keyword      | Description
 | :------      | :----------
-| `clearscope` | Structure has Data scope. Default.
+| `clearScope` | Structure has Data scope. Default.
 | `native`     | Structure is from the engine. Only usable internally.
 | `play`       | Structure has Play scope.
 | `ui`         | Structure has UI scope.
@@ -36,7 +36,7 @@ Structures are subject to [object scoping].
 
 <dl class="syn"><dt>StructureFlag</dt><dd>
 
-* `clearscope`
+* `clearScope`
 * `native`
 * `play`
 * `ui`

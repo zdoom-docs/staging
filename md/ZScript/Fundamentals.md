@@ -109,7 +109,7 @@ delimited by [Whitespace] or non-[IdentifierCharacter]s.
 </dd><dt>RegionComment</dt><dd>
 
 * `#region` [AnyCharacter]* [NewLine]
-* `#endregion` [AnyCharacter]* [NewLine]
+* `#endRegion` [AnyCharacter]* [NewLine]
 
 </dd></dl>
 
@@ -126,11 +126,11 @@ delimited by [Whitespace] or non-[IdentifierCharacter]s.
 `sizeOf`, `alignOf`, `abstract`, `forEach`, `true`, `false`, `none`,
 `auto`, `property`, `native`, `var`, `out`, `static`, `transient`,
 `final`, `extend`, `protected`, `private`, `dot`, `cross`, `virtual`,
-`override`, `vararg`, `ui`, `play`, `clearscope`, `virtualscope`,
+`override`, `vararg`, `ui`, `play`, `clearScope`, `virtualScope`,
 `super`, `stop`, `null`, `is`, `replaces`, `states`, `meta`,
 `deprecated`, `version`, `version`, `action`, `#include`, `readOnly`,
 <span class="label label-purple">3.4.0+</span> `internal`, <span
-class="label label-purple">3.7.0+</span> `flagdef`
+class="label label-purple">3.7.0+</span> `flagDef`
 
 </dd></dl>
 

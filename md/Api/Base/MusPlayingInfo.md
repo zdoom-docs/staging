@@ -3,7 +3,7 @@
 [music ordering]: ../../Data/Music.md#ordering
 
 <!-- api-declaration -->
-struct MusPlayingInfo clearscope;
+struct MusPlayingInfo clearScope;
 
 <!-- api-definition -->
 Information about music that is playing.

@@ -1,7 +1,7 @@
 # FColorMap
 
 <!-- api-declaration -->
-struct FColorMap clearscope;
+struct FColorMap clearScope;
 
 <!-- api-definition -->
 Describes the coloring of a sector.

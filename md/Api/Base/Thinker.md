@@ -20,7 +20,7 @@ numbers][EStatNums].
 
 <!-- api-class-methods -->
 #-
-static clearscope int {Tics2Seconds}(int tics)
+static clearScope int {Tics2Seconds}(int tics)
 
 Roughly converts a number of tics to an integral amount of seconds.
 Equivalent to dividing `tics` by [Object].[TICRATE].

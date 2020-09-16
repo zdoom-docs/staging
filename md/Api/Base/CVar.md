@@ -7,7 +7,7 @@
 [PlayerInfo]: ../Players/PlayerInfo.md
 
 <!-- api-declaration -->
-struct CVar clearscope;
+struct CVar clearScope;
 
 <!-- api-definition -->
 {{#include ../../Labels/Unserializable.md}}

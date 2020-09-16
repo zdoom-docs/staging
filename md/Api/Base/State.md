@@ -8,7 +8,7 @@
 [DefaultStateUsage]: DefaultStateUsage.md
 
 <!-- api-declaration -->
-struct State clearscope;
+struct State clearScope;
 
 <!-- api-definition -->
 Represents a state on an [Actor]. Data in State is read-only and is
@@ -99,7 +99,7 @@ The action scope of this state.
 #-
 readOnly bool {bCanRaise}
 
-State has the `canraise` option, allowing [Actor].[A_VileChase] to
+State has the `canRaise` option, allowing [Actor].[A_VileChase] to
 target this actor for healing without entering an infinitely long
 state.
 -#
@@ -127,7 +127,7 @@ lighting conditions.
 #-
 readOnly bool {bNoDelay}
 
-State has the `nodelay` option, forcing the associated action function
+State has the `noDelay` option, forcing the associated action function
 to be run if the actor is in its first tic.
 -#
 
