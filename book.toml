@@ -1,0 +1,29 @@
+[book]
+title = "ZDoom Docs"
+authors = ["Alison G. Watson", "fira watson"]
+description = "Documentation for ZDoom, GZDoom, and ZScript."
+language = "en"
+src = "md"
+
+[output.html]
+theme = "theme"
+additional-css = [
+	"css/elements.css",
+	"css/hljs.css",
+	"css/labels.css",
+	"css/restyle.css",
+]
+curly-quotes = true
+no-section-label = true
+git-repository-url = "http://github.com/marrub--/zdoom-doc"
+
+[output.html.fold]
+enable = true
+
+[preprocessor.zdoom-doc]
+command = "ruby tools/preproc.rb"
+renderer = ["html"]
+
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]

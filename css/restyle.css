@@ -1,0 +1,89 @@
+details p {
+	border-left: 4px solid var(--fira-border);
+	padding: 0.5ex 1ch;
+	margin-block: 0;
+	background-color: var(--fira-secondary);
+}
+
+pre, :not(pre) > code {
+	padding: 0.2em 0.15em;
+	font-weight: 400;
+	background-color: var(--fira-secondary);
+	border: 1px solid var(--fira-border);
+	border-radius: 4px;
+}
+
+footer {
+	color: var(--fira-paint);
+	font-size: 12px;
+}
+
+table {
+	margin-block: 1em;
+}
+
+hr {
+	color: var(--fira-border);
+}
+
+h2, h3 {
+	margin-top: 1em;
+}
+
+h4, h5 {
+	margin-top: 0.5em;
+}
+
+ul, ol {
+	padding-left: 1em;
+}
+
+dt, dd {
+	margin: 0;
+}
+
+.js .menu-title {
+	cursor: unset;
+}
+
+.menu-title {
+	display: block;
+}
+
+.chapter .chapter-item::before {
+	color: var(--fira-paint);
+	content: counters(item, ".") " ";
+	counter-increment: item;
+	position: unset;
+	left: unset;
+	padding-right: 5px;
+}
+
+.chapter, .chapter ol {
+	counter-reset: item;
+}
+
+.chapter ol {
+	padding-left: 10px;
+}
+
+.chapter li > a.toggle {
+	margin-left: unset;
+}
+
+sup.footnote-reference::before, sup.footnote-definition-label::before {
+	color: var(--fira-paint);
+	content: "[";
+}
+
+sup.footnote-reference::after, sup.footnote-definition-label::after {
+	color: var(--fira-paint);
+	content: "]";
+}
+
+sup.footnote-definition-label {
+	display: inline-block;
+	min-width: 5ch;
+}
+
+/* EOF */

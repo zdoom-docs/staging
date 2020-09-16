@@ -1,0 +1,76 @@
+dl.syn {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+}
+
+dl.syn dt, dl.syn dd {
+	background-color: var(--fira-secondary);
+	border-top: 1px solid var(--fira-border);
+	border-radius: 4px;
+	padding: 0.5em 1em;
+}
+
+dl.syn dt {
+	font-weight: 700;
+	border-right: 1px solid var(--fira-border);
+}
+
+dl.syn dd {
+	border-left: 1px solid var(--fira-border);
+	margin-left: 0.5em;
+}
+
+dl.syn dd p {
+	margin-block: 0;
+}
+
+dl.api {
+	background-color: var(--fira-secondary);
+	border-radius: 10px;
+	padding: 0.5em;
+}
+
+dl.api span:target {
+	display: block;
+	position: relative;
+	top: -48px;
+	visibility: hidden;
+}
+
+dl.api dt code p {
+	display: inline;
+}
+
+dl.api dd {
+	border-left: 4px solid var(--fira-border);
+	padding-left: 1ch;
+}
+
+dl.api dd p {
+	margin-block: 0.5em;
+}
+
+dl.api dt a {
+	text-decoration: underline dotted;
+}
+
+.toc {
+	border: 1px solid var(--fira-border);
+	border-radius: 4px;
+	padding: 0.5em 1em;
+	display: inline-block;
+	background-color: var(--fira-secondary);
+}
+
+.toc::before {
+	content: "Table of Contents";
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 0.1em;
+}
+
+.toc ul {
+	margin-bottom: 0;
+}
+
+/* EOF */
