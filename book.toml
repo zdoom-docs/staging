@@ -13,7 +13,6 @@ additional-css = [
 	"css/labels.css",
 	"css/restyle.css",
 ]
-curly-quotes = true
 no-section-label = true
 git-repository-url = "http://github.com/marrub--/zdoom-doc"
 
