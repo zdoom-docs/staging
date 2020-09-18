@@ -179,16 +179,16 @@ linked into this list, so be careful when overriding this. Any [Actor]
 will generally be safe.
 -#
 
-<!-- api-constants -->
-#-
-const int {TICRATE}
-
-The number of game tics in a second. Its value is always `35`.
--#
-
 <!-- api-members -->
 #-
 bool {bDestroyed}
 
 This object wants to be destroyed but has not yet been garbage collected.
+-#
+
+<!-- api-constants -->
+#-
+const int {TICRATE}
+
+The number of game tics in a second. Its value is always `35`.
 -#

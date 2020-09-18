@@ -1,5 +1,8 @@
 # Color
 
+<!-- api-definition -->
+The `color` built-in type.
+
 <!-- api-members -->
 #-
 uint8 {R}

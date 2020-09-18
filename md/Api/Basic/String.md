@@ -213,7 +213,7 @@ deprecated(\"3.5.1\") int {LastIndexOf}(string substr, int endIndex = int.Max) c
 Broken. Use [RightIndexOf] instead.
 -#
 
-<!-- api-definition -->
+<!-- api-footer -->
 #### Replacing CharAt
 
 ```csharp

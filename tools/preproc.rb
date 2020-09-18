@@ -5,11 +5,32 @@ require 'stringio'
 
 WORD = /[a-zA-Z_]\w*/
 
-def mod_chapter chapter
-	content = chapter["content"]
+DECLARATION  = "declaration"
+DEFINITION   = "definition"
+FOOTER       = "footer"
+SUB_TYPES    = "sub-types"
+METHOD_CLASS = "class-methods"
+METHOD_INSTN = "instance-methods"
+MEMBERS      = "members"
+CONSTANTS    = "constants"
+VARIANTS     = "variants"
 
-	if content.include? "<!-- api-"
-		pairs = content.split /<!-- api-([-a-z]+) -->/
+def must_be_after c_name, last, type, *set
+	unless set.include? last
+		set  = set.map do |v| v || "beginning" end.join ", "
+		last = last || "beginning"
+		raise "#{c_name}: #{type} must be after #{set} (was after #{last})"
+	end
+end
+
+def mod_chapter chapter
+	c_name    = "#{chapter["parent_names"].join ">"}>#{chapter["name"]}"
+	c_content = chapter["content"]
+
+	if c_content.include? "<!-- api-"
+		pairs = c_content.split /<!-- api-([-a-z]+) -->/
+
+		last = nil
 
 		backlinks = {}
 		output = String.new
@@ -18,33 +39,48 @@ def mod_chapter chapter
 
 		for type, content in pairs.each_slice 2
 			case type
-			when "declaration"
+			when DECLARATION
+				must_be_after c_name, last, type, nil
 				output <<
 					"<details><summary>Show declaration</summary>\n\n```csharp\n" <<
 					content.strip <<
 					"\n```\n</details>\n\n"
-			when "definition"
+			when DEFINITION
+				must_be_after c_name, last, type, nil, DECLARATION
 				output << content
-			when "sub-types"
+			when FOOTER
+				output << content
+			when SUB_TYPES
+				must_be_after c_name, last, type, DEFINITION
 				output <<
 					"## Sub-Types\n\n" <<
 					content
-			when "class-methods", "instance-methods", "constants", "members",
-			     "variants"
+			when METHOD_CLASS, METHOD_INSTN, MEMBERS, CONSTANTS, VARIANTS
+				after = [SUB_TYPES, DEFINITION]
+				case type
+				when METHOD_CLASS, VARIANTS
+				when METHOD_INSTN
+					after << METHOD_CLASS
+				when MEMBERS
+					after << METHOD_CLASS << METHOD_INSTN
+				when CONSTANTS
+					after << METHOD_CLASS << METHOD_INSTN << MEMBERS
+				end
+				must_be_after c_name, last, type, *after
 				links = []
 				pfx =
 					case type
-					when "class-methods", "instance-methods" then "mthd-"
-					when "constants",     "members"          then "memb-"
-					when "variants"                          then "enum-"
+					when METHOD_CLASS, METHOD_INSTN then "mthd-"
+					when MEMBERS,      CONSTANTS    then "memb-"
+					when VARIANTS                   then "enum-"
 					end
 				title =
 					case type
-					when "class-methods"    then "Class Methods"
-					when "instance-methods" then "Instance Methods"
-					when "constants"        then "Constants"
-					when "members"          then "Instance Members"
-					when "variants"         then "Variants"
+					when METHOD_CLASS then "Class Methods"
+					when METHOD_INSTN then "Instance Methods"
+					when MEMBERS      then "Instance Members"
+					when CONSTANTS    then "Constants"
+					when VARIANTS     then "Variants"
 					end
 				content.gsub! /\\#-((?:(?!-#).)+)-#/m do |_|
 					match = $1.strip
@@ -69,16 +105,20 @@ def mod_chapter chapter
 					content <<
 					"<details><summary>Overview of #{title.downcase}</summary><p>#{links.join ", "}</p></details>\n\n"
 			else
-				raise "unknown api block #{type}"
+				raise "#{c_name}: unknown api block #{type}"
 			end
+
+			last = type
 		end
+
 		output.gsub! /\\\[(#{WORD})\]/ do |_|
 			if link = backlinks[$1]
 				%([#{$1}](#{link}))
 			else
-				raise "unknown backlink '#{$1}' in API documentation"
+				raise "#{c_name}: unknown backlink '#{$1}' in API documentation"
 			end
 		end
+
 		chapter["content"] = output
 	end
 

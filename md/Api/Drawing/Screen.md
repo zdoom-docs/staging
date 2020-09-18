@@ -164,7 +164,7 @@ aspect ratio differences if `handleAspect` is true. If the ratio is
 repositioning vertically.
 -#
 
-<!-- api-definition -->
+<!-- api-footer -->
 ## Drawing Function Arguments
 
 ### CleanMode

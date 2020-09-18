@@ -1,5 +1,8 @@
 # Vector3
 
+<!-- api-definition -->
+The `vector3` built-in type.
+
 <!-- api-instance-methods -->
 #-
 double {Length}() const

@@ -68,5 +68,5 @@ readOnly bool {IsAlt}
 `true` if the "alt" key was held down during this event.
 -#
 
-<!-- api-definition -->
+<!-- api-footer -->
 [^delta]: The difference between the last known position and the current position.

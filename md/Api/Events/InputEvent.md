@@ -61,5 +61,5 @@ The vertical mouse position differential[^delta] for
 InputEvent.[Type_Mouse].
 -#
 
-<!-- api-definition -->
+<!-- api-footer -->
 [^delta]: The difference between the last known position and the current position.

@@ -36,7 +36,7 @@ void {SetNull}()
 Sets the texture index to `0`.
 -#
 
-<!-- api-definition -->
+<!-- api-footer -->
 ## Zero-Initializing
 
 The proper way to zero-initialize a textureId is:
