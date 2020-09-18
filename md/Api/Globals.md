@@ -3,25 +3,31 @@
 [dehacked]: ../Data/DeHackEd.md
 [language]: ../Data/Language.md
 [mapinfo gameinfo]: ../Data/MapInfo.md#gameinfo
+[sndinfo]: ../Data/SndInfo.md
 
 [NumericType]: ../ZScript/Types.md#numeric-types
 
 [BeginPlay]: Base/Actor.md#mthd-BeginPlay
 
 [Actor]: Base/Actor.md
+[BaseStatusBar]: Menus/BaseStatusBar.md
 [DeHInfo]: Base/DeHInfo.md
 [EGameAction]: Base/EGameAction.md
 [EGameState]: Base/EGameState.md
 [EMenuState]: Menus/Menu/EMenuState.md
+[FOptionMenuSettings]: Menus/FOptionMenuSettings.md
 [Font]: Drawing/Font.md
 [GameInfoStruct]: Base/GameInfoStruct.md
 [KeyBindings]: Base/KeyBindings.md
+[LevelLocals]: Level/LevelLocals.md
 [Menu]: Menus/Menu.md
+[MusPlayingInfo]: Sound/MusPlayingInfo.md
 [Object]: Base/Object.md
 [PlayerClass]: Players/PlayerClass.md
 [PlayerInfo]: Players/PlayerInfo.md
 [PlayerSkin]: Players/PlayerSkin.md
 [Team]: Players/Team.md
+[Weapon]: Weapons/Weapon.md
 
 <!-- api-definition -->
 These functions and variables are accessible from any context.
@@ -298,6 +304,13 @@ a networked game with more than one player to be true.
 -#
 
 #-
+readOnly int {Net_Arbitrator}
+
+In a [NetGame], the number of the player that is currently arbitrating
+("hosting") the game.
+-#
+
+#-
 readOnly bool {DemoPlayback}
 
 Whether the game is actually a demo playing or not.
@@ -305,7 +318,7 @@ Whether the game is actually a demo playing or not.
 
 ### Client State
 
-All data scope globals here are {{#include
+All Data scope globals here are {{#include
 ../Labels/Nondeterministic.md}} because they rely on the client
 despite being accessible from non-UI scope.
 
@@ -329,16 +342,66 @@ drawn in the scene.
 -#
 
 #-
+int {LocalViewPitch}
+
+{{#include ../Labels/Internal.md}} The pitch angle (in degrees) of
+[ConsolePlayer]'s view.
+-#
+
+#-
+readOnly int {CleanXFac}
+readOnly int {CleanYFac}
+
+An integral scaling factor for horizontal and vertical positions to
+scale from 320x200 to the current virtual resolution.
+-#
+
+#-
+readOnly int {CleanXFac_1}
+readOnly int {CleanYFac_1}
+
+Integral scaling factor for horizontal and vertical positions to scale
+from 320x200 to the current virtual resolution, accounting for aspect
+ratio differences.
+-#
+
+#-
+readOnly int {CleanWidth}
+readOnly int {CleanHeight}
+
+The current screan size divided by ([CleanXFac],[CleanYFac]).
+-#
+
+#-
+readOnly int {CleanWidth_1}
+readOnly int {CleanHeight_1}
+
+The current screan size divided by ([CleanXFac_1],[CleanYFac_1]).
+-#
+
+#-
 ui [Menu].[EMenuState] {MenuActive}
 
 The current global menu state.
 -#
 
 #-
-int {LocalViewPitch}
+ui float {BackButtonAlpha}
 
-{{#include ../Labels/Internal.md}} The pitch angle (in degrees) of
-[ConsolePlayer]'s view.
+The transparency of the back button in menus.
+-#
+
+#-
+ui int {BackButtonTime}
+
+{{#include ../Labels/Todo.md}} The time until the back button starts
+fading out in menus.
+-#
+
+#-
+ui [BaseStatusBar] {StatusBar}
+
+The current status bar being used by the client.
 -#
 
 ### Game State
@@ -359,6 +422,18 @@ The current game state.
 readOnly int {GameTic}
 
 The current game tick.
+-#
+
+#-
+readOnly [MusPlayingInfo] {MusPlaying}
+
+Information about the currently playing music.
+-#
+
+#-
+play [LevelLocals] {Level}
+
+The current level's local data.
 -#
 
 #-
@@ -454,9 +529,23 @@ The big font defined by the IWAD.
 #-
 readOnly [Font] {AlternativeSmallFont}
 
-If the [language] defines `USE_GENERIC_FONT` as a non-zero value, this
-font will be defined as either [SmallFont], [OriginalSmallFont], or
-[NewSmallFont] (in that order) depending on which is complete.
+If [Generic_Ui] is true, this font will be defined as either
+[SmallFont], [OriginalSmallFont], or [NewSmallFont] (in that order)
+depending on which is complete.
+-#
+
+#-
+readOnly bool {Generic_Ui}
+
+Will be `true` if the [language] defines `USE_GENERIC_FONT` as a
+non-zero value. This indicates what the [AlternativeSmallFont] will
+be.
+-#
+
+#-
+readOnly [FOptionMenuSettings] {OptionMenuSettings}
+
+The settings used for option menus.
 -#
 
 <!-- api-constants -->
@@ -464,4 +553,65 @@ font will be defined as either [SmallFont], [OriginalSmallFont], or
 const int {MAXPLAYERS}
 
 The maximum amount of players allowed in a networked game.
+-#
+
+#-
+const int {FLAG_NO_CHANGE}
+
+A constant for flag changer functions denoting that there should be no
+change.
+-#
+
+### Ranges
+
+#-
+const float {DEFMELEERANGE}
+
+The default melee range for monsters and the player's melee attacks.
+-#
+
+#-
+const float {SAWRANGE}
+
+The range of Doom's chainsaw.
+-#
+
+#-
+const float {MISSILERANGE}
+
+The maximum range for monster hitscan attacks.
+-#
+
+#-
+const float {PLAYERMISSILERANGE}
+
+The maximum range for player hitscan attacks.
+-#
+
+### Attenuations
+
+Preset attenuation values for various purposes.
+
+#-
+const float {ATTN_NONE}
+
+An attenuation at which the sound can be heard from any distance.
+-#
+
+#-
+const float {ATTN_NORM}
+
+The default attenuation, which uses the distances defined in [SNDINFO].
+-#
+
+#-
+const float {ATTN_IDLE}
+
+The default attenuation used by Doom.
+-#
+
+#-
+const float {ATTN_STATIC}
+
+An attenuation with which sounds fade fully at 512 map units away.
 -#
