@@ -175,21 +175,21 @@ it is `0`.
 {{#include ../../Labels/Legacy.md}}
 
 #-
-deprecated(\"4.1\") void {ToLower}()
+deprecated("4.1") void {ToLower}()
 
 Converts all bytes in the string to lowercase in-place. Use
 [MakeLower] instead.
 -#
 
 #-
-deprecated(\"4.1\") void {ToUpper}()
+deprecated("4.1") void {ToUpper}()
 
 Converts all bytes in the string to uppercase in-place. Use
 [MakeUpper] instead.
 -#
 
 #-
-deprecated(\"4.1\") string {CharAt}(int pos) const
+deprecated("4.1") string {CharAt}(int pos) const
 
 Returns the byte at `pos` as a new string. Use [CodePointCount] and
 [GetNextCodePoint] instead. An example of replacing `CharAt` is
@@ -197,7 +197,7 @@ available [below.][replace charat]
 -#
 
 #-
-deprecated(\"4.1\") int {CharCodeAt}(int pos) const
+deprecated("4.1") int {CharCodeAt}(int pos) const
 
 Returns the byte at `pos` as an integer. Use either [ByteAt] or
 [CodePointCount] and [GetNextCodePoint] instead. If you specifically
@@ -208,7 +208,7 @@ charcodeat]
 -#
 
 #-
-deprecated(\"3.5.1\") int {LastIndexOf}(string substr, int endIndex = int.Max) const
+deprecated("3.5.1") int {LastIndexOf}(string substr, int endIndex = int.Max) const
 
 Broken. Use [RightIndexOf] instead.
 -#

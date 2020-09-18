@@ -6,13 +6,14 @@
 [music ordering]: ../../Data/Music.md#ordering
 [sounds]: ../../Data/Sounds.md
 
+[ATTN_NORM]: ../Globals.md#memb-ATTN_NORM
 [Actor]: Actor.md
 [EFSkillProperty]: EFSkillProperty.md
 [ESkillProperty]: ESkillProperty.md
 [ESoundFlags]: ESoundFlags.md
-[LevelLocals]: LevelLocals.md
-[PickDeathmatchStart]: LevelLocals.md#mthd-pickdeathmatchstart
-[PickPlayerStart]: LevelLocals.md#mthd-pickplayerstart
+[LevelLocals]: ../Level/LevelLocals.md
+[PickDeathmatchStart]: ../Level/LevelLocals.md#mthd-pickdeathmatchstart
+[PickPlayerStart]: ../Level/LevelLocals.md#mthd-pickplayerstart
 [Thinker]: Thinker.md
 
 <!-- api-declaration -->
@@ -51,7 +52,7 @@ Marks `soundId` to be [pre-cached][caching].
 -#
 
 #-
-static void {S_StartSound}(sound soundId, [ESoundFlags] channel, [ESoundFlags] flags = 0, float volume = 1.0, float attenuation = ATTN_NORM, float pitch = 0.0, float startTime = 0.0)
+static void {S_StartSound}(sound soundId, [ESoundFlags] channel, [ESoundFlags] flags = 0, float volume = 1.0, float attenuation = [ATTN_NORM], float pitch = 0.0, float startTime = 0.0)
 
 Plays a [sound][sounds] with no source.
 -#
@@ -125,19 +126,19 @@ Kills the VM and ends the game (without exiting) with a
 {{#include ../../Labels/Legacy.md}}
 
 #-
-deprecated(\"3.8\") static vector3, int {G_PickDeathmatchStart}()
+deprecated("3.8") static vector3, int {G_PickDeathmatchStart}()
 
 Use [LevelLocals].[PickDeathmatchStart] instead.
 -#
 
 #-
-deprecated(\"3.8\") static vector3, int {G_PickPlayerStart}(int pNum, int flags = 0)
+deprecated("3.8") static vector3, int {G_PickPlayerStart}(int pNum, int flags = 0)
 
 Use [LevelLocals].[PickPlayerStart] instead.
 -#
 
 #-
-deprecated(\"4.3\") static void {S_Sound}(sound soundId, [ESoundFlags] channel, float volume = 1.0, float attenuation = ATTN_NORM, float pitch = 0.0)
+deprecated("4.3") static void {S_Sound}(sound soundId, [ESoundFlags] channel, float volume = 1.0, float attenuation = [ATTN_NORM], float pitch = 0.0)
 
 Use [S_StartSound] instead.
 -#

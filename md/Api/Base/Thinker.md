@@ -3,7 +3,7 @@
 [TICRATE]: Object.md#memb-TICRATE
 
 [EStatNums]: Thinker/EStatNums.md
-[LevelLocals]: LevelLocals.md
+[LevelLocals]: ../Level/LevelLocals.md
 [Object]: Object.md
 
 <!-- api-declaration -->

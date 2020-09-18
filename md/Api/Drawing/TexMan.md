@@ -1,8 +1,10 @@
 # TexMan
 
 [TryAny]: TexMan/EFlags.md#enum-TryAny
+[ll-ReplaceTextures]: ../Level/LevelLocals.md#mthd-ReplaceTextures
 
 [Actor]: ../Base/Actor.md
+[LevelLocals]: ../Level/LevelLocals.md
 [EFlags]: TexMan/EFlags.md
 [ETexReplaceFlags]: TexMan/ETexReplaceFlags.md
 [EUseTypes]: TexMan/EUseTypes.md
@@ -74,10 +76,10 @@ static bool {OkForLocalization}(textureId patch, string textSubstitute)
 -#
 
 #-
-deprecated(\"3.8\") static void {ReplaceTextures}(string from, string to, TexMan.[ETexReplaceFlags] flags)
+deprecated("3.8") static void {ReplaceTextures}(string from, string to, TexMan.[ETexReplaceFlags] flags)
 
-{{#include ../../Labels/Legacy.md}} Use `LevelLocals.ReplaceTextures`
-instead.
+{{#include ../../Labels/Legacy.md}} Use
+[LevelLocals].[ReplaceTextures][ll-ReplaceTextures] instead.
 
 Replaces textures named `from` with `to` within the map.
 -#
