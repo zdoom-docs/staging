@@ -9,17 +9,17 @@
 	vertical-align: middle;
 }
 
-.label-red {
+.label.red {
 	background-color: #310506;
 	border: 1px solid #c31319;
 }
 
-.label-yellow {
+.label.yellow {
 	background-color: #312905;
 	border: 1px solid #c3a313;
 }
 
-.label-purple {
+.label.purple {
 	background-color: #2e0531;
 	border: 1px solid #b513c3;
 }

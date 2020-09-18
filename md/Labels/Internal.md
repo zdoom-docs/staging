@@ -1,1 +1,1 @@
-<span class="label label-yellow">Internal &mdash; Do not use</span>
+<span class="label yellow">Internal &mdash; Do not use</span>

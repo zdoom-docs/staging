@@ -129,8 +129,8 @@ delimited by [Whitespace] or non-[IdentifierCharacter]s.
 `override`, `vararg`, `ui`, `play`, `clearScope`, `virtualScope`,
 `super`, `stop`, `null`, `is`, `replaces`, `states`, `meta`,
 `deprecated`, `version`, `version`, `action`, `#include`, `readOnly`,
-<span class="label label-purple">3.4.0+</span> `internal`, <span
-class="label label-purple">3.7.0+</span> `flagDef`
+<span class="label purple">3.4.0+</span> `internal`, <span
+class="label purple">3.7.0+</span> `flagDef`
 
 </dd></dl>
 

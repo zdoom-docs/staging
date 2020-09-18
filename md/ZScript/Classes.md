@@ -95,7 +95,7 @@ Properties defined in ZScript are usable from `DECORATE`.
 
 ## Flag Definitions
 
-<span class="label label-purple">3.7.0+</span>
+<span class="label purple">3.7.0+</span>
 
 Flag definitions are used within classes to define defaultable boolean
 flags on actors. They are not valid on classes not derived from Actor.

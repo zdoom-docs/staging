@@ -5,7 +5,7 @@ the music code is in its own submodule, *ZMusic*. The music system
 supports many types of MIDI, tracker, emulated chip, OPL, and PCM
 audio formats.
 
-<span class="label label-yellow">Until 4.4.0</span> Additionally,
+<span class="label yellow">Until 4.4.0</span> Additionally,
 ZMusic also supports playing redbook audio via a CD drive, or through
 a CDDA dump of one.
 
@@ -40,7 +40,7 @@ handling individually.
 Supported PCM audio formats include:
 
 * AIFF, AIFC[^aiff-spec][^aiff-info]
-* CDDA[^cdda-spec][^cdda-info] <span>Until 4.4.0</span>{:.label.label-yellow}
+* CDDA[^cdda-spec][^cdda-info] <span class="label yellow">Until 4.4.0</span>
 * FLAC[^flac-spec][^flac-info]
 * MPEG 1.0, 2.0, 2.5 Layer I, II, III Audio (MP2,
   MP3)[^mpeg-spec][^mpeg-info]

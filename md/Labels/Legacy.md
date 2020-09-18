@@ -1,1 +1,1 @@
-<span class="label label-yellow">Legacy &mdash; Do not use</span>
+<span class="label yellow">Legacy &mdash; Do not use</span>

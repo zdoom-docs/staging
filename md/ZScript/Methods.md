@@ -43,7 +43,7 @@ implicitly in scope.
 
 Method arguments must all have a name and type, and optionally the
 last arguments in the list may have a default value, <span
-class="label label-purple">3.3.0+</span> unless the function is marked
+class="label purple">3.3.0+</span> unless the function is marked
 `override`.
 
 <dl class="syn"><dt>MethodArgumentList</dt><dd>
