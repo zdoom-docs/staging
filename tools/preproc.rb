@@ -161,8 +161,8 @@ def mod_chapter_toc c_name, c_content
 		headings = []
 
 		c_content.scan HEADING do |level, title|
+			num  = headings.count do |hd| hd.title == title end
 			link = title.downcase.gsub " ", "-"
-			num  = headings.count do |hd| hd[:link] == link end
 			link = if num > 0 then link + "-#{num}" else link end
 			hd   = Heading.new level.length - 1, title, link
 			headings.push hd
