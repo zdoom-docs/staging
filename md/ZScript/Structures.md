@@ -1,12 +1,12 @@
 # Structure Definitions
 
 A structure is an object type that does not inherit from Object and is
-not always --- though occasionally is --- a reference type, unlike
-classes. Structures marked as `native` are passed by-reference to and
-from the engine in an implicit pseudo-type `Pointer<T>`, and `null`
-can be passed in their place. Also note that this means the engine can
-return `null` structures. User defined structures cannot be passed as
-arguments or returned normally.
+not always &mdash; though occasionally is &mdash; a reference type,
+unlike classes. Structures marked as `native` are passed by-reference
+to and from the engine in an implicit pseudo-type `Pointer<T>`, and
+`null` can be passed in their place. Also note that this means the
+engine can return `null` structures. User defined structures cannot be
+passed as arguments or returned normally.
 
 Structures are preferred for basic compound data types that do not
 need to be instanced and are often used as a way of generalizing code.

@@ -50,7 +50,7 @@ operator.
 
 ## Examples
 
-## Member Declarations
+### Member Declarations
 
 ```csharp
 // An integer. Visible to and modifiable by everything.

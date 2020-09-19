@@ -32,6 +32,8 @@
 <!-- api-definition -->
 These functions and variables are accessible from any context.
 
+<!-- toc -->
+
 <!-- api-instance-methods -->
 ### Class Handling
 

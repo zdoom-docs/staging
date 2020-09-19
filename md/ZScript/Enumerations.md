@@ -23,8 +23,8 @@ the type `int`, but the default decay type can be set manually.
 
 ## Enumerators
 
-Enumerators can either be incremental --- from the last enumerator, or
-0 if there is none --- or explicitly set.
+Enumerators can either be incremental &mdash; from the last
+enumerator, or 0 if there is none &mdash; or explicitly set.
 
 <dl class="syn"><dt>Enumerator</dt><dd>
 
