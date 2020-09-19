@@ -33,9 +33,7 @@ then one can continue a class definition by using `extend`.
 
 </dd></dl>
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Class Definition Flags
 

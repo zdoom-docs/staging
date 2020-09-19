@@ -20,9 +20,7 @@ Structures are subject to [object scoping].
 
 </dd></dl>
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Structure Flags
 

@@ -16,9 +16,7 @@ latter.
 All music formats can be put in a GZip container, saving space in some
 situations.
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Ordering
 

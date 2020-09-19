@@ -4,9 +4,7 @@ These are the fundamental building blocks of ZScript. Included here
 are basic syntax elements such as [Identifier]s, and atoms, also known
 as [Literal]s.
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Lexical Elements
 

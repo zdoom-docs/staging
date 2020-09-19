@@ -39,9 +39,7 @@ unknown why this exists, and is likely an implementation error.
 
 </dd></dl>
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Numeric Types
 

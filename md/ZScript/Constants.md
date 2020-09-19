@@ -11,9 +11,7 @@ specific type, you must cast the value to that type.
 
 </dd></dl>
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Static Array Definitions
 

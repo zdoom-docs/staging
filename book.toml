@@ -22,7 +22,3 @@ enable = true
 [preprocessor.zdoom-doc]
 command = "ruby tools/preproc.rb"
 renderer = ["html"]
-
-[preprocessor.toc]
-command = "mdbook-toc"
-renderer = ["html"]

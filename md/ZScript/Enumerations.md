@@ -10,9 +10,7 @@ the type `int`, but the default decay type can be set manually.
 
 </dd></dl>
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Enumerator Lists
 

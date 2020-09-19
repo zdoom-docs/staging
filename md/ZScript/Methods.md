@@ -35,9 +35,7 @@ implicitly in scope.
 
 </dd></dl>
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Method Argument Lists
 

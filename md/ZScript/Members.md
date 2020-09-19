@@ -12,9 +12,7 @@ operator.
 
 </dd></dl>
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Member Declaration Flags
 

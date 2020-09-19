@@ -6,9 +6,7 @@ entirety of a ZScript source file. ZScript files are searched for in
 lumps named `zscript` with any extension, including none. The standard
 extension is `.zs`, but `.zsc`, `.zc` and `.txt` are common as well.
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Translation Units
 

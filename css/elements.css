@@ -69,8 +69,26 @@ dl.api dt a {
 	letter-spacing: 0.1em;
 }
 
-.toc ul {
+.toc ol {
 	margin-bottom: 0;
+	counter-reset: item;
+	padding-left: 0;
+}
+
+.toc ol ol > li {
+	margin-left: 2ch;
+}
+
+.toc li {
+	display: block;
+}
+
+.toc li::before {
+	content: counters(item, ".");
+	counter-increment: item;
+	color: var(--fira-paint);
+	display: inline-block;
+	padding-right: 1ch;
 }
 
 /* EOF */

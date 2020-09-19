@@ -13,9 +13,7 @@ including arithmetic and various conditions.
 
 </dd></dl>
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Constant Expressions
 

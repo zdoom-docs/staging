@@ -19,9 +19,7 @@ and right braces, which in and of itself is a statement called a
 
 </dd></dl>
 
-<div class=toc>
 <!-- toc -->
-</div>
 
 ## Compound Statements
 
