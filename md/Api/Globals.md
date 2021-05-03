@@ -264,14 +264,14 @@ Every [Team] registered to the engine.
 ### Players
 
 #-
-play [PlayerInfo]\[[MAXPLAYERS]] {Players}
+play [PlayerInfo]\[MAXPLAYERS\] {Players}
 
 The [PlayerInfo] for each player. These may be invalid data if the
 corresponding entry in [PlayerInGame] is not `true`.
 -#
 
 #-
-readOnly bool\[[MAXPLAYERS]] {PlayerInGame}
+readOnly bool[MAXPLAYERS\] {PlayerInGame}
 
 The status of each player as a boolean. If `false` then the
 corresponding player is not in-game.

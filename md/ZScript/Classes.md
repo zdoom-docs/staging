@@ -13,7 +13,7 @@ reference values, and therefore can be null.
 `new` is used to instantiate a new instance of a class.
 
 Classes that inherit from Actor can replace other actors when spawned
-in maps, and can also be used freely in `DECORATE`.
+in maps, and can also be used freely in DECORATE.
 
 The rest of the translation unit can be used as class content. Note
 that with this syntax you cannot use include directives afterward.
@@ -83,7 +83,7 @@ When registered, a property will be available in the `default` block
 as `ClassName.PropertyName`. Properties can be given multiple members
 to initialize.
 
-Properties defined in ZScript are usable from `DECORATE`.
+Properties defined in ZScript are usable from DECORATE.
 
 <dl class="syn"><dt>PropertyDefinition</dt><dd>
 
@@ -113,7 +113,7 @@ A flag's backing integer may not be `meta`, although it may be
 flag member will be publicly visible regardless of the backing
 integer's visibility.
 
-Flags defined in ZScript are usable from `DECORATE`.
+Flags defined in ZScript are usable from DECORATE.
 
 <dl class="syn"><dt>FlagDefinition</dt><dd>
 
@@ -127,9 +127,9 @@ Default blocks are used on classes derived from Actor to create an
 overridable list of defaults to properties, allowing for swift
 creation of flexible actor types.
 
-In `DECORATE`, this is everything that isn't in the `states` block,
-but in ZScript, for syntax flexibility purposes, it must be enclosed
-in a block with `default` at the beginning.
+In DECORATE, this is everything that isn't in the `states` block, but
+in ZScript, for syntax flexibility purposes, it must be enclosed in a
+block with `default` at the beginning.
 
 <dl class="syn"><dt>DefaultBlock</dt><dd>
 
@@ -174,7 +174,7 @@ onto the actor:
 
 ## State Blocks
 
-These are the same as `DECORATE`, but states that do not have function
+These are the same as DECORATE, but states that do not have function
 blocks require terminating semicolons. Double quotes around `#` and
 `-` are no longer required. State blocks can be subject to [action
 scoping] if explicitly specified.

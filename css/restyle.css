@@ -1,6 +1,7 @@
-details p {
+/* misc elements */
+details {
 	border-left: 4px solid var(--fira-border);
-	padding: 0.5ex 1ch;
+	padding: 0 1ch;
 	margin-block: 0;
 	background-color: var(--fira-secondary);
 }
@@ -10,7 +11,7 @@ pre, :not(pre) > code {
 	font-weight: 400;
 	background-color: var(--fira-secondary);
 	border: 1px solid var(--fira-border);
-	border-radius: 4px;
+	border-radius: var(--border-radius);
 }
 
 footer {
@@ -18,14 +19,45 @@ footer {
 	font-size: 12px;
 }
 
-table {
-	margin-block: 1em;
-}
-
 hr {
 	color: var(--fira-border);
 }
 
+/* tables */
+table {
+	margin-block: 1em;
+	border-collapse: unset;
+	border-spacing: 0;
+}
+
+table td {
+	border-top: none;
+	border-right: none;
+}
+
+table tr:last-child td:first-child {
+	border-bottom-left-radius: var(--border-radius);
+}
+
+table tr:last-child td:last-child {
+	border-bottom-right-radius: var(--border-radius);
+}
+
+table tr td:last-child {
+	border-right: 1px var(--table-border-color) solid;
+}
+
+table thead {
+	background: none;
+}
+
+table thead th {
+	border-bottom: 1px var(--table-border-color) solid;
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	background: var(--table-header-bg);
+}
+
+/* headings */
 h2, h3 {
 	margin-top: 1em;
 }
@@ -34,43 +66,70 @@ h4, h5 {
 	margin-top: 0.5em;
 }
 
-ul, ol {
-	padding-left: 1em;
-}
-
+/* definition lists */
 dt, dd {
 	margin: 0;
 }
 
+/* lists */
+ul, ol {
+	padding-left: 1em;
+}
+
+ol {
+	margin-bottom: 0;
+	counter-reset: item;
+	padding-left: 0;
+}
+
+ol ol > li {
+	margin-left: 2ch;
+}
+
+ol li {
+	display: block;
+}
+
+ol li::before {
+	content: counters(item, ".");
+	counter-increment: item;
+	color: var(--fira-paint);
+	display: inline-block;
+	padding-right: 1ch;
+}
+
+/* title */
 .js .menu-title {
 	cursor: unset;
 }
 
 .menu-title {
 	display: block;
-}
-
-.chapter .chapter-item::before {
 	color: var(--fira-paint);
-	content: counters(item, ".") " ";
-	counter-increment: item;
-	position: unset;
-	left: unset;
-	padding-right: 5px;
 }
 
-.chapter, .chapter ol {
-	counter-reset: item;
+/* chapter list */
+.chapter li.chapter-item {
+	margin-top: 0.6ex;
 }
 
-.chapter ol {
-	padding-left: 10px;
+.chapter li:not(.chapter-item)::before {
+	content: unset;
+	counter-increment: unset;
+	color: unset;
+	display: unset;
+	padding-right: unset;
 }
 
 .chapter li > a.toggle {
 	margin-left: unset;
 }
 
+.section {
+	padding-left: 0;
+}
+
+/* footnotes */
 sup.footnote-reference::before, sup.footnote-definition-label::before {
 	color: var(--fira-paint);
 	content: "[";
@@ -85,5 +144,3 @@ sup.footnote-definition-label {
 	display: inline-block;
 	min-width: 5ch;
 }
-
-/* EOF */

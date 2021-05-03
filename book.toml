@@ -10,7 +10,6 @@ theme = "theme"
 additional-css = [
 	"css/elements.css",
 	"css/hljs.css",
-	"css/labels.css",
 	"css/restyle.css",
 ]
 no-section-label = true

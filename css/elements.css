@@ -1,3 +1,4 @@
+/* syntax definitions */
 dl.syn {
 	display: grid;
 	grid-template-columns: max-content 1fr;
@@ -6,7 +7,7 @@ dl.syn {
 dl.syn dt, dl.syn dd {
 	background-color: var(--fira-secondary);
 	border-top: 1px solid var(--fira-border);
-	border-radius: 4px;
+	border-radius: var(--border-radius);
 	padding: 0.5em 1em;
 }
 
@@ -24,9 +25,10 @@ dl.syn dd p {
 	margin-block: 0;
 }
 
+/* api definitions */
 dl.api {
 	background-color: var(--fira-secondary);
-	border-radius: 10px;
+	border-radius: var(--border-radius);
 	padding: 0.5em;
 }
 
@@ -54,41 +56,46 @@ dl.api dt a {
 	text-decoration: underline dotted;
 }
 
+/* table of contents */
 .toc {
 	border: 1px solid var(--fira-border);
-	border-radius: 4px;
+	border-radius: var(--border-radius);
 	padding: 0.5em 1em;
 	display: inline-block;
 	background-color: var(--fira-secondary);
 }
 
 .toc::before {
-	content: "Table of Contents";
-	text-transform: uppercase;
+	content: "Contents";
+	color: var(--fira-paint);
+	font-variant: small-caps;
 	font-weight: 400;
 	letter-spacing: 0.1em;
 }
 
-.toc ol {
-	margin-bottom: 0;
-	counter-reset: item;
-	padding-left: 0;
-}
-
-.toc ol ol > li {
-	margin-left: 2ch;
-}
-
-.toc li {
-	display: block;
-}
-
-.toc li::before {
-	content: counters(item, ".");
-	counter-increment: item;
-	color: var(--fira-paint);
+/* labels */
+.label {
+	border-radius: var(--border-radius);
 	display: inline-block;
-	padding-right: 1ch;
+	font-size: 14px;
+	font-variant: small-caps;
+	font-weight: bold;
+	padding: 0.16em 0.56em;
+	text-transform: unset !important;
+	vertical-align: middle;
 }
 
-/* EOF */
+.label.red {
+	background-color: #310506;
+	border: 1px solid #c31319;
+}
+
+.label.yellow {
+	background-color: #312905;
+	border: 1px solid #c3a313;
+}
+
+.label.purple {
+	background-color: #2e0531;
+	border: 1px solid #b513c3;
+}
