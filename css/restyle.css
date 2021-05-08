@@ -1,3 +1,14 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+span.code {
+	font-family: monospace;
+}
+
+h1, .chapter li.chapter-item {
+	font-family: Ubuntu, Consolas, serif;
+}
+
 /* basic elements */
 html {
 	overflow-y: scroll;
@@ -11,20 +22,12 @@ pre, :not(pre) > code {
 	border-radius: var(--border-radius);
 }
 
-span.code {
-	font-family: monospace;
-}
-
 code > p > a {
 	color: var(--fg) !important;
 }
 
 .content > main > p {
 	line-height: 1.6;
-}
-
-h1 {
-	font-family: serif;
 }
 
 /* misc elements */
@@ -186,7 +189,6 @@ ol li::before {
 /* chapter list */
 .chapter li.chapter-item {
 	margin-top: 0.6ex;
-	font-family: serif;
 }
 
 .chapter li:not(.chapter-item)::before {
