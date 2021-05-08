@@ -57,7 +57,7 @@ Structures are subject to [object scoping].
 
 ### Structure Definitions
 
-```csharp
+```zsc
 // Simple structure.
 struct MyCoolStructure
 {

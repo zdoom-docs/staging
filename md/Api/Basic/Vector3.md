@@ -1,4 +1,6 @@
-# Vector3
+# vector3
+
+[vector2]: Vector2.md
 
 <!-- api-definition -->
 The `vector3` built-in type.
@@ -26,7 +28,7 @@ The X, Y, and Z components of this vector.
 -#
 
 #-
-vector2 {XY}
+[vector2] {XY}
 
-The [X] and [Y] components of this vector as a vector2.
+The [`X`] and [`Y`] components of this vector as a [`vector2`].
 -#

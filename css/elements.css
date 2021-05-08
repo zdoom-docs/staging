@@ -66,11 +66,22 @@ dl.api dt a {
 }
 
 .toc::before {
-	content: "Contents";
 	color: var(--fira-paint);
 	font-variant: small-caps;
 	font-weight: 400;
 	letter-spacing: 0.1em;
+}
+
+.toc.contents::before {
+	content: "Contents";
+}
+
+.toc.types::before {
+	content: "Sub-Types";
+}
+
+.toc.types ul {
+	list-style-type: circle;
 }
 
 /* labels */

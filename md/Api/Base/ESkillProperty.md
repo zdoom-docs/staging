@@ -16,31 +16,31 @@ enum ESkillProperty;
 
 <!-- api-definition -->
 All of the properties that can be returned by
-[Object].[G_SkillPropertyInt].
+[`Object.G_SkillPropertyInt`].
 
 <!-- api-variants -->
 #-
 {SKILLP_ACSRETURN}
 
-The number returned by the [GameSkill] ACS function.
+The number returned by the [`GameSkill`] ACS function.
 -#
 
 #-
 {SKILLP_AUTOUSEHEALTH}
 
-If not `0`, [HealthPickup] items are automatically used by the player.
+If not `0`, [`HealthPickup`] items are automatically used by the player.
 -#
 
 #-
 {SKILLP_DISABLECHEATS}
 
-If not `0`, cheating is disabled unless [sv_cheats] is enabled.
+If not `0`, cheating is disabled unless [`sv_cheats`] is enabled.
 -#
 
 #-
 {SKILLP_EASYBOSSBRAIN}
 
-Makes [BossBrain].[A_BrainSpit] skip this amount of [BossTarget]s.
+Makes [`BossBrain.A_BrainSpit`] skip this amount of [`BossTarget`]s.
 -#
 
 #-
@@ -77,7 +77,7 @@ The timer for respawning monsters, or `0` if monsters do not respawn.
 #-
 {SKILLP_RESPAWNLIMIT}
 
-The number of times a monster may respawn if [SKILLP_RESPAWN] allows
+The number of times a monster may respawn if [`SKILLP_RESPAWN`] allows
 them to.
 -#
 

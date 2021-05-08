@@ -22,7 +22,7 @@ These functions may only be called in a drawing function, or they will
 either crash the game with an exception, or have no result.
 
 #-
-static vararg void {DrawChar}([Font] font, int cr, double x, double y, int character, ...)
+static varArg void {DrawChar}([Font] font, int cr, double x, double y, int character, ...)
 
 The same as `DrawTexture`, but draws the texture of character code
 `character` from `font`. The output color may be modified by the font
@@ -30,19 +30,14 @@ color `cr`.
 -#
 
 #-
-static vararg void {DrawShape}(textureId tex, bool animate, [Shape2D] s, ...)
+static varArg void {DrawShape}(textureId tex, bool animate, [Shape2D] s, ...)
+static varArg void {DrawText}([Font] font, int cr, double x, double y, string text, ...)
 
 {{#include ../../Labels/Todo.md}}
 -#
 
 #-
-static vararg void {DrawText}([Font] font, int cr, double x, double y, string text, ...)
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
-static vararg void {DrawTexture}(textureId tex, bool animate, double x, double y, ...)
+static varArg void {DrawTexture}(textureId tex, bool animate, double x, double y, ...)
 
 Draws texture `tex`, possibly animated by the animation ticker if
 `animate` is `true`, at horizontal position `x` and vertical position
@@ -186,7 +181,7 @@ finally transform positions. `CleanMode` may be one of the following:
 ### DrawTexture Arguments
 
 Here is a list of tags and their respective arguments which may be
-used with [DrawTexture]:
+used with [`DrawTexture`]:
 
 | Name                                      | Arguments      | Description
 | ----                                      | ---------      | -----------

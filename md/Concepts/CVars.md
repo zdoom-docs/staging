@@ -21,7 +21,7 @@
 | `bool`   | `1.0` or `0.0`
 | `float`  | No change
 | `int`    | No change
-| `string` | Value returned by [strtod]
+| `string` | Value returned by [`strtod`]
 | `color`  | Integer value with no change
 
 ### Into `int`
@@ -31,7 +31,7 @@
 | `bool`   | `1` or `0`
 | `float`  | Value rounded down
 | `int`    | No change
-| `string` | `1` if the value is `"true"`, `0` if `"false"`, or value returned by [strtoll]
+| `string` | `1` if the value is `"true"`, `0` if `"false"`, or value returned by [`strtoll`]
 | `color`  | RRGGBB octet pair as an integer
 
 ### Into `string`

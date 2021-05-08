@@ -14,7 +14,7 @@ enum Thinker.EStatNums;
 <!-- api-definition -->
 All thinkers are grouped by their "stat" number, or "statnum," which
 specifies the ordering of which thinkers are run, first to last. There
-are [Thinker].[MAX_STATNUM] stat numbers total, 20 of which are not
+are [`Thinker.MAX_STATNUM`] stat numbers total, 20 of which are not
 used by the engine and may be used for any purpose.
 
 <!-- api-variants -->
@@ -30,9 +30,9 @@ The number of statnums available to the engine.
 [Thinker].{STAT_USER_MAX}
 [Thinker].{STAT_USER}
 
-The user-defined stat numbers begin at [Thinker].[STAT_USER] and end at
-[Thinker].[STAT_USER_MAX]. Do not attempt to use normal integers as stat
-numbers *except as relative to these two*.
+The user-defined stat numbers begin at [`Thinker.STAT_USER`] and end
+at [`Thinker.STAT_USER_MAX`]. Do not attempt to use normal integers as
+stat numbers *except as relative to these two*.
 -#
 
 ### Non-Thinking
@@ -42,7 +42,7 @@ Thinkers which do not think and are elided from many checks.
 #-
 [Thinker].{STAT_INFO}
 
-Info queue used by [SpecialSpot] and its descendants.
+Info queue used by [`SpecialSpot`] and its descendants.
 -#
 
 #-
@@ -83,7 +83,7 @@ Thinkers which do think and are mandatory to many checks.
 [Thinker].{STAT_FIRST_THINKING}
 
 The first thinking statnum. This is equivalent to
-[Thinker].[STAT_SCROLLER].
+[`Thinker.STAT_SCROLLER`].
 -#
 
 #-
@@ -95,13 +95,13 @@ Texture scrollers and carriers.
 #-
 [Thinker].{STAT_PLAYER}
 
-All [PlayerPawn] actors.
+All [`PlayerPawn`] actors.
 -#
 
 #-
 [Thinker].{STAT_BOSSTARGET}
 
-[BossBrain] targets.
+[`BossBrain`] targets.
 -#
 
 #-
@@ -119,7 +119,7 @@ Decal animators.
 #-
 [Thinker].{STAT_INVENTORY}
 
-All [Inventory] items.
+All [`Inventory`] items.
 -#
 
 #-
@@ -143,7 +143,7 @@ Quake effects.
 #-
 [Thinker].{STAT_MAPMARKER}
 
-All [MapMarker] actors.
+All [`MapMarker`] actors.
 -#
 
 #-
@@ -179,7 +179,7 @@ Sector effects that cause floor or ceiling movement.
 #-
 [Thinker].{STAT_ACTORMOVER}
 
-All [ActorMover] actors.
+All [`ActorMover`] actors.
 -#
 
 #-

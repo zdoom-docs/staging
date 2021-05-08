@@ -77,13 +77,13 @@ uniquely named sub-folder.
 
 ### Version Directives
 
-```csharp
+```zsc
 version "4.3.3"
 ```
 
 ### Include Directives
 
-```csharp
+```zsc
 #include "zscript/MyCoolMod/MyCoolClasses.zsc"
 ```
 

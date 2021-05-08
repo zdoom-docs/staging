@@ -36,7 +36,7 @@ class StaticEventHandler : Object play version("2.4");
 <!-- api-definition -->
 Static event handlers handle events on a per-instance level. This
 means that they are registered when you start GZDoom, and un-register
-when you exit GZDoom. This is unlike [EventHandler], which registers
+when you exit GZDoom. This is unlike [`EventHandler`], which registers
 when a new game or map is started, and un-registers when it ends.
 
 All of the virtual functions on StaticEventHandler have empty
@@ -44,7 +44,7 @@ implementations by default, so you only need to override the events
 your event handler needs to override.
 
 Differences in virtual function behaviour are listed in the
-[EventHandler] documentation.
+[`EventHandler`] documentation.
 
 {{#include ../../Labels/Nondeterministic.md}} Because static event
 handlers are per-instance rather than per-game, care should be taken
@@ -65,7 +65,7 @@ is registered, or `null` if it does not exist.
 virtual void {OnRegister}()
 
 Called when this type is registered. This is where you should call
-[SetOrder] and set [IsUiProcessor] and [RequireMouse].
+[`SetOrder`], and set [`IsUiProcessor`] and [`RequireMouse`].
 -#
 
 #-
@@ -94,13 +94,13 @@ is changed.
 #-
 virtual void {WorldThingSpawned}([WorldEvent] e)
 
-Called directly after [Thinker].[PostBeginPlay].
+Called directly after [`Thinker.PostBeginPlay`].
 -#
 
 #-
 virtual void {WorldThingDied}([WorldEvent] e)
 
-Called after [Actor].[MorphedDeath], [Inventory].[OwnerDied], and the
+Called after [`Actor.MorphedDeath`], [`Inventory.OwnerDied`], and the
 target is set to the damage source, just before Kill ACS scripts are
 called and the rest of the death handling is done.
 -#
@@ -114,14 +114,14 @@ Called when an actor is revived, after everything is finished.
 #-
 virtual void {WorldThingDamaged}([WorldEvent] e)
 
-Called directly directly after [Actor].[DamageMobj] finishes, or
-directly before [Actor].[Die].
+Called directly directly after [`Actor.DamageMobj`] finishes, or
+directly before [`Actor.Die`].
 -#
 
 #-
 virtual void {WorldThingDestroyed}([WorldEvent] e)
 
-Called at the beginning of [Object].[OnDestroy] on [Actor]s.
+Called at the beginning of [`Object.OnDestroy`] on [`Actor`]s.
 -#
 
 #-
@@ -177,17 +177,17 @@ handler is applied.
 virtual ui void {RenderOverlay}([RenderEvent] e)
 
 Despite the name, this is actually run on the status bar, specifically
-in [BaseStatusBar].[DrawTopStuff]. It is run after [HudMessage]s are
+in [`BaseStatusBar.DrawTopStuff`]. It is run after [`HudMessage`]s are
 drawn and power-ups are drawn, just before the log is drawn. You may
-use [Screen] functions in this function.
+use [`Screen`] functions in this function.
 -#
 
 #-
 virtual ui void {RenderUnderlay}([RenderEvent] e)
 
 Despite the name, this is actually run on the status bar, specifically
-in the currently-not-exposed [BaseStatusBar].DrawBottomStuff. It is
-run just before [HudMessage]s are drawn. You may use [Screen]
+in the currently-not-exposed [`BaseStatusBar`].DrawBottomStuff. It is
+run just before [`HudMessage`]s are drawn. You may use [`Screen`]
 functions in this function.
 -#
 
@@ -203,16 +203,16 @@ virtual void {PlayerRespawned}([PlayerEvent] e)
 
 Called when a player spawns, directly after the teleport fog is
 spanwed and just before Respawn ACS scripts are called. Also called
-similarly at the end of the [PlayerPawn].[OnRespawn] function, for
-example when the [resurrect] cheat is used.
+similarly at the end of the [`PlayerPawn.OnRespawn`] function, for
+example when the [`resurrect`] cheat is used.
 -#
 
 #-
 virtual void {PlayerDied}([PlayerEvent] e)
 
-Called after [WorldThingDied] and [Actor].[GetDeathHeight], and after
-the actor's thing special is activated, when the obituary has been
-displayed, just before Death ACS scripts have been called.
+Called after [`WorldThingDied`] and [`Actor.GetDeathHeight`], and
+after the actor's thing special is activated, when the obituary has
+been displayed, just before Death ACS scripts have been called.
 -#
 
 #-
@@ -225,10 +225,10 @@ before `DISCONNECT` ACS scripts are called.
 #-
 virtual ui bool {UiProcess}([UiEvent] e)
 
-Called only if [IsUiProcessor] is `true`. Called when a GUI event is
+Called only if [`IsUiProcessor`] is `true`. Called when a GUI event is
 dispatched by the engine, for example when the UI is active and the
 player has pressed a key or moved the mouse. Mouse movements will only
-be captured if [RequireMouse] is `true`. Because this interacts
+be captured if [`RequireMouse`] is `true`. Because this interacts
 directly with the OS it is not part of the game simulation, therefore
 has UI scope and must dispatch commands to the game as networked
 events. If the return value is `true`, the function will block any
@@ -249,16 +249,16 @@ this, it is UI scope, so it should be used to process UI code.
 #-
 virtual ui void {PostUiTick}()
 
-Similar to [UiTick], this is also deterministic, but called after all
-other tickers.
+Similar to [`UiTick`], this is also deterministic, but called after
+all other tickers.
 -#
 
 #-
 virtual ui bool {InputProcess}([InputEvent] e)
 
-The same as [UiProcess], but this is only called when inputs are being
-directed to the game, rather than to the GUI. All of the same
-restrictions apply to this as they do to [UiProcess], and the return
+The same as [`UiProcess`], but this is only called when inputs are
+being directed to the game, rather than to the GUI. All of the same
+restrictions apply to this as they do to [`UiProcess`], and the return
 value acts the same.
 -#
 
@@ -304,7 +304,7 @@ before the level is set up.
 void {SetOrder}(int order)
 
 Sets the ordering of this event handler, which can be read from
-[Order].
+[`Order`].
 -#
 
 <!-- api-members -->
@@ -313,20 +313,20 @@ readOnly int {Order}
 
 The arbitrary ordering of this event handler relative to other ones.
 Event handlers with lower ordering numbers have their functions
-executed first. You can set this variable with [SetOrder].
+executed first. You can set this variable with [`SetOrder`].
 -#
 
 #-
 bool {IsUiProcessor}
 
 If `true`, GUI events will be sent to this event handler through
-[UiProcess]. This is mainly for optimization purposes.
+[`UiProcess`]. This is mainly for optimization purposes.
 -#
 
 #-
 bool {RequireMouse}
 
 If `true`, mouse events will be sent to this event handler through
-[InputProcess] and/or [UiProcess]. This is mainly for optimization
+[`InputProcess`] and/or [`UiProcess`]. This is mainly for optimization
 purposes.
 -#

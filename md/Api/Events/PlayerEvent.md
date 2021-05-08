@@ -11,10 +11,10 @@
 struct PlayerEvent play version("2.4");
 
 <!-- api-definition -->
-The information for a [StaticEventHandler].[PlayerEntered],
-[StaticEventHandler].[PlayerRespawned],
-[StaticEventHandler].[PlayerDied], or
-[StaticEventHandler].[PlayerDisconnected] event.
+The information for a [`StaticEventHandler.PlayerEntered`],
+[`StaticEventHandler.PlayerRespawned`],
+[`StaticEventHandler.PlayerDied`], or
+[`StaticEventHandler.PlayerDisconnected`] event.
 
 <!-- api-members -->
 #-
@@ -26,6 +26,6 @@ The player who created this event.
 #-
 readOnly bool {IsReturn}
 
-`true` if this is a [StaticEventHandler].[PlayerEntered] event caused
+`true` if this is a [`StaticEventHandler.PlayerEntered`] event caused
 by re-entering a hub level.
 -#

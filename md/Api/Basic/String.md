@@ -1,4 +1,4 @@
-# String
+# string
 
 [format strings]: ../../Concepts/FormatStrings.md
 
@@ -18,7 +18,7 @@ characters*.
 
 <!-- api-class-methods -->
 #-
-static vararg string {Format}(string format, ...)
+static varArg string {Format}(string format, ...)
 
 Creates a string using a [format string] and any amount of arguments.
 -#
@@ -121,9 +121,9 @@ splitting.
 ### In-Place Modification
 
 #-
-vararg void {AppendFormat}(string format, ...)
+varArg void {AppendFormat}(string format, ...)
 
-Works like [Format], but appends the result to the string.
+Works like [`Format`], but appends the result to the string.
 -#
 
 #-
@@ -178,45 +178,45 @@ it is `0`.
 deprecated("4.1") void {ToLower}()
 
 Converts all bytes in the string to lowercase in-place. Use
-[MakeLower] instead.
+[`MakeLower`] instead.
 -#
 
 #-
 deprecated("4.1") void {ToUpper}()
 
 Converts all bytes in the string to uppercase in-place. Use
-[MakeUpper] instead.
+[`MakeUpper`] instead.
 -#
 
 #-
 deprecated("4.1") string {CharAt}(int pos) const
 
-Returns the byte at `pos` as a new string. Use [CodePointCount] and
-[GetNextCodePoint] instead. An example of replacing `CharAt` is
+Returns the byte at `pos` as a new string. Use [`CodePointCount`] and
+[`GetNextCodePoint`] instead. An example of replacing `CharAt` is
 available [below.][replace charat]
 -#
 
 #-
 deprecated("4.1") int {CharCodeAt}(int pos) const
 
-Returns the byte at `pos` as an integer. Use either [ByteAt] or
-[CodePointCount] and [GetNextCodePoint] instead. If you specifically
-want one byte from the string, use [ByteAt]. Otherwise, if you want
-one *character*, use [CodePointCount] and [GetNextCodePoint]. An
-example of replacing `CharCodeAt` is available [below.][replace
-charcodeat]
+Returns the byte at `pos` as an integer. Use either [`ByteAt`] or
+[`CodePointCount`] and [`GetNextCodePoint`] instead. If you
+specifically want one byte from the string, use [`ByteAt`]. Otherwise,
+if you want one *character*, use [`CodePointCount`] and
+[`GetNextCodePoint`]. An example of replacing `CharCodeAt` is
+available [below.][replace charcodeat]
 -#
 
 #-
 deprecated("3.5.1") int {LastIndexOf}(string substr, int endIndex = int.Max) const
 
-Broken. Use [RightIndexOf] instead.
+Broken. Use [`RightIndexOf`] instead.
 -#
 
 <!-- api-footer -->
 #### Replacing CharAt
 
-```csharp
+```zsc
 // Old code:
 if(str.Length() < 3)
 	return;
@@ -252,7 +252,7 @@ string theThirdCharacter = str.Mid(leftIndex, rightIndex - leftIndex);
 
 #### Replacing CharCodeAt
 
-```csharp
+```zsc
 // Old code:
 if(str.Length() < 3)
 	return;

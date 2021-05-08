@@ -27,7 +27,7 @@ int16 {Roll}
 
 16-bit fixed-point representations of the player's current view
 angles. -32767 being the minimum angle, and 32767 being the maximum
-angle. -32768 is reserved for [Pitch] signifying the view will be
+angle. -32768 is reserved for [`Pitch`] signifying the view will be
 centered.
 -#
 

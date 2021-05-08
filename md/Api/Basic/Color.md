@@ -1,4 +1,4 @@
-# Color
+# color
 
 <!-- api-definition -->
 The `color` built-in type.

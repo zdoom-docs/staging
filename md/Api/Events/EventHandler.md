@@ -9,21 +9,21 @@ class EventHandler : StaticEventHandler play version("2.4");
 Event handlers handle events on a per-game or per-map level. This
 means that they are registered when you start a new game or map, and
 un-register when you finish the game or map. This is unlike
-[StaticEventHandler], which registers when the engine is started, and
-un-registers when it exits.
+[`StaticEventHandler`], which registers when the engine is started,
+and un-registers when it exits.
 
 All of the virtual functions on EventHandler have empty
 implementations by default, so you only need to override the events
 your event handler needs to override.
 
-See [StaticEventHandler] for more information on the events that can
+See [`StaticEventHandler`] for more information on the events that can
 be overridden on this type.
 
 <!-- api-class-methods -->
 #-
 clearScope static [StaticEventHandler] {Find}(class\<StaticEventHandler> type)
 
-This is exactly the same as the function on [StaticEventHandler].
+This is exactly the same as the function on [`StaticEventHandler`].
 -#
 
 #-

@@ -1,32 +1,25 @@
 # InterBackground
 
+[WbStartStruct]: WbStartStruct.md
+
+<!-- api-declaration -->
+class InterBackground play version("2.5");
+
+<!-- api-definition -->
 A class containing an animated intermission background.
 
-```
-class InterBackground : Object play
-{
-	static InterBackground Create(WBStartStruct wbs);
+<!-- api-class-methods -->
+#-
+static InterBackground {Create}([WbStartStruct] wbs)
 
-	virtual void DrawBackground(int curstate, bool drawsplat, bool pointeron);
-	virtual bool LoadBackground(bool isenterpic);
-	virtual void UpdateAnimatedBack();
-}
-```
+{{#include ../../Labels/Todo.md}}
+-#
 
-### `Create`
+<!-- api-instance-methods -->
+#-
+virtual void {DrawBackground}(int curState, bool drawSplat, bool pointerOn)
+virtual bool {LoadBackground}(bool isEnterPic)
+virtual void {UpdateAnimatedBack}()
 
-TODO
-
-### `DrawBackground`
-
-TODO
-
-### `LoadBackground`
-
-TODO
-
-### `UpdateAnimatedBack`
-
-TODO
-
-<!-- EOF -->
+{{#include ../../Labels/Todo.md}}
+-#

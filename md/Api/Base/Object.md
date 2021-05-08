@@ -4,7 +4,7 @@
 [caching]: ../../Concepts/Caching.md
 [format strings]: ../../Concepts/FormatStrings.md
 [music ordering]: ../../Data/Music.md#ordering
-[sounds]: ../../Data/Sounds.md
+[sound]: ../../Data/Sounds.md
 
 [ATTN_NORM]: ../Globals.md#memb-ATTN_NORM
 [Actor]: Actor.md
@@ -54,7 +54,7 @@ Marks `soundId` to be [pre-cached][caching].
 #-
 static void {S_StartSound}(sound soundId, [ESoundFlags] channel, [ESoundFlags] flags = 0, float volume = 1.0, float attenuation = [ATTN_NORM], float pitch = 0.0, float startTime = 0.0)
 
-Plays a [sound][sounds] with no source.
+Plays a [sound] with no source.
 -#
 
 #-
@@ -115,7 +115,7 @@ milliseconds since the engine was started.
 -#
 
 #-
-vararg static void {ThrowAbortException}(string fmt, ...)
+varArg static void {ThrowAbortException}(string fmt, ...)
 
 Kills the VM and ends the game (without exiting) with a
 [formatted][format strings] error.
@@ -128,19 +128,19 @@ Kills the VM and ends the game (without exiting) with a
 #-
 deprecated("3.8") static vector3, int {G_PickDeathmatchStart}()
 
-Use [LevelLocals].[PickDeathmatchStart] instead.
+Use [`LevelLocals.PickDeathmatchStart`] instead.
 -#
 
 #-
 deprecated("3.8") static vector3, int {G_PickPlayerStart}(int pNum, int flags = 0)
 
-Use [LevelLocals].[PickPlayerStart] instead.
+Use [`LevelLocals.PickPlayerStart`] instead.
 -#
 
 #-
 deprecated("4.3") static void {S_Sound}(sound soundId, [ESoundFlags] channel, float volume = 1.0, float attenuation = [ATTN_NORM], float pitch = 0.0)
 
-Use [S_StartSound] instead.
+Use [`S_StartSound`] instead.
 -#
 
 <!-- api-instance-methods -->
@@ -175,9 +175,9 @@ virtual virtualScope void {OnDestroy}()
 {{#include ../../Labels/Nondeterministic.md}} Called just before the
 object is collected by the garbage collector. Nondeterministic unless
 the object is linked into the thinker list, in which case it is
-destroyed earlier in a deterministic setting. Not all [Thinker]s are
-linked into this list, so be careful when overriding this. Any [Actor]
-will generally be safe.
+destroyed earlier in a deterministic setting. Not all [`Thinker`]s are
+linked into this list, so be careful when overriding this. Any
+[`Actor`] will generally be safe.
 -#
 
 <!-- api-members -->

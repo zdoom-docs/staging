@@ -5,8 +5,8 @@
 [language]: ../../Data/Language.md
 
 [Font]: Font.md
-[GS_FULLCONSOLE]: ../Base/EGameState.md#memb-gs_fullconsole
-[GameState]: ../Base/Globals.md#memb-gamestate
+[GS_FULLCONSOLE]: ../Base/EGameState.md#memb-GS_FULLCONSOLE
+[GameState]: ../Base/Globals.md#memb-GameState
 [PrintBold]: ../../Acs/Drawing/PrintBold.md
 [Print]: ../../Acs/Drawing/Print.md
 [msgmidcolor2]: ../../CVars.md#cvar-msgmidcolor2
@@ -22,8 +22,8 @@ Basic access to console functionality.
 #-
 static void {HideConsole}()
 
-Hides the console if it is open and [GameState] is not
-[GS_FULLCONSOLE].
+Hides the console if it is open and [`GameState`] is not
+[`GS_FULLCONSOLE`].
 -#
 
 #-
@@ -31,15 +31,16 @@ static void {MidPrint}([Font] font, string text, bool bold = false)
 
 Prints `text` (possibly a [LANGUAGE] string if prefixed with `$`) in
 `font` to the middle of the screen for 1½ seconds. Will print even if
-the player is a spectator if `bold` is `true`. Uses the [msgmidcolor]
-CVar for non-bold messages and [msgmidcolor2] for bold messages.
+the player is a spectator if `bold` is `true`. Uses the
+[`msgmidcolor`] CVar for non-bold messages and [`msgmidcolor2`] for
+bold messages.
 
-This is the function used internally by [ACS]' [Print] and [PrintBold]
-functions.
+This is the function used internally by [ACS]' [`Print`] and
+[`PrintBold`] functions.
 -#
 
 #-
-static vararg void {PrintF}(string fmt, \...)
+static varArg void {PrintF}(string fmt, \...)
 
 Prints a [formatted string][format strings] to the console.
 -#

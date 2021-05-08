@@ -224,49 +224,49 @@ function and attach it.
 
 ### Class Headers
 
-```csharp
+```zsc
 // Automatically inherits Object, similar to the "actor" keyword in DECORATE.
 class MyCoolObject
 {
 }
 ```
 
-```csharp
+```zsc
 // Equivalent to the above.
 class MyCoolObjectExplicit : Object
 {
 }
 ```
 
-```csharp
+```zsc
 // Has "Play" scope.
 class MyCoolScopedObject play
 {
 }
 ```
 
-```csharp
+```zsc
 // Inherits Thinker and can override functions on it.
 class MyCoolThinker : Thinker
 {
 }
 ```
 
-```csharp
+```zsc
 // Some actor.
 class OtherActor : Actor
 {
 }
 ```
 
-```csharp
+```zsc
 // Replaces "OtherActor."
 class MyCoolActor : Actor replaces OtherActor
 {
 }
 ```
 
-```csharp
+```zsc
 // Can only be inherited.
 class MyCoolInterface abstract
 {
@@ -275,7 +275,7 @@ class MyCoolInterface abstract
 
 ### Class Definitions
 
-```csharp
+```zsc
 // Basic class definition with a member variable and member function.
 class BasicClass
 {
@@ -290,7 +290,7 @@ class BasicClass
 }
 ```
 
-```csharp
+```zsc
 // Alternate syntax usage.
 // This class spans from this point to the end of the file.
 class TheWholeFileIsAClassOhNo;
@@ -302,7 +302,7 @@ int m_MyMember;
 
 ### Property Definitions
 
-```csharp
+```zsc
 // A class with some properties.
 class MyCoolActor : Actor
 {
@@ -326,7 +326,7 @@ class MyCoolActor : Actor
 
 ### Flag Definitions
 
-```csharp
+```zsc
 // A class with some flags.
 class MyCoolActorWithFlags : Actor
 {

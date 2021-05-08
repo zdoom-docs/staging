@@ -17,7 +17,7 @@ A set of character graphics used to visually represent strings of
 text.
 
 <!-- api-sub-types -->
-* [EColorRange]
+EColorRange,
 
 <!-- api-class-methods -->
 #-
@@ -97,7 +97,7 @@ the width of the largest line in the string.
 #-
 [BrokenLines] {BreakLines}(string text, int maxLen)
 
-Breaks `text` up into a [BrokenLines] structure according to the
+Breaks `text` up into a [`BrokenLines`] structure according to the
 screen and clip region, as well as appropriately accounting for a
 maximum width in pixels of `maxLen`.
 -#

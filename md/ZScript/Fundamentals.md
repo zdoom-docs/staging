@@ -124,11 +124,11 @@ delimited by [Whitespace] or non-[IdentifierCharacter]s.
 `sizeOf`, `alignOf`, `abstract`, `forEach`, `true`, `false`, `none`,
 `auto`, `property`, `native`, `var`, `out`, `static`, `transient`,
 `final`, `extend`, `protected`, `private`, `dot`, `cross`, `virtual`,
-`override`, `vararg`, `ui`, `play`, `clearScope`, `virtualScope`,
+`override`, `varArg`, `ui`, `play`, `clearScope`, `virtualScope`,
 `super`, `stop`, `null`, `is`, `replaces`, `states`, `meta`,
-`deprecated`, `version`, `version`, `action`, `#include`, `readOnly`,
-<span class="label purple">3.4.0+</span> `internal`, <span
-class="label purple">3.7.0+</span> `flagDef`
+`deprecated`, `version`, `action`, `#include`, `readOnly`, <span
+class="label purple">3.4.0+</span> `internal`, <span class="label
+purple">3.7.0+</span> `flagDef`
 
 </dd></dl>
 

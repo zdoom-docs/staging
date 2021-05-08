@@ -9,7 +9,7 @@
 struct ReplacedEvent clearScope version("3.7");
 
 <!-- api-definition -->
-The information for a [StaticEventHandler].[CheckReplacee] event. You
+The information for a [`StaticEventHandler.CheckReplacee`] event. You
 can mutate the variables in this event to change the result of
 replacement checking.
 
@@ -33,5 +33,5 @@ bool {IsFinal}
 
 If `true`, the engine will not attempt to continue going down the
 replacement chain, and will directly replace the actor with
-[Replacee].
+[`Replacee`].
 -#

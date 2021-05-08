@@ -17,9 +17,9 @@ The **Tex**ture **Man**ager is used for loading, finding, replacing and getting
 information on textures.
 
 <!-- api-sub-types -->
-* [EFlags]
-* [ETexReplaceFlags]
-* [EUseTypes]
+EFlags,
+ETexReplaceFlags,
+EUseTypes,
 
 <!-- api-class-methods -->
 #-
@@ -78,8 +78,9 @@ static bool {OkForLocalization}(textureId patch, string textSubstitute)
 #-
 deprecated("3.8") static void {ReplaceTextures}(string from, string to, TexMan.[ETexReplaceFlags] flags)
 
-{{#include ../../Labels/Legacy.md}} Use
-[LevelLocals].[ReplaceTextures][ll-ReplaceTextures] instead.
+{{#include ../../Labels/Legacy.md}} Use <span
+class=code>[LevelLocals].[ReplaceTextures][ll-ReplaceTextures]</span>
+instead.
 
 Replaces textures named `from` with `to` within the map.
 -#

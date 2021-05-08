@@ -20,11 +20,6 @@ Checks if `skin` is in `Skins`.
 
 #-
 void {EnumColorsets}(out array\<int> data)
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 name {GetColorsetName}(int setnum)
 
 {{#include ../../Labels/Todo.md}}

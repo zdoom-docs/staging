@@ -10,8 +10,8 @@
 struct RenderEvent ui version("2.4");
 
 <!-- api-definition -->
-The information for a [StaticEventHandler].[RenderOverlay] or
-[StaticEventHandler].[RenderUnderlay] event.
+The information for a [`StaticEventHandler.RenderOverlay`] or
+[`StaticEventHandler.RenderUnderlay`] event.
 
 <!-- api-members -->
 #-

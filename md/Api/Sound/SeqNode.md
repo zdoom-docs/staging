@@ -11,28 +11,13 @@ class SeqNode : Object clearScope;
 A [SNDSEQ] node.
 
 <!-- api-sub-types -->
-* [ESeqType]
+ESeqType,
 
 <!-- api-class-methods -->
 #-
 void {AddChoice}(int seqnum, SeqNode.[ESeqType] type)
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 bool {AreModesSame}(name n, int mode1)
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 bool {AreModesSameID}(int sequence, SeqNode.[ESeqType] type, int mode1)
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 name {GetSequenceName}()
 
 {{#include ../../Labels/Todo.md}}
@@ -41,11 +26,6 @@ name {GetSequenceName}()
 <!-- api-instance-methods -->
 #-
 static name {GetSequenceSlot}(int sequence, SeqNode.[ESeqType] type)
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 static void {MarkPrecacheSounds}(int sequence, SeqNode.[ESeqType] type)
 
 {{#include ../../Labels/Todo.md}}

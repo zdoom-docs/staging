@@ -15,7 +15,7 @@ Iterates over line indices with a specified tag.
 deprecated("3.8") static LineIdIterator {Create}(int tag)
 
 {{#include ../../Labels/Legacy.md}} Use
-[LevelLocals].[CreateLineIdIterator] instead.
+[`LevelLocals.CreateLineIdIterator`] instead.
 
 Creates a new iterator over lines with tag `tag`.
 -#

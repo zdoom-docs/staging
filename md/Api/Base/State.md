@@ -11,7 +11,7 @@
 struct State clearScope;
 
 <!-- api-definition -->
-Represents a state on an [Actor]. Data in State is read-only and is
+Represents a state on an [`Actor`]. Data in State is read-only and is
 copied as needed to its respective locations for modification, as it
 is merely a view into the global constant state table.
 
@@ -70,7 +70,7 @@ readOnly uint16 {TicRange}
 
 The maximum amount of tics to add for random tic durations, or `0` if
 the duration is not random. For example, `TNT1 A random(5, 7)` would
-have a [Tics] value of `5` and a [TicRange] of `2`.
+have a [`Tics`] value of `5` and a [`TicRange`] of `2`.
 -#
 
 ### Data
@@ -99,7 +99,7 @@ The action scope of this state.
 #-
 readOnly bool {bCanRaise}
 
-State has the `canRaise` option, allowing [Actor].[A_VileChase] to
+State has the `canRaise` option, allowing [`Actor.A_VileChase`] to
 target this actor for healing without entering an infinitely long
 state.
 -#
@@ -107,7 +107,7 @@ state.
 #-
 readOnly bool {bDeHackEd}
 
-State has been modified by [DeHackEd][dehacked].
+State has been modified by [DeHackEd].
 -#
 
 #-

@@ -36,7 +36,7 @@ enumerator, or 0 if there is none &mdash; or explicitly set.
 
 ### Enumeration Definitions
 
-```csharp
+```zsc
 // Basic enumeration.
 enum MyCoolEnum
 {
@@ -47,7 +47,7 @@ enum MyCoolEnum
 }
 ```
 
-```csharp
+```zsc
 // Less trivial example.
 enum MyCoolerEnum : int16
 {

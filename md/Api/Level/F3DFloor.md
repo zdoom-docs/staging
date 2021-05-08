@@ -12,7 +12,7 @@ struct F3DFloor play;
 Describes a 3D floor.
 
 <!-- api-sub-types -->
-* [EF3DFloorFlags]
+EF3DFloorFlags,
 
 <!-- api-instance-methods -->
 #-

@@ -1,7 +1,7 @@
-# Fixed Array
+# T[]
 
 <!-- api-definition -->
-The `T[]` built-in type.
+The built-in fixed-size array type.
 
 <!-- api-instance-methods -->
 #-

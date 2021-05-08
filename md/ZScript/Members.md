@@ -52,27 +52,27 @@ operator.
 
 ### Member Declarations
 
-```csharp
+```zsc
 // An integer. Visible to and modifiable by everything.
 int m_MyCoolInt;
 ```
 
-```csharp
+```zsc
 // Three separate integers, defined short-hand.
 int m_CoolInt1, m_CoolInt2, m_CoolInt3;
 ```
 
-```csharp
+```zsc
 // Ten integers in one variable.
 int[10] m_CoolIntArray;
 ```
 
-```csharp
+```zsc
 // Can only be seen by this type.
 private int m_CoolPrivateInt;
 ```
 
-```csharp
+```zsc
 // Read-only; part of the class data, can only be seen by descendant types.
 protected meta int m_CoolMetaInt;
 ```

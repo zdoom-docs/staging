@@ -5,6 +5,7 @@
 [EStatNums]: Thinker/EStatNums.md
 [LevelLocals]: ../Level/LevelLocals.md
 [Object]: Object.md
+[Thinker]: #thinker
 
 <!-- api-declaration -->
 class Thinker : Object play;
@@ -16,14 +17,14 @@ indirectly. The order of which thinkers run is defined by [stat
 numbers][EStatNums].
 
 <!-- api-sub-types -->
-* [EStatNums]
+EStatNums,
 
 <!-- api-class-methods -->
 #-
 static clearScope int {Tics2Seconds}(int tics)
 
 Roughly converts a number of tics to an integral amount of seconds.
-Equivalent to dividing `tics` by [Object].[TICRATE].
+Equivalent to dividing `tics` by [`Object.TICRATE`].
 -#
 
 <!-- api-instance-methods -->
@@ -36,13 +37,13 @@ Changes the [statnum][EStatNums] of this thinker.
 #-
 virtual void {PostBeginPlay}()
 
-Called at the very end of this Thinker's initialization.
+Called at the very end of this [`Thinker`]'s initialization.
 -#
 
 #-
 virtual void {Tick}()
 
-Called every game tic. The order between this thinker's [Tick] and
+Called every game tic. The order between this thinker's [`Tick`] and
 every other thinker in the same statnum *is unspecified*. It is not
 nondeterministic.
 -#

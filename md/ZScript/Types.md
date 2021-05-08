@@ -251,7 +251,7 @@ be accessed with the array access operator.
 Dynamic arrays do not have their lifetime scoped to their current
 block, so the following code will result in an array with 5 elements:
 
-```csharp
+```zsc
 for(int i = 0; i < 5; i++)
 {
 	array<int> a;

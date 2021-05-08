@@ -49,8 +49,8 @@ object.
 [Actor] {GetDefaultByType}(class\<[Actor]> typeName)
 
 {{#include ../Labels/Unserializable.md}} Returns an object containing
-the default values for each member of the [Actor] type provided as
-they would be set in [Actor].[BeginPlay]. The returned object is a
+the default values for each member of the [`Actor`] type provided as
+they would be set in [`Actor.BeginPlay`]. The returned object is a
 pseudo-object which is stored only in-memory.
 -#
 
@@ -186,7 +186,7 @@ All of these functions may have `[Identifier]` between the function
 name and argument list to specify a named RNG table to use. This
 special syntax applies only to these functions. An example would be:
 
-```csharp
+```zsc
 int myRandomNumber = Random[MyCoolRng](50, 100);
 ```
 
@@ -240,38 +240,38 @@ Every class registered to the engine.
 #-
 readOnly array\<class\<[Actor]> > {AllActorClasses}
 
-Every [Actor]-derived class registered to the engine.
+Every [`Actor`]-derived class registered to the engine.
 -#
 
 #-
 readOnly array\<[PlayerClass]> {PlayerClasses}
 
-Every [PlayerClass] registered to the engine.
+Every [`PlayerClass`] registered to the engine.
 -#
 
 #-
 readOnly array\<[PlayerSkin]> {PlayerSkins}
 
-Every [PlayerSkin] registered to the engine.
+Every [`PlayerSkin`] registered to the engine.
 -#
 
 #-
 readOnly array\<[Team]> {Teams}
 
-Every [Team] registered to the engine.
+Every [`Team`] registered to the engine.
 -#
 
 ### Players
 
 #-
-play [PlayerInfo]\[MAXPLAYERS\] {Players}
+play [PlayerInfo]\[[MAXPLAYERS]\] {Players}
 
-The [PlayerInfo] for each player. These may be invalid data if the
-corresponding entry in [PlayerInGame] is not `true`.
+The [`PlayerInfo`] for each player. These may be invalid data if the
+corresponding entry in [`PlayerInGame`] is not `true`.
 -#
 
 #-
-readOnly bool[MAXPLAYERS\] {PlayerInGame}
+readOnly bool[[MAXPLAYERS]\] {PlayerInGame}
 
 The status of each player as a boolean. If `false` then the
 corresponding player is not in-game.
@@ -279,11 +279,6 @@ corresponding player is not in-game.
 
 #-
 [KeyBindings] {AutomapBindings}
-
-{{#include ../Labels/Todo.md}}
--#
-
-#-
 [KeyBindings] {Bindings}
 
 {{#include ../Labels/Todo.md}}
@@ -308,8 +303,8 @@ a networked game with more than one player to be true.
 #-
 readOnly int {Net_Arbitrator}
 
-In a [NetGame], the number of the player that is currently arbitrating
-("hosting") the game.
+In a [`NetGame`], the number of the player that is currently
+arbitrating ("hosting") the game.
 -#
 
 #-
@@ -347,7 +342,7 @@ drawn in the scene.
 int {LocalViewPitch}
 
 {{#include ../Labels/Internal.md}} The pitch angle (in degrees) of
-[ConsolePlayer]'s view.
+[`ConsolePlayer`]'s view.
 -#
 
 #-
@@ -371,14 +366,14 @@ ratio differences.
 readOnly int {CleanWidth}
 readOnly int {CleanHeight}
 
-The current screan size divided by ([CleanXFac],[CleanYFac]).
+The current screan size divided by ([`CleanXFac`],[`CleanYFac`]).
 -#
 
 #-
 readOnly int {CleanWidth_1}
 readOnly int {CleanHeight_1}
 
-The current screan size divided by ([CleanXFac_1],[CleanYFac_1]).
+The current screan size divided by ([`CleanXFac_1`],[`CleanYFac_1`]).
 -#
 
 #-
@@ -531,16 +526,16 @@ The big font defined by the IWAD.
 #-
 readOnly [Font] {AlternativeSmallFont}
 
-If [Generic_Ui] is true, this font will be defined as either
-[SmallFont], [OriginalSmallFont], or [NewSmallFont] (in that order)
-depending on which is complete.
+If [`Generic_Ui`] is true, this font will be defined as either
+[`SmallFont`], [`OriginalSmallFont`], or [`NewSmallFont`] (in that
+order) depending on which is complete.
 -#
 
 #-
 readOnly bool {Generic_Ui}
 
 Will be `true` if the [language] defines `USE_GENERIC_FONT` as a
-non-zero value. This indicates what the [AlternativeSmallFont] will
+non-zero value. This indicates what the [`AlternativeSmallFont`] will
 be.
 -#
 

@@ -12,14 +12,14 @@ struct CVar clearScope;
 <!-- api-definition -->
 {{#include ../../Labels/Unserializable.md}}
 
-A **C**onsole **Var**iable, either defined in [CVARINFO][cvarinfo] or
-by the engine.
+A **C**onsole **Var**iable, either defined in [CVARINFO] or by the
+engine.
 
 All Get and Set operations will work regardless of the real type of
 the CVar, as [they are not "strongly" typed.][cvar conversions]
 
 <!-- api-sub-types -->
-* [ECVarType]
+ECVarType,
 
 <!-- api-class-methods -->
 #-

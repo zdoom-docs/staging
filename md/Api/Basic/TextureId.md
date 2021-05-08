@@ -1,4 +1,4 @@
-# TextureID
+# textureId
 
 <!-- api-definition -->
 Texture IDs can be explicitly converted to integers, but not the other

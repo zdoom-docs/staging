@@ -1,424 +1,374 @@
 # StatusScreen
 
-The base class for intermission status screens. Any status screen used by
-`MAPINFO`/GameInfo must be derived from this class.
+[CR_UNTRANSLATED]: ../Drawing/Font/EColorRange.md#enum-CR_UNTRANSLATED
+[ESpState]: StatusScreen/ESpState.md
+[EState]: StatusScreen/EState.md
+[FSMODE_SCALETOFIT43]: ../Drawing/EScaleMode.md#enum-FSMODE_SCALETOFIT43
+[Font]: ../Drawing/Font.md
+[FragCount]: WbPlayerStruct.md#memb-FragCount
+[GS_INTERMISSION]: ../Base/EGameState.md#memb-GS_INTERMISSION
+[GameState]: ../Globals.md#memb-GameState
+[InterBackground]: InterBackground.md
+[LEAVINGINTERMISSION]: StatusScreen/EState.md#enum-LEAVINGINTERMISSION
+[LevelLocals]: ../Level/LevelLocals.md
+[MAXPLAYERS]: ../Globals.md#memb-MAXPLAYERS
+[NOSTATE]: StatusScreen/EState.md#enum-NOSTATE
+[PNum]: WbStartStruct.md#memb-PNum
+[PatchInfo]: PatchInfo.md
+[PlayerInfo]: ../Players/PlayerInfo.md
+[Plyr]: WbStartStruct.md#memb-Plyr
+[SHOWNEXTLOC]: StatusScreen/EState.md#enum-SHOWNEXTLOC
+[STATCOUNT]: StatusScreen/EState.md#enum-STATCOUNT
+[S_StartSound]: ../Base/Object.md#mthd-S_StartSound
+[StatusScreen]: #statusscreen
+[WbPlayerStruct]: WbPlayerStruct.md
+[WbStartStruct]: WbStartStruct.md
+[WorldDone]: ../Level/LevelLocals.md#mthd-WorldDone
 
-Status screens have four stages:
+[mapinfo gameinfo]: ../../Data/MapInfo.md#gameinfo
 
-* `STATCOUNT`, where the stats are counted and displayed.
-* `SHOWNEXTLOC`, where the next map is shown as "ENTERING (map name)" and in episodic maps, the world map.
-* `NOSTATE`, at the very end of this process, where the last frame is drawn and the intermission is exited.
-* `LEAVINGINTERMISSION`, which is used only to signify that all stages are done and the status screen has been exited.
+<!-- api-declaration -->
+class StatusScreen abstract play version("2.5");
 
-These are provided as constants in `StatusScreen`. The starting stage is `STATCOUNT`.
+<!-- api-definition -->
+The base class for intermission status screens. Any status screen used
+by [MAPINFO GameInfo] must be derived from this class.
 
-```
-class StatusScreen : Object abstract play
-{
-	const NG_STATSY;
-	const SHOWNEXTLOCDELAY;
-	const SP_STATSX;
-	const SP_STATSY;
-	const SP_TIMEX;
-	const SP_TIMEY;
-	const TITLEY;
+<!-- api-sub-types -->
+ESpState,
+EState,
 
-	InterBackground BG;
-	WBPlayerStruct  Plrs[MAXPLAYERS];
-	WBStartStruct   Wbs;
+<!-- api-class-methods -->
 
-	int   AccelerateStage;
-	int   BCnt;
-	int   Cnt;
-	int   Cnt_Deaths[MAXPLAYERS];
-	int   Cnt_Frags[MAXPLAYERS];
-	int   Cnt_Items[MAXPLAYERS];
-	int   Cnt_Kills[MAXPLAYERS];
-	int   Cnt_Par;
-	int   Cnt_Pause;
-	int   Cnt_Secret[MAXPLAYERS];
-	int   Cnt_Time;
-	int   Cnt_Total_Time;
-	int   CurState;
-	int   DoFrags;
-	int   Me;
-	int   NG_State;
-	bool  NoAutoStartMap;
-	bool  PlayerReady[MAXPLAYERS];
-	int   Player_Deaths[MAXPLAYERS];
-	bool  Snl_PointerOn;
-	int   SP_State;
-	float ShadowAlpha;
-	int   Total_Deaths;
-	int   Total_Frags;
+#-
+static int, int, int {GetPlayerWidths}()
+static color {GetRowColor}([PlayerInfo] player, bool highlight)
+static void {GetSortedPlayers}(in out array\<int> sorted, bool teamPlay)
 
-	PatchInfo Entering;
-	PatchInfo Finished;
-	PatchInfo MapName;
+{{#include ../../Labels/Todo.md}}
+-#
 
-	textureId Items;
-	textureId Kills;
-	textureId P_Secret;
-	textureId Par;
-	textureId Secret;
-	textureId Sucks;
-	textureId Timepic;
+#-
+static void {PlaySound}(sound snd)
 
-	string LNameTexts[2];
+Plays a UI sound at full volume using [`S_StartSound`].
+-#
 
-	int  DrawCharPatch(Font fnt, int charcode, int x, int y, int translation = Font.CR_UNTRANSLATED, bool nomove = false);
-	void DrawEL();
-	int  DrawLF();
-	int  DrawName(int y, textureId tex, string levelname);
-	int  DrawNum(Font fnt, int x, int y, int n, int digits, bool leadingzeros = true, int translation = Font.CR_UNTRANSLATED);
-	int  DrawPatchText(int y, PatchInfo pinfo, string stringname);
-	void DrawPercent(Font fnt, int x, int y, int p, int b, bool show_total = true, int color = Font.CR_UNTRANSLATED);
-	void DrawTime(int x, int y, int t, bool no_sucks = false);
+<!-- api-instance-methods -->
 
-	bool AutoSkip();
+#-
+void {SetSize}(int width, int height, int wrapW = -1, int scaleMode = [FSMODE_SCALETOFIT43])
+int {DrawCharPatch}([Font] fnt, int charCode, int x, int y, int translation = [Font].[CR_UNTRANSLATED], bool noMove = false)
+void {DrawTexture}(textureId tex, double x, double y, bool noMove = false)
+void {DrawText}([Font] fnt, int color, double x, double y, string s, bool noMove = false, bool shadow = false)
+int {DrawName}(int y, textureId tex, string levelName)
+int {DrawAuthor}(int y, string levelName)
+deprecated("3.8") int {DrawPatchText}(int y, [PatchInfo] pInfo, string stringName)
+int {DrawPatchOrText}(int y, [PatchInfo] pinfo, textureId patch, string stringName)
+virtual int {DrawLf}()
+virtual int {DrawEl}()
+int {DrawNum}([Font] fnt, int x, int y, int n, int digits, bool leadingZeros = true, int translation = [Font].[CR_UNTRANSLATED], bool noMove = false)
+void {DrawPercent}([Font] fnt, int x, int y, int p, int b, bool show_Total = true, int color = [Font].[CR_UNTRANSLATED], bool noMove = false)
+void {DrawTimeFont}([Font] printFont, int x, int y, int t, int color)
+void {DrawTime}(int x, int y, int t, bool no_Sucks = false)
+void {DrawTextScaled}([Font] fnt, double x, double y, string text, double scale, int translation = [Font].[CR_UNTRANSLATED])
+void {DrawNumScaled}([Font] fnt, int x, int y, double scale, int n, int digits, int translation = [Font].[CR_UNTRANSLATED])
+void {DrawPercentScaled}([Font] fnt, int x, int y, int p, int b, double scale, bool show_Total = true, int color = [Font].[CR_UNTRANSLATED])
+void {DrawTimeScaled}([Font] fnt, int x, int y, int t, double scale, int color = [Font].[CR_UNTRANSLATED])
+bool {AutoSkip}()
 
-	virtual void Drawer();
-	virtual void End();
-	virtual void Start(WBStartStruct wbs_);
-	virtual void StartMusic();
-	virtual void Ticker();
+{{#include ../../Labels/Todo.md}}
+-#
 
-	protected virtual void DrawNoState();
-	protected virtual void DrawShowNextLoc();
-	protected virtual void DrawStats();
-	protected virtual void InitNoState();
-	protected virtual void InitShowNextLoc();
-	protected virtual void InitStats();
-	protected virtual void UpdateNoState();
-	protected virtual void UpdateShowNextLoc();
-	protected virtual void UpdateStats();
+#-
+virtual void {Drawer}()
 
-	protected void CheckForAccelerate();
-	protected int  FragSum(int playernum);
+Called by `WI_Drawer`, which is called every frame when [`GameState`]
+is [`GS_INTERMISSION`].
+-#
 
-	static int, int, int GetPlayerWidths();
-	static color GetRowColor(PlayerInfo player, bool highlight);
-	static void  GetSortedPlayers(in out array<int> sorted, bool teamplay);
-	static void  PlaySound(sound snd);
-}
-```
+#-
+virtual void {End}()
 
-### `NG_STATSY`
+Called when the intermission should end. Default behaviour is to set
+[`CurState`] to [`StatusScreen.LEAVINGINTERMISSION`] and remove bots
+in death-match. Generally, [`LevelLocals.WorldDone`] should be called
+directly after this.
+-#
 
-TODO
+#-
+virtual void {Start}([WbStartStruct] wbs)
 
-### `SHOWNEXTLOCDELAY`
+Called by `WI_Start` after the [`WbStartStruct`] is populated, sounds
+are stopped and the screen blend is set to black. Sets up initial
+values and runs [`InitStats`].
+-#
 
-TODO
+#-
+virtual void {StartMusic}()
 
-### `SP_STATSX`
+Called in the first tick by [`Ticker`] to set the intermission music.
+-#
 
-TODO
+#-
+virtual void {Ticker}()
 
-### `SP_STATSY`
+Called by `WI_Ticker`, which is called every game tick when
+[`GameState`] is [`GS_INTERMISSION`].
+-#
 
-TODO
+#-
+protected virtual void {DrawNoState}()
 
-### `SP_TIMEX`
+Called by `Drawer` when [`CurState`] is [`StatusScreen.NOSTATE`] or
+any other non-state.
+-#
 
-TODO
+#-
+protected virtual void {DrawShowNextLoc}()
 
-### `SP_TIMEY`
+Called by [`Drawer`] when [`CurState`] is [`StatusScreen.SHOWNEXTLOC`]
+and, by default, [`DrawNoState`] after setting [`Snl_PointerOn`] to
+`true`.
+-#
 
-TODO
+#-
+protected virtual void {DrawStats}()
 
-### `TITLEY`
+Called by [`Drawer`] directly after drawing the animated background
+when [`CurState`] is [`StatusScreen.STATCOUNT`].
+-#
 
-The Y position (in 320x200 pixels) to draw the top of the "finished" and
-"entering" texts. Used by `DrawEL` and `DrawLF`.
+#-
+protected virtual void {InitNoState}()
 
-### `BG`
+Called by [`UpdateShowNextLoc`] to initiate the
+[`StatusScreen.NOSTATE`] stage.
+-#
 
-The `InterBackground` object for this intermission, set by `Start` with the
-initial `Wbs` object.
+#-
+protected virtual void {InitShowNextLoc}()
 
-### `Plrs`
+Called by [`UpdateStats`] to initiate the [`StatusScreen.SHOWNEXTLOC`]
+stage.
+-#
 
-The value of `Wbs.Plyr` when `Start` was called. Usually not changed, so
-essentially equivalent to `Wbs.Plyr`.
+#-
+protected virtual void {InitStats}()
 
-### `Wbs`
+Called by [`Start`] to initiate the [`StatusScreen.STATCOUNT`] stage.
+-#
 
-The `WBStartStruct` passed to this class via the `Start` function.
+#-
+protected virtual void {UpdateNoState}()
 
-### `AccelerateStage`
+Called by [`Ticker`] when [`CurState`] is [`StatusScreen.NOSTATE`] or
+any other non-state. Exits the intermission by calling [`End`] and
+[`LevelLocals.WorldDone`] when appropriate.
+-#
 
-Used to signify to the current stage that it should go quicker or be skipped
-entirely.
+#-
+protected virtual void {UpdateShowNextLoc}()
 
-### `BCnt`
+Called by [`Ticker`] when [`CurState`] is
+[`StatusScreen.SHOWNEXTLOC`]. Runs [`InitNoState`] when appropriate
+and alternates [`Snl_PointerOn`].
+-#
 
-TODO
+#-
+protected virtual void {UpdateStats}()
 
-### `Cnt`
+Called by [`Ticker`] when [`CurState`] is [`StatusScreen.STATCOUNT`].
+Runs [`InitShowNextLoc`] when appropriate.
+-#
 
-TODO
+#-
+protected void {CheckForAccelerate}()
 
-### `Cnt_Deaths`
+Updates the values of [`AccelerateStage`] and [`PlayerReady`]
+according to each player's inputs.
+-#
 
-TODO
+#-
+protected int {FragSum}(int playerNum)
 
-### `Cnt_Frags`
+Returns the number of frags player `playerNum` has accumulated against
+all currently in-game players. This is different from
+[`WbPlayerStruct.FragCount`] because it is counted dynamically, i.e.
+if a player leaves the count will be changed. This is only useful for
+game modes where frags do not count as score.
+-#
 
-TODO
+<!-- api-members -->
+#-
+[InterBackground] {Bg}
 
-### `Cnt_Items`
+The background for this intermission, set by [`Start`] with the
+initial [`WbStartStruct`] object.
+-#
 
-TODO
+#-
+int {AccelerateStage}
 
-### `Cnt_Kills`
+Used to signify to the current stage that it should go quicker or be
+skipped entirely.
+-#
 
-TODO
+#-
+bool[[MAXPLAYERS]\] {PlayerReady}
 
-### `Cnt_Par`
+Used in networked games to signify when each player is ready to
+continue to the next map. Set by [`CheckForAccelerate`].
+-#
 
-TODO
+#-
+int {Me}
 
-### `Cnt_Pause`
+The value of [`Wbs.PNum`] when [`Start`] was called. Usually not
+changed, so essentially equivalent to [`Wbs.PNum`].
+-#
 
-TODO
+#-
+int {BCnt}
 
-### `Cnt_Secret`
+{{#include ../../Labels/Todo.md}}
+-#
 
-TODO
-
-### `Cnt_Time`
-
-TODO
-
-### `Cnt_Total_Time`
-
-TODO
-
-### `CurState`
+#-
+int {CurState}
 
 The current stage the intermission is in.
+-#
 
-### `DoFrags`
+#-
+[WbStartStruct] {Wbs}
 
-TODO
+The [`WbStartStruct`] passed to this class via the [`Start`] function.
+-#
 
-### `Me`
+#-
+[WbPlayerStruct]\[[MAXPLAYERS]\] {Plrs}
 
-The value of `Wbs.PNum` when `Start` was called. Usually not changed, so
-essentially equivalent to `Wbs.PNum`.
+The value of [`Wbs.Plyr`] when [`Start`] was called. Usually not
+changed, so essentially equivalent to [`Wbs.Plyr`].
+-#
 
-### `NG_State`
+#-
+int {OtherKills}
+int {Cnt}
+int {Cnt_OtherKills}
+int[[MAXPLAYERS]\] {Cnt_Kills}
+int[[MAXPLAYERS]\] {Cnt_Items}
+int[[MAXPLAYERS]\] {Cnt_Secret}
+int[[MAXPLAYERS]\] {Cnt_Frags}
+int[[MAXPLAYERS]\] {Cnt_Deaths}
+int {Cnt_Time}
+int {Cnt_Total_Time}
+int {Cnt_Par}
+int {Cnt_Pause}
+int {Total_Frags}
+int {Total_Deaths}
+bool {NoAutoStartMap}
+int {DoFrags}
+int {Ng_State}
+float {ShadowAlpha}
+[PatchInfo] {MapName}
+[PatchInfo] {Finished}
+[PatchInfo] {Entering}
+[PatchInfo] {Content}
+[PatchInfo] {Author}
 
-TODO
+{{#include ../../Labels/Todo.md}}
+-#
 
-### `NoAutoStartMap`
-
-TODO
-
-### `PlayerReady`
-
-Used in networked games to signify when each player is ready to continue to the
-next map. Set by `CheckForAccelerate`.
-
-### `Player_Deaths`
-
-TODO
-
-### `Snl_PointerOn`
-
-TODO
-
-### `SP_State`
-
-Used in single-player status screens during the `STATCOUNT` stage for
-indicating the current round of statistics to count up.
-
-### `ShadowAlpha`
-
-TODO
-
-### `Total_Deaths`
-
-TODO
-
-### `Total_Frags`
-
-TODO
-
-### `Entering`
-
-TODO
-
-### `Finished`
-
-TODO
-
-### `MapName`
-
-TODO
-
-### `Items`
-
-The "ITEMS" (default `WIOSTI`) graphic.
-
-### `Kills`
-
-The "KILLS" (default `WIOSTK`) graphic.
-
-### `P_Secret`
+#-
+textureId {P_Secret}
 
 The "SECRET" (default `WISCRT2`) graphic.
+-#
 
-### `Par`
+#-
+textureId {Kills}
 
-The "PAR" (default `WIPAR`) graphic.
+The "KILLS" (default `WIOSTK`) graphic.
+-#
 
-### `Secret`
+#-
+textureId {Secret}
 
 The "SCRT" (default `WIOSTS`) graphic.
+-#
 
-### `Sucks`
+#-
+textureId {Items}
 
-The "SUCKS" (default `WISUCKS`) graphic.
+The "ITEMS" (default `WIOSTI`) graphic.
+-#
 
-### `Timepic`
+#-
+textureId {TimePic}
 
 The "TIME" (default `WITIME`) graphic.
+-#
 
-### `LNameTexts`
+#-
+textureId {Par}
 
-TODO
+The "PAR" (default `WIPAR`) graphic.
+-#
 
-### `DrawCharPatch`
+#-
+textureId {Sucks}
 
-TODO
+The "SUCKS" (default `WISUCKS`) graphic.
+-#
 
-### `DrawEL`
+#-
+textureId {FinishedPatch}
+textureId {EnteringPatch}
+string[2\] {LNameTexts}
+string[2\] {AuthorTexts}
+bool {Snl_PointerOn}
+int[[MAXPLAYERS]\] {Player_Deaths}
 
-TODO
+{{#include ../../Labels/Todo.md}}
+-#
 
-### `DrawLF`
+#-
+int {Sp_State}
 
-TODO
+Used in single-player status screens during the [`StatusScreen.STATCOUNT`] stage
+for indicating the current round of statistics to count up.
+-#
 
-### `DrawName`
+#-
+int {CWidth}
+int {CHeight}
+int {ScaleMode}
+int {WrapWidth}
+int {ScaleFactorX}
+int {ScaleFactorY}
 
-TODO
+{{#include ../../Labels/Todo.md}}
+-#
 
-### `DrawNum`
+<!-- api-constants -->
+#-
+const int {TITLEY}
 
-TODO
+The Y position (in 320x200 pixels) to draw the top of the "finished"
+and "entering" text. Used by [`DrawEl`] and [`DrawLf`].
+-#
 
-### `DrawPatchText`
+#-
+const int {SP_STATSX}
+const int {SP_STATSY}
+const int {SP_TIMEX}
+const int {SP_TIMEY}
+const int {NG_STATSY}
+const int {SHOWNEXTLOCDELAY}
 
-TODO
-
-### `DrawPercent`
-
-TODO
-
-### `DrawTime`
-
-TODO
-
-### `AutoSkip`
-
-TODO
-
-### `Drawer`
-
-Called by `WI_Drawer`, which is called every frame when `GameState` is
-`GS_INTERMISSION`.
-
-### `End`
-
-Called when the intermission should end. Default behaviour is to set `CurState`
-to `LEAVINGINTERMISSION` and remove bots in death-match. Generally,
-`Level.WorldDone` should be called directly after this.
-
-### `Start`
-
-Called by `WI_Start` after the `WBStartStruct` is populated, sounds are stopped
-and the screen blend is set to black. Sets up initial values and runs
-`InitStats`.
-
-### `StartMusic`
-
-Called in the first tick by `Ticker` to set the intermission music.
-
-### `Ticker`
-
-Called by `WI_Ticker`, which is called every game tick when `GameState` is
-`GS_INTERMISSION`.
-
-### `DrawNoState`
-
-Called by `Drawer` when `CurState` is `NOSTATE` or any other non-state.
-
-### `DrawShowNextLoc`
-
-Called by `Drawer` when `CurState` is `SHOWNEXTLOC` and, by default,
-`DrawNoState` after setting `Snl_PointerOn` to `true`.
-
-### `DrawStats`
-
-Called by `Drawer` directly after drawing the animated background when
-`CurState` is `STATCOUNT`.
-
-### `InitNoState`
-
-Called by `UpdateShowNextLoc` to initiate the `NOSTATE` stage.
-
-### `InitShowNextLoc`
-
-Called by `UpdateStats` to initiate the `SHOWNEXTLOC` stage.
-
-### `InitStats`
-
-Called by `Start` to initiate the `STATCOUNT` stage.
-
-### `UpdateNoState`
-
-Called by `Ticker` when `CurState` is `NOSTATE` or any other non-state. Exits
-the intermission by calling `End` and `Level.WorldDone` when appropriate.
-
-### `UpdateShowNextLoc`
-
-Called by `Ticker` when `CurState` is `SHOWNEXTLOC`. Runs `InitNoState` when
-appropriate and alternates `Snl_PointerOn`.
-
-### `UpdateStats`
-
-Called by `Ticker` when `CurState` is `STATCOUNT`. Runs `InitShowNextLoc`
-when appropriate.
-
-### `CheckForAccelerate`
-
-Updates the values of `AccelerateStage` and `PlayerReady` according to each
-player's inputs.
-
-### `FragSum`
-
-Returns the number of frags player `playernum` has accumulated against all
-currently in-game players. This is different from `WBPlayerStruct.FragCount`
-because it is counted dynamically, i.e. if a player leaves the count will be
-changed. This is only useful for game modes where frags do not count as score.
-
-### `GetPlayerWidths`
-
-TODO
-
-### `GetRowColor`
-
-TODO
-
-### `GetSortedPlayers`
-
-TODO
-
-### `PlaySound`
-
-Plays a UI sound at full volume using `S_Sound`.
+{{#include ../../Labels/Todo.md}}
+-#
 
 <!-- EOF -->

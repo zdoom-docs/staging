@@ -19,135 +19,70 @@
 struct WorldEvent play version("2.4");
 
 <!-- api-definition -->
-The information for a [StaticEventHandler].[WorldLightning],
-[StaticEventHandler].[WorldLineActivated],
-[StaticEventHandler].[WorldLineDamaged],
-[StaticEventHandler].[WorldLinePreActivated],
-[StaticEventHandler].[WorldLoaded],
-[StaticEventHandler].[WorldSectorDamaged],
-[StaticEventHandler].[WorldThingDamaged],
-[StaticEventHandler].[WorldThingDestroyed],
-[StaticEventHandler].[WorldThingDied],
-[StaticEventHandler].[WorldThingRevived],
-[StaticEventHandler].[WorldThingSpawned], or
-[StaticEventHandler].[WorldUnloaded] event.
+The information for a [`StaticEventHandler.WorldLightning`],
+[`StaticEventHandler.WorldLineActivated`],
+[`StaticEventHandler.WorldLineDamaged`],
+[`StaticEventHandler.WorldLinePreActivated`],
+[`StaticEventHandler.WorldLoaded`],
+[`StaticEventHandler.WorldSectorDamaged`],
+[`StaticEventHandler.WorldThingDamaged`],
+[`StaticEventHandler.WorldThingDestroyed`],
+[`StaticEventHandler.WorldThingDied`],
+[`StaticEventHandler.WorldThingRevived`],
+[`StaticEventHandler.WorldThingSpawned`], or
+[`StaticEventHandler.WorldUnloaded`] event.
 
 <!-- api-members -->
-### [WorldLoaded], [WorldUnloaded]
+### [`WorldLoaded`], [`WorldUnloaded`]
 #-
 readOnly bool {IsSaveGame}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly bool {IsReopen}
 
 {{#include ../../Labels/Todo.md}}
 -#
 
-### [WorldThingDamaged], [WorldThingDestroyed], [WorldThingDied], [WorldThingRevived], [WorldThingSpawned]
+### [`WorldThingDamaged`], [`WorldThingDestroyed`], [`WorldThingDied`], [`WorldThingRevived`], [`WorldThingSpawned`]
 #-
 readOnly Actor {Thing}
 
 {{#include ../../Labels/Todo.md}}
 -#
 
-#### [WorldThingDied]
+#### [`WorldThingDied`]
 #-
 readOnly Actor {Inflictor}
 
 {{#include ../../Labels/Todo.md}}
 -#
 
-#### [WorldThingDamaged]
+#### [`WorldThingDamaged`]
 #-
 readOnly int {Damage}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly Actor {DamageSource}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly Name {DamageType}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly EDmgFlags {DamageFlags}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly double {DamageAngle}
 
 {{#include ../../Labels/Todo.md}}
 -#
 
-### [WorldLineActivated], [WorldLinePreActivated]
+### [`WorldLineActivated`], [`WorldLinePreActivated`]
 #-
 readOnly Line {ActivatedLine}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly int {ActivationType}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 bool {ShouldActivate}
 
 {{#include ../../Labels/Todo.md}}
 -#
 
-### [WorldLineDamaged], [WorldSectorDamaged]
+### [`WorldLineDamaged`], [`WorldSectorDamaged`]
 #-
 readOnly SectorPart {DamageSectorPart}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly Line {DamageLine}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly Sector {DamageSector}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly int {DamageLineSide}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly vector3 {DamagePosition}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 readOnly bool {DamageIsRadius}
-
-{{#include ../../Labels/Todo.md}}
--#
-
-#-
 int {NewDamage}
 
 {{#include ../../Labels/Todo.md}}

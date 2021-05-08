@@ -19,8 +19,8 @@ even if they are not exactly the same, but be careful to not do things
 which may collide with what another mod is doing.
 
 <!-- api-sub-types -->
-* [FindLumpNamespace]
-* [WadNamespace]
+FindLumpNamespace,
+WadNamespace,
 
 <!-- api-class-methods -->
 #-

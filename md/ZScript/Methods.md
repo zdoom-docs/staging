@@ -72,7 +72,7 @@ class="label purple">3.3.0+</span> unless the function is marked
 | `protected`    | Method is not visible to any class but this one and any descendants of it.
 | `static`       | Function is not a method, but a global function without a `self` pointer.
 | `ui`           | Method has UI scope.
-| `vararg`       | Method doesn't type-check arguments after `...`. Only usable internally.
+| `varArg`       | Method doesn't type-check arguments after `...`. Only usable internally.
 | `version`      | Restricted to ZScript version `ver` or higher.
 | `virtual`      | Method can be overridden in derived classes.
 | `virtualScope` | Method has scope of the type of the object it's being called on.
@@ -90,7 +90,7 @@ class="label purple">3.3.0+</span> unless the function is marked
 * `protected`
 * `static`
 * `ui`
-* `vararg`
+* `varArg`
 * `version` `(` [StringLiteral] `)`
 * `virtual`
 * `virtualScope`
@@ -143,7 +143,7 @@ the meanings of scopes above them:
 
 ### Method argument lists
 
-```csharp
+```zsc
 // With the function:
 void DoSomething(int one, int two, int a = 0, int b = 0) {}
 

@@ -1,4 +1,4 @@
-# Vector2
+# vector2
 
 <!-- api-definition -->
 The `vector2` built-in type.

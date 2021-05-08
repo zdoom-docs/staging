@@ -9,7 +9,7 @@ enum EFSkillProperty;
 
 <!-- api-definition -->
 All of the properties that can be returned by
-[Object].[G_SkillPropertyFloat].
+[`Object.G_SkillPropertyFloat`].
 
 <!-- api-variants -->
 #-

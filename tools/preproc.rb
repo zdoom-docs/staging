@@ -5,108 +5,126 @@ require 'stringio'
 
 WORD    = /[a-zA-Z_]\w*/
 HEADING = /\s{,3}(\#{1,6})\s+(.+)\s*$/ # NOTE: does not match trailing #
+API_PAT = /^<!-- api-([-a-z]+) -->$/
+TOC_PAT = /^<!-- toc -->$/
 
-API_PATTERN = /<!-- api-([-a-z]+) -->/
-TOC_PATTERN = /<!-- (toc) -->/
-
-DECLARATION  = "declaration"
-DEFINITION   = "definition"
-FOOTER       = "footer"
-SUB_TYPES    = "sub-types"
-METHOD_CLASS = "class-methods"
-METHOD_INSTN = "instance-methods"
-MEMBERS      = "members"
-CONSTANTS    = "constants"
-VARIANTS     = "variants"
+DECLARTN = "declaration"
+DEFINITN = "definition"
+FOOTER   = "footer"
+SUB_TYPS = "sub-types"
+MTHD_CLS = "class-methods"
+MTHD_INS = "instance-methods"
+MEMBERS  = "members"
+CONSTNTS = "constants"
+VARIANTS = "variants"
 
 Heading = Struct.new :level, :title, :link
+Offset  = Struct.new :file, :line, :colu, :strn
 
-def must_be_after c_name, last, type, *set
+def raise_ofs ofs, msg
+	raise "#{ofs.file} line #{ofs.line}: #{msg}\n#{ofs.strn.chomp}\n#{" " * ofs.colu[0]}^#{"~" * (ofs.colu[1] - ofs.colu[0] - 1)}"
+end
+
+def must_be_after ofs, last, type, *set
 	unless set.include? last
 		set  = set.map do |v| v || "beginning" end.join ", "
 		last = last || "beginning"
-		raise "#{c_name}: #{type} must be after #{set} (was after #{last})"
+		raise_ofs ofs, "#{type} must be after #{set} (was after #{last})"
 	end
 end
 
-def mod_chapter_pattern c_content, pattern
-	pairs = c_content.split pattern
-
+def chapter_pat chapter, pattern
 	output = String.new
-	output.concat pairs.shift
-
-	last = nil
-	for match, content in pairs.each_slice 2
-		result = yield content, match, last
-		output.concat result
-		last = match
+	cur_dt = String.new
+	cur_md = nil
+	cur_ln = nil
+	spring = Proc.new do ||
+		if cur_md
+			ofs = Offset.new chapter["path"], cur_ln, cur_md.offset(0), cur_md[0]
+			output.concat yield cur_dt, cur_md[1], ofs
+		end
+		cur_dt.clear
 	end
+
+	for ln, lnum in chapter["content"].lines.each_with_index
+		if (md = ln.match pattern)
+			spring.()
+			cur_ln = lnum + 1
+			cur_md = md
+		elsif cur_md
+			cur_dt.concat ln
+		else
+			output.concat ln
+		end
+	end
+
+	spring.()
 
 	output
 end
 
-def mod_chapter_api c_name, c_content
+def mod_chapter_api chapter
 	backlinks = {}
+	last      = nil
 
-	mod_chapter_pattern c_content, API_PATTERN do |content, type, last|
+	chapter["content"] = chapter_pat chapter, API_PAT do |ret, type, ofs|
 		case type
-		when DECLARATION
-			must_be_after c_name, last, type, nil
-			<<~_end_
+		when DECLARTN
+			must_be_after ofs, last, type, nil
+			ret = <<~_end_
 			<details><summary>Show declaration</summary>
 
-			```csharp
-			#{content.strip}
+			```zsc
+			#{ret.strip}
 			```
 			</details>
 
 			_end_
-		when DEFINITION
-			must_be_after c_name, last, type, nil, DECLARATION
-			content
+		when DEFINITN
+			must_be_after ofs, last, type, nil, DECLARTN
 		when FOOTER
-			content
-		when SUB_TYPES
-			must_be_after c_name, last, type, DEFINITION
-			<<~_end_
-			## Sub-Types
-
-			#{content}
-			_end_
-		when METHOD_CLASS, METHOD_INSTN, MEMBERS, CONSTANTS, VARIANTS
-			after = [SUB_TYPES, DEFINITION]
+			# nothing
+		when SUB_TYPS
+			must_be_after ofs, last, type, DEFINITN
+			types = ret.split(",\n").map do |type| type.chomp end
+			types.delete("")
+			ret = types.reduce(%(<div class="toc types">\n\n)) do |s, type|
+				s + "* <span class=code>[#{type}]</span>\n"
+			end + "\n</div>\n\n"
+		when MTHD_CLS, MTHD_INS, MEMBERS, CONSTNTS, VARIANTS
+			after = [SUB_TYPS, DEFINITN]
 			case type
-			when METHOD_CLASS, VARIANTS
-			when METHOD_INSTN
-				after.push METHOD_CLASS
+			when MTHD_CLS, VARIANTS
+			when MTHD_INS
+				after.push MTHD_CLS
 			when MEMBERS
-				after.push METHOD_CLASS, METHOD_INSTN
-			when CONSTANTS
-				after.push METHOD_CLASS, METHOD_INSTN, MEMBERS
+				after.push MTHD_CLS, MTHD_INS
+			when CONSTNTS
+				after.push MTHD_CLS, MTHD_INS, MEMBERS
 			end
-			must_be_after c_name, last, type, *after
+			must_be_after ofs, last, type, *after
 			links = []
 			pfx =
 				case type
-				when METHOD_CLASS, METHOD_INSTN then "mthd-"
-				when MEMBERS,      CONSTANTS    then "memb-"
-				when VARIANTS                   then "enum-"
+				when MTHD_CLS, MTHD_INS then "mthd-"
+				when MEMBERS,  CONSTNTS then "memb-"
+				when VARIANTS           then "enum-"
 				end
 			title =
 				case type
-				when METHOD_CLASS then "Class Methods"
-				when METHOD_INSTN then "Instance Methods"
-				when MEMBERS      then "Instance Members"
-				when CONSTANTS    then "Constants"
-				when VARIANTS     then "Variants"
+				when MTHD_CLS then "Class Methods"
+				when MTHD_INS then "Instance Methods"
+				when MEMBERS  then "Instance Members"
+				when CONSTNTS then "Constants"
+				when VARIANTS then "Variants"
 				end
-			content.gsub! /#-((?:(?!-#).)+)-#/m do |_|
+			ret.gsub! /#-((?:(?!-#).)+)-#/m do |_|
 				match = $1.strip
-				match.gsub! /^[^{}]+$/ do |match|
+				match.gsub! /^((?:(?!\{#{WORD}\}).|\n)+)$/ do |match|
 					<<~_end_
 					<dd>
 
-					#{match}
+					#{match.strip}
 
 					</dd>
 					_end_
@@ -115,9 +133,8 @@ def mod_chapter_api c_name, c_content
 					id = pfx + $2
 					links.push [$2, "#" + id]
 					<<~_end_
-					<span id="#{id}"></span>
-					<dt>
-					<code class="language-csharp">
+					<dt id="#{id}">
+					<code class="language-zsc">
 
 					#{$1}<a href="##{id}">#{$2}</a>#{$3}
 
@@ -131,70 +148,65 @@ def mod_chapter_api c_name, c_content
 				</dl>
 				_end_
 			end
-			links.sort!.map! do |a|
+			links.sort!
+			link_spans = links.map do |a|
 				name = a[0]
 				link = a[1]
 				backlinks[name] = link
-				%(<a href="#{link}">#{name}</a>)
-			end
+				%(<span class=code><a href="#{link}">#{name}</a></span>)
+			end.join ", "
+			link_refs = links.map do |a|
+				"[#{a[0]}]: #{a[1]}\n"
+			end.join
 			summary = "<summary>Overview of #{title.downcase}</summary>"
-			<<~_end_
+			ret = <<~_end_
 			## #{title}
 
-			#{content}<details>#{summary}<p>#{links.join ", "}</p></details>
+			#{ret}<details>#{summary}<p>#{link_spans}</p></details>
 
+			#{link_refs}
 			_end_
 		else
-			raise "#{c_name}: unknown api block #{type}"
+			raise_ofs ofs, "unknown api block '#{type}'"
 		end
-	end.gsub /\\\[(#{WORD})\]/ do |_|
-		if link = backlinks[$1]
-			%([#{$1}](#{link}))
-		else
-			raise "#{c_name}: unknown backlink '#{$1}' in API documentation"
-		end
+		last = type
+		ret
 	end
 end
 
-def mod_chapter_toc c_name, c_content
-	mod_chapter_pattern c_content, TOC_PATTERN do |content, _, _|
-		headings = []
+def mod_chapter_toc chapter
+	headings = []
 
-		c_content.scan HEADING do |level, title|
-			num  = headings.count do |hd| hd.title == title end
-			link = title.downcase.gsub " ", "-"
-			link = if num > 0 then link + "-#{num}" else link end
-			hd   = Heading.new level.length - 1, title, link
-			headings.push hd
-		end
+	chapter["content"].scan HEADING do |level, title|
+		num  = headings.count do |hd| hd.title == title end
+		link = title.downcase.gsub " ", "-"
+		link = if num > 0 then link + "-#{num}" else link end
+		hd   = Heading.new level.length - 1, title, link
+		headings.push hd
+	end
 
-		output = String.new "<div class=toc>\n\n"
-
-		for hd in headings
+	chapter["content"] = chapter_pat chapter, TOC_PAT do |content|
+		headings.reduce(%(<div class="toc contents">\n\n)) do |s, hd|
 			if (level = hd.level - 1) >= 0
-				output.concat "#{"   " * level}1. [#{hd.title}](##{hd.link})\n"
+				s + "#{"   " * level}1. [#{hd.title}](##{hd.link})\n"
+			else
+				s
 			end
-		end
+		end + "\n</div>\n\n" + content
+	end
+end
 
-		output.concat "\n</div>\n"
-
-		output + content
+def mod_chapter_lnk chapter
+	chapter["content"].gsub! /\[`([a-zA-Z][a-zA-Z0-9._]*)`\]/ do |match|
+		links = $1.split(".").map do |s| "[" + s + "]" end
+		"<span class=code>#{links.join "."}</span>"
 	end
 end
 
 def mod_chapter chapter
-	c_name    = "#{chapter["parent_names"].join ">"}>#{chapter["name"]}"
-	c_content = chapter["content"]
-
-	if c_content.include? "<!-- api-"
-		c_content = mod_chapter_api c_name, c_content
-	end
-
-	if c_content.include? "<!-- toc -->"
-		c_content = mod_chapter_toc c_name, c_content
-	end
-
-	chapter["content"] = c_content
+	mod_chapter_api chapter
+	mod_chapter_toc chapter
+	mod_chapter_lnk chapter
 
 	for section in chapter["sub_items"]
 		mod_chapter section["Chapter"]

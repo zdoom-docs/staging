@@ -1,5 +1,101 @@
 "use strict";
 
+hljs.registerLanguage('zscript', () => {
+	const KEYWORDS = {
+		keyword: 'abstract action alignOf auto break case class '
+			+ 'clearScope const continue default deprecated do else enum '
+			+ 'extend final flagDef for forEach goto if in internal meta '
+			+ 'mixin native out override play private property protected '
+			+ 'readOnly replaces return self sizeOf states static stop '
+			+ 'struct super switch transient ui until var varArg version '
+			+ 'virtual virtualScope volatile while',
+		type: 'array bool byte char color double float int int16 int8 '
+			+ 'long map name none sbyte short sound state string uint '
+			+ 'uint16 uint8 ulong ushort vector2 vector3 void',
+		literal: 'true false null',
+	};
+
+	const FUNC_TITLE_RE = hljs.UNDERSCORE_IDENT_RE + '\\s*\\(';
+	const TYPE_NAME_RE = hljs.UNDERSCORE_IDENT_RE + '(\\.'
+		+ hljs.UNDERSCORE_IDENT_RE + ')*(<[^>]*>)?';
+	const NUMBER_MODE = hljs.C_NUMBER_MODE;
+	const STRING_MODE = {
+		variants: [hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE]
+	};
+	const COMMENT_MODE = {
+		variants: [hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE]
+	};
+
+	return {
+		case_insensitive: true,
+		aliases: ['zsc', 'zc'],
+		keywords: KEYWORDS,
+		contains: [
+			COMMENT_MODE,
+			NUMBER_MODE,
+			STRING_MODE,
+			{
+				className: 'meta',
+				begin: /#include/,
+			},
+			{
+				className: 'meta',
+				begin: /^version/,
+				end:   /\n/,
+			},
+			{
+				beginKeywords: 'struct class',
+				end:           /[{;]/,
+				excludeEnd: true,
+				illegal:  /[^\w\s<>.]/,
+				contains: [
+					COMMENT_MODE,
+					{
+						beginKeywords: 'abstract clearScope native play replaces ui',
+					},
+					{
+						beginKeywords: 'version',
+						end:           /\)/,
+						contains: [STRING_MODE, COMMENT_MODE],
+					},
+					hljs.UNDERSCORE_TITLE_MODE,
+				],
+			},
+			{
+				beginKeywords: 'return else',
+			},
+			{
+				className: 'function',
+				begin: TYPE_NAME_RE + '(\\s*,\\s*' + TYPE_NAME_RE + ')*\\s+'
+					+ FUNC_TITLE_RE,
+				end:   /[{;]/,
+				returnBegin: true,
+				excludeEnd:  true,
+				keywords: KEYWORDS,
+				contains: [].concat(
+					{
+						begin: FUNC_TITLE_RE,
+						returnBegin: true,
+						contains: [hljs.UNDERSCORE_TITLE_MODE],
+					},
+					{
+						className: 'params',
+						begin: /\(/,
+						end:   /\)/,
+						keywords: KEYWORDS,
+						contains: [
+							COMMENT_MODE,
+							NUMBER_MODE,
+							STRING_MODE,
+						],
+					},
+					COMMENT_MODE,
+				),
+			},
+		],
+	};
+});
+
 // Fix back button cache problem
 window.onunload = function() {};
 
@@ -13,11 +109,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 (function sidebar() {
-	var html = document.querySelector("html");
-	var sidebar = document.getElementById("sidebar");
+	var html = document.querySelector('html');
+	var sidebar = document.getElementById('sidebar');
 	var sidebarLinks = document.querySelectorAll('#sidebar a');
-	var sidebarToggleButton = document.getElementById("sidebar-toggle");
-	var sidebarResizeHandle = document.getElementById("sidebar-resize-handle");
+	var sidebarToggleButton = document.getElementById('sidebar-toggle');
+	var sidebarResizeHandle = document.getElementById('sidebar-resize-handle');
 	var firstContact = null;
 
 	function showSidebar() {
@@ -54,14 +150,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 	// Toggle sidebar
 	sidebarToggleButton.addEventListener('click', function sidebarToggle() {
-		if (html.classList.contains("sidebar-hidden")) {
+		if (html.classList.contains('sidebar-hidden')) {
 			var current_width = parseInt(document.documentElement.style.getPropertyValue('--sidebar-width'), 10);
 
 			if (current_width < 150)
 				document.documentElement.style.setProperty('--sidebar-width', '150px');
 
 			showSidebar();
-		} else if (html.classList.contains("sidebar-visible") || getComputedStyle(sidebar)['transform'] === 'none') {
+		} else if (html.classList.contains('sidebar-visible') || getComputedStyle(sidebar)['transform'] === 'none') {
 			hideSidebar();
 		} else {
 			showSidebar();
@@ -81,7 +177,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		if (pos < 20) {
 			hideSidebar();
 		} else {
-			if (html.classList.contains("sidebar-hidden")) {
+			if (html.classList.contains('sidebar-hidden')) {
 				showSidebar();
 			}
 			pos = Math.min(pos, window.innerWidth - 100);
@@ -119,7 +215,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	}, { passive: true });
 
 	// Scroll sidebar to current active section
-	var activeSection = document.getElementById("sidebar").querySelector(".active");
+	var activeSection = document.getElementById('sidebar').querySelector('.active');
 	if (activeSection) {
 		// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
 		activeSection.scrollIntoView({ block: 'center' });

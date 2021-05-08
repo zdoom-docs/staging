@@ -14,7 +14,7 @@ class Shape2D : Object clearScope;
 Represents an arbitrary polygonal 2D shape.
 
 <!-- api-sub-types -->
-* [EClearWhich]
+EClearWhich,
 
 <!-- api-instance-methods -->
 #-

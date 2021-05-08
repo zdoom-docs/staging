@@ -1,35 +1,36 @@
 # PatchInfo
 
+[GiFont]: ../Drawing/GiFont.md
+
+<!-- api-declaration -->
+struct PatchInfo play version("2.5")
+
+<!-- api-definition -->
 Either a patch or string depending on external configurations.
 
-```
-struct PatchInfo play
-{
-	int       mColor;
-	Font      mFont;
-	textureId mPatch;
+<!-- api-instance-methods -->
+#-
+void {Init}([GiFont] giFont)
 
-	void Init(GIFont gifont);
-}
-```
+Initializes `self` from the information in `giFont`.
+-#
 
-### `mColor`
+<!-- api-members -->
+#-
+int {MColor}
 
 The color of the font, if this is a string.
+-#
 
-### `mFont`
+#-
+Font {MFont}
 
-The font, if this is a string, or `null`.
+The font, if this is a string, or a null font.
+-#
 
-### `mPatch`
+#-
+deprecated("3.8") textureId {MPatch}
 
-The patch, if this is a patch, or an invalid texture.
-
-### `Init`
-
-Initializes the structure. If `gifont.Color` is `'Null'`, and `gifont.FontName`
-is a valid patch, `mPatch` will be set accordingly. Otherwise, if the font has
-a color or the patch is invalid, `gifont.FontName` is used to set `mFont` (or
-it is defaulted to `BigFont`.)
-
-<!-- EOF -->
+{{#include ../../Labels/Legacy.md}} The patch, if this is a patch, or
+an invalid texture. Ignored after 3.8.0.
+-#

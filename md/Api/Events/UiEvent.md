@@ -1,6 +1,7 @@
 # UiEvent
 
 [UiProcess]: StaticEventHandler.md#mthd-UiProcess
+[UiEvent]: #uievent
 
 [EGuiEvent]: UiEvent/EGuiEvent.md
 [ESpecialGuiKeys]: UiEvent/ESpecialGuiKeys.md
@@ -10,11 +11,11 @@
 struct UiEvent ui version("2.4");
 
 <!-- api-definition -->
-The information for a [StaticEventHandler].[UiProcess] event.
+The information for a [`StaticEventHandler.UiProcess`] event.
 
 <!-- api-sub-types -->
-* [EGuiEvent]
-* [ESpecialGuiKeys]
+EGuiEvent,
+ESpecialGuiKeys,
 
 <!-- api-members -->
 #-
@@ -35,7 +36,7 @@ readOnly int {KeyChar}
 
 The character code for this event as an integer, if it is used and can
 be represented as one. This value may also be one of
-UiEvent.[ESpecialGuiKeys].
+[`UiEvent.ESpecialGuiKeys`].
 -#
 
 #-

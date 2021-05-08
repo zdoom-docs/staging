@@ -25,7 +25,6 @@
 .hljs-meta,
 .hljs-builtin-name,
 .hljs-literal,
-.hljs-type,
 .hljs-params {
 	color: #fff9ca;
 }
@@ -37,6 +36,7 @@
 
 .hljs-keyword,
 .hljs-selector-tag,
+.hljs-type,
 .hljs-symbol {
 	color: #e8a8c9;
 }

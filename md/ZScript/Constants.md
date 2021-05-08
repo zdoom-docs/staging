@@ -30,19 +30,19 @@ fixed arrays.
 
 ### Constant Definitions
 
-```csharp
+```zsc
 // Making a regular integer constant.
 const MY_COOL_NUMBER = 777;
 ```
 
-```csharp
+```zsc
 // Making an integer constant from a double.
 const MY_COOL_NUMBER_FROM_BEYOND = int(777.7777);
 ```
 
 ### Static Array Definitions
 
-```csharp
+```zsc
 // Making an array of integers.
 static const int MY_COOL_INTEGERS[] = { 0, 1, 2, 3 };
 ```

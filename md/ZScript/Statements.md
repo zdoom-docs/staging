@@ -225,26 +225,26 @@ statement.
 
 ### Expression Statements
 
-```csharp
+```zsc
 // Some basic expressions.
 MyCoolFunction(5, 4);
 m_MyCoolMember = 500;
 ```
 
-```csharp
+```zsc
 // Does nothing, of course, but valid.
 5 * 5;
 ```
 
 ### Conditional Statements
 
-```csharp
+```zsc
 // Simple conditional.
 if(a)
 	B();
 ```
 
-```csharp
+```zsc
 // Simple conditional, with else statement and a block.
 if(a)
 {
@@ -257,7 +257,7 @@ else
 
 ### Switch Statements
 
-```csharp
+```zsc
 // A switch demonstrating fall-through and default cases.
 switch(a)
 {
@@ -278,7 +278,7 @@ default:
 
 ### Flow Statements
 
-```csharp
+```zsc
 // Use of "continue."
 for(int i = 0; i < 50; i++)
 {
@@ -290,7 +290,7 @@ for(int i = 0; i < 50; i++)
 }
 ```
 
-```csharp
+```zsc
 // Use of "break."
 for(int i = 0; i < 50; i++)
 {
@@ -302,7 +302,7 @@ for(int i = 0; i < 50; i++)
 }
 ```
 
-```csharp
+```zsc
 // Use of `return` in various contexts.
 void ReturnsNothing()
 {
@@ -314,7 +314,7 @@ void ReturnsNothing()
 }
 ```
 
-```csharp
+```zsc
 int ReturnsInt()
 {
 	// "m_Thing" is 50, so return 50.
@@ -326,7 +326,7 @@ int ReturnsInt()
 }
 ```
 
-```csharp
+```zsc
 int, int ReturnsTwoInts()
 {
 	// Returns 1 and 2.
@@ -336,7 +336,7 @@ int, int ReturnsTwoInts()
 
 ### Multi-Assignment Statements
 
-```csharp
+```zsc
 // Getting the actor out of "A_SpawnItemEx."
 Actor mo; bool spawned; [spawned, mo] = A_SpawnItemEx("MyCoolActor");
 ```

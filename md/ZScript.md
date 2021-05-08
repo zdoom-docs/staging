@@ -53,7 +53,7 @@ Some example syntax definitions would be:
 
 Which would mean, in a ZScript file, you could write things like:
 
-```csharp
+```zsc
 keyword example;
 keyword example2, example3;
 ```
