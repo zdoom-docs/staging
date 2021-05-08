@@ -11,6 +11,7 @@ script:
   - mdbook build && mdbook test
 deploy:
   provider: pages
+  edge: true
   github_token: $GITHUB_TOKEN
   local_dir: book
   on:
