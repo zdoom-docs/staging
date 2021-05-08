@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Style - ZDoom Docs</title>
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../css/elements.css">
+        
+        <link rel="stylesheet" href="../css/hljs.css">
+        
+        <link rel="stylesheet" href="../css/restyle.css">
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../Introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Meta/Style.html" class="active">Style</a></li></ol></li><li class="chapter-item "><a href="../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ZScript/Classes.html">Class Definitions</a></li><li class="chapter-item "><a href="../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item "><a href="../ZScript/Expressions.html">Expressions</a></li><li class="chapter-item "><a href="../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item "><a href="../ZScript/Methods.html">Method Definitions</a></li><li class="chapter-item "><a href="../ZScript/Statements.html">Statements</a></li><li class="chapter-item "><a href="../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../Acs.html">ACS</a></li><li class="chapter-item "><a href="../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../Api/Base/Object.html">Object</a></li><li class="chapter-item "><a href="../Api/Base/State.html">State</a></li><li class="chapter-item "><a href="../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../Api/Basic/Color.html">color</a></li><li class="chapter-item "><a href="../Api/Basic/String.html">string</a></li><li class="chapter-item "><a href="../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item "><a href="../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../Api/Drawing/Console.html">Console</a></li><li class="chapter-item "><a href="../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item "><a href="../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item "><a href="../Api/Events/StaticEventHandler.html">StaticEventHandler</a></li><li class="chapter-item "><a href="../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item "><a href="../Api/Globals.html">Globals</a></li><li class="chapter-item "><a href="../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen.html">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        
+                        <a href="http://github.com/marrub--/zdoom-doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="style"><a class="header" href="#style">Style</a></h1>
+<p>This is a style guide for the ZScript documentation to encourage
+best-practice coding with it, focused on clarity and consistency of
+formatting. It is also intended to be a general style guide for
+writing new code, but this purpose is ancillary and can be ignored.
+Within the abstract of each component of style will be rationale for
+choices made.</p>
+<div class="toc contents">
+<ol>
+<li><a href="#capitalization-conventions">Capitalization Conventions</a>
+<ol>
+<li><a href="#rationale">Rationale</a></li>
+</ol>
+</li>
+<li><a href="#word-choice">Word Choice</a>
+<ol>
+<li><a href="#rationale-1">Rationale</a></li>
+</ol>
+</li>
+<li><a href="#naming-type-members">Naming Type Members</a>
+<ol>
+<li><a href="#rationale-2">Rationale</a></li>
+</ol>
+</li>
+<li><a href="#layout-conventions">Layout Conventions</a>
+<ol>
+<li><a href="#rationale-3">Rationale</a></li>
+</ol>
+</li>
+<li><a href="#commenting-conventions">Commenting Conventions</a>
+<ol>
+<li><a href="#rationale-4">Rationale</a></li>
+</ol>
+</li>
+<li><a href="#language-guidelines">Language Guidelines</a>
+<ol>
+<li><a href="#rationale-5">Rationale</a></li>
+</ol>
+</li>
+</ol>
+</div>
+<h2 id="capitalization-conventions"><a class="header" href="#capitalization-conventions">Capitalization Conventions</a></h2>
+<p>ZScript is case insensitive, however this guide aims to give a way to
+consistently capitalize all identifiers in the language. Due to case
+insensitivity, it may be difficult to apply these guidelines to real
+code, but nonetheless a consistent capitalization style should be
+followed. Do note that you must not rely on case differences in
+identifiers due to this.</p>
+<p>Capitalize the first letter of each word in an identifier. Acronyms
+are considered whole words, so for instance prefer <code>XmlWidget</code> over
+<code>XMLWidget</code> and <code>IoStream</code> over <code>IOStream</code>. Acronyms of one character
+also count, so prefer <code>PrintF</code> over <code>Printf</code>.</p>
+<p>For identifiers of parameter names and local scope variables do not
+capitalize the first word. In these cases, prefer <code>xmlWidget</code> over
+<code>XmlWidget</code> or <code>ioStream</code> over <code>IOStream</code>. The same for acronyms of
+one character, so <code>typeF</code> over <code>TypeF</code> or <code>nChars</code> over <code>NChars</code>.
+(Note that the former two are malformed names, however. See the &quot;Word
+Choice&quot; section for more information.)</p>
+<p>Constants (declared with <code>const</code>, <code>static const</code>, or <code>enum</code>) must be
+all uppercase, and must separate words with underscores.</p>
+<p>Argument names in base archive methods may be renamed, but arguments
+with defaults may not be renamed as they are part of the API. Their
+capitalization may be changed accordingly, however.</p>
+<p>Flags will have the <code>b</code> prefix lowercase regardless of context, as
+will members with the <code>m_</code> prefix. Flags are not to be treated as
+constants, so always prefer <code>bNoAutoFire</code> to <code>bNOAUTOFIRE</code>.</p>
+<h3 id="rationale"><a class="header" href="#rationale">Rationale</a></h3>
+<p>It is not imperative here to reason for or against case insensitivity.
+Code within this style is to be written as uniformly as possible,
+therefore capitalization is also to be uniform. It is the user's
+choice whether to follow this rule or not, but for authors of this
+documentation the only reason to treat code as if it were case
+sensitive is consistency.</p>
+<p>This style of acronym capitalization has been chosen so as to defer to
+prior art, primarily C#'s standard, which has been in use for over a
+decade now. The purpose of not capitalizing acronyms is to make it
+more natural to read them where normally they are forced to be next to
+other capitalized words.</p>
+<p>Not capitalizing the first word of parameter and local scope variables
+is also decided by deferring to prior art. The majority of programming
+style guides written advocate for this. The purpose in ZScript is
+primarily moot due to case insensitivity, but we apply these rules to
+make reading easier and more consistent with most other programming
+languages that have existed.</p>
+<p>Capitalizing constants and enumerations is an artifact of the way they
+are declared in ZDoom, and also in the original Linux Doom source
+code. This is extended to static arrays for consistency.</p>
+<p>Flags were capitalized in Linux Doom due to being constants, and
+internally within ZDoom they are still constants, but due to the style
+of ZScript using full capitalization appears inconsistent.</p>
+<h2 id="word-choice"><a class="header" href="#word-choice">Word Choice</a></h2>
+<p>In new identifiers, do not add underscores anywhere within the
+identifier, unless explicitly stated in this style guide or necessary
+because of unmodifiable code (such as that in GZDoom's base archive.)
+Do not use Hungarian notation.</p>
+<p>Do not use keywords or types as names except for the identifier
+<code>name</code>. Do not, for instance, declare <code>string Class;</code>, even though the
+language will allow you to do so, although <code>string Name;</code> is fine.</p>
+<p>It is generally favorable to use shortened terminology, for instance
+<code>CanMoveZ</code> instead of <code>CanMoveVertically</code>. Try to make names readable
+in English, however: <code>CanThrowItem</code> instead of <code>ThrowableItem</code>.</p>
+<p>In the same vein, use abbreviations where conventional, but avoid them
+where unnecessary. Prefer <code>GetMobj</code> to <code>GetMapObject</code> but also
+<code>GetAngle</code> to <code>GetAng</code>.</p>
+<h3 id="rationale-1"><a class="header" href="#rationale-1">Rationale</a></h3>
+<p>The forbidding of underscores and Hungarian notation are in accordance
+with ZDoom's coding style. These choices are also present in other
+prior art, but the main deciding factor is that of the engine itself.</p>
+<p>The usage of most keywords in variable names is allowed in ZScript
+because the parser considers most identifiers to be contextual. In
+many contexts, keywords are allowed in places they shouldn't be by
+most standards. Besides the precedence of prior art, it appears that
+the engine itself also avoids using this relaxation of context.</p>
+<p>The engine and this style do, however, allow use of the identifier
+<code>name</code> in variables and members because it is a frequently used word.</p>
+<p>Shortened terminology such as abbreviations or contractions are
+favored due to long-standing conventions within ZDoom's source code.
+This is also historically relevant because of engines such as Unreal
+Engine which ZDoom takes inspiration from. Common terminology which
+may be shortened can be found on <a href="https://doomwiki.org/wiki/Category:Doom_engine">the Doom Wiki.</a></p>
+<h2 id="naming-type-members"><a class="header" href="#naming-type-members">Naming Type Members</a></h2>
+<p>Always name methods with verbs or verb phrases, such as &quot;<code>Split</code>&quot; or
+&quot;<code>CompareTo</code>.&quot; Always try to make names forward compatible, i.e. such
+that they will likely not conflict with new functions when they are
+added to the engine. In mods, this can even involve prefixing method
+names with one unique to the mod. Avoid violent words such as <code>Die</code>,
+<code>Destroy</code>, <code>Kill</code>, except where literally applicable. Prefer for
+instance <code>Stop</code>, <code>Drop</code>, <code>Halt</code>.</p>
+<p>Always name members with nouns, noun phrases or adjectives. Boolean
+values should often be prefixed with <code>Is</code>, <code>Has</code>, <code>Can</code>, and other
+existential present-tense verbs. All members of class types should be
+prefixed with <code>m_</code>, despite rules against Hungarian notation and
+underscores. Try to name members productively rather than vaguely,
+instead of <code>RefInt</code> write <code>ReferenceCount</code>.</p>
+<h3 id="rationale-2"><a class="header" href="#rationale-2">Rationale</a></h3>
+<p>Forwards compatibility is necessary primarily in mods. In this
+documentation it should be taken into account when writing example
+code, often when writing examples that involve inheriting from a class
+in the engine. ZScript will hard error on load if there is more than
+one definition of a function, so it is necessary to never have a
+conflict in names, including capitalization-wise.</p>
+<p>The purpose of avoiding violent words in method names is to not
+needlessly invoke potentially uncomfortable or triggering imagery. In
+much of the base class code, it is literally the action being taken,
+as Doom is indeed a violent game. In these cases it is entirely normal
+to use such verbs. An example of when this is entirely wasteful is
+ZDoom's garbage collector (which is exposed with different naming
+conventions) in which the flag for objects marked for finalization
+upon the next collection cycle is named <code>EuthanizeMe</code>. This kind of
+wording is certainly jocular and potentially amusing, but a 'funny'
+name such as this serves no real purpose, and could easily be
+re-worded to prevent potential discomfort.</p>
+<p>Members are prefixed with <code>m_</code> in order to defuse potential clashes
+with local variables, since case sensitivity cannot defuse them. The
+alternative to this is to prefix all member variable accesses with
+<code>self.</code>. However, this is potentially excessive and is not entirely
+productive in writing short and readable examples. This also provides
+a layer of forward compatibility, as ZDoom does not use <code>m_</code> prefixes
+anywhere within its code. For the opposite reason, as structure types
+cannot inherit, there is no need to prefix their members, and so this
+prefix is omitted within them.</p>
+<h2 id="layout-conventions"><a class="header" href="#layout-conventions">Layout Conventions</a></h2>
+<p>Use hardware tabs with a width of 3 characters for indentation. Indent
+at each block, but do not indent <code>case</code> labels. Align all code to 80
+columns. Align all markdown to 80 columns, except where impossible.</p>
+<p>Write only one statement or declaration per line, except in the case
+of multiple-assignment operations, in which case pairing all of the
+related declarations and the statement on the same line is allowed as
+long as it does not exceed 80 columns.</p>
+<p>Always add one blank line between separate method definitions, and
+between member declarations and member definitions. Add one blank line
+between local variable declarations and statements, unless specified
+otherwise. Add one blank line between conditional statements, except
+the <code>else</code> block of an <code>if</code> statement.</p>
+<p>Do not place a space before the parentheses of a conditional or loop
+statement such as <code>if</code> or <code>for</code>. Always write <code>if()</code> and not <code>if ()</code>.</p>
+<p>Always place opening braces on their own line. Using braces is not
+necessary when there is a single sub-statement, for instance with
+<code>if(x) y = z;</code>.</p>
+<h3 id="rationale-3"><a class="header" href="#rationale-3">Rationale</a></h3>
+<p>The convention of 3 spaces for indentation comes from <a href="https://github.com/team-eternity/eternity/blob/master/docs/ee_style_guide.md">Eternity
+Engine's style guideline.</a> There is no other reason for this
+decision, other than it is pleasing to the eye while not being
+excessive. Hardware tabs are used instead of spaces in order to allow
+for user configuration, increasing accessibility. The indentation and
+blank line rules are generally the same as the majority of C-like
+language style guidelines.</p>
+<p>Alignment to 80 columns is for the purpose of reading the raw
+documentation text under standard size Linux terminals. This is
+useful, for instance, when reading diff files under the <code>git</code> console
+client. This guideline can generally be ignored outside of this
+documentation.</p>
+<p>Writing multiple-assignment operations all on one line serves the
+purpose of grouping all of the relevant information together. In most
+languages with multiple assignment, you are able to do the declaration
+and assignment in one line, so this crudely mirrors a more well
+implemented language syntax.</p>
+<p>Placing opening braces on their own line greatly increases code
+readability, especially for people hard of sight. Other styles make it
+easy to confuse where a block begins and create a less clear visual
+line between the start and end. The purpose of this is to increase
+readability of this documentation, and not to make code look more
+pleasing.</p>
+<h2 id="commenting-conventions"><a class="header" href="#commenting-conventions">Commenting Conventions</a></h2>
+<p>Do not use block comments, except for the purpose of example or code
+that will intentionally not work.</p>
+<p>Comments may be placed anywhere except at the end of the opening line
+of a conditional or loop statement, the opening brace of a block, or
+the ending brace of a block.</p>
+<p>Always use proper case and punctuation when writing comments.</p>
+<p>Always put one space between the comment delimiter and comment text.</p>
+<h3 id="rationale-4"><a class="header" href="#rationale-4">Rationale</a></h3>
+<p>Block comments are mostly an adage of old programming languages made
+to be printed on paper. In modern times they are most useful for
+commenting out large blocks of code. They are rather clumsy to format
+well, and so single-line comments are to be used instead of them. One
+could argue that if a consistent formatting style was added, this
+would not be a problem. However, it is generally easier and more
+readable to just use line comments.</p>
+<h2 id="language-guidelines"><a class="header" href="#language-guidelines">Language Guidelines</a></h2>
+<p>Use <code>let</code> declarations when the type of the object will be obvious
+from what it is assigned. Do not use <code>let</code> if it is not made clear by
+the following text what the type will be, or where it is necessary to
+proclaim the type to make reading easier.</p>
+<p>Do not use integer types except for <code>int</code>, except in examples.
+Similarly, do not use float types except for <code>double</code> except in
+examples.</p>
+<p>No restrictions are placed on the usage of parentheses. Always place
+spaces between the operands of binary expressions (<code>1 + 1</code>) but never
+unary expressions (<code>-5</code>.)</p>
+<p>Do not place semicolons at the end of <code>enum</code> or <code>struct</code> definitions.
+However, always place a comma at the end of the last variant in an
+enumeration.</p>
+<h3 id="rationale-5"><a class="header" href="#rationale-5">Rationale</a></h3>
+<p>Integer and floating-point types other than <code>int</code> and <code>double</code> are
+primarily for internal use. They can be used by user types, but often
+it is unnecessary, and can be harmful.</p>
+<p>Placing semicolons at the end of top-level items is not meant to be
+used by end users. Its main purpose is to make ZScript easier to port
+from C++. On the other hand, placing a comma at the end of the last
+enumeration in a set is a common practice.</p>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="https://github.com/marrub--/zdoom-doc/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="https://github.com/marrub--/zdoom-doc">contribute to the project!</a> Originally authored by Alison G. Watson (e/he/they) and fira watson (they/them.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../Meta.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../ZScript.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../Meta.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../ZScript.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+    </body>
+</html>

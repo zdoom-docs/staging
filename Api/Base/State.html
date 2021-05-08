@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>State - ZDoom Docs</title>
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../../css/elements.css">
+        
+        <link rel="stylesheet" href="../../css/hljs.css">
+        
+        <link rel="stylesheet" href="../../css/restyle.css">
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../Introduction.html">Introduction</a></li><li class="chapter-item "><a href="../../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Meta/Style.html">Style</a></li></ol></li><li class="chapter-item "><a href="../../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ZScript/Classes.html">Class Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Expressions.html">Expressions</a></li><li class="chapter-item "><a href="../../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item "><a href="../../ZScript/Methods.html">Method Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Statements.html">Statements</a></li><li class="chapter-item "><a href="../../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../../Acs.html">ACS</a></li><li class="chapter-item expanded "><a href="../../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../../Api/Base/Object.html">Object</a></li><li class="chapter-item expanded "><a href="../../Api/Base/State.html" class="active">State</a></li><li class="chapter-item "><a href="../../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../../Api/Basic/Color.html">color</a></li><li class="chapter-item "><a href="../../Api/Basic/String.html">string</a></li><li class="chapter-item "><a href="../../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item "><a href="../../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../../Api/Drawing/Console.html">Console</a></li><li class="chapter-item "><a href="../../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item "><a href="../../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item "><a href="../../Api/Events/StaticEventHandler.html">StaticEventHandler</a></li><li class="chapter-item "><a href="../../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item "><a href="../../Api/Globals.html">Globals</a></li><li class="chapter-item "><a href="../../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item "><a href="../../Api/Inter/StatusScreen.html">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        
+                        <a href="http://github.com/marrub--/zdoom-doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="state"><a class="header" href="#state">State</a></h1>
+<details><summary>Show declaration</summary>
+<pre><code class="language-zsc">struct State clearScope;
+</code></pre>
+</details>
+<p>Represents a state on an <span class=code><a href="Actor.html">Actor</a></span>. Data in State is read-only and is
+copied as needed to its respective locations for modification, as it
+is merely a view into the global constant state table.</p>
+<h2 id="instance-methods"><a class="header" href="#instance-methods">Instance Methods</a></h2>
+<dl class="api"><dt id="mthd-DistanceTo">
+<code class="language-zsc">
+<p>int <a href="#mthd-DistanceTo">DistanceTo</a>(State other)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the offset between this state and <code>other</code> in the global frame
+table. Only works if both states are owned by the same actor.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-InStateSequence">
+<code class="language-zsc">
+<p>bool <a href="#mthd-InStateSequence">InStateSequence</a>(State base)</p>
+</code>
+</dt>
+<dd>
+<p>Returns <code>true</code> if this state is within a contiguous state sequence
+beginning with <code>base</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-ValidateSpriteFrame">
+<code class="language-zsc">
+<p>bool <a href="#mthd-ValidateSpriteFrame">ValidateSpriteFrame</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Returns <code>true</code> if the sprite frame actually exists.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-GetSpriteTexture">
+<code class="language-zsc">
+<p>textureId, bool, vector2 <a href="#mthd-GetSpriteTexture">GetSpriteTexture</a>(int rotation, int skin = 0, vector2 scale = (0, 0))</p>
+</code>
+</dt>
+<dd>
+<p>Returns the texture, if the texture should be flipped horizontally,
+and scaling of this state's sprite. Scaling will return <code>scale</code> unless
+<code>skin</code> is nonzero. <code>skin</code> determines the player skin used.</p>
+</dd>
+</dl>
+<details><summary>Overview of instance methods</summary><p><span class=code><a href="#mthd-DistanceTo">DistanceTo</a></span>, <span class=code><a href="#mthd-GetSpriteTexture">GetSpriteTexture</a></span>, <span class=code><a href="#mthd-InStateSequence">InStateSequence</a></span>, <span class=code><a href="#mthd-ValidateSpriteFrame">ValidateSpriteFrame</a></span></p></details>
+<h2 id="instance-members"><a class="header" href="#instance-members">Instance Members</a></h2>
+<h3 id="visuals"><a class="header" href="#visuals">Visuals</a></h3>
+<dl class="api"><dt id="memb-Frame">
+<code class="language-zsc">
+<p>readOnly uint8 <a href="#memb-Frame">Frame</a></p>
+</code>
+</dt>
+<dd>
+<p>The sprite frame of this state. The &quot;A&quot; frame is represented by &quot;0,&quot;
+the &quot;B&quot; frame by &quot;1,&quot; etc.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Sprite">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-Sprite">Sprite</a></p>
+</code>
+</dt>
+<dd>
+<p>The sprite ID of this state.</p>
+</dd>
+</dl>
+<h3 id="timings"><a class="header" href="#timings">Timings</a></h3>
+<dl class="api"><dt id="memb-Tics">
+<code class="language-zsc">
+<p>readOnly int16 <a href="#memb-Tics">Tics</a></p>
+</code>
+</dt>
+<dd>
+<p>The number of game tics this state lasts.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-TicRange">
+<code class="language-zsc">
+<p>readOnly uint16 <a href="#memb-TicRange">TicRange</a></p>
+</code>
+</dt>
+<dd>
+<p>The maximum amount of tics to add for random tic durations, or <code>0</code> if
+the duration is not random. For example, <code>TNT1 A random(5, 7)</code> would
+have a <span class=code><a href="#memb-Tics">Tics</a></span> value of <code>5</code> and a <span class=code><a href="#memb-TicRange">TicRange</a></span> of <code>2</code>.</p>
+</dd>
+</dl>
+<h3 id="data"><a class="header" href="#data">Data</a></h3>
+<dl class="api"><dt id="memb-NextState">
+<code class="language-zsc">
+<p>readOnly State <a href="#memb-NextState">NextState</a></p>
+</code>
+</dt>
+<dd>
+<p>A pointer to the next state in the global state table. <strong>The next
+state may not be in the same actor!</strong> Be careful when using this.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Misc1">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-Misc1">Misc1</a></p>
+</code>
+</dt>
+<dt id="memb-Misc2">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-Misc2">Misc2</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label yellow">Legacy — Do not use</span> Primarily used in <a href="../../Data/DeHackEd.html">DeHackEd</a>
+compatibility.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-UseFlags">
+<code class="language-zsc">
+<p>readOnly <a href="DefaultStateUsage.html">DefaultStateUsage</a> <a href="#memb-UseFlags">UseFlags</a></p>
+</code>
+</dt>
+<dd>
+<p>The action scope of this state.</p>
+</dd>
+</dl>
+<h3 id="flags"><a class="header" href="#flags">Flags</a></h3>
+<dl class="api"><dt id="memb-bCanRaise">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-bCanRaise">bCanRaise</a></p>
+</code>
+</dt>
+<dd>
+<p>State has the <code>canRaise</code> option, allowing <span class=code><a href="Actor.html">Actor</a>.<a href="Actor.html#mthd-A_VileChase">A_VileChase</a></span> to
+target this actor for healing without entering an infinitely long
+state.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-bDeHackEd">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-bDeHackEd">bDeHackEd</a></p>
+</code>
+</dt>
+<dd>
+<p>State has been modified by <a href="../../Data/DeHackEd.html">DeHackEd</a>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-bFast">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-bFast">bFast</a></p>
+</code>
+</dt>
+<dd>
+<p>State has the <code>fast</code> option, halving the duration when fast monsters
+is enabled.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-bFullBright">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-bFullBright">bFullBright</a></p>
+</code>
+</dt>
+<dd>
+<p>State has the <code>bright</code> option, making it fully bright regardless of
+lighting conditions.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-bNoDelay">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-bNoDelay">bNoDelay</a></p>
+</code>
+</dt>
+<dd>
+<p>State has the <code>noDelay</code> option, forcing the associated action function
+to be run if the actor is in its first tic.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-bSameFrame">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-bSameFrame">bSameFrame</a></p>
+</code>
+</dt>
+<dd>
+<p>State's frame is to be kept from the last frame used, i.e, is <code>#</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-bSlow">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-bSlow">bSlow</a></p>
+</code>
+</dt>
+<dd>
+<p>State has the <code>slow</code> option, doubling the duration when slow monsters
+is enabled.</p>
+</dd>
+</dl>
+<details><summary>Overview of instance members</summary><p><span class=code><a href="#memb-Frame">Frame</a></span>, <span class=code><a href="#memb-Misc1">Misc1</a></span>, <span class=code><a href="#memb-Misc2">Misc2</a></span>, <span class=code><a href="#memb-NextState">NextState</a></span>, <span class=code><a href="#memb-Sprite">Sprite</a></span>, <span class=code><a href="#memb-TicRange">TicRange</a></span>, <span class=code><a href="#memb-Tics">Tics</a></span>, <span class=code><a href="#memb-UseFlags">UseFlags</a></span>, <span class=code><a href="#memb-bCanRaise">bCanRaise</a></span>, <span class=code><a href="#memb-bDeHackEd">bDeHackEd</a></span>, <span class=code><a href="#memb-bFast">bFast</a></span>, <span class=code><a href="#memb-bFullBright">bFullBright</a></span>, <span class=code><a href="#memb-bNoDelay">bNoDelay</a></span>, <span class=code><a href="#memb-bSameFrame">bSameFrame</a></span>, <span class=code><a href="#memb-bSlow">bSlow</a></span></p></details>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="https://github.com/marrub--/zdoom-doc/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="https://github.com/marrub--/zdoom-doc">contribute to the project!</a> Originally authored by Alison G. Watson (e/he/they) and fira watson (they/them.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../Api/Base/Object.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../Api/Base/StringTable.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../Api/Base/Object.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../Api/Base/StringTable.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+    </body>
+</html>

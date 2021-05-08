@@ -1,0 +1,112 @@
+/* syntax definitions */
+dl.syn {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+}
+
+dl.syn dt, dl.syn dd {
+	background-color: var(--fira-secondary);
+	border-top: 1px solid var(--fira-border);
+	border-radius: var(--border-radius);
+	padding: 0.5em 1em;
+}
+
+dl.syn dt {
+	font-weight: 700;
+	border-right: 1px solid var(--fira-border);
+}
+
+dl.syn dd {
+	border-left: 1px solid var(--fira-border);
+	margin-left: 0.5em;
+}
+
+dl.syn dd p {
+	margin-block: 0;
+}
+
+/* api definitions */
+dl.api {
+	background-color: var(--fira-secondary);
+	border-radius: var(--border-radius);
+	padding: 0.5em;
+}
+
+dl.api span:target {
+	display: block;
+	position: relative;
+	top: -48px;
+	visibility: hidden;
+}
+
+dl.api dt code p {
+	display: inline;
+}
+
+dl.api dd {
+	border-left: 4px solid var(--fira-border);
+	padding-left: 1ch;
+}
+
+dl.api dd p {
+	margin-block: 0.5em;
+}
+
+dl.api dt a {
+	text-decoration: underline dotted;
+}
+
+/* table of contents */
+.toc {
+	border: 1px solid var(--fira-border);
+	border-radius: var(--border-radius);
+	padding: 0.5em 1em;
+	display: inline-block;
+	background-color: var(--fira-secondary);
+}
+
+.toc::before {
+	color: var(--fira-paint);
+	font-variant: small-caps;
+	font-weight: 400;
+	letter-spacing: 0.1em;
+}
+
+.toc.contents::before {
+	content: "Contents";
+}
+
+.toc.types::before {
+	content: "Sub-Types";
+}
+
+.toc.types ul {
+	list-style-type: circle;
+}
+
+/* labels */
+.label {
+	border-radius: var(--border-radius);
+	display: inline-block;
+	font-size: 14px;
+	font-variant: small-caps;
+	font-weight: bold;
+	padding: 0.16em 0.56em;
+	text-transform: unset !important;
+	vertical-align: middle;
+}
+
+.label.red {
+	background-color: #310506;
+	border: 1px solid #c31319;
+}
+
+.label.yellow {
+	background-color: #312905;
+	border: 1px solid #c3a313;
+}
+
+.label.purple {
+	background-color: #2e0531;
+	border: 1px solid #b513c3;
+}

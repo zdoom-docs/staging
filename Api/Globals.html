@@ -1,0 +1,1052 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Globals - ZDoom Docs</title>
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../css/elements.css">
+        
+        <link rel="stylesheet" href="../css/hljs.css">
+        
+        <link rel="stylesheet" href="../css/restyle.css">
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../Introduction.html">Introduction</a></li><li class="chapter-item "><a href="../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Meta/Style.html">Style</a></li></ol></li><li class="chapter-item "><a href="../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ZScript/Classes.html">Class Definitions</a></li><li class="chapter-item "><a href="../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item "><a href="../ZScript/Expressions.html">Expressions</a></li><li class="chapter-item "><a href="../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item "><a href="../ZScript/Methods.html">Method Definitions</a></li><li class="chapter-item "><a href="../ZScript/Statements.html">Statements</a></li><li class="chapter-item "><a href="../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../Acs.html">ACS</a></li><li class="chapter-item expanded "><a href="../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../Api/Base/Object.html">Object</a></li><li class="chapter-item "><a href="../Api/Base/State.html">State</a></li><li class="chapter-item "><a href="../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../Api/Basic/Color.html">color</a></li><li class="chapter-item "><a href="../Api/Basic/String.html">string</a></li><li class="chapter-item "><a href="../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item "><a href="../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../Api/Drawing/Console.html">Console</a></li><li class="chapter-item "><a href="../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item "><a href="../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item "><a href="../Api/Events/StaticEventHandler.html">StaticEventHandler</a></li><li class="chapter-item "><a href="../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item expanded "><a href="../Api/Globals.html" class="active">Globals</a></li><li class="chapter-item "><a href="../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen.html">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        
+                        <a href="http://github.com/marrub--/zdoom-doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="globals"><a class="header" href="#globals">Globals</a></h1>
+<p>These functions and variables are accessible from any context.</p>
+<div class="toc contents">
+<ol>
+<li><a href="#instance-methods">Instance Methods</a>
+<ol>
+<li><a href="#class-handling">Class Handling</a></li>
+<li><a href="#math">Math</a></li>
+<li><a href="#random-number-generation">Random Number Generation</a></li>
+</ol>
+</li>
+<li><a href="#instance-members">Instance Members</a>
+<ol>
+<li><a href="#definitions">Definitions</a></li>
+<li><a href="#players">Players</a></li>
+<li><a href="#game-information">Game Information</a></li>
+<li><a href="#client-state">Client State</a></li>
+<li><a href="#game-state">Game State</a></li>
+<li><a href="#static-game-information">Static Game Information</a></li>
+<li><a href="#static-client-information">Static Client Information</a></li>
+</ol>
+</li>
+<li><a href="#constants">Constants</a>
+<ol>
+<li><a href="#ranges">Ranges</a></li>
+<li><a href="#attenuations">Attenuations</a></li>
+</ol>
+</li>
+</ol>
+</div>
+<h2 id="instance-methods"><a class="header" href="#instance-methods">Instance Methods</a></h2>
+<h3 id="class-handling"><a class="header" href="#class-handling">Class Handling</a></h3>
+<dl class="api"><dt id="mthd-New">
+<code class="language-zsc">
+<p><a href="Base/Object.html">Object</a> <a href="#mthd-New">New</a>(class typeName = ThisClass)</p>
+</code>
+</dt>
+<dd>
+<p>Typically spelled lowercase as a keyword (<code>new</code>.) Creates an object
+with the specified type. Defaults to using the class of the calling
+object.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-GetDefaultByType">
+<code class="language-zsc">
+<p><a href="Base/Actor.html">Actor</a> <a href="#mthd-GetDefaultByType">GetDefaultByType</a>(class&lt;<a href="Base/Actor.html">Actor</a>&gt; typeName)</p>
+</code>
+</dt>
+<dd>
+<p><span class="label yellow">Unserializable — Do not use as a member unless marked as transient</span> Returns an object containing
+the default values for each member of the <span class=code><a href="Base/Actor.html">Actor</a></span> type provided as
+they would be set in <span class=code><a href="Base/Actor.html">Actor</a>.<a href="Base/Actor.html#mthd-BeginPlay">BeginPlay</a></span>. The returned object is a
+pseudo-object which is stored only in-memory.</p>
+</dd>
+</dl>
+<h3 id="math"><a class="header" href="#math">Math</a></h3>
+<dl class="api"><dt id="mthd-Abs">
+<code class="language-zsc">
+<p><a href="../ZScript/Types.html#numeric-types">NumericType</a> <a href="#mthd-Abs">Abs</a>(<a href="../ZScript/Types.html#numeric-types">NumericType</a> n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns <code>|n|</code> (absolute of <code>n</code>.)</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-ACos">
+<code class="language-zsc">
+<p>double <a href="#mthd-ACos">ACos</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the arc-cosine of <code>n</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-ASin">
+<code class="language-zsc">
+<p>double <a href="#mthd-ASin">ASin</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the arc-sine of <code>n</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-ATan">
+<code class="language-zsc">
+<p>double <a href="#mthd-ATan">ATan</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the arc-tangent of <code>n</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-ATan2">
+<code class="language-zsc">
+<p>double <a href="#mthd-ATan2">ATan2</a>(double y, double x)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the arc-tangent of <code>y / x</code> using the arguments' signs to
+determine the correct quadrant.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Ceil">
+<code class="language-zsc">
+<p>double <a href="#mthd-Ceil">Ceil</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the integral portion of <code>n</code>, rounded up.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Clamp">
+<code class="language-zsc">
+<p><a href="../ZScript/Types.html#numeric-types">NumericType</a> <a href="#mthd-Clamp">Clamp</a>(<a href="../ZScript/Types.html#numeric-types">NumericType</a> n, <a href="../ZScript/Types.html#numeric-types">NumericType</a> minimum, <a href="../ZScript/Types.html#numeric-types">NumericType</a> maximum)</p>
+</code>
+</dt>
+<dd>
+<p>Returns <code>n</code> if <code>n</code> is more than <code>minimum</code> and less than <code>maximum</code>, or
+either of those values if it is not.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Cos">
+<code class="language-zsc">
+<p>double <a href="#mthd-Cos">Cos</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the cosine of <code>n</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-CosH">
+<code class="language-zsc">
+<p>double <a href="#mthd-CosH">CosH</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the hyperbolic cosine of <code>n</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Exp">
+<code class="language-zsc">
+<p>double <a href="#mthd-Exp">Exp</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the natural exponent of <code>n</code>. Note that there is a <code>**</code> binary
+operator for exponentation, which is generally more useful.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Floor">
+<code class="language-zsc">
+<p>double <a href="#mthd-Floor">Floor</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the integral portion of <code>n</code>, rounded down.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Log">
+<code class="language-zsc">
+<p>double <a href="#mthd-Log">Log</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the natural logarithm of <code>n</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Log10">
+<code class="language-zsc">
+<p>double <a href="#mthd-Log10">Log10</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the common (base 10) logarithm of <code>n</code>. This is most useful for
+calculating the number of decimal digits in a number.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Max">
+<code class="language-zsc">
+<p><a href="../ZScript/Types.html#numeric-types">NumericType</a> <a href="#mthd-Max">Max</a>(<a href="../ZScript/Types.html#numeric-types">NumericType</a> n, <a href="../ZScript/Types.html#numeric-types">NumericType</a> maximum)</p>
+</code>
+</dt>
+<dd>
+<p>Returns <code>n</code> if <code>n</code> is less than <code>maximum</code>, or <code>maximum</code> if it is not.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Min">
+<code class="language-zsc">
+<p><a href="../ZScript/Types.html#numeric-types">NumericType</a> <a href="#mthd-Min">Min</a>(<a href="../ZScript/Types.html#numeric-types">NumericType</a> n, <a href="../ZScript/Types.html#numeric-types">NumericType</a> minimum)</p>
+</code>
+</dt>
+<dd>
+<p>Returns <code>n</code> if <code>n</code> is more than <code>minimum</code>, or <code>minimum</code> if it is not.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Sin">
+<code class="language-zsc">
+<p>double <a href="#mthd-Sin">Sin</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the sine of <code>n</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-SqRt">
+<code class="language-zsc">
+<p>double <a href="#mthd-SqRt">SqRt</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the square root of <code>n</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Tan">
+<code class="language-zsc">
+<p>double <a href="#mthd-Tan">Tan</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the tangent of <code>n</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-TanH">
+<code class="language-zsc">
+<p>double <a href="#mthd-TanH">TanH</a>(double n)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the hyperbolic tangent of <code>n</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-VectorAngle">
+<code class="language-zsc">
+<p>double <a href="#mthd-VectorAngle">VectorAngle</a>(double x, double y)</p>
+</code>
+</dt>
+<dd>
+<p>Equivalent to <code>ATan2(y, x)</code>.</p>
+</dd>
+</dl>
+<h3 id="random-number-generation"><a class="header" href="#random-number-generation">Random Number Generation</a></h3>
+<p>All of these functions may have <code>[Identifier]</code> between the function
+name and argument list to specify a named RNG table to use. This
+special syntax applies only to these functions. An example would be:</p>
+<pre><code class="language-zsc">int myRandomNumber = Random[MyCoolRng](50, 100);
+</code></pre>
+<dl class="api"><dt id="mthd-FRandom">
+<code class="language-zsc">
+<p>double <a href="#mthd-FRandom">FRandom</a>(double min, double max)</p>
+</code>
+</dt>
+<dd>
+<p>Returns a random <code>double</code> between <code>min</code> and <code>max</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-FRandomPick">
+<code class="language-zsc">
+<p>double <a href="#mthd-FRandomPick">FRandomPick</a>(double ...)</p>
+</code>
+</dt>
+<dd>
+<p>Returns one of the arguments provided randomly.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Random">
+<code class="language-zsc">
+<p>int <a href="#mthd-Random">Random</a>(int min = 0, int max = 255)</p>
+</code>
+</dt>
+<dd>
+<p>Returns a random <code>int</code> between <code>min</code> and <code>max</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Random2">
+<code class="language-zsc">
+<p>int <a href="#mthd-Random2">Random2</a>(uint mask = uint.Max)</p>
+</code>
+</dt>
+<dd>
+<p>Returns a random <code>int</code> between <code>-mask</code> and <code>mask</code>. <code>mask</code> is used as a
+bit mask, so it is recommended to use a value of one less than a power
+of two (i.e. 3, 7, 15, 31, 63, 127, 255...)</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-RandomPick">
+<code class="language-zsc">
+<p>int <a href="#mthd-RandomPick">RandomPick</a>(int ...)</p>
+</code>
+</dt>
+<dd>
+<p>Returns one of the arguments provided randomly.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-SetRandomSeed">
+<code class="language-zsc">
+<p>void <a href="#mthd-SetRandomSeed">SetRandomSeed</a>(uint num)</p>
+</code>
+</dt>
+<dd>
+<p>Sets the seed of the RNG table to <code>num</code>.</p>
+</dd>
+</dl>
+<details><summary>Overview of instance methods</summary><p><span class=code><a href="#mthd-ACos">ACos</a></span>, <span class=code><a href="#mthd-ASin">ASin</a></span>, <span class=code><a href="#mthd-ATan">ATan</a></span>, <span class=code><a href="#mthd-ATan2">ATan2</a></span>, <span class=code><a href="#mthd-Abs">Abs</a></span>, <span class=code><a href="#mthd-Ceil">Ceil</a></span>, <span class=code><a href="#mthd-Clamp">Clamp</a></span>, <span class=code><a href="#mthd-Cos">Cos</a></span>, <span class=code><a href="#mthd-CosH">CosH</a></span>, <span class=code><a href="#mthd-Exp">Exp</a></span>, <span class=code><a href="#mthd-FRandom">FRandom</a></span>, <span class=code><a href="#mthd-FRandomPick">FRandomPick</a></span>, <span class=code><a href="#mthd-Floor">Floor</a></span>, <span class=code><a href="#mthd-GetDefaultByType">GetDefaultByType</a></span>, <span class=code><a href="#mthd-Log">Log</a></span>, <span class=code><a href="#mthd-Log10">Log10</a></span>, <span class=code><a href="#mthd-Max">Max</a></span>, <span class=code><a href="#mthd-Min">Min</a></span>, <span class=code><a href="#mthd-New">New</a></span>, <span class=code><a href="#mthd-Random">Random</a></span>, <span class=code><a href="#mthd-Random2">Random2</a></span>, <span class=code><a href="#mthd-RandomPick">RandomPick</a></span>, <span class=code><a href="#mthd-SetRandomSeed">SetRandomSeed</a></span>, <span class=code><a href="#mthd-Sin">Sin</a></span>, <span class=code><a href="#mthd-SqRt">SqRt</a></span>, <span class=code><a href="#mthd-Tan">Tan</a></span>, <span class=code><a href="#mthd-TanH">TanH</a></span>, <span class=code><a href="#mthd-VectorAngle">VectorAngle</a></span></p></details>
+<h2 id="instance-members"><a class="header" href="#instance-members">Instance Members</a></h2>
+<h3 id="definitions"><a class="header" href="#definitions">Definitions</a></h3>
+<dl class="api"><dt id="memb-AllClasses">
+<code class="language-zsc">
+<p>readOnly array&lt;class&gt; <a href="#memb-AllClasses">AllClasses</a></p>
+</code>
+</dt>
+<dd>
+<p>Every class registered to the engine.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-AllActorClasses">
+<code class="language-zsc">
+<p>readOnly array&lt;class&lt;<a href="Base/Actor.html">Actor</a>&gt; &gt; <a href="#memb-AllActorClasses">AllActorClasses</a></p>
+</code>
+</dt>
+<dd>
+<p>Every <span class=code><a href="Base/Actor.html">Actor</a></span>-derived class registered to the engine.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-PlayerClasses">
+<code class="language-zsc">
+<p>readOnly array&lt;<a href="Players/PlayerClass.html">PlayerClass</a>&gt; <a href="#memb-PlayerClasses">PlayerClasses</a></p>
+</code>
+</dt>
+<dd>
+<p>Every <span class=code><a href="Players/PlayerClass.html">PlayerClass</a></span> registered to the engine.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-PlayerSkins">
+<code class="language-zsc">
+<p>readOnly array&lt;<a href="Players/PlayerSkin.html">PlayerSkin</a>&gt; <a href="#memb-PlayerSkins">PlayerSkins</a></p>
+</code>
+</dt>
+<dd>
+<p>Every <span class=code><a href="Players/PlayerSkin.html">PlayerSkin</a></span> registered to the engine.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Teams">
+<code class="language-zsc">
+<p>readOnly array&lt;<a href="Players/Team.html">Team</a>&gt; <a href="#memb-Teams">Teams</a></p>
+</code>
+</dt>
+<dd>
+<p>Every <span class=code><a href="Players/Team.html">Team</a></span> registered to the engine.</p>
+</dd>
+</dl>
+<h3 id="players"><a class="header" href="#players">Players</a></h3>
+<dl class="api"><dt id="memb-Players">
+<code class="language-zsc">
+<p>play <a href="Players/PlayerInfo.html">PlayerInfo</a>[<a href="#memb-MAXPLAYERS">MAXPLAYERS</a>] <a href="#memb-Players">Players</a></p>
+</code>
+</dt>
+<dd>
+<p>The <span class=code><a href="Players/PlayerInfo.html">PlayerInfo</a></span> for each player. These may be invalid data if the
+corresponding entry in <span class=code><a href="#memb-PlayerInGame">PlayerInGame</a></span> is not <code>true</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-PlayerInGame">
+<code class="language-zsc">
+<p>readOnly bool[<a href="#memb-MAXPLAYERS">MAXPLAYERS</a>] <a href="#memb-PlayerInGame">PlayerInGame</a></p>
+</code>
+</dt>
+<dd>
+<p>The status of each player as a boolean. If <code>false</code> then the
+corresponding player is not in-game.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-AutomapBindings">
+<code class="language-zsc">
+<p><a href="Base/KeyBindings.html">KeyBindings</a> <a href="#memb-AutomapBindings">AutomapBindings</a></p>
+</code>
+</dt>
+<dt id="memb-Bindings">
+<code class="language-zsc">
+<p><a href="Base/KeyBindings.html">KeyBindings</a> <a href="#memb-Bindings">Bindings</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label red">TO-DO — This section is not finished yet</span></p>
+</dd>
+</dl>
+<h3 id="game-information"><a class="header" href="#game-information">Game Information</a></h3>
+<dl class="api"><dt id="memb-MultiPlayer">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-MultiPlayer">MultiPlayer</a></p>
+</code>
+</dt>
+<dd>
+<p>Whether the game is running in multi-player or not. Does not
+necessarily mean there is network communication happening.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-NetGame">
+<code class="language-zsc">
+<p>readOnly ui bool <a href="#memb-NetGame">NetGame</a></p>
+</code>
+</dt>
+<dd>
+<p>Whether the game is running in non-local multi-player or not. Must be
+a networked game with more than one player to be true.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Net_Arbitrator">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-Net_Arbitrator">Net_Arbitrator</a></p>
+</code>
+</dt>
+<dd>
+<p>In a <span class=code><a href="#memb-NetGame">NetGame</a></span>, the number of the player that is currently
+arbitrating (&quot;hosting&quot;) the game.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-DemoPlayback">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-DemoPlayback">DemoPlayback</a></p>
+</code>
+</dt>
+<dd>
+<p>Whether the game is actually a demo playing or not.</p>
+</dd>
+</dl>
+<h3 id="client-state"><a class="header" href="#client-state">Client State</a></h3>
+<p>All Data scope globals here are <span class="label yellow">Nondeterministic — Do not rely on its outcome</span> because they rely on the client
+despite being accessible from non-UI scope.</p>
+<dl class="api"><dt id="memb-ConsolePlayer">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-ConsolePlayer">ConsolePlayer</a></p>
+</code>
+</dt>
+<dd>
+<p>Index of the player running the client.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-AutoMapActive">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-AutoMapActive">AutoMapActive</a></p>
+</code>
+</dt>
+<dd>
+<p>Whether the auto-map is visible for the current player.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-ValidCount">
+<code class="language-zsc">
+<p>int <a href="#memb-ValidCount">ValidCount</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label yellow">Internal — Do not use</span> The number of line segments to be
+drawn in the scene.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-LocalViewPitch">
+<code class="language-zsc">
+<p>int <a href="#memb-LocalViewPitch">LocalViewPitch</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label yellow">Internal — Do not use</span> The pitch angle (in degrees) of
+<span class=code><a href="#memb-ConsolePlayer">ConsolePlayer</a></span>'s view.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-CleanXFac">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-CleanXFac">CleanXFac</a></p>
+</code>
+</dt>
+<dt id="memb-CleanYFac">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-CleanYFac">CleanYFac</a></p>
+</code>
+</dt>
+<dd>
+<p>An integral scaling factor for horizontal and vertical positions to
+scale from 320x200 to the current virtual resolution.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-CleanXFac_1">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-CleanXFac_1">CleanXFac_1</a></p>
+</code>
+</dt>
+<dt id="memb-CleanYFac_1">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-CleanYFac_1">CleanYFac_1</a></p>
+</code>
+</dt>
+<dd>
+<p>Integral scaling factor for horizontal and vertical positions to scale
+from 320x200 to the current virtual resolution, accounting for aspect
+ratio differences.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-CleanWidth">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-CleanWidth">CleanWidth</a></p>
+</code>
+</dt>
+<dt id="memb-CleanHeight">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-CleanHeight">CleanHeight</a></p>
+</code>
+</dt>
+<dd>
+<p>The current screan size divided by (<span class=code><a href="#memb-CleanXFac">CleanXFac</a></span>,<span class=code><a href="#memb-CleanYFac">CleanYFac</a></span>).</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-CleanWidth_1">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-CleanWidth_1">CleanWidth_1</a></p>
+</code>
+</dt>
+<dt id="memb-CleanHeight_1">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-CleanHeight_1">CleanHeight_1</a></p>
+</code>
+</dt>
+<dd>
+<p>The current screan size divided by (<span class=code><a href="#memb-CleanXFac_1">CleanXFac_1</a></span>,<span class=code><a href="#memb-CleanYFac_1">CleanYFac_1</a></span>).</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-MenuActive">
+<code class="language-zsc">
+<p>ui <a href="Menus/Menu.html">Menu</a>.<a href="Menus/Menu/EMenuState.html">EMenuState</a> <a href="#memb-MenuActive">MenuActive</a></p>
+</code>
+</dt>
+<dd>
+<p>The current global menu state.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-BackButtonAlpha">
+<code class="language-zsc">
+<p>ui float <a href="#memb-BackButtonAlpha">BackButtonAlpha</a></p>
+</code>
+</dt>
+<dd>
+<p>The transparency of the back button in menus.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-BackButtonTime">
+<code class="language-zsc">
+<p>ui int <a href="#memb-BackButtonTime">BackButtonTime</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label red">TO-DO — This section is not finished yet</span> The time until the back button starts
+fading out in menus.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-StatusBar">
+<code class="language-zsc">
+<p>ui <a href="Menus/BaseStatusBar.html">BaseStatusBar</a> <a href="#memb-StatusBar">StatusBar</a></p>
+</code>
+</dt>
+<dd>
+<p>The current status bar being used by the client.</p>
+</dd>
+</dl>
+<h3 id="game-state"><a class="header" href="#game-state">Game State</a></h3>
+<dl class="api"><dt id="memb-GameAction">
+<code class="language-zsc">
+<p>readOnly <a href="Base/EGameAction.html">EGameAction</a> <a href="#memb-GameAction">GameAction</a></p>
+</code>
+</dt>
+<dd>
+<p>The current game action.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-GameState">
+<code class="language-zsc">
+<p>readOnly <a href="Base/EGameState.html">EGameState</a> <a href="#memb-GameState">GameState</a></p>
+</code>
+</dt>
+<dd>
+<p>The current game state.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-GameTic">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-GameTic">GameTic</a></p>
+</code>
+</dt>
+<dd>
+<p>The current game tick.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-MusPlaying">
+<code class="language-zsc">
+<p>readOnly <a href="Sound/MusPlayingInfo.html">MusPlayingInfo</a> <a href="#memb-MusPlaying">MusPlaying</a></p>
+</code>
+</dt>
+<dd>
+<p>Information about the currently playing music.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Level">
+<code class="language-zsc">
+<p>play <a href="Level/LevelLocals.html">LevelLocals</a> <a href="#memb-Level">Level</a></p>
+</code>
+</dt>
+<dd>
+<p>The current level's local data.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-GlobalFreeze">
+<code class="language-zsc">
+<p>deprecated(&quot;3.8&quot;) readOnly bool <a href="#memb-GlobalFreeze">GlobalFreeze</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label yellow">Legacy — Do not use</span> Indicates whether all actors are
+frozen or not.</p>
+</dd>
+</dl>
+<h3 id="static-game-information"><a class="header" href="#static-game-information">Static Game Information</a></h3>
+<dl class="api"><dt id="memb-DeH">
+<code class="language-zsc">
+<p>play <a href="Base/DeHInfo.html">DeHInfo</a> <a href="#memb-DeH">DeH</a></p>
+</code>
+</dt>
+<dd>
+<p>Static <a href="../Data/DeHackEd.html">DeHackEd</a> information.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-GameInfo">
+<code class="language-zsc">
+<p>readOnly <a href="Base/GameInfoStruct.html">GameInfoStruct</a> <a href="#memb-GameInfo">GameInfo</a></p>
+</code>
+</dt>
+<dd>
+<p>Static information from <a href="../Data/MapInfo.html#gameinfo">MAPINFO GameInfo</a>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Wp_NoChange">
+<code class="language-zsc">
+<p>readOnly <a href="Weapons/Weapon.html">Weapon</a> <a href="#memb-Wp_NoChange">Wp_NoChange</a></p>
+</code>
+</dt>
+<dd>
+<p>A non-weapon that denotes the weapon the player is holding should not
+be swapped for another weapon.</p>
+</dd>
+</dl>
+<h3 id="static-client-information"><a class="header" href="#static-client-information">Static Client Information</a></h3>
+<dl class="api"><dt id="memb-SkyFlatNum">
+<code class="language-zsc">
+<p>readOnly textureId <a href="#memb-SkyFlatNum">SkyFlatNum</a></p>
+</code>
+</dt>
+<dd>
+<p>The <code>textureId</code> of the sky texture.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-SmallFont">
+<code class="language-zsc">
+<p>readOnly <a href="Drawing/Font.html">Font</a> <a href="#memb-SmallFont">SmallFont</a></p>
+</code>
+</dt>
+<dd>
+<p>The small font for the current game.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-SmallFont2">
+<code class="language-zsc">
+<p>readOnly <a href="Drawing/Font.html">Font</a> <a href="#memb-SmallFont2">SmallFont2</a></p>
+</code>
+</dt>
+<dd>
+<p>The small font for strife status bars.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-BigFont">
+<code class="language-zsc">
+<p>readOnly <a href="Drawing/Font.html">Font</a> <a href="#memb-BigFont">BigFont</a></p>
+</code>
+</dt>
+<dd>
+<p>The big font for the current game.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-ConFont">
+<code class="language-zsc">
+<p>readOnly <a href="Drawing/Font.html">Font</a> <a href="#memb-ConFont">ConFont</a></p>
+</code>
+</dt>
+<dd>
+<p>The console font for the current game.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-IntermissionFont">
+<code class="language-zsc">
+<p>readOnly <a href="Drawing/Font.html">Font</a> <a href="#memb-IntermissionFont">IntermissionFont</a></p>
+</code>
+</dt>
+<dd>
+<p>The intermission font for the current game.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-NewConsoleFont">
+<code class="language-zsc">
+<p>readOnly <a href="Drawing/Font.html">Font</a> <a href="#memb-NewConsoleFont">NewConsoleFont</a></p>
+</code>
+</dt>
+<dd>
+<p>The universal unicode small font used by the console.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-NewSmallFont">
+<code class="language-zsc">
+<p>readOnly <a href="Drawing/Font.html">Font</a> <a href="#memb-NewSmallFont">NewSmallFont</a></p>
+</code>
+</dt>
+<dd>
+<p>The universal unicode small font used by most things in the engine.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-OriginalSmallFont">
+<code class="language-zsc">
+<p>readOnly <a href="Drawing/Font.html">Font</a> <a href="#memb-OriginalSmallFont">OriginalSmallFont</a></p>
+</code>
+</dt>
+<dd>
+<p>The small font defined by the IWAD.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-OriginalBigFont">
+<code class="language-zsc">
+<p>readOnly <a href="Drawing/Font.html">Font</a> <a href="#memb-OriginalBigFont">OriginalBigFont</a></p>
+</code>
+</dt>
+<dd>
+<p>The big font defined by the IWAD.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-AlternativeSmallFont">
+<code class="language-zsc">
+<p>readOnly <a href="Drawing/Font.html">Font</a> <a href="#memb-AlternativeSmallFont">AlternativeSmallFont</a></p>
+</code>
+</dt>
+<dd>
+<p>If <span class=code><a href="#memb-Generic_Ui">Generic_Ui</a></span> is true, this font will be defined as either
+<span class=code><a href="#memb-SmallFont">SmallFont</a></span>, <span class=code><a href="#memb-OriginalSmallFont">OriginalSmallFont</a></span>, or <span class=code><a href="#memb-NewSmallFont">NewSmallFont</a></span> (in that
+order) depending on which is complete.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Generic_Ui">
+<code class="language-zsc">
+<p>readOnly bool <a href="#memb-Generic_Ui">Generic_Ui</a></p>
+</code>
+</dt>
+<dd>
+<p>Will be <code>true</code> if the <a href="../Data/Language.html">language</a> defines <code>USE_GENERIC_FONT</code> as a
+non-zero value. This indicates what the <span class=code><a href="#memb-AlternativeSmallFont">AlternativeSmallFont</a></span> will
+be.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-OptionMenuSettings">
+<code class="language-zsc">
+<p>readOnly <a href="Menus/FOptionMenuSettings.html">FOptionMenuSettings</a> <a href="#memb-OptionMenuSettings">OptionMenuSettings</a></p>
+</code>
+</dt>
+<dd>
+<p>The settings used for option menus.</p>
+</dd>
+</dl>
+<details><summary>Overview of instance members</summary><p><span class=code><a href="#memb-AllActorClasses">AllActorClasses</a></span>, <span class=code><a href="#memb-AllClasses">AllClasses</a></span>, <span class=code><a href="#memb-AlternativeSmallFont">AlternativeSmallFont</a></span>, <span class=code><a href="#memb-AutoMapActive">AutoMapActive</a></span>, <span class=code><a href="#memb-AutomapBindings">AutomapBindings</a></span>, <span class=code><a href="#memb-BackButtonAlpha">BackButtonAlpha</a></span>, <span class=code><a href="#memb-BackButtonTime">BackButtonTime</a></span>, <span class=code><a href="#memb-BigFont">BigFont</a></span>, <span class=code><a href="#memb-Bindings">Bindings</a></span>, <span class=code><a href="#memb-CleanHeight">CleanHeight</a></span>, <span class=code><a href="#memb-CleanHeight_1">CleanHeight_1</a></span>, <span class=code><a href="#memb-CleanWidth">CleanWidth</a></span>, <span class=code><a href="#memb-CleanWidth_1">CleanWidth_1</a></span>, <span class=code><a href="#memb-CleanXFac">CleanXFac</a></span>, <span class=code><a href="#memb-CleanXFac_1">CleanXFac_1</a></span>, <span class=code><a href="#memb-CleanYFac">CleanYFac</a></span>, <span class=code><a href="#memb-CleanYFac_1">CleanYFac_1</a></span>, <span class=code><a href="#memb-ConFont">ConFont</a></span>, <span class=code><a href="#memb-ConsolePlayer">ConsolePlayer</a></span>, <span class=code><a href="#memb-DeH">DeH</a></span>, <span class=code><a href="#memb-DemoPlayback">DemoPlayback</a></span>, <span class=code><a href="#memb-GameAction">GameAction</a></span>, <span class=code><a href="#memb-GameInfo">GameInfo</a></span>, <span class=code><a href="#memb-GameState">GameState</a></span>, <span class=code><a href="#memb-GameTic">GameTic</a></span>, <span class=code><a href="#memb-Generic_Ui">Generic_Ui</a></span>, <span class=code><a href="#memb-GlobalFreeze">GlobalFreeze</a></span>, <span class=code><a href="#memb-IntermissionFont">IntermissionFont</a></span>, <span class=code><a href="#memb-Level">Level</a></span>, <span class=code><a href="#memb-LocalViewPitch">LocalViewPitch</a></span>, <span class=code><a href="#memb-MenuActive">MenuActive</a></span>, <span class=code><a href="#memb-MultiPlayer">MultiPlayer</a></span>, <span class=code><a href="#memb-MusPlaying">MusPlaying</a></span>, <span class=code><a href="#memb-NetGame">NetGame</a></span>, <span class=code><a href="#memb-Net_Arbitrator">Net_Arbitrator</a></span>, <span class=code><a href="#memb-NewConsoleFont">NewConsoleFont</a></span>, <span class=code><a href="#memb-NewSmallFont">NewSmallFont</a></span>, <span class=code><a href="#memb-OptionMenuSettings">OptionMenuSettings</a></span>, <span class=code><a href="#memb-OriginalBigFont">OriginalBigFont</a></span>, <span class=code><a href="#memb-OriginalSmallFont">OriginalSmallFont</a></span>, <span class=code><a href="#memb-PlayerClasses">PlayerClasses</a></span>, <span class=code><a href="#memb-PlayerInGame">PlayerInGame</a></span>, <span class=code><a href="#memb-PlayerSkins">PlayerSkins</a></span>, <span class=code><a href="#memb-Players">Players</a></span>, <span class=code><a href="#memb-SkyFlatNum">SkyFlatNum</a></span>, <span class=code><a href="#memb-SmallFont">SmallFont</a></span>, <span class=code><a href="#memb-SmallFont2">SmallFont2</a></span>, <span class=code><a href="#memb-StatusBar">StatusBar</a></span>, <span class=code><a href="#memb-Teams">Teams</a></span>, <span class=code><a href="#memb-ValidCount">ValidCount</a></span>, <span class=code><a href="#memb-Wp_NoChange">Wp_NoChange</a></span></p></details>
+<h2 id="constants"><a class="header" href="#constants">Constants</a></h2>
+<dl class="api"><dt id="memb-MAXPLAYERS">
+<code class="language-zsc">
+<p>const int <a href="#memb-MAXPLAYERS">MAXPLAYERS</a></p>
+</code>
+</dt>
+<dd>
+<p>The maximum amount of players allowed in a networked game.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-FLAG_NO_CHANGE">
+<code class="language-zsc">
+<p>const int <a href="#memb-FLAG_NO_CHANGE">FLAG_NO_CHANGE</a></p>
+</code>
+</dt>
+<dd>
+<p>A constant for flag changer functions denoting that there should be no
+change.</p>
+</dd>
+</dl>
+<h3 id="ranges"><a class="header" href="#ranges">Ranges</a></h3>
+<dl class="api"><dt id="memb-DEFMELEERANGE">
+<code class="language-zsc">
+<p>const float <a href="#memb-DEFMELEERANGE">DEFMELEERANGE</a></p>
+</code>
+</dt>
+<dd>
+<p>The default melee range for monsters and the player's melee attacks.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-SAWRANGE">
+<code class="language-zsc">
+<p>const float <a href="#memb-SAWRANGE">SAWRANGE</a></p>
+</code>
+</dt>
+<dd>
+<p>The range of Doom's chainsaw.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-MISSILERANGE">
+<code class="language-zsc">
+<p>const float <a href="#memb-MISSILERANGE">MISSILERANGE</a></p>
+</code>
+</dt>
+<dd>
+<p>The maximum range for monster hitscan attacks.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-PLAYERMISSILERANGE">
+<code class="language-zsc">
+<p>const float <a href="#memb-PLAYERMISSILERANGE">PLAYERMISSILERANGE</a></p>
+</code>
+</dt>
+<dd>
+<p>The maximum range for player hitscan attacks.</p>
+</dd>
+</dl>
+<h3 id="attenuations"><a class="header" href="#attenuations">Attenuations</a></h3>
+<p>Preset attenuation values for various purposes.</p>
+<dl class="api"><dt id="memb-ATTN_NONE">
+<code class="language-zsc">
+<p>const float <a href="#memb-ATTN_NONE">ATTN_NONE</a></p>
+</code>
+</dt>
+<dd>
+<p>An attenuation at which the sound can be heard from any distance.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-ATTN_NORM">
+<code class="language-zsc">
+<p>const float <a href="#memb-ATTN_NORM">ATTN_NORM</a></p>
+</code>
+</dt>
+<dd>
+<p>The default attenuation, which uses the distances defined in <a href="../Data/SndInfo.html">SNDINFO</a>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-ATTN_IDLE">
+<code class="language-zsc">
+<p>const float <a href="#memb-ATTN_IDLE">ATTN_IDLE</a></p>
+</code>
+</dt>
+<dd>
+<p>The default attenuation used by Doom.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-ATTN_STATIC">
+<code class="language-zsc">
+<p>const float <a href="#memb-ATTN_STATIC">ATTN_STATIC</a></p>
+</code>
+</dt>
+<dd>
+<p>An attenuation with which sounds fade fully at 512 map units away.</p>
+</dd>
+</dl>
+<details><summary>Overview of constants</summary><p><span class=code><a href="#memb-ATTN_IDLE">ATTN_IDLE</a></span>, <span class=code><a href="#memb-ATTN_NONE">ATTN_NONE</a></span>, <span class=code><a href="#memb-ATTN_NORM">ATTN_NORM</a></span>, <span class=code><a href="#memb-ATTN_STATIC">ATTN_STATIC</a></span>, <span class=code><a href="#memb-DEFMELEERANGE">DEFMELEERANGE</a></span>, <span class=code><a href="#memb-FLAG_NO_CHANGE">FLAG_NO_CHANGE</a></span>, <span class=code><a href="#memb-MAXPLAYERS">MAXPLAYERS</a></span>, <span class=code><a href="#memb-MISSILERANGE">MISSILERANGE</a></span>, <span class=code><a href="#memb-PLAYERMISSILERANGE">PLAYERMISSILERANGE</a></span>, <span class=code><a href="#memb-SAWRANGE">SAWRANGE</a></span></p></details>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="https://github.com/marrub--/zdoom-doc/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="https://github.com/marrub--/zdoom-doc">contribute to the project!</a> Originally authored by Alison G. Watson (e/he/they) and fira watson (they/them.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../Api/Events/WorldEvent.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../Api/Inter.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../Api/Events/WorldEvent.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../Api/Inter.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+    </body>
+</html>

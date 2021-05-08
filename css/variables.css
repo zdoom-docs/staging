@@ -1,0 +1,54 @@
+:root {
+	--fg:             #fff;
+	--bg:             #0f0c11;
+	--fira-secondary: #1a141d;
+	--fira-border:    #54435f;
+	--fira-paint:     #ba8cc6;
+	--fira-highlight: #e873af;
+	--fira-shadow:    #505170;
+	--fira-active:    #53dbd1;
+
+	--border-radius: 7px;
+
+	--sidebar-width:     300px;
+	--page-padding:      0px;
+	--content-max-width: 800px;
+	--menu-bar-height:   35px;
+
+	--sidebar-fg:           var(--fira-highlight);
+	--sidebar-bg:           var(--fira-secondary);
+	--sidebar-non-existant: var(--fira-shadow);
+	--sidebar-active:       var(--fira-active);
+	--sidebar-spacer:       var(--fira-border);
+
+	--scrollbar: var(--fira-paint);
+
+	--icons:       var(--fira-highlight);
+	--icons-hover: var(--fira-active);
+
+	--links: var(--fira-highlight);
+
+	--inline-code-color: var(--fg);
+
+	--theme-popup-bg:     var(--fira-secondary);
+	--theme-popup-border: var(--fira-paint);
+	--theme-hover:        var(--fira-border);
+
+	--quote-bg:     var(--fira-secondary);
+	--quote-border: var(--fira-border);
+
+	--table-border-color: var(--fira-border);
+	--table-header-bg:    var(--fira-secondary);
+	--table-alternate-bg: var(--fira-secondary);
+
+	--searchbar-fg:           var(--fg);
+	--searchbar-bg:           var(--fira-secondary);
+	--searchbar-border-color: var(--fira-border);
+	--searchbar-shadow-color: var(--fira-shadow);
+
+	--searchresults-header-fg:    var(--fira-paint);
+	--searchresults-border-color: var(--fira-border);
+	--searchresults-li-bg:        var(--fira-secondary);
+
+	--search-mark-bg: var(--fira-active);
+}

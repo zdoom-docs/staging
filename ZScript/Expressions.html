@@ -1,0 +1,522 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Expressions - ZDoom Docs</title>
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../css/elements.css">
+        
+        <link rel="stylesheet" href="../css/hljs.css">
+        
+        <link rel="stylesheet" href="../css/restyle.css">
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../Introduction.html">Introduction</a></li><li class="chapter-item "><a href="../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Meta/Style.html">Style</a></li></ol></li><li class="chapter-item expanded "><a href="../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ZScript/Classes.html">Class Definitions</a></li><li class="chapter-item "><a href="../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item expanded "><a href="../ZScript/Expressions.html" class="active">Expressions</a></li><li class="chapter-item "><a href="../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item "><a href="../ZScript/Methods.html">Method Definitions</a></li><li class="chapter-item "><a href="../ZScript/Statements.html">Statements</a></li><li class="chapter-item "><a href="../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../Acs.html">ACS</a></li><li class="chapter-item "><a href="../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../Api/Base/Object.html">Object</a></li><li class="chapter-item "><a href="../Api/Base/State.html">State</a></li><li class="chapter-item "><a href="../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../Api/Basic/Color.html">color</a></li><li class="chapter-item "><a href="../Api/Basic/String.html">string</a></li><li class="chapter-item "><a href="../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item "><a href="../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../Api/Drawing/Console.html">Console</a></li><li class="chapter-item "><a href="../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item "><a href="../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item "><a href="../Api/Events/StaticEventHandler.html">StaticEventHandler</a></li><li class="chapter-item "><a href="../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item "><a href="../Api/Globals.html">Globals</a></li><li class="chapter-item "><a href="../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen.html">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        
+                        <a href="http://github.com/marrub--/zdoom-doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="expressions"><a class="header" href="#expressions">Expressions</a></h1>
+<p>Expressions contain literals or other such <em>expressions</em> of objects,
+including arithmetic and various conditions.</p>
+<dl class="syn"><dt>Expression</dt><dd>
+<ul>
+<li><a href="#primary-expressions">PrimaryExpression</a></li>
+<li><a href="#postfix-expressions">PostfixExpression</a></li>
+<li><a href="#unary-expressions">UnaryExpression</a></li>
+<li><a href="#binary-expressions">BinaryExpression</a></li>
+<li><a href="#ternary-expressions">TernaryExpression</a></li>
+</ul>
+</dd></dl>
+<div class="toc contents">
+<ol>
+<li><a href="#constant-expressions">Constant Expressions</a></li>
+<li><a href="#primary-expressions">Primary Expressions</a>
+<ol>
+<li><a href="#vector-literal-expressions">Vector Literal Expressions</a></li>
+<li><a href="#color-literal-expressions">Color Literal Expressions</a></li>
+</ol>
+</li>
+<li><a href="#postfix-expressions">Postfix Expressions</a>
+<ol>
+<li><a href="#argument-lists">Argument Lists</a></li>
+</ol>
+</li>
+<li><a href="#unary-expressions">Unary Expressions</a></li>
+<li><a href="#binary-expressions">Binary Expressions</a>
+<ol>
+<li><a href="#arithmetic-expressions">Arithmetic Expressions</a></li>
+<li><a href="#vector-expressions">Vector Expressions</a></li>
+<li><a href="#concatenation-expressions">Concatenation Expressions</a></li>
+<li><a href="#comparison-expressions">Comparison Expressions</a></li>
+<li><a href="#lazy-boolean-expressions">Lazy Boolean Expressions</a></li>
+<li><a href="#type-comparison-expressions">Type Comparison Expressions</a></li>
+<li><a href="#signed-difference-expressions">Signed Difference Expressions</a></li>
+<li><a href="#logical-expressions">Logical Expressions</a></li>
+<li><a href="#scope-expressions">Scope Expressions</a></li>
+<li><a href="#assignment-expressions">Assignment Expressions</a></li>
+</ol>
+</li>
+<li><a href="#ternary-expressions">Ternary Expressions</a></li>
+</ol>
+</div>
+<h2 id="constant-expressions"><a class="header" href="#constant-expressions">Constant Expressions</a></h2>
+<p>Constant expressions are expressions that do not contain mutation of
+state or function calls. We define them simply as expressions.</p>
+<dl class="syn"><dt>ConstantExpression</dt><dd>
+<p><a href="#expressions">Expression</a></p>
+</dd></dl>
+<h2 id="primary-expressions"><a class="header" href="#primary-expressions">Primary Expressions</a></h2>
+<p>Primary expressions can be one of:</p>
+<ul>
+<li>An identifier for a constant or variable.</li>
+<li>The <code>super</code> keyword, which references the parent type.</li>
+<li>Any literal.</li>
+<li>A vector literal.</li>
+<li>An expression in parentheses.</li>
+</ul>
+<dl class="syn"><dt>PrimaryExpression</dt><dd>
+<ul>
+<li><a href="Fundamentals.html#identifiers">Identifier</a></li>
+<li><code>super</code></li>
+<li><a href="Fundamentals.html#literals">Literal</a></li>
+<li><a href="#vector-literal-expressions">VectorLiteralExpression</a></li>
+<li><a href="#color-literal-expressions">ColorLiteralExpression</a></li>
+<li><code>(</code> <a href="#expressions">Expression</a> <code>)</code></li>
+</ul>
+</dd></dl>
+<h3 id="vector-literal-expressions"><a class="header" href="#vector-literal-expressions">Vector Literal Expressions</a></h3>
+<p>Vector literals are not under object literals as they are not
+constants in the same manner as other literals, since they contain
+expressions within them. As such, they are expressions, not proper
+value-based literals.</p>
+<p>Literals of <code>vector3</code> may be made by either grammar. In the former
+grammar, the first expression (<code>X1</code>) must be a <code>vector2</code> and the
+second (<code>X2</code>) must be a <code>double</code>. It will be equivalent to <code>(X1.X, X1.Y, X2)</code>. In any other case, all expressions must be <code>double</code>.</p>
+<dl class="syn"><dt>VectorLiteralExpression</dt><dd>
+<ul>
+<li><code>(</code> <a href="#expressions">Expression</a> <code>,</code> <a href="#expressions">Expression</a> <code>)</code></li>
+<li><code>(</code> <a href="#expressions">Expression</a> <code>,</code> <a href="#expressions">Expression</a> <code>,</code> <a href="#expressions">Expression</a> <code>)</code></li>
+</ul>
+</dd></dl>
+<h3 id="color-literal-expressions"><a class="header" href="#color-literal-expressions">Color Literal Expressions</a></h3>
+<p>Much like vector literals, color literals are not &quot;real&quot; literals,
+since they contain expressions. Color literals may be either RGB
+(where alpha is implied to be maximum) or RGBA. The three (or four)
+expressions must be <code>int</code>.</p>
+<dl class="syn"><dt>ColorLiteralExpression</dt><dd>
+<p><code>color</code> <code>(</code> <a href="#expressions">Expression</a> <code>,</code> <a href="#expressions">Expression</a> <code>,</code> <a href="#expressions">Expression</a> (<code>,</code>
+<a href="#expressions">Expression</a>)? <code>)</code></p>
+</dd></dl>
+<h2 id="postfix-expressions"><a class="header" href="#postfix-expressions">Postfix Expressions</a></h2>
+<p>Postfix expressions are affixed at the end of an expression, and are
+used for a large variety of things, although the actual amount of
+postfix expressions is small.</p>
+<p>The postfix expressions are:</p>
+<ul>
+<li>Function call.</li>
+<li>Type cast.</li>
+<li>Class type reference cast.</li>
+<li>Array access.</li>
+<li>Member access.</li>
+<li>Post-increment, which increments the object <em>after</em> the expression
+is evaluated.</li>
+<li>Post-decrement, which decrements the object <em>after</em> the expression
+is evaluated.</li>
+</ul>
+<dl class="syn"><dt>PostfixExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>(</code> <a href="#argument-lists">ArgumentList</a>? <code>)</code></li>
+<li><a href="Types.html#types">Type</a> <code>(</code> <a href="#expressions">Expression</a> <code>)</code></li>
+<li><code>(</code> <code>class</code> <code>&lt;</code> <a href="Types.html#types">Type</a> <code>&gt;</code> <code>)</code> <code>(</code> <a href="#expressions">Expression</a> <code>)</code></li>
+<li><a href="#expressions">Expression</a> <code>[</code> <a href="#expressions">Expression</a> <code>]</code></li>
+<li><a href="#expressions">Expression</a> <code>.</code> <a href="Fundamentals.html#identifiers">Identifier</a></li>
+<li><a href="#expressions">Expression</a> <code>++</code></li>
+<li><a href="#expressions">Expression</a> <code>--</code></li>
+</ul>
+</dd></dl>
+<h3 id="argument-lists"><a class="header" href="#argument-lists">Argument Lists</a></h3>
+<p>Function calls may name arguments which have defaults, possibly
+skipping over other defaulted arguments. After the first named
+defaultable argument, all other arguments must be named as well.</p>
+<dl class="syn"><dt>ArgumentList</dt><dd>
+<p><a href="#expressions">Expression</a> (<code>,</code> <a href="#expressions">Expression</a>)* (<code>,</code> <a href="Fundamentals.html#identifiers">Identifier</a> <code>:</code> <a href="#expressions">Expression</a>)*</p>
+</dd></dl>
+<h2 id="unary-expressions"><a class="header" href="#unary-expressions">Unary Expressions</a></h2>
+<p>Unary expressions are affixed at the beginning of an expression. The
+simplest example of a unary expression is the negation operator, <code>-</code>,
+as in <code>-500</code>.</p>
+<p>The unary expressions are:</p>
+<ul>
+<li>Negation.</li>
+<li>Logical negation.</li>
+<li>Pre-increment, which increments the object <em>before</em> the expression
+is evaluated.</li>
+<li>Pre-decrement, which decrements the object <em>before</em> the expression
+is evaluated.</li>
+<li>Bit-wise negation. Flips all bits in an integer.</li>
+<li>Affirmation. Doesn't actually do anything.</li>
+<li>Alignment of a type of an expression.</li>
+<li>Size of a type of an expression.</li>
+</ul>
+<dl class="syn"><dt>UnaryExpression</dt><dd>
+<ul>
+<li><code>-</code> <a href="#expressions">Expression</a></li>
+<li><code>!</code> <a href="#expressions">Expression</a></li>
+<li><code>++</code> <a href="#expressions">Expression</a></li>
+<li><code>--</code> <a href="#expressions">Expression</a></li>
+<li><code>~</code> <a href="#expressions">Expression</a></li>
+<li><code>+</code> <a href="#expressions">Expression</a></li>
+<li><code>alignOf</code> <a href="#expressions">Expression</a></li>
+<li><code>sizeOf</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h2 id="binary-expressions"><a class="header" href="#binary-expressions">Binary Expressions</a></h2>
+<p>Binary expressions operate on two expressions, and are the most common
+kind of expression. They are used inline like regular math syntax,
+i.e. <code>1 + 1</code>.</p>
+<dl class="syn"><dt>BinaryExpression</dt><dd>
+<ul>
+<li><a href="#arithmetic-expressions">ArithmeticExpression</a></li>
+<li><a href="#vector-expressions">VectorExpression</a></li>
+<li><a href="#concatenation-expressions">ConcatenationExpression</a></li>
+<li><a href="#comparison-expressions">ComparisonExpression</a></li>
+<li><a href="#lazy-boolean-expressions">LazyBooleanExpression</a></li>
+<li><a href="#type-comparison-expressions">TypeComparisonExpression</a></li>
+<li><a href="#signed-difference-expressions">SignedDifferenceExpression</a></li>
+<li><a href="#logical-expressions">LogicalExpression</a></li>
+<li><a href="#scope-expressions">ScopeExpression</a></li>
+<li><a href="#assignment-expressions">AssignmentExpression</a></li>
+</ul>
+</dd></dl>
+<h3 id="arithmetic-expressions"><a class="header" href="#arithmetic-expressions">Arithmetic Expressions</a></h3>
+<p>The arithmetic expressions are:</p>
+<ul>
+<li>Addition.</li>
+<li>Subtraction.</li>
+<li>Multiplication.</li>
+<li>Division quotient.</li>
+<li>Division remainder, also known as &quot;modulus.&quot; Unlike C, this works on
+floats, too.</li>
+<li>Exponentation.</li>
+<li>Left bit-wise shift.</li>
+<li>Right bit-wise shift.</li>
+<li>Right unsigned bit-wise shift.</li>
+</ul>
+<dl class="syn"><dt>ArithmeticExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>+</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>-</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>*</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>/</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>%</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>**</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>&lt;&lt;</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>&gt;&gt;</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>&gt;&gt;&gt;</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h3 id="vector-expressions"><a class="header" href="#vector-expressions">Vector Expressions</a></h3>
+<p>The vector expressions are:</p>
+<ul>
+<li>Vector cross-product.</li>
+<li>Vector dot-product.</li>
+</ul>
+<dl class="syn"><dt>VectorExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>cross</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>dot</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h3 id="concatenation-expressions"><a class="header" href="#concatenation-expressions">Concatenation Expressions</a></h3>
+<p>Concatenation creates a string from two expressions.</p>
+<p>The following basic types may be cast to strings through
+concatenation:</p>
+<ul>
+<li>Only <code>int</code> and <code>uint</code> of <a href="Types.html#integer-types">IntegerType</a></li>
+<li><a href="Types.html#floating-point-types">FloatingPointType</a></li>
+<li><a href="Types.html#vector-types">VectorType</a></li>
+<li><a href="Types.html#name-types">NameType</a></li>
+<li><a href="Types.html#string-like-reference-types">StringLikeReferenceType</a> except <code>stateLabel</code></li>
+<li><a href="Types.html#color-types">ColorType</a></li>
+<li><a href="Types.html#integer-like-reference-types">IntegerLikeReferenceType</a></li>
+<li><a href="Types.html#native-pointer-types">NativePointerType</a></li>
+</ul>
+<dl class="syn"><dt>ConcatenationExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>..</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h3 id="comparison-expressions"><a class="header" href="#comparison-expressions">Comparison Expressions</a></h3>
+<p>The comparison expressions are:</p>
+<ul>
+<li>Less than.</li>
+<li>Greater than.</li>
+<li>Less than or equal.</li>
+<li>Greater than or equal.</li>
+<li>Equality.</li>
+<li>Inequality.</li>
+<li>Approximate equality. For strings, this is a case-insensitive
+comparison. For floats and vectors, this checks if the difference
+between the two expressions is smaller than ε.</li>
+</ul>
+<dl class="syn"><dt>ComparisonExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>&lt;</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>&gt;</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>&lt;=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>&gt;=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>==</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>!=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>~==</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h3 id="lazy-boolean-expressions"><a class="header" href="#lazy-boolean-expressions">Lazy Boolean Expressions</a></h3>
+<p>Lazy boolean expressions evaluate the left and right hand side
+expressions separately.</p>
+<p>The first, logical and, will only evaluate the right hand side if the
+left hand side is <code>true</code>, and will evaluate to <code>true</code> if both
+expressions are <code>true</code>.</p>
+<p>The second, logical or, will only evaluate the right hand side if the
+left hand side is <code>false</code>, and will evaluate to <code>true</code> if either
+expression is <code>true</code>.</p>
+<dl class="syn"><dt>LazyBooleanExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>&amp;&amp;</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>||</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h3 id="type-comparison-expressions"><a class="header" href="#type-comparison-expressions">Type Comparison Expressions</a></h3>
+<p>Logical type equality. Will check if the type of the left hand side is
+equal to or a descendant of the right hand side.</p>
+<dl class="syn"><dt>TypeComparisonExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>is</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h3 id="signed-difference-expressions"><a class="header" href="#signed-difference-expressions">Signed Difference Expressions</a></h3>
+<p>Signed difference. Will return <code>-1</code> if the left hand side is lesser
+than the right hand side, <code>0</code> if they are equal, and <code>1</code> if the left
+hand side is greater than the right hand side.</p>
+<dl class="syn"><dt>SignedDifferenceExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>&lt;&gt;=</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h3 id="logical-expressions"><a class="header" href="#logical-expressions">Logical Expressions</a></h3>
+<p>The logical expressions are:</p>
+<ul>
+<li>Bit-wise and.</li>
+<li>Bit-wise exclusive or.</li>
+<li>Bit-wise or.</li>
+</ul>
+<dl class="syn"><dt>LogicalExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>&amp;</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>^</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>|</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h3 id="scope-expressions"><a class="header" href="#scope-expressions">Scope Expressions</a></h3>
+<p>Not implemented. Will simply cause a compiler error.</p>
+<dl class="syn"><dt>ScopeExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>::</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h3 id="assignment-expressions"><a class="header" href="#assignment-expressions">Assignment Expressions</a></h3>
+<p>Assignment expressions are a subset of binary expressions which <em>are
+never constant expressions</em>. They assign a value to another value.</p>
+<p>Besides the normal assignment operation, there are assignment
+operations for assigning the result of arithmetic expressions and
+logical expressions.</p>
+<dl class="syn"><dt>AssignmentExpression</dt><dd>
+<ul>
+<li><a href="#expressions">Expression</a> <code>=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>+=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>-=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>*=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>/=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>%=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>&lt;&lt;=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>&gt;&gt;=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>&gt;&gt;&gt;=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>|=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>&amp;=</code> <a href="#expressions">Expression</a></li>
+<li><a href="#expressions">Expression</a> <code>^=</code> <a href="#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h2 id="ternary-expressions"><a class="header" href="#ternary-expressions">Ternary Expressions</a></h2>
+<p>The ternary expression will evaluate to the left hand side if the
+expression is <code>true</code>, or the right hand side if it is <code>false</code>.</p>
+<dl class="syn"><dt>TernaryExpression</dt><dd>
+<p><a href="#expressions">Expression</a> <code>?</code> <a href="#expressions">Expression</a> <code>:</code> <a href="#expressions">Expression</a></p>
+</dd></dl>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="https://github.com/marrub--/zdoom-doc/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="https://github.com/marrub--/zdoom-doc">contribute to the project!</a> Originally authored by Alison G. Watson (e/he/they) and fira watson (they/them.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../ZScript/Enumerations.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../ZScript/Fundamentals.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../ZScript/Enumerations.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../ZScript/Fundamentals.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+    </body>
+</html>

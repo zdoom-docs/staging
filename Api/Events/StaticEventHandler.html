@@ -1,0 +1,592 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>StaticEventHandler - ZDoom Docs</title>
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../../css/elements.css">
+        
+        <link rel="stylesheet" href="../../css/hljs.css">
+        
+        <link rel="stylesheet" href="../../css/restyle.css">
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../Introduction.html">Introduction</a></li><li class="chapter-item "><a href="../../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Meta/Style.html">Style</a></li></ol></li><li class="chapter-item "><a href="../../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ZScript/Classes.html">Class Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Expressions.html">Expressions</a></li><li class="chapter-item "><a href="../../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item "><a href="../../ZScript/Methods.html">Method Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Statements.html">Statements</a></li><li class="chapter-item "><a href="../../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../../Acs.html">ACS</a></li><li class="chapter-item expanded "><a href="../../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../../Api/Base/Object.html">Object</a></li><li class="chapter-item "><a href="../../Api/Base/State.html">State</a></li><li class="chapter-item "><a href="../../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../../Api/Basic/Color.html">color</a></li><li class="chapter-item "><a href="../../Api/Basic/String.html">string</a></li><li class="chapter-item "><a href="../../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item "><a href="../../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../../Api/Drawing/Console.html">Console</a></li><li class="chapter-item "><a href="../../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item expanded "><a href="../../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item expanded "><a href="../../Api/Events/StaticEventHandler.html" class="active">StaticEventHandler</a></li><li class="chapter-item "><a href="../../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item "><a href="../../Api/Globals.html">Globals</a></li><li class="chapter-item "><a href="../../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item "><a href="../../Api/Inter/StatusScreen.html">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        
+                        <a href="http://github.com/marrub--/zdoom-doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="staticeventhandler"><a class="header" href="#staticeventhandler">StaticEventHandler</a></h1>
+<details><summary>Show declaration</summary>
+<pre><code class="language-zsc">class StaticEventHandler : Object play version(&quot;2.4&quot;);
+</code></pre>
+</details>
+<p>Static event handlers handle events on a per-instance level. This
+means that they are registered when you start GZDoom, and un-register
+when you exit GZDoom. This is unlike <span class=code><a href="EventHandler.html">EventHandler</a></span>, which registers
+when a new game or map is started, and un-registers when it ends.</p>
+<p>All of the virtual functions on StaticEventHandler have empty
+implementations by default, so you only need to override the events
+your event handler needs to override.</p>
+<p>Differences in virtual function behaviour are listed in the
+<span class=code><a href="EventHandler.html">EventHandler</a></span> documentation.</p>
+<p><span class="label yellow">Nondeterministic — Do not rely on its outcome</span> Because static event
+handlers are per-instance rather than per-game, care should be taken
+to make sure that variables kept in a static event handler don't
+interact with the game directly, or it will act nondeterministically
+and cause a desync.</p>
+<h2 id="class-methods"><a class="header" href="#class-methods">Class Methods</a></h2>
+<dl class="api"><dt id="mthd-Find">
+<code class="language-zsc">
+<p>clearScope static StaticEventHandler <a href="#mthd-Find">Find</a>(class&lt;StaticEventHandler&gt; type)</p>
+</code>
+</dt>
+<dd>
+<p>Finds and returns the static event handler with the type <code>type</code> if it
+is registered, or <code>null</code> if it does not exist.</p>
+</dd>
+</dl>
+<details><summary>Overview of class methods</summary><p><span class=code><a href="#mthd-Find">Find</a></span></p></details>
+<h2 id="instance-methods"><a class="header" href="#instance-methods">Instance Methods</a></h2>
+<dl class="api"><dt id="mthd-OnRegister">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-OnRegister">OnRegister</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called when this type is registered. This is where you should call
+<span class=code><a href="#mthd-SetOrder">SetOrder</a></span>, and set <span class=code><a href="#memb-IsUiProcessor">IsUiProcessor</a></span> and <span class=code><a href="#memb-RequireMouse">RequireMouse</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-OnUnregister">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-OnUnregister">OnUnregister</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called when this type is un-registered. With static event handlerss,
+this is called when the engine shuts down, so it isn't particularly
+useful.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldLoaded">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldLoaded">WorldLoaded</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called directly after the status bar is attached to the player and
+after ReOpen ACS scripts are called, just before the display is
+flushed and auto-save is done.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldUnloaded">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldUnloaded">WorldUnloaded</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called directly after Unloading ACS scripts, just before the level
+is changed.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldThingSpawned">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldThingSpawned">WorldThingSpawned</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called directly after <span class=code><a href="../Base/Thinker.html">Thinker</a>.<a href="../Base/Thinker.html#mthd-PostBeginPlay">PostBeginPlay</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldThingDied">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldThingDied">WorldThingDied</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called after <span class=code><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-MorphedDeath">MorphedDeath</a></span>, <span class=code><a href="../Inventory.html">Inventory</a>.<a href="../Inventory.html#mthd-OwnerDied">OwnerDied</a></span>, and the
+target is set to the damage source, just before Kill ACS scripts are
+called and the rest of the death handling is done.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldThingRevived">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldThingRevived">WorldThingRevived</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called when an actor is revived, after everything is finished.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldThingDamaged">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldThingDamaged">WorldThingDamaged</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called directly directly after <span class=code><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-DamageMobj">DamageMobj</a></span> finishes, or
+directly before <span class=code><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-Die">Die</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldThingDestroyed">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldThingDestroyed">WorldThingDestroyed</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called at the beginning of <span class=code><a href="../Base/Object.html">Object</a>.<a href="../Base/Object.html#mthd-OnDestroy">OnDestroy</a></span> on <span class=code><a href="../Base/Actor.html">Actor</a></span>s.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldLinePreActivated">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldLinePreActivated">WorldLinePreActivated</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called directly after a line is tested for activation, before any
+other activation specials are called (such as checking for keys,
+executing the line special, etc.)</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldLineActivated">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldLineActivated">WorldLineActivated</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called directly after a line's special is executed, if it succeeded,
+before any other handling (such as changing a switch's texture) is
+completed.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldSectorDamaged">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldSectorDamaged">WorldSectorDamaged</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called when a sector is damaged if it has any health groups, before
+any other handling is done.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldLineDamaged">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldLineDamaged">WorldLineDamaged</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called when a line is damaged if it has any health groups, before any
+other handling is done.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldLightning">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldLightning">WorldLightning</a>(<a href="WorldEvent.html">WorldEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called when lightning strikes, directly after the sound is played,
+just before Lightning ACS scripts are called.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-WorldTick">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-WorldTick">WorldTick</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called on every world tick, after interpolators are updated, world
+freeze is updated, sight counters are reset, particles have run their
+thinkers, and players have run their thinkers, just before the status
+bar is ticked, the level ticks, thinkers are ticked, and the level
+time is updated. This is not called when the game is paused, and its
+execution is entirely deterministic regardless of how this event
+handler is applied.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-RenderOverlay">
+<code class="language-zsc">
+<p>virtual ui void <a href="#mthd-RenderOverlay">RenderOverlay</a>(<a href="RenderEvent.html">RenderEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Despite the name, this is actually run on the status bar, specifically
+in <span class=code><a href="../Ui/BaseStatusBar.html">BaseStatusBar</a>.<a href="../Ui/BaseStatusBar.html#mthd-DrawTopStuff">DrawTopStuff</a></span>. It is run after <span class=code><a href="../Ui/HudMessage.html">HudMessage</a></span>s are
+drawn and power-ups are drawn, just before the log is drawn. You may
+use <span class=code><a href="../Drawing/Screen.html">Screen</a></span> functions in this function.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-RenderUnderlay">
+<code class="language-zsc">
+<p>virtual ui void <a href="#mthd-RenderUnderlay">RenderUnderlay</a>(<a href="RenderEvent.html">RenderEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Despite the name, this is actually run on the status bar, specifically
+in the currently-not-exposed <span class=code><a href="../Ui/BaseStatusBar.html">BaseStatusBar</a></span>.DrawBottomStuff. It is
+run just before <span class=code><a href="../Ui/HudMessage.html">HudMessage</a></span>s are drawn. You may use <span class=code><a href="../Drawing/Screen.html">Screen</a></span>
+functions in this function.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-PlayerEntered">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-PlayerEntered">PlayerEntered</a>(<a href="PlayerEvent.html">PlayerEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called during level load when each player enters the game, after the
+camera is set but just before Return ACS scripts are called.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-PlayerRespawned">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-PlayerRespawned">PlayerRespawned</a>(<a href="PlayerEvent.html">PlayerEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called when a player spawns, directly after the teleport fog is
+spanwed and just before Respawn ACS scripts are called. Also called
+similarly at the end of the <span class=code><a href="../Players/PlayerPawn.html">PlayerPawn</a>.<a href="../Players/PlayerPawn.html#mthd-OnRespawn">OnRespawn</a></span> function, for
+example when the <span class=code><a href="../../ConsoleCommands.html#ccmd-resurrect">resurrect</a></span> cheat is used.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-PlayerDied">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-PlayerDied">PlayerDied</a>(<a href="PlayerEvent.html">PlayerEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called after <span class=code><a href="#mthd-WorldThingDied">WorldThingDied</a></span> and <span class=code><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-GetDeathHeight">GetDeathHeight</a></span>, and
+after the actor's thing special is activated, when the obituary has
+been displayed, just before Death ACS scripts have been called.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-PlayerDisconnected">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-PlayerDisconnected">PlayerDisconnected</a>(<a href="PlayerEvent.html">PlayerEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called when a bot is removed and when a player disconnects from the game, just
+before <code>DISCONNECT</code> ACS scripts are called.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-UiProcess">
+<code class="language-zsc">
+<p>virtual ui bool <a href="#mthd-UiProcess">UiProcess</a>(<a href="UiEvent.html">UiEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called only if <span class=code><a href="#memb-IsUiProcessor">IsUiProcessor</a></span> is <code>true</code>. Called when a GUI event is
+dispatched by the engine, for example when the UI is active and the
+player has pressed a key or moved the mouse. Mouse movements will only
+be captured if <span class=code><a href="#memb-RequireMouse">RequireMouse</a></span> is <code>true</code>. Because this interacts
+directly with the OS it is not part of the game simulation, therefore
+has UI scope and must dispatch commands to the game as networked
+events. If the return value is <code>true</code>, the function will block any
+further handlers from processing this event, essentially &quot;eating&quot; it.
+If the return value is <code>false</code>, other handlers will continue to be
+called as normal.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-UiTick">
+<code class="language-zsc">
+<p>virtual ui void <a href="#mthd-UiTick">UiTick</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Despite what it may seem, this function is actually called
+deterministically within the game loop, just before the level is
+ticked and after the player's network commands are created. Despite
+this, it is UI scope, so it should be used to process UI code.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-PostUiTick">
+<code class="language-zsc">
+<p>virtual ui void <a href="#mthd-PostUiTick">PostUiTick</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Similar to <span class=code><a href="#mthd-UiTick">UiTick</a></span>, this is also deterministic, but called after
+all other tickers.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-InputProcess">
+<code class="language-zsc">
+<p>virtual ui bool <a href="#mthd-InputProcess">InputProcess</a>(<a href="InputEvent.html">InputEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>The same as <span class=code><a href="#mthd-UiProcess">UiProcess</a></span>, but this is only called when inputs are
+being directed to the game, rather than to the GUI. All of the same
+restrictions apply to this as they do to <span class=code><a href="#mthd-UiProcess">UiProcess</a></span>, and the return
+value acts the same.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-ConsoleProcess">
+<code class="language-zsc">
+<p>virtual ui void <a href="#mthd-ConsoleProcess">ConsoleProcess</a>(<a href="ConsoleEvent.html">ConsoleEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called when network events which have no player activator are
+received.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-NetworkProcess">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-NetworkProcess">NetworkProcess</a>(<a href="ConsoleEvent.html">ConsoleEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called when network events which have a player activator are received.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-CheckReplacement">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-CheckReplacement">CheckReplacement</a>(<a href="ReplaceEvent.html">ReplaceEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called during actor replacement, after skill replacement is done, but
+before any other replacement (such as actor replacements done in
+ZScript actor definitions.)</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-CheckReplacee">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-CheckReplacee">CheckReplacee</a>(<a href="ReplacedEvent.html">ReplacedEvent</a> e)</p>
+</code>
+</dt>
+<dd>
+<p>Called during actor replacement, essentially allowing one to implement
+a custom function to replace the <code>replaces ActorType</code> class flag with
+another class when an actor is spawned. This is useful particularly
+for boss monsters that have hard-coded death sequences that the player
+may want to replace with a random actor.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-NewGame">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-NewGame">NewGame</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called on a new game, directly after level data is reset and right
+before the level is set up.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-SetOrder">
+<code class="language-zsc">
+<p>void <a href="#mthd-SetOrder">SetOrder</a>(int order)</p>
+</code>
+</dt>
+<dd>
+<p>Sets the ordering of this event handler, which can be read from
+<span class=code><a href="#memb-Order">Order</a></span>.</p>
+</dd>
+</dl>
+<details><summary>Overview of instance methods</summary><p><span class=code><a href="#mthd-CheckReplacee">CheckReplacee</a></span>, <span class=code><a href="#mthd-CheckReplacement">CheckReplacement</a></span>, <span class=code><a href="#mthd-ConsoleProcess">ConsoleProcess</a></span>, <span class=code><a href="#mthd-InputProcess">InputProcess</a></span>, <span class=code><a href="#mthd-NetworkProcess">NetworkProcess</a></span>, <span class=code><a href="#mthd-NewGame">NewGame</a></span>, <span class=code><a href="#mthd-OnRegister">OnRegister</a></span>, <span class=code><a href="#mthd-OnUnregister">OnUnregister</a></span>, <span class=code><a href="#mthd-PlayerDied">PlayerDied</a></span>, <span class=code><a href="#mthd-PlayerDisconnected">PlayerDisconnected</a></span>, <span class=code><a href="#mthd-PlayerEntered">PlayerEntered</a></span>, <span class=code><a href="#mthd-PlayerRespawned">PlayerRespawned</a></span>, <span class=code><a href="#mthd-PostUiTick">PostUiTick</a></span>, <span class=code><a href="#mthd-RenderOverlay">RenderOverlay</a></span>, <span class=code><a href="#mthd-RenderUnderlay">RenderUnderlay</a></span>, <span class=code><a href="#mthd-SetOrder">SetOrder</a></span>, <span class=code><a href="#mthd-UiProcess">UiProcess</a></span>, <span class=code><a href="#mthd-UiTick">UiTick</a></span>, <span class=code><a href="#mthd-WorldLightning">WorldLightning</a></span>, <span class=code><a href="#mthd-WorldLineActivated">WorldLineActivated</a></span>, <span class=code><a href="#mthd-WorldLineDamaged">WorldLineDamaged</a></span>, <span class=code><a href="#mthd-WorldLinePreActivated">WorldLinePreActivated</a></span>, <span class=code><a href="#mthd-WorldLoaded">WorldLoaded</a></span>, <span class=code><a href="#mthd-WorldSectorDamaged">WorldSectorDamaged</a></span>, <span class=code><a href="#mthd-WorldThingDamaged">WorldThingDamaged</a></span>, <span class=code><a href="#mthd-WorldThingDestroyed">WorldThingDestroyed</a></span>, <span class=code><a href="#mthd-WorldThingDied">WorldThingDied</a></span>, <span class=code><a href="#mthd-WorldThingRevived">WorldThingRevived</a></span>, <span class=code><a href="#mthd-WorldThingSpawned">WorldThingSpawned</a></span>, <span class=code><a href="#mthd-WorldTick">WorldTick</a></span>, <span class=code><a href="#mthd-WorldUnloaded">WorldUnloaded</a></span></p></details>
+<h2 id="instance-members"><a class="header" href="#instance-members">Instance Members</a></h2>
+<dl class="api"><dt id="memb-Order">
+<code class="language-zsc">
+<p>readOnly int <a href="#memb-Order">Order</a></p>
+</code>
+</dt>
+<dd>
+<p>The arbitrary ordering of this event handler relative to other ones.
+Event handlers with lower ordering numbers have their functions
+executed first. You can set this variable with <span class=code><a href="#mthd-SetOrder">SetOrder</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-IsUiProcessor">
+<code class="language-zsc">
+<p>bool <a href="#memb-IsUiProcessor">IsUiProcessor</a></p>
+</code>
+</dt>
+<dd>
+<p>If <code>true</code>, GUI events will be sent to this event handler through
+<span class=code><a href="#mthd-UiProcess">UiProcess</a></span>. This is mainly for optimization purposes.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-RequireMouse">
+<code class="language-zsc">
+<p>bool <a href="#memb-RequireMouse">RequireMouse</a></p>
+</code>
+</dt>
+<dd>
+<p>If <code>true</code>, mouse events will be sent to this event handler through
+<span class=code><a href="#mthd-InputProcess">InputProcess</a></span> and/or <span class=code><a href="#mthd-UiProcess">UiProcess</a></span>. This is mainly for optimization
+purposes.</p>
+</dd>
+</dl>
+<details><summary>Overview of instance members</summary><p><span class=code><a href="#memb-IsUiProcessor">IsUiProcessor</a></span>, <span class=code><a href="#memb-Order">Order</a></span>, <span class=code><a href="#memb-RequireMouse">RequireMouse</a></span></p></details>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="https://github.com/marrub--/zdoom-doc/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="https://github.com/marrub--/zdoom-doc">contribute to the project!</a> Originally authored by Alison G. Watson (e/he/they) and fira watson (they/them.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../Api/Events/ReplacedEvent.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../Api/Events/UiEvent.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../Api/Events/ReplacedEvent.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../Api/Events/UiEvent.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+    </body>
+</html>

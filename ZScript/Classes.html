@@ -1,0 +1,494 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Class Definitions - ZDoom Docs</title>
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../css/elements.css">
+        
+        <link rel="stylesheet" href="../css/hljs.css">
+        
+        <link rel="stylesheet" href="../css/restyle.css">
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../Introduction.html">Introduction</a></li><li class="chapter-item "><a href="../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Meta/Style.html">Style</a></li></ol></li><li class="chapter-item expanded "><a href="../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ZScript/Classes.html" class="active">Class Definitions</a></li><li class="chapter-item "><a href="../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item "><a href="../ZScript/Expressions.html">Expressions</a></li><li class="chapter-item "><a href="../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item "><a href="../ZScript/Methods.html">Method Definitions</a></li><li class="chapter-item "><a href="../ZScript/Statements.html">Statements</a></li><li class="chapter-item "><a href="../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../Acs.html">ACS</a></li><li class="chapter-item "><a href="../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../Api/Base/Object.html">Object</a></li><li class="chapter-item "><a href="../Api/Base/State.html">State</a></li><li class="chapter-item "><a href="../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../Api/Basic/Color.html">color</a></li><li class="chapter-item "><a href="../Api/Basic/String.html">string</a></li><li class="chapter-item "><a href="../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item "><a href="../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../Api/Drawing/Console.html">Console</a></li><li class="chapter-item "><a href="../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item "><a href="../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item "><a href="../Api/Events/StaticEventHandler.html">StaticEventHandler</a></li><li class="chapter-item "><a href="../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item "><a href="../Api/Globals.html">Globals</a></li><li class="chapter-item "><a href="../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen.html">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        
+                        <a href="http://github.com/marrub--/zdoom-doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="class-definitions"><a class="header" href="#class-definitions">Class Definitions</a></h1>
+<p>A class defines an object type within ZScript, and is most of what
+you'll be creating within the language.</p>
+<p>All classes inherit from other classes. The base class can be set
+within the class header, but if it is not the class will automatically
+inherit from <code>Object</code>.</p>
+<p>Classes are subject to <a href="../Concepts/ObjectScoping.html">object scoping</a>. They are also implicitly
+reference values, and therefore can be null.</p>
+<p><code>new</code> is used to instantiate a new instance of a class.</p>
+<p>Classes that inherit from Actor can replace other actors when spawned
+in maps, and can also be used freely in DECORATE.</p>
+<p>The rest of the translation unit can be used as class content. Note
+that with this syntax you cannot use include directives afterward.</p>
+<p>If the class is defined within the same archive as the current file,
+then one can continue a class definition by using <code>extend</code>.</p>
+<dl class="syn"><dt>ClassDefinition</dt><dd>
+<ul>
+<li><a href="#class-definitions">ClassHeader</a> <code>{</code> <a href="#class-contents">ClassContent</a>* <code>}</code></li>
+<li><a href="#class-definitions">ClassHeader</a> <code>;</code> <a href="#class-contents">ClassContent</a>*</li>
+</ul>
+</dd><dt>ClassHeader</dt><dd>
+<ul>
+<li><code>class</code> <a href="Fundamentals.html#identifiers">Identifier</a> (<code>:</code> <a href="Fundamentals.html#identifiers">Identifier</a>) <a href="#class-definition-flags">ClassDefinitionFlag</a>*</li>
+<li><code>extend</code> <code>class</code> <a href="Fundamentals.html#identifiers">Identifier</a></li>
+</ul>
+</dd></dl>
+<div class="toc contents">
+<ol>
+<li><a href="#class-definition-flags">Class Definition Flags</a></li>
+<li><a href="#class-contents">Class Contents</a></li>
+<li><a href="#property-definitions">Property Definitions</a></li>
+<li><a href="#flag-definitions">Flag Definitions</a></li>
+<li><a href="#default-blocks">Default Blocks</a>
+<ol>
+<li><a href="#default-special-properties">Default Special Properties</a></li>
+</ol>
+</li>
+<li><a href="#state-blocks">State Blocks</a>
+<ol>
+<li><a href="#state-functions">State Functions</a></li>
+</ol>
+</li>
+<li><a href="#examples">Examples</a>
+<ol>
+<li><a href="#class-headers">Class Headers</a></li>
+<li><a href="#class-definitions-1">Class Definitions</a></li>
+<li><a href="#property-definitions-1">Property Definitions</a></li>
+<li><a href="#flag-definitions-1">Flag Definitions</a></li>
+</ol>
+</li>
+</ol>
+</div>
+<h2 id="class-definition-flags"><a class="header" href="#class-definition-flags">Class Definition Flags</a></h2>
+<table><thead><tr><th align="left">Keyword</th><th align="left">Description</th></tr></thead><tbody>
+<tr><td align="left"><code>abstract</code></td><td align="left">Cannot be instantiated with <code>new</code>.</td></tr>
+<tr><td align="left"><code>native</code></td><td align="left">Class is from the engine. Only usable internally.</td></tr>
+<tr><td align="left"><code>play</code></td><td align="left">Class has Play scope.</td></tr>
+<tr><td align="left"><code>replaces</code></td><td align="left">Replaces another class with this class. Only works with descendants of <code>Actor</code>.</td></tr>
+<tr><td align="left"><code>ui</code></td><td align="left">Class has UI scope.</td></tr>
+<tr><td align="left"><code>version</code></td><td align="left">Restricted to ZScript version <code>ver</code> or higher.</td></tr>
+</tbody></table>
+<dl class="syn"><dt>ClassDefinitionFlags</dt><dd>
+<ul>
+<li><code>abstract</code></li>
+<li><code>native</code></li>
+<li><code>play</code></li>
+<li><code>replaces</code> <a href="Fundamentals.html#identifiers">Identifier</a></li>
+<li><code>ui</code></li>
+<li><code>version</code> <code>(</code> <a href="Fundamentals.html#string-literals">StringLiteral</a> <code>)</code></li>
+</ul>
+</dd></dl>
+<h2 id="class-contents"><a class="header" href="#class-contents">Class Contents</a></h2>
+<dl class="syn"><dt>ClassContent</dt><dd>
+<ul>
+<li><a href="Constants.html#constant-definitions">ConstantDefinition</a></li>
+<li><a href="#default-blocks">DefaultBlock</a></li>
+<li><a href="Enumerations.html#enumeration-definitions">EnumerationDefinition</a></li>
+<li><a href="#flag-definitions">FlagDefinition</a></li>
+<li><a href="Members.html#member-declarations">MemberDeclaration</a></li>
+<li><a href="Methods.html#method-definitions">MethodDefinition</a></li>
+<li><a href="#property-definitions">PropertyDefinition</a></li>
+<li><a href="#state-blocks">StateBlock</a></li>
+<li><a href="Structures.html#structure-definitions">StructureDefinition</a></li>
+</ul>
+</dd></dl>
+<h2 id="property-definitions"><a class="header" href="#property-definitions">Property Definitions</a></h2>
+<p>Property definitions are used within classes to define defaultable
+attributes on <code>Actor</code>s. They are not valid on classes not derived from
+<code>Actor</code>.</p>
+<p>When registered, a property will be available in the <code>default</code> block
+as <code>ClassName.PropertyName</code>. Properties can be given multiple members
+to initialize.</p>
+<p>Properties defined in ZScript are usable from DECORATE.</p>
+<dl class="syn"><dt>PropertyDefinition</dt><dd>
+<p><code>property</code> <a href="Fundamentals.html#identifiers">Identifier</a> <code>:</code> <a href="Fundamentals.html#identifiers">Identifier</a> (<code>,</code> <a href="Fundamentals.html#identifiers">Identifier</a>)* <code>;</code></p>
+</dd></dl>
+<h2 id="flag-definitions"><a class="header" href="#flag-definitions">Flag Definitions</a></h2>
+<p><span class="label purple">3.7.0+</span></p>
+<p>Flag definitions are used within classes to define defaultable boolean
+flags on actors. They are not valid on classes not derived from Actor.</p>
+<p>When registered, a flag will be available in the <code>default</code> block as
+<code>ClassName.FlagName</code>, as well as a member as <code>bFlagName</code>.</p>
+<p>Each flag operates on a singular bit of any integer member of the
+class. The integer must be exactly 32 bits, though if it is signed or
+not does not matter. This means each backing integer can hold exactly
+32 flags each (assuming no duplicated flags,) and more will require
+another one to be added. (Internally, the <code>Actor</code> flags are currently
+up to over 8 backing integers.)</p>
+<p>A flag's backing integer may not be <code>meta</code>, although it may be
+<code>readOnly</code>, <code>private</code>, or any other access modifier. The generated
+flag member will be publicly visible regardless of the backing
+integer's visibility.</p>
+<p>Flags defined in ZScript are usable from DECORATE.</p>
+<dl class="syn"><dt>FlagDefinition</dt><dd>
+<p><code>flagDef</code> <a href="Fundamentals.html#identifiers">Identifier</a> <code>:</code> <a href="Fundamentals.html#identifiers">Identifier</a> <code>,</code> <a href="Fundamentals.html#integer-literals">IntegerLiteral</a> <code>;</code></p>
+</dd></dl>
+<h2 id="default-blocks"><a class="header" href="#default-blocks">Default Blocks</a></h2>
+<p>Default blocks are used on classes derived from Actor to create an
+overridable list of defaults to properties, allowing for swift
+creation of flexible actor types.</p>
+<p>In DECORATE, this is everything that isn't in the <code>states</code> block, but
+in ZScript, for syntax flexibility purposes, it must be enclosed in a
+block with <code>default</code> at the beginning.</p>
+<dl class="syn"><dt>DefaultBlock</dt><dd>
+<p><code>default</code> <code>{</code> <a href="#default-blocks">DefaultDefinition</a>* <code>}</code></p>
+</dd><dt>DefaultDefinition</dt><dd>
+<ul>
+<li><a href="#default-blocks">DefaultFlag</a></li>
+<li><a href="#default-blocks">DefaultProperty</a></li>
+</ul>
+</dd><dt>DefaultFlag</dt><dd>
+<ul>
+<li><a href="Fundamentals.html#identifiers">Identifier</a> <code>;</code>?</li>
+</ul>
+<ul>
+<li><a href="Fundamentals.html#identifiers">Identifier</a> <code>;</code>?</li>
+</ul>
+</dd><dt>DefaultProperty</dt><dd>
+<ul>
+<li><a href="Fundamentals.html#identifiers">Identifier</a> (<code>.</code> <a href="Fundamentals.html#identifiers">Identifier</a>)? <a href="Expressions.html#constant-expressions">ConstantExpression</a> <code>;</code></li>
+<li><a href="#default-special-properties">DefaultSpecialProperty</a> <code>;</code></li>
+<li><code>DamageFunction</code> <a href="Expressions.html#expressions">Expression</a> <code>;</code></li>
+</ul>
+</dd></dl>
+<h3 id="default-special-properties"><a class="header" href="#default-special-properties">Default Special Properties</a></h3>
+<p>There are several special properties which add pre-defined flag sets
+onto the actor:</p>
+<table><thead><tr><th align="left">Keyword</th><th align="left">Description</th></tr></thead><tbody>
+<tr><td align="left"><code>ClearFlags</code></td><td align="left">Clears all flags except <code>ARGSDEFINED</code>.</td></tr>
+<tr><td align="left"><code>Monster</code></td><td align="left">Adds the flags <code>SHOOTABLE COUNTKILL SOLID PUSHWALL MCROSS PASSMOBJ ISMONSTER CANUSEWALLS</code>.</td></tr>
+<tr><td align="left"><code>Projectile</code></td><td align="left">Adds the flags <code>NOBLOCKMAP NOGRAVITY DROPOFF MISSILE IMPACT PCROSS NOTELEPORT</code>, and if the game is Heretic or Hexen, <code>BLOODSPLATTER</code>.</td></tr>
+</tbody></table>
+<dl class="syn"><dt>DefaultSpecialProperty</dt><dd>
+<ul>
+<li><code>ClearFlags</code></li>
+<li><code>Monster</code></li>
+<li><code>Projectile</code></li>
+</ul>
+</dd></dl>
+<h2 id="state-blocks"><a class="header" href="#state-blocks">State Blocks</a></h2>
+<p>These are the same as DECORATE, but states that do not have function
+blocks require terminating semicolons. Double quotes around <code>#</code> and
+<code>-</code> are no longer required. State blocks can be subject to <a href="../Concepts/ActionScoping.html">action
+scoping</a> if explicitly specified.</p>
+<dl class="syn"><dt>StateBlock</dt><dd>
+<p><code>states</code> (<code>(</code> <a href="Methods.html#action-scopes">ActionScope</a> (<code>,</code> <a href="Methods.html#action-scopes">ActionScope</a>)* <code>)</code>)? <code>{</code>
+<a href="#state-blocks">StateDefinition</a> <code>}</code></p>
+</dd><dt>StateDefinition</dt><dd>
+<ul>
+<li><a href="Fundamentals.html#identifiers">Identifier</a> <code>:</code></li>
+<li><a href="Fundamentals.html#character-types">Character</a>{4} <a href="Fundamentals.html#character-types">Character</a>+ <a href="#state-blocks">StateTime</a> <a href="#state-blocks">StateOption</a>* <a href="#state-functions">StateFunction</a></li>
+</ul>
+</dd><dt>StateTime</dt><dd>
+<ul>
+<li><a href="Fundamentals.html#integer-literals">IntegerLiteral</a></li>
+<li><code>random</code> <code>(</code> <a href="Fundamentals.html#integer-literals">IntegerLiteral</a> <code>,</code> <a href="Fundamentals.html#integer-literals">IntegerLiteral</a> <code>)</code></li>
+</ul>
+</dd><dt>StateOption</dt><dd>
+<ul>
+<li><code>bright</code></li>
+<li><code>fast</code></li>
+<li><code>slow</code></li>
+<li><code>noDelay</code></li>
+<li><code>canRaise</code></li>
+<li><code>offset</code> <code>(</code> <a href="Fundamentals.html#integer-literals">IntegerLiteral</a> <code>,</code> <a href="Fundamentals.html#integer-literals">IntegerLiteral</a> <code>)</code></li>
+<li><code>light</code> <code>(</code> <a href="Fundamentals.html#string-literals">StringLiteral</a> (<code>,</code> <a href="Fundamentals.html#string-literals">StringLiteral</a>)* <code>)</code></li>
+</ul>
+</dd></dl>
+<h3 id="state-functions"><a class="header" href="#state-functions">State Functions</a></h3>
+<p>You may attach no action function to the state. You can also attach a
+function with the specified arguments, or create an anonymous action
+function and attach it.</p>
+<dl class="syn"><dt>StateFunction</dt><dd>
+<ul>
+<li><code>;</code></li>
+<li><a href="Fundamentals.html#identifiers">Identifier</a> <code>(</code> <a href="Expressions.html#argument-lists">ArgumentList</a>? <code>)</code> <code>;</code></li>
+<li><code>{</code> <a href="Statements.html#statements">Statement</a>* <code>}</code></li>
+</ul>
+</dd></dl>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="class-headers"><a class="header" href="#class-headers">Class Headers</a></h3>
+<pre><code class="language-zsc">// Automatically inherits Object, similar to the &quot;actor&quot; keyword in DECORATE.
+class MyCoolObject
+{
+}
+</code></pre>
+<pre><code class="language-zsc">// Equivalent to the above.
+class MyCoolObjectExplicit : Object
+{
+}
+</code></pre>
+<pre><code class="language-zsc">// Has &quot;Play&quot; scope.
+class MyCoolScopedObject play
+{
+}
+</code></pre>
+<pre><code class="language-zsc">// Inherits Thinker and can override functions on it.
+class MyCoolThinker : Thinker
+{
+}
+</code></pre>
+<pre><code class="language-zsc">// Some actor.
+class OtherActor : Actor
+{
+}
+</code></pre>
+<pre><code class="language-zsc">// Replaces &quot;OtherActor.&quot;
+class MyCoolActor : Actor replaces OtherActor
+{
+}
+</code></pre>
+<pre><code class="language-zsc">// Can only be inherited.
+class MyCoolInterface abstract
+{
+}
+</code></pre>
+<h3 id="class-definitions-1"><a class="header" href="#class-definitions-1">Class Definitions</a></h3>
+<pre><code class="language-zsc">// Basic class definition with a member variable and member function.
+class BasicClass
+{
+	// &quot;m_Thing&quot; is attached to any &quot;instance&quot; of BasicClass.
+	int m_Thing;
+
+	// Changes &quot;m_Thing&quot; to 500 on an instance of BasicClass.
+	void ChangeThing()
+	{
+		m_Thing = 500;
+	}
+}
+</code></pre>
+<pre><code class="language-zsc">// Alternate syntax usage.
+// This class spans from this point to the end of the file.
+class TheWholeFileIsAClassOhNo;
+
+int m_MyMember;
+
+// End of file, end of class.
+</code></pre>
+<h3 id="property-definitions-1"><a class="header" href="#property-definitions-1">Property Definitions</a></h3>
+<pre><code class="language-zsc">// A class with some properties.
+class MyCoolActor : Actor
+{
+	// You can set defined properties in a &quot;default&quot; block like in DECORATE.
+	// This will also be available in DECORATE code that inherits your class!
+	default
+	{
+		MyCoolActor.MyCoolMember 5000;
+		MyCoolActor.MyCoolMemberList 501, 502;
+	}
+
+	// Declare some members.
+	int m_MyCoolMember;
+	int m_CoolMember1, m_CoolMember2;
+
+	// Declare some properties attached to our members.
+	property MyCoolMember: m_MyCoolMember;
+	property MyCoolMemberList: m_CoolMember1, m_CoolMember2;
+}
+</code></pre>
+<h3 id="flag-definitions-1"><a class="header" href="#flag-definitions-1">Flag Definitions</a></h3>
+<pre><code class="language-zsc">// A class with some flags.
+class MyCoolActorWithFlags : Actor
+{
+	// You can set defined flag in a &quot;default&quot; block like in DECORATE.
+	// This will also be available in DECORATE code that inherits your class!
+	// Hey, those sentences sounded familiar...
+	default
+	{
+		+MyCoolActorWithFlags.ThisOneIsOn
+		-MyCoolActorWithFlags.ThisOneIsOff
+	}
+
+	// Declare a flag field for all of the flags. This can hold up to 32 flags.
+	int m_Flags;
+
+	// Declare the flags, one at a time...
+	flagDef ThisOneIsOn: m_Flags, 0;
+	flagDef ThisOneIsOff: m_Flags, 1;
+	flagDef ThisOneAliasesOn: m_Flags, 0;
+
+	// Unnecessary, since you can just access it directly, but this demonstrates
+	// how declared flags can be used in methods.
+	bool CheckIfOnIsOn()
+	{
+		return bThisOneIsOn;
+	}
+}
+</code></pre>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="https://github.com/marrub--/zdoom-doc/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="https://github.com/marrub--/zdoom-doc">contribute to the project!</a> Originally authored by Alison G. Watson (e/he/they) and fira watson (they/them.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../ZScript.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../ZScript/Constants.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../ZScript.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../ZScript/Constants.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+    </body>
+</html>

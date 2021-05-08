@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Method Definitions - ZDoom Docs</title>
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../css/elements.css">
+        
+        <link rel="stylesheet" href="../css/hljs.css">
+        
+        <link rel="stylesheet" href="../css/restyle.css">
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../Introduction.html">Introduction</a></li><li class="chapter-item "><a href="../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Meta/Style.html">Style</a></li></ol></li><li class="chapter-item expanded "><a href="../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ZScript/Classes.html">Class Definitions</a></li><li class="chapter-item "><a href="../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item "><a href="../ZScript/Expressions.html">Expressions</a></li><li class="chapter-item "><a href="../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item expanded "><a href="../ZScript/Methods.html" class="active">Method Definitions</a></li><li class="chapter-item "><a href="../ZScript/Statements.html">Statements</a></li><li class="chapter-item "><a href="../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../Acs.html">ACS</a></li><li class="chapter-item "><a href="../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../Api/Base/Object.html">Object</a></li><li class="chapter-item "><a href="../Api/Base/State.html">State</a></li><li class="chapter-item "><a href="../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../Api/Basic/Color.html">color</a></li><li class="chapter-item "><a href="../Api/Basic/String.html">string</a></li><li class="chapter-item "><a href="../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item "><a href="../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../Api/Drawing/Console.html">Console</a></li><li class="chapter-item "><a href="../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item "><a href="../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item "><a href="../Api/Events/StaticEventHandler.html">StaticEventHandler</a></li><li class="chapter-item "><a href="../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item "><a href="../Api/Globals.html">Globals</a></li><li class="chapter-item "><a href="../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen.html">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        
+                        <a href="http://github.com/marrub--/zdoom-doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="method-definitions"><a class="header" href="#method-definitions">Method Definitions</a></h1>
+<p>Method definitions define functions within a structure or class that
+can be accessed directly within either other methods of the object or
+its derived classes, or indirectly from instances of it with the
+member access operator.</p>
+<p>Methods marked as <code>virtual</code> may have their functionality overridden by
+derived classes, and in those overrides one can use the <code>Super</code>
+keyword to call the parent function.</p>
+<p>If <code>const</code> is placed after the function signature and before the
+function body, the method will not be allowed to modify any members in
+the object instance it's being called on.</p>
+<p>The keyword <code>void</code> can be used in place of the return type (or type
+list) to have a method which does not have any return value.
+Similarly, one can place <code>void</code> where the argument list might be,
+although this is redundant as having no argument list at all is
+allowed.</p>
+<p>Arguments of methods may only be of certain types due to technical
+limitations. See the type table for a list of which are usable and
+which are not.</p>
+<p>All methods which are not <code>static</code> have an implicit <code>self</code> parameter
+which refers to this object, although if you wish to refer to a member
+of <code>self</code>, you do not need to reference it directly, as it is already
+implicitly in scope.</p>
+<dl class="syn"><dt>MethodDefinition</dt><dd>
+<p><a href="#method-declaration-flags">MethodDeclarationFlag</a>* <a href="Types.html#types">Type</a> (<code>,</code> <a href="Types.html#types">Type</a>)* <a href="Fundamentals.html#identifiers">Identifier</a> <code>(</code>
+<a href="#method-argument-lists">MethodArgumentListOrVoid</a>? <code>)</code> <code>const</code>? <code>{</code> <a href="Statements.html#statements">Statement</a>* <code>}</code></p>
+</dd></dl>
+<div class="toc contents">
+<ol>
+<li><a href="#method-argument-lists">Method Argument Lists</a></li>
+<li><a href="#method-declaration-flags">Method Declaration Flags</a>
+<ol>
+<li><a href="#action-scopes">Action Scopes</a></li>
+</ol>
+</li>
+<li><a href="#examples">Examples</a>
+<ol>
+<li><a href="#method-argument-lists">Method argument lists</a></li>
+</ol>
+</li>
+</ol>
+</div>
+<h2 id="method-argument-lists"><a class="header" href="#method-argument-lists">Method Argument Lists</a></h2>
+<p>Method arguments must all have a name and type, and optionally the
+last arguments in the list may have a default value, <span
+class="label purple">3.3.0+</span> unless the function is marked
+<code>override</code>.</p>
+<dl class="syn"><dt>MethodArgumentList</dt><dd>
+<ul>
+<li><a href="Types.html#types">Type</a> <a href="Types.html#variable-names">VariableName</a> (<code>,</code> <a href="#method-argument-lists">MethodArgumentList</a>)*</li>
+<li><a href="Types.html#types">Type</a> <a href="Types.html#variable-names">VariableName</a> <code>=</code> <a href="Expressions.html#constant-expressions">ConstantExpression</a> (<code>,</code>
+<a href="#method-argument-lists">MethodArgumentList</a>)*</li>
+</ul>
+</dd><dt>MethodArgumentListOrVoid</dt><dd>
+<ul>
+<li><a href="#method-argument-lists">MethodArgumentList</a></li>
+<li><code>void</code></li>
+</ul>
+</dd></dl>
+<h2 id="method-declaration-flags"><a class="header" href="#method-declaration-flags">Method Declaration Flags</a></h2>
+<table><thead><tr><th align="left">Keyword</th><th align="left">Description</th></tr></thead><tbody>
+<tr><td align="left"><code>action</code></td><td align="left">Method may have implicit <code>invoker</code> and <code>stateinfo</code> parameters.</td></tr>
+<tr><td align="left"><code>clearScope</code></td><td align="left">Method has Data scope.</td></tr>
+<tr><td align="left"><code>deprecated</code></td><td align="left">If accessed, a script warning will occur on load if the archive version is greater than <code>ver</code>, with the reason <code>reason</code> specified in the message.</td></tr>
+<tr><td align="left"><code>final</code></td><td align="left">Virtual method cannot be further overridden from derived classes.</td></tr>
+<tr><td align="left"><code>native</code></td><td align="left">Method is from the engine. Only usable internally.</td></tr>
+<tr><td align="left"><code>override</code></td><td align="left">Method is overriding a base class' virtual method.</td></tr>
+<tr><td align="left"><code>play</code></td><td align="left">Method has Play scope.</td></tr>
+<tr><td align="left"><code>private</code></td><td align="left">Method is not visible to any class but this one.</td></tr>
+<tr><td align="left"><code>protected</code></td><td align="left">Method is not visible to any class but this one and any descendants of it.</td></tr>
+<tr><td align="left"><code>static</code></td><td align="left">Function is not a method, but a global function without a <code>self</code> pointer.</td></tr>
+<tr><td align="left"><code>ui</code></td><td align="left">Method has UI scope.</td></tr>
+<tr><td align="left"><code>varArg</code></td><td align="left">Method doesn't type-check arguments after <code>...</code>. Only usable internally.</td></tr>
+<tr><td align="left"><code>version</code></td><td align="left">Restricted to ZScript version <code>ver</code> or higher.</td></tr>
+<tr><td align="left"><code>virtual</code></td><td align="left">Method can be overridden in derived classes.</td></tr>
+<tr><td align="left"><code>virtualScope</code></td><td align="left">Method has scope of the type of the object it's being called on.</td></tr>
+</tbody></table>
+<dl class="syn"><dt>MethodDeclarationFlag</dt><dd>
+<ul>
+<li><code>action</code> (<code>(</code> <a href="#action-scopes">ActionScope</a> (<code>,</code> <a href="#action-scopes">ActionScope</a>)* <code>)</code>)?</li>
+<li><code>clearScope</code></li>
+<li><code>deprecated</code> <code>(</code> <a href="Fundamentals.html#string-literals">StringLiteral</a> (<code>,</code> <a href="Fundamentals.html#string-literals">StringLiteral</a>)? <code>)</code></li>
+<li><code>final</code></li>
+<li><code>native</code></li>
+<li><code>override</code></li>
+<li><code>play</code></li>
+<li><code>private</code></li>
+<li><code>protected</code></li>
+<li><code>static</code></li>
+<li><code>ui</code></li>
+<li><code>varArg</code></li>
+<li><code>version</code> <code>(</code> <a href="Fundamentals.html#string-literals">StringLiteral</a> <code>)</code></li>
+<li><code>virtual</code></li>
+<li><code>virtualScope</code></li>
+</ul>
+</dd></dl>
+<h3 id="action-scopes"><a class="header" href="#action-scopes">Action Scopes</a></h3>
+<p>ZScript includes an extra method type for descendents of <code>Actor</code>
+called <em>actions</em>, which are intended to be run from actor states and
+give extra information to the function. Action functions change the
+meaning of the <code>self</code> parameter and may pass in <code>invoker</code> and
+<code>stateinfo</code> parameters as well. <code>stateinfo</code> refers to the <code>State</code>
+which this action was called from.</p>
+<p>Action functions may have any amount of scopes. Actor scope and
+un-scoped action functions do not have <code>invoker</code> or <code>stateinfo</code>
+parameters and as such are not often useful.</p>
+<p>Here are charts for the meanings of the <code>self</code> and <code>invoker</code>
+parameters under each scope. Scopes lower down on the chart override
+the meanings of scopes above them:</p>
+<table><thead><tr><th>Scope</th><th><code>self</code></th></tr></thead><tbody>
+<tr><td>None</td><td>The actor this function operates on, ambiguous in some contexts</td></tr>
+<tr><td><code>actor</code></td><td>The actor itself</td></tr>
+<tr><td><code>item</code></td><td>Context-dependent. The item itself when it exists in-world, but the owner of the item when used as part of a state chain.</td></tr>
+<tr><td><code>overlay</code></td><td>Context-dependent. The actor itself when it exists in-world, but the owner of the PSprite when it is being used as one.</td></tr>
+<tr><td><code>weapon</code></td><td>Same as <code>overlay</code>, but <code>self</code> is allowed to be any subclass of Actor rather than just a subclass of the defining class</td></tr>
+</tbody></table>
+<table><thead><tr><th>Scope</th><th><code>invoker</code></th></tr></thead><tbody>
+<tr><td>None</td><td>Not available</td></tr>
+<tr><td><code>actor</code></td><td>Not available</td></tr>
+<tr><td><code>item</code></td><td>The item itself</td></tr>
+<tr><td><code>overlay</code></td><td>Context-dependent. The actor itself when it exists in-world, but the PSprite's <code>caller</code> field when it is being used as one. In most cases this field should be set to the actor that defined the action function, but it can be changed by user code.</td></tr>
+<tr><td><code>weapon</code></td><td>Same as <code>overlay</code></td></tr>
+</tbody></table>
+<dl class="syn"><dt>ActionScope</dt><dd>
+<ul>
+<li><code>actor</code></li>
+<li><code>item</code></li>
+<li><code>overlay</code></li>
+<li><code>weapon</code></li>
+</ul>
+</dd></dl>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="method-argument-lists-1"><a class="header" href="#method-argument-lists-1">Method argument lists</a></h3>
+<pre><code class="language-zsc">// With the function:
+void DoSomething(int one, int two, int a = 0, int b = 0) {}
+
+// One could do the following:
+DoSomething(4, 5);
+DoSomething(5, 6, 7);
+DoSomething(6, 7, 8, 9);
+
+// Or using named default arguments,
+DoSomething(5, 6, a: 7);
+
+// Equivalent to:
+DoSomething(5, 6, 7);
+
+// And more examples:
+DoSomething(6, 7, b: 8);
+DoSomething(7, 8, a: 9, b: 10);
+DoSomething(7, 8, 9, 10);
+</code></pre>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><span class="label red">TO-DO — This section is not finished yet</span> Sometimes. In some contexts, the
+<code>self</code> pointer will not be ambiguous.</p>
+</div>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="https://github.com/marrub--/zdoom-doc/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="https://github.com/marrub--/zdoom-doc">contribute to the project!</a> Originally authored by Alison G. Watson (e/he/they) and fira watson (they/them.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../ZScript/Members.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../ZScript/Statements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../ZScript/Members.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../ZScript/Statements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+    </body>
+</html>

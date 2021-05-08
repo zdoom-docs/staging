@@ -1,0 +1,524 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>string - ZDoom Docs</title>
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../../css/elements.css">
+        
+        <link rel="stylesheet" href="../../css/hljs.css">
+        
+        <link rel="stylesheet" href="../../css/restyle.css">
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../Introduction.html">Introduction</a></li><li class="chapter-item "><a href="../../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Meta/Style.html">Style</a></li></ol></li><li class="chapter-item "><a href="../../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ZScript/Classes.html">Class Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Expressions.html">Expressions</a></li><li class="chapter-item "><a href="../../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item "><a href="../../ZScript/Methods.html">Method Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Statements.html">Statements</a></li><li class="chapter-item "><a href="../../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../../Acs.html">ACS</a></li><li class="chapter-item expanded "><a href="../../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../../Api/Base/Object.html">Object</a></li><li class="chapter-item "><a href="../../Api/Base/State.html">State</a></li><li class="chapter-item "><a href="../../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../../Api/Basic/Color.html">color</a></li><li class="chapter-item expanded "><a href="../../Api/Basic/String.html" class="active">string</a></li><li class="chapter-item "><a href="../../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item "><a href="../../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../../Api/Drawing/Console.html">Console</a></li><li class="chapter-item "><a href="../../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item "><a href="../../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item "><a href="../../Api/Events/StaticEventHandler.html">StaticEventHandler</a></li><li class="chapter-item "><a href="../../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item "><a href="../../Api/Globals.html">Globals</a></li><li class="chapter-item "><a href="../../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item "><a href="../../Api/Inter/StatusScreen.html">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        
+                        <a href="http://github.com/marrub--/zdoom-doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="string"><a class="header" href="#string">string</a></h1>
+<p>Strings have many methods attached to them for manipulating text.</p>
+<p>A string is composed of <em>bytes</em> which make up <em>characters</em>. Every
+character is at least one byte, but a character may also be more than
+one byte. The traditional ASCII characters are all single bytes.
+Characters are also refered to as <em>code points</em> or <em>unicode
+characters</em>.</p>
+<h2 id="class-methods"><a class="header" href="#class-methods">Class Methods</a></h2>
+<dl class="api"><dt id="mthd-Format">
+<code class="language-zsc">
+<p>static varArg string <a href="#mthd-Format">Format</a>(string format, ...)</p>
+</code>
+</dt>
+<dd>
+<p>Creates a string using a [format string] and any amount of arguments.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-CharLower">
+<code class="language-zsc">
+<p>static int <a href="#mthd-CharLower">CharLower</a>(int ch)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the lowercase version of <code>ch</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-CharUpper">
+<code class="language-zsc">
+<p>static int <a href="#mthd-CharUpper">CharUpper</a>(int ch)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the uppercase version of <code>ch</code>.</p>
+</dd>
+</dl>
+<details><summary>Overview of class methods</summary><p><span class=code><a href="#mthd-CharLower">CharLower</a></span>, <span class=code><a href="#mthd-CharUpper">CharUpper</a></span>, <span class=code><a href="#mthd-Format">Format</a></span></p></details>
+<h2 id="instance-methods"><a class="header" href="#instance-methods">Instance Methods</a></h2>
+<h3 id="querying"><a class="header" href="#querying">Querying</a></h3>
+<dl class="api"><dt id="mthd-Length">
+<code class="language-zsc">
+<p>uint <a href="#mthd-Length">Length</a>() const</p>
+</code>
+</dt>
+<dd>
+<p>Returns the number of bytes in this string.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-CodePointCount">
+<code class="language-zsc">
+<p>int <a href="#mthd-CodePointCount">CodePointCount</a>() const</p>
+</code>
+</dt>
+<dd>
+<p>Returns the number of characters in this string.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-GetNextCodePoint">
+<code class="language-zsc">
+<p>int, int <a href="#mthd-GetNextCodePoint">GetNextCodePoint</a>(int pos) const</p>
+</code>
+</dt>
+<dd>
+<p>Returns the next character from the byte <code>pos</code> onwards, and the byte
+position of the next character.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-ByteAt">
+<code class="language-zsc">
+<p>int <a href="#mthd-ByteAt">ByteAt</a>(int pos) const</p>
+</code>
+</dt>
+<dd>
+<p>Returns the byte at <code>pos</code> as an integer.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-IndexOf">
+<code class="language-zsc">
+<p>int <a href="#mthd-IndexOf">IndexOf</a>(string substr, int startIndex = 0) const</p>
+</code>
+</dt>
+<dd>
+<p>Returns the first index of <code>substr</code> starting from the left at <code>start</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-RightIndexOf">
+<code class="language-zsc">
+<p>int <a href="#mthd-RightIndexOf">RightIndexOf</a>(string substr, int endIndex = int.Max) const</p>
+</code>
+</dt>
+<dd>
+<p>Returns the first index of <code>substr</code> starting from the right at <code>end</code>.</p>
+</dd>
+</dl>
+<h3 id="copy-modification"><a class="header" href="#copy-modification">Copy Modification</a></h3>
+<dl class="api"><dt id="mthd-Filter">
+<code class="language-zsc">
+<p>string <a href="#mthd-Filter">Filter</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Replaces escape sequences in a string with escaped characters as a new
+string.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Left">
+<code class="language-zsc">
+<p>string <a href="#mthd-Left">Left</a>(int len) const</p>
+</code>
+</dt>
+<dd>
+<p>Returns the first <code>len</code> bytes as a new string.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Mid">
+<code class="language-zsc">
+<p>string <a href="#mthd-Mid">Mid</a>(int pos = 0, int len = int.Max) const</p>
+</code>
+</dt>
+<dd>
+<p>Returns <code>len</code> bytes starting at <code>pos</code> as a new string.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-MakeUpper">
+<code class="language-zsc">
+<p>string <a href="#mthd-MakeUpper">MakeUpper</a>() const</p>
+</code>
+</dt>
+<dd>
+<p>Converts all characters in the string to uppercase and returns the new
+string.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-MakeLower">
+<code class="language-zsc">
+<p>string <a href="#mthd-MakeLower">MakeLower</a>() const</p>
+</code>
+</dt>
+<dd>
+<p>Converts all characters in the string to lowercase and returns the new
+string.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Split">
+<code class="language-zsc">
+<p>void <a href="#mthd-Split">Split</a>(out array&lt;string&gt; tokens, string delimiter, <a href="../Base/EmptyTokenType.html">EmptyTokenType</a> keepEmpty = TOK_KEEPEMPTY) const</p>
+</code>
+</dt>
+<dd>
+<p>Splits the string by each delimiter into tokens. <code>keepEmpty</code> describes
+whether the function should keep or discard empty strings found while
+splitting.</p>
+</dd>
+</dl>
+<h3 id="in-place-modification"><a class="header" href="#in-place-modification">In-Place Modification</a></h3>
+<dl class="api"><dt id="mthd-AppendFormat">
+<code class="language-zsc">
+<p>varArg void <a href="#mthd-AppendFormat">AppendFormat</a>(string format, ...)</p>
+</code>
+</dt>
+<dd>
+<p>Works like <span class=code><a href="#mthd-Format">Format</a></span>, but appends the result to the string.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Remove">
+<code class="language-zsc">
+<p>void <a href="#mthd-Remove">Remove</a>(int index, int amount)</p>
+</code>
+</dt>
+<dd>
+<p>Removes <code>amount</code> bytes starting at <code>index</code> in-place.</p>
+</dd>
+</dl>
+<p>void {Replace}(string pattern, string replacement)</p>
+<p>Replaces all instances of <code>pattern</code> with <code>replacement</code> in-place.
+-#</p>
+<dl class="api"><dt id="mthd-Truncate">
+<code class="language-zsc">
+<p>void <a href="#mthd-Truncate">Truncate</a>(int newlen)</p>
+</code>
+</dt>
+<dd>
+<p>Truncates the string to <code>len</code> bytes in-place.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-AppendCharacter">
+<code class="language-zsc">
+<p>void <a href="#mthd-AppendCharacter">AppendCharacter</a>(int ch)</p>
+</code>
+</dt>
+<dd>
+<p>Appends <code>ch</code> to the end of the string in-place.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-DeleteLastCharacter">
+<code class="language-zsc">
+<p>void <a href="#mthd-DeleteLastCharacter">DeleteLastCharacter</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Deletes the last character of the string in-place.</p>
+</dd>
+</dl>
+<h3 id="conversions"><a class="header" href="#conversions">Conversions</a></h3>
+<dl class="api"><dt id="mthd-ToDouble">
+<code class="language-zsc">
+<p>double <a href="#mthd-ToDouble">ToDouble</a>() const</p>
+</code>
+</dt>
+<dd>
+<p>Interprets the string as a double precision floating point number.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-ToInt">
+<code class="language-zsc">
+<p>int <a href="#mthd-ToInt">ToInt</a>(int base = 0) const</p>
+</code>
+</dt>
+<dd>
+<p>Interprets the string as a base <code>base</code> integer, guessing the base if
+it is <code>0</code>.</p>
+</dd>
+</dl>
+<h3 id="deprecated"><a class="header" href="#deprecated">Deprecated</a></h3>
+<p><span class="label yellow">Legacy — Do not use</span></p>
+<dl class="api"><dt id="mthd-ToLower">
+<code class="language-zsc">
+<p>deprecated(&quot;4.1&quot;) void <a href="#mthd-ToLower">ToLower</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Converts all bytes in the string to lowercase in-place. Use
+<span class=code><a href="#mthd-MakeLower">MakeLower</a></span> instead.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-ToUpper">
+<code class="language-zsc">
+<p>deprecated(&quot;4.1&quot;) void <a href="#mthd-ToUpper">ToUpper</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Converts all bytes in the string to uppercase in-place. Use
+<span class=code><a href="#mthd-MakeUpper">MakeUpper</a></span> instead.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-CharAt">
+<code class="language-zsc">
+<p>deprecated(&quot;4.1&quot;) string <a href="#mthd-CharAt">CharAt</a>(int pos) const</p>
+</code>
+</dt>
+<dd>
+<p>Returns the byte at <code>pos</code> as a new string. Use <span class=code><a href="#mthd-CodePointCount">CodePointCount</a></span> and
+<span class=code><a href="#mthd-GetNextCodePoint">GetNextCodePoint</a></span> instead. An example of replacing <code>CharAt</code> is
+available <a href="#replacing-charat">below.</a></p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-CharCodeAt">
+<code class="language-zsc">
+<p>deprecated(&quot;4.1&quot;) int <a href="#mthd-CharCodeAt">CharCodeAt</a>(int pos) const</p>
+</code>
+</dt>
+<dd>
+<p>Returns the byte at <code>pos</code> as an integer. Use either <span class=code><a href="#mthd-ByteAt">ByteAt</a></span> or
+<span class=code><a href="#mthd-CodePointCount">CodePointCount</a></span> and <span class=code><a href="#mthd-GetNextCodePoint">GetNextCodePoint</a></span> instead. If you
+specifically want one byte from the string, use <span class=code><a href="#mthd-ByteAt">ByteAt</a></span>. Otherwise,
+if you want one <em>character</em>, use <span class=code><a href="#mthd-CodePointCount">CodePointCount</a></span> and
+<span class=code><a href="#mthd-GetNextCodePoint">GetNextCodePoint</a></span>. An example of replacing <code>CharCodeAt</code> is
+available <a href="#replacing-charcodeat">below.</a></p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-LastIndexOf">
+<code class="language-zsc">
+<p>deprecated(&quot;3.5.1&quot;) int <a href="#mthd-LastIndexOf">LastIndexOf</a>(string substr, int endIndex = int.Max) const</p>
+</code>
+</dt>
+<dd>
+<p>Broken. Use <span class=code><a href="#mthd-RightIndexOf">RightIndexOf</a></span> instead.</p>
+</dd>
+</dl>
+<details><summary>Overview of instance methods</summary><p><span class=code><a href="#mthd-AppendCharacter">AppendCharacter</a></span>, <span class=code><a href="#mthd-AppendFormat">AppendFormat</a></span>, <span class=code><a href="#mthd-ByteAt">ByteAt</a></span>, <span class=code><a href="#mthd-CharAt">CharAt</a></span>, <span class=code><a href="#mthd-CharCodeAt">CharCodeAt</a></span>, <span class=code><a href="#mthd-CodePointCount">CodePointCount</a></span>, <span class=code><a href="#mthd-DeleteLastCharacter">DeleteLastCharacter</a></span>, <span class=code><a href="#mthd-Filter">Filter</a></span>, <span class=code><a href="#mthd-GetNextCodePoint">GetNextCodePoint</a></span>, <span class=code><a href="#mthd-IndexOf">IndexOf</a></span>, <span class=code><a href="#mthd-LastIndexOf">LastIndexOf</a></span>, <span class=code><a href="#mthd-Left">Left</a></span>, <span class=code><a href="#mthd-Length">Length</a></span>, <span class=code><a href="#mthd-MakeLower">MakeLower</a></span>, <span class=code><a href="#mthd-MakeUpper">MakeUpper</a></span>, <span class=code><a href="#mthd-Mid">Mid</a></span>, <span class=code><a href="#mthd-Remove">Remove</a></span>, <span class=code><a href="#mthd-RightIndexOf">RightIndexOf</a></span>, <span class=code><a href="#mthd-Split">Split</a></span>, <span class=code><a href="#mthd-ToDouble">ToDouble</a></span>, <span class=code><a href="#mthd-ToInt">ToInt</a></span>, <span class=code><a href="#mthd-ToLower">ToLower</a></span>, <span class=code><a href="#mthd-ToUpper">ToUpper</a></span>, <span class=code><a href="#mthd-Truncate">Truncate</a></span></p></details>
+<h4 id="replacing-charat"><a class="header" href="#replacing-charat">Replacing CharAt</a></h4>
+<pre><code class="language-zsc">// Old code:
+if(str.Length() &lt; 3)
+	return;
+
+string theThirdCharacter = str.CharAt(2);
+
+// New code:
+int leftIndex = -1, rightIndex = -1;
+
+for(int i = 0, j = 0, n = str.CodePointCount(); i &lt; n; j++)
+{
+	int code;
+
+	[code, i] = str.GetNextCodePoint(i);
+
+	if(j == 2)
+		leftIndex = i;
+	else if(j == 3)
+	{
+		rightIndex = i;
+		break;
+	}
+}
+
+if(leftIndex == -1)
+	return;
+
+if(rightIndex == -1)
+	rightIndex = str.Length() - leftIndex;
+
+string theThirdCharacter = str.Mid(leftIndex, rightIndex - leftIndex);
+</code></pre>
+<h4 id="replacing-charcodeat"><a class="header" href="#replacing-charcodeat">Replacing CharCodeAt</a></h4>
+<pre><code class="language-zsc">// Old code:
+if(str.Length() &lt; 3)
+	return;
+
+int theThirdCharacter = str.CharCodeAt(2);
+
+// New code:
+int theThirdCharacter = -1;
+
+for(int i = 0, j = 0, n = str.CodePointCount(); i &lt; n; j++)
+{
+	int code;
+
+	[code, i] = str.GetNextCodePoint(i);
+
+	if(j == 2)
+	{
+		theThirdCharacter = code;
+		break;
+	}
+}
+
+if(theThirdCharacter == -1)
+	return;
+</code></pre>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="https://github.com/marrub--/zdoom-doc/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="https://github.com/marrub--/zdoom-doc">contribute to the project!</a> Originally authored by Alison G. Watson (e/he/they) and fira watson (they/them.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../Api/Basic/Color.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../Api/Basic/FixedArray.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../Api/Basic/Color.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../Api/Basic/FixedArray.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+    </body>
+</html>

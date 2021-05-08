@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Statements - ZDoom Docs</title>
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../css/elements.css">
+        
+        <link rel="stylesheet" href="../css/hljs.css">
+        
+        <link rel="stylesheet" href="../css/restyle.css">
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../Introduction.html">Introduction</a></li><li class="chapter-item "><a href="../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Meta/Style.html">Style</a></li></ol></li><li class="chapter-item expanded "><a href="../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ZScript/Classes.html">Class Definitions</a></li><li class="chapter-item "><a href="../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item "><a href="../ZScript/Expressions.html">Expressions</a></li><li class="chapter-item "><a href="../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item "><a href="../ZScript/Methods.html">Method Definitions</a></li><li class="chapter-item expanded "><a href="../ZScript/Statements.html" class="active">Statements</a></li><li class="chapter-item "><a href="../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../Acs.html">ACS</a></li><li class="chapter-item "><a href="../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../Api/Base/Object.html">Object</a></li><li class="chapter-item "><a href="../Api/Base/State.html">State</a></li><li class="chapter-item "><a href="../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../Api/Basic/Color.html">color</a></li><li class="chapter-item "><a href="../Api/Basic/String.html">string</a></li><li class="chapter-item "><a href="../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item "><a href="../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../Api/Drawing/Console.html">Console</a></li><li class="chapter-item "><a href="../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item "><a href="../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item "><a href="../Api/Events/StaticEventHandler.html">StaticEventHandler</a></li><li class="chapter-item "><a href="../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item "><a href="../Api/Globals.html">Globals</a></li><li class="chapter-item "><a href="../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen.html">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        
+                        <a href="http://github.com/marrub--/zdoom-doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="statements"><a class="header" href="#statements">Statements</a></h1>
+<p>All functions are made up of a list of statements enclosed with left
+and right braces, which in and of itself is a statement called a
+<em>compound statement</em>, or <em>block</em>.</p>
+<dl class="syn"><dt>Statement</dt><dd>
+<ul>
+<li><a href="#compound-statements">CompoundStatement</a></li>
+<li><a href="#conditional-statements">ConditionalStatement</a></li>
+<li><a href="#flow-statements">FlowStatement</a></li>
+<li><a href="#expression-statements">ExpressionStatement</a></li>
+<li><a href="#local-variable-statements">LocalVariableStatement</a></li>
+<li><a href="#loop-statements">LoopStatement</a></li>
+<li><a href="#multi-assignment-statements">MultiAssignmentStatement</a></li>
+<li><a href="#null-statements">NullStatement</a></li>
+<li><a href="Constants.html#static-array-definitions">StaticArrayDefinition</a></li>
+<li><a href="#switch-statements">SwitchStatement</a></li>
+</ul>
+</dd></dl>
+<div class="toc contents">
+<ol>
+<li><a href="#compound-statements">Compound Statements</a></li>
+<li><a href="#expression-statements">Expression Statements</a></li>
+<li><a href="#conditional-statements">Conditional Statements</a></li>
+<li><a href="#switch-statements">Switch Statements</a></li>
+<li><a href="#loop-statements">Loop Statements</a>
+<ol>
+<li><a href="#for-loop-statements">For Loop Statements</a></li>
+<li><a href="#while-loop-statements">While Loop Statements</a></li>
+<li><a href="#do-while-loop-statements">Do While Loop Statements</a></li>
+</ol>
+</li>
+<li><a href="#flow-statements">Flow Statements</a>
+<ol>
+<li><a href="#continue-flow-statements">Continue Flow Statements</a></li>
+<li><a href="#break-flow-statements">Break Flow Statements</a></li>
+<li><a href="#return-flow-statements">Return Flow Statements</a></li>
+</ol>
+</li>
+<li><a href="#local-variable-statements">Local Variable Statements</a></li>
+<li><a href="#multi-assignment-statements">Multi-Assignment Statements</a></li>
+<li><a href="#null-statements">Null Statements</a></li>
+<li><a href="#examples">Examples</a>
+<ol>
+<li><a href="#expression-statements-1">Expression Statements</a></li>
+<li><a href="#conditional-statements-1">Conditional Statements</a></li>
+<li><a href="#switch-statements-1">Switch Statements</a></li>
+<li><a href="#flow-statements-1">Flow Statements</a></li>
+<li><a href="#multi-assignment-statements-1">Multi-Assignment Statements</a></li>
+</ol>
+</li>
+</ol>
+</div>
+<h2 id="compound-statements"><a class="header" href="#compound-statements">Compound Statements</a></h2>
+<p>Note that the statement list is zero or more, so an empty compound
+statement <code>{}</code> is entirely valid.</p>
+<dl class="syn"><dt>CompoundStatement</dt><dd>
+<p><code>{</code> <a href="#statements">Statement</a>* <code>}</code></p>
+</dd></dl>
+<h2 id="expression-statements"><a class="header" href="#expression-statements">Expression Statements</a></h2>
+<p>An expression statement is the single most common type of statement in
+just about any programming language. In ZScript, exactly like C and
+C++, an expression statement is simply formed with any expression
+followed by a semicolon. Function calls and variable assignments are
+expressions, for instance, so it is quite clear why they are common.</p>
+<dl class="syn"><dt>ExpressionStatement</dt><dd>
+<p><a href="Expressions.html#expressions">Expression</a> <code>;</code></p>
+</dd></dl>
+<h2 id="conditional-statements"><a class="header" href="#conditional-statements">Conditional Statements</a></h2>
+<p>A conditional statement will, conditionally, choose a statement (or
+none) to execute. They work the same as in C, C++, and ACS.</p>
+<dl class="syn"><dt>ConditionalStatement</dt><dd>
+<p><code>if</code> <code>(</code> <a href="Expressions.html#expressions">Expression</a> <code>)</code> <a href="#statements">Statement</a> (<code>else</code> <a href="#statements">Statement</a>)?</p>
+</dd></dl>
+<h2 id="switch-statements"><a class="header" href="#switch-statements">Switch Statements</a></h2>
+<p>A switch statement takes an expression of integer or name type and
+selects a labeled statement to run. They work the same as in C, C++,
+and ACS.</p>
+<dl class="syn"><dt>SwitchStatement</dt><dd>
+<p><code>switch</code> <code>(</code> <a href="Expressions.html#expressions">Expression</a> <code>)</code> <a href="#statements">Statement</a></p>
+</dd></dl>
+<h2 id="loop-statements"><a class="header" href="#loop-statements">Loop Statements</a></h2>
+<p>ZScript has five loop statements: <code>for</code>, <code>while</code>, <code>until</code>, <code>do while</code>
+and <code>do until</code>. <code>for</code>, <code>while</code> and <code>do while</code> work the same as in C,
+C++ and ACS, and <code>until</code> and <code>do until</code> do the inverse of <code>while</code> and
+<code>do while</code>.</p>
+<dl class="syn"><dt>LoopStatement</dt><dd>
+<ul>
+<li><a href="#for-loop-statements">ForLoopStatement</a></li>
+<li><a href="#while-loop-statements">WhileLoopStatement</a></li>
+<li><a href="#do-while-loop-statements">DoWhileLoopStatement</a></li>
+</ul>
+</dd></dl>
+<h3 id="for-loop-statements"><a class="header" href="#for-loop-statements">For Loop Statements</a></h3>
+<p>The <code>for</code> loop takes a limited statement and two optional expressions:
+The statement for when the loop begins (which is scoped to the loop,)
+one expression for checking if the loop should break, and one which is
+executed every time the loop iterates.</p>
+<dl class="syn"><dt>ForLoopStatement</dt><dd>
+<p><code>for</code> <code>(</code> <a href="#for-loop-statements">ForLoopInitializer</a>? <code>;</code> <a href="Expressions.html#expressions">Expression</a>? <code>;</code> <a href="Expressions.html#expressions">Expression</a>?
+<code>)</code> <a href="#statements">Statement</a></p>
+</dd><dt>ForLoopInitializer</dt><dd>
+<ul>
+<li><a href="Expressions.html#expressions">Expression</a></li>
+<li><a href="#local-variable-statements">LocalVariableStatement</a></li>
+</ul>
+</dd></dl>
+<h3 id="while-loop-statements"><a class="header" href="#while-loop-statements">While Loop Statements</a></h3>
+<p>The <code>while</code> loop simply takes one expression for checking if the loop
+should break, equivalent to <code>for(; x;)</code>.</p>
+<p>The <code>until</code> loop is equivalent to <code>while(!x)</code>.</p>
+<dl class="syn"><dt>WhileLoopStatement</dt><dd>
+<ul>
+<li><code>while</code> <code>(</code> <a href="Expressions.html#expressions">Expression</a> <code>)</code> <a href="#statements">Statement</a></li>
+<li><code>until</code> <code>(</code> <a href="Expressions.html#expressions">Expression</a> <code>)</code> <a href="#statements">Statement</a></li>
+</ul>
+</dd></dl>
+<h3 id="do-while-loop-statements"><a class="header" href="#do-while-loop-statements">Do While Loop Statements</a></h3>
+<p><code>do while</code> and <code>do until</code> will only check the expression after the
+first iteration is complete. Unlike C, you don't need a semicolon
+after one.</p>
+<dl class="syn"><dt>DoWhileLoopStatement</dt><dd>
+<ul>
+<li><code>do</code> <a href="#statements">Statement</a> <code>while</code> <code>(</code> <a href="Expressions.html#expressions">Expression</a> <code>)</code></li>
+<li><code>do</code> <a href="#statements">Statement</a> <code>until</code> <code>(</code> <a href="Expressions.html#expressions">Expression</a> <code>)</code></li>
+</ul>
+</dd></dl>
+<h2 id="flow-statements"><a class="header" href="#flow-statements">Flow Statements</a></h2>
+<p>As in C, there are three control flow statements that manipulate where
+the program will execute statements next, which are available
+contextually. They are <code>continue</code>, <code>break</code> and <code>return</code>.</p>
+<dl class="syn"><dt>FlowStatement</dt><dd>
+<ul>
+<li><a href="#continue-flow-statements">ContinueFlowStatement</a></li>
+<li><a href="#break-flow-statements">BreakFlowStatement</a></li>
+<li><a href="#return-flow-statements">ReturnFlowStatement</a></li>
+</ul>
+</dd></dl>
+<h3 id="continue-flow-statements"><a class="header" href="#continue-flow-statements">Continue Flow Statements</a></h3>
+<p><code>continue</code> is available in loop statements and will continue to the
+next iteration immediately.</p>
+<dl class="syn"><dt>ContinueFlowStatement</dt><dd>
+<p><code>continue</code> <code>;</code></p>
+</dd></dl>
+<h3 id="break-flow-statements"><a class="header" href="#break-flow-statements">Break Flow Statements</a></h3>
+<p><code>break</code> is available in loop statements and switch statements, and
+will break out of the containing statement early.</p>
+<dl class="syn"><dt>BreakFlowStatement</dt><dd>
+<p><code>break</code> <code>;</code></p>
+</dd></dl>
+<h3 id="return-flow-statements"><a class="header" href="#return-flow-statements">Return Flow Statements</a></h3>
+<p><code>return</code> is available in functions. If the function does not return
+any values, it may have no expressions, and will simply exit the
+function early. If the function does return values, it takes a
+comma-separated list for each expression returned.</p>
+<dl class="syn"><dt>ReturnFlowStatement</dt><dd>
+<p><code>return</code> (<a href="Expressions.html#expressions">Expression</a> (<code>,</code> <a href="Expressions.html#expressions">Expression</a>)*)? <code>;</code></p>
+</dd></dl>
+<h2 id="local-variable-statements"><a class="header" href="#local-variable-statements">Local Variable Statements</a></h2>
+<p>Local variable statements are formed in one of 2 ways. The <code>let</code>
+keyword can be used to automatically determine the type of the
+variable from the initializer, while the regular syntax uses an
+explicit type, and initialization is optional.</p>
+<dl class="syn"><dt>LocalVariableStatement</dt><dd>
+<ul>
+<li><code>let</code> <a href="Fundamentals.html#identifiers">Identifier</a> <code>=</code> <a href="Expressions.html#expressions">Expression</a> <code>;</code></li>
+<li><a href="Types.html#types">Type</a> <a href="#local-variable-statements">LocalVariableInitializer</a> (<code>,</code>
+<a href="#local-variable-statements">LocalVariableInitializer</a>)* <code>;</code></li>
+</ul>
+</dd><dt>LocalVariableInitializer</dt><dd>
+<ul>
+<li><a href="Types.html#variable-names">VariableName</a></li>
+<li><a href="Types.html#variable-names">VariableName</a> <code>=</code> <a href="Expressions.html#expressions">Expression</a></li>
+</ul>
+</dd></dl>
+<h2 id="multi-assignment-statements"><a class="header" href="#multi-assignment-statements">Multi-Assignment Statements</a></h2>
+<p>Expressions or functions that return multiple values can be assigned
+into multiple variables.</p>
+<dl class="syn"><dt>MultiAssignmentStatement</dt><dd>
+<p><code>[</code> <a href="Expressions.html#expressions">Expression</a> (<code>,</code> <a href="Expressions.html#expressions">Expression</a>)* <code>]</code> <code>=</code> <a href="Expressions.html#expressions">Expression</a> <code>;</code></p>
+</dd></dl>
+<h2 id="null-statements"><a class="header" href="#null-statements">Null Statements</a></h2>
+<p>A null statement does nothing. It is similar to an empty compound
+statement.</p>
+<dl class="syn"><dt>NullStatement</dt><dd>
+<p><code>;</code></p>
+</dd></dl>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="expression-statements-1"><a class="header" href="#expression-statements-1">Expression Statements</a></h3>
+<pre><code class="language-zsc">// Some basic expressions.
+MyCoolFunction(5, 4);
+m_MyCoolMember = 500;
+</code></pre>
+<pre><code class="language-zsc">// Does nothing, of course, but valid.
+5 * 5;
+</code></pre>
+<h3 id="conditional-statements-1"><a class="header" href="#conditional-statements-1">Conditional Statements</a></h3>
+<pre><code class="language-zsc">// Simple conditional.
+if(a)
+	B();
+</code></pre>
+<pre><code class="language-zsc">// Simple conditional, with else statement and a block.
+if(a)
+{
+	B();
+	c = d;
+}
+else
+	e = f;
+</code></pre>
+<h3 id="switch-statements-1"><a class="header" href="#switch-statements-1">Switch Statements</a></h3>
+<pre><code class="language-zsc">// A switch demonstrating fall-through and default cases.
+switch(a)
+{
+case 500:
+	Console.PrintF(&quot;a is 500&quot;);
+	break;
+case 501:
+	Console.PrintF(&quot;a is 501&quot;);
+	// Falls through to the next case.
+case 502:
+	Console.PrintF(&quot;a is 501 or 502&quot;);
+	break;
+default:
+	Console.PrintF(&quot;not sure what a is!&quot;);
+	// &quot;break&quot; is implied here.
+}
+</code></pre>
+<h3 id="flow-statements-1"><a class="header" href="#flow-statements-1">Flow Statements</a></h3>
+<pre><code class="language-zsc">// Use of &quot;continue.&quot;
+for(int i = 0; i &lt; 50; i++)
+{
+	// Don't do anything when &quot;i&quot; is 25.
+	if(i == 25)
+		continue;
+
+	DoThing(i);
+}
+</code></pre>
+<pre><code class="language-zsc">// Use of &quot;break.&quot;
+for(int i = 0; i &lt; 50; i++)
+{
+	// &quot;break&quot; when &quot;i&quot; is 25.
+	if(i == 25)
+		break;
+
+	DoThing(i);
+}
+</code></pre>
+<pre><code class="language-zsc">// Use of `return` in various contexts.
+void ReturnsNothing()
+{
+	// Exit early if &quot;m_Thing&quot; isn't 50.
+	if(m_Thing != 50)
+		return;
+
+	DoThing(m_Thing);
+}
+</code></pre>
+<pre><code class="language-zsc">int ReturnsInt()
+{
+	// &quot;m_Thing&quot; is 50, so return 50.
+	if(m_Thing == 50)
+		return 50;
+
+	// Must have a return, eventually.
+	return 0;
+}
+</code></pre>
+<pre><code class="language-zsc">int, int ReturnsTwoInts()
+{
+	// Returns 1 and 2.
+	return 1, 2;
+}
+</code></pre>
+<h3 id="multi-assignment-statements-1"><a class="header" href="#multi-assignment-statements-1">Multi-Assignment Statements</a></h3>
+<pre><code class="language-zsc">// Getting the actor out of &quot;A_SpawnItemEx.&quot;
+Actor mo; bool spawned; [spawned, mo] = A_SpawnItemEx(&quot;MyCoolActor&quot;);
+</code></pre>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="https://github.com/marrub--/zdoom-doc/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="https://github.com/marrub--/zdoom-doc">contribute to the project!</a> Originally authored by Alison G. Watson (e/he/they) and fira watson (they/them.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../ZScript/Methods.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../ZScript/Structures.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../ZScript/Methods.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../ZScript/Structures.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+    </body>
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>StatusScreen - ZDoom Docs</title>
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../../css/elements.css">
+        
+        <link rel="stylesheet" href="../../css/hljs.css">
+        
+        <link rel="stylesheet" href="../../css/restyle.css">
+        
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../Introduction.html">Introduction</a></li><li class="chapter-item "><a href="../../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Meta/Style.html">Style</a></li></ol></li><li class="chapter-item "><a href="../../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ZScript/Classes.html">Class Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Expressions.html">Expressions</a></li><li class="chapter-item "><a href="../../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item "><a href="../../ZScript/Methods.html">Method Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Statements.html">Statements</a></li><li class="chapter-item "><a href="../../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../../Acs.html">ACS</a></li><li class="chapter-item expanded "><a href="../../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../../Api/Base/Object.html">Object</a></li><li class="chapter-item "><a href="../../Api/Base/State.html">State</a></li><li class="chapter-item "><a href="../../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../../Api/Basic/Color.html">color</a></li><li class="chapter-item "><a href="../../Api/Basic/String.html">string</a></li><li class="chapter-item "><a href="../../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item "><a href="../../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../../Api/Drawing/Console.html">Console</a></li><li class="chapter-item "><a href="../../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item "><a href="../../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item "><a href="../../Api/Events/StaticEventHandler.html">StaticEventHandler</a></li><li class="chapter-item "><a href="../../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item "><a href="../../Api/Globals.html">Globals</a></li><li class="chapter-item expanded "><a href="../../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item expanded "><a href="../../Api/Inter/StatusScreen.html" class="active">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        
+                        <a href="http://github.com/marrub--/zdoom-doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="statusscreen"><a class="header" href="#statusscreen">StatusScreen</a></h1>
+<details><summary>Show declaration</summary>
+<pre><code class="language-zsc">class StatusScreen abstract play version(&quot;2.5&quot;);
+</code></pre>
+</details>
+<p>The base class for intermission status screens. Any status screen used
+by <a href="../../Data/MapInfo.html#gameinfo">MAPINFO GameInfo</a> must be derived from this class.</p>
+<div class="toc types">
+<ul>
+<li><span class=code><a href="StatusScreen/ESpState.html">ESpState</a></span></li>
+<li><span class=code><a href="StatusScreen/EState.html">EState</a></span></li>
+</ul>
+</div>
+<h2 id="class-methods"><a class="header" href="#class-methods">Class Methods</a></h2>
+<dl class="api"><dt id="mthd-GetPlayerWidths">
+<code class="language-zsc">
+<p>static int, int, int <a href="#mthd-GetPlayerWidths">GetPlayerWidths</a>()</p>
+</code>
+</dt>
+<dt id="mthd-GetRowColor">
+<code class="language-zsc">
+<p>static color <a href="#mthd-GetRowColor">GetRowColor</a>(<a href="../Players/PlayerInfo.html">PlayerInfo</a> player, bool highlight)</p>
+</code>
+</dt>
+<dt id="mthd-GetSortedPlayers">
+<code class="language-zsc">
+<p>static void <a href="#mthd-GetSortedPlayers">GetSortedPlayers</a>(in out array&lt;int&gt; sorted, bool teamPlay)</p>
+</code>
+</dt>
+<dd>
+<p><span class="label red">TO-DO — This section is not finished yet</span></p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-PlaySound">
+<code class="language-zsc">
+<p>static void <a href="#mthd-PlaySound">PlaySound</a>(sound snd)</p>
+</code>
+</dt>
+<dd>
+<p>Plays a UI sound at full volume using <span class=code><a href="../Base/Object.html#mthd-S_StartSound">S_StartSound</a></span>.</p>
+</dd>
+</dl>
+<details><summary>Overview of class methods</summary><p><span class=code><a href="#mthd-GetPlayerWidths">GetPlayerWidths</a></span>, <span class=code><a href="#mthd-GetRowColor">GetRowColor</a></span>, <span class=code><a href="#mthd-GetSortedPlayers">GetSortedPlayers</a></span>, <span class=code><a href="#mthd-PlaySound">PlaySound</a></span></p></details>
+<h2 id="instance-methods"><a class="header" href="#instance-methods">Instance Methods</a></h2>
+<dl class="api"><dt id="mthd-SetSize">
+<code class="language-zsc">
+<p>void <a href="#mthd-SetSize">SetSize</a>(int width, int height, int wrapW = -1, int scaleMode = <a href="../Drawing/EScaleMode.html#enum-FSMODE_SCALETOFIT43">FSMODE_SCALETOFIT43</a>)</p>
+</code>
+</dt>
+<dt id="mthd-DrawCharPatch">
+<code class="language-zsc">
+<p>int <a href="#mthd-DrawCharPatch">DrawCharPatch</a>(<a href="../Drawing/Font.html">Font</a> fnt, int charCode, int x, int y, int translation = <a href="../Drawing/Font.html">Font</a>.<a href="../Drawing/Font/EColorRange.html#enum-CR_UNTRANSLATED">CR_UNTRANSLATED</a>, bool noMove = false)</p>
+</code>
+</dt>
+<dt id="mthd-DrawTexture">
+<code class="language-zsc">
+<p>void <a href="#mthd-DrawTexture">DrawTexture</a>(textureId tex, double x, double y, bool noMove = false)</p>
+</code>
+</dt>
+<dt id="mthd-DrawText">
+<code class="language-zsc">
+<p>void <a href="#mthd-DrawText">DrawText</a>(<a href="../Drawing/Font.html">Font</a> fnt, int color, double x, double y, string s, bool noMove = false, bool shadow = false)</p>
+</code>
+</dt>
+<dt id="mthd-DrawName">
+<code class="language-zsc">
+<p>int <a href="#mthd-DrawName">DrawName</a>(int y, textureId tex, string levelName)</p>
+</code>
+</dt>
+<dt id="mthd-DrawAuthor">
+<code class="language-zsc">
+<p>int <a href="#mthd-DrawAuthor">DrawAuthor</a>(int y, string levelName)</p>
+</code>
+</dt>
+<dt id="mthd-DrawPatchText">
+<code class="language-zsc">
+<p>deprecated(&quot;3.8&quot;) int <a href="#mthd-DrawPatchText">DrawPatchText</a>(int y, <a href="PatchInfo.html">PatchInfo</a> pInfo, string stringName)</p>
+</code>
+</dt>
+<dt id="mthd-DrawPatchOrText">
+<code class="language-zsc">
+<p>int <a href="#mthd-DrawPatchOrText">DrawPatchOrText</a>(int y, <a href="PatchInfo.html">PatchInfo</a> pinfo, textureId patch, string stringName)</p>
+</code>
+</dt>
+<dt id="mthd-DrawLf">
+<code class="language-zsc">
+<p>virtual int <a href="#mthd-DrawLf">DrawLf</a>()</p>
+</code>
+</dt>
+<dt id="mthd-DrawEl">
+<code class="language-zsc">
+<p>virtual int <a href="#mthd-DrawEl">DrawEl</a>()</p>
+</code>
+</dt>
+<dt id="mthd-DrawNum">
+<code class="language-zsc">
+<p>int <a href="#mthd-DrawNum">DrawNum</a>(<a href="../Drawing/Font.html">Font</a> fnt, int x, int y, int n, int digits, bool leadingZeros = true, int translation = <a href="../Drawing/Font.html">Font</a>.<a href="../Drawing/Font/EColorRange.html#enum-CR_UNTRANSLATED">CR_UNTRANSLATED</a>, bool noMove = false)</p>
+</code>
+</dt>
+<dt id="mthd-DrawPercent">
+<code class="language-zsc">
+<p>void <a href="#mthd-DrawPercent">DrawPercent</a>(<a href="../Drawing/Font.html">Font</a> fnt, int x, int y, int p, int b, bool show_Total = true, int color = <a href="../Drawing/Font.html">Font</a>.<a href="../Drawing/Font/EColorRange.html#enum-CR_UNTRANSLATED">CR_UNTRANSLATED</a>, bool noMove = false)</p>
+</code>
+</dt>
+<dt id="mthd-DrawTimeFont">
+<code class="language-zsc">
+<p>void <a href="#mthd-DrawTimeFont">DrawTimeFont</a>(<a href="../Drawing/Font.html">Font</a> printFont, int x, int y, int t, int color)</p>
+</code>
+</dt>
+<dt id="mthd-DrawTime">
+<code class="language-zsc">
+<p>void <a href="#mthd-DrawTime">DrawTime</a>(int x, int y, int t, bool no_Sucks = false)</p>
+</code>
+</dt>
+<dt id="mthd-DrawTextScaled">
+<code class="language-zsc">
+<p>void <a href="#mthd-DrawTextScaled">DrawTextScaled</a>(<a href="../Drawing/Font.html">Font</a> fnt, double x, double y, string text, double scale, int translation = <a href="../Drawing/Font.html">Font</a>.<a href="../Drawing/Font/EColorRange.html#enum-CR_UNTRANSLATED">CR_UNTRANSLATED</a>)</p>
+</code>
+</dt>
+<dt id="mthd-DrawNumScaled">
+<code class="language-zsc">
+<p>void <a href="#mthd-DrawNumScaled">DrawNumScaled</a>(<a href="../Drawing/Font.html">Font</a> fnt, int x, int y, double scale, int n, int digits, int translation = <a href="../Drawing/Font.html">Font</a>.<a href="../Drawing/Font/EColorRange.html#enum-CR_UNTRANSLATED">CR_UNTRANSLATED</a>)</p>
+</code>
+</dt>
+<dt id="mthd-DrawPercentScaled">
+<code class="language-zsc">
+<p>void <a href="#mthd-DrawPercentScaled">DrawPercentScaled</a>(<a href="../Drawing/Font.html">Font</a> fnt, int x, int y, int p, int b, double scale, bool show_Total = true, int color = <a href="../Drawing/Font.html">Font</a>.<a href="../Drawing/Font/EColorRange.html#enum-CR_UNTRANSLATED">CR_UNTRANSLATED</a>)</p>
+</code>
+</dt>
+<dt id="mthd-DrawTimeScaled">
+<code class="language-zsc">
+<p>void <a href="#mthd-DrawTimeScaled">DrawTimeScaled</a>(<a href="../Drawing/Font.html">Font</a> fnt, int x, int y, int t, double scale, int color = <a href="../Drawing/Font.html">Font</a>.<a href="../Drawing/Font/EColorRange.html#enum-CR_UNTRANSLATED">CR_UNTRANSLATED</a>)</p>
+</code>
+</dt>
+<dt id="mthd-AutoSkip">
+<code class="language-zsc">
+<p>bool <a href="#mthd-AutoSkip">AutoSkip</a>()</p>
+</code>
+</dt>
+<dd>
+<p><span class="label red">TO-DO — This section is not finished yet</span></p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Drawer">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-Drawer">Drawer</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <code>WI_Drawer</code>, which is called every frame when <span class=code><a href="../Globals.html#memb-GameState">GameState</a></span>
+is <span class=code><a href="../Base/EGameState.html#memb-GS_INTERMISSION">GS_INTERMISSION</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-End">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-End">End</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called when the intermission should end. Default behaviour is to set
+<span class=code><a href="#memb-CurState">CurState</a></span> to <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-LEAVINGINTERMISSION">LEAVINGINTERMISSION</a></span> and remove bots
+in death-match. Generally, <span class=code><a href="../Level/LevelLocals.html">LevelLocals</a>.<a href="../Level/LevelLocals.html#mthd-WorldDone">WorldDone</a></span> should be called
+directly after this.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Start">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-Start">Start</a>(<a href="WbStartStruct.html">WbStartStruct</a> wbs)</p>
+</code>
+</dt>
+<dd>
+<p>Called by <code>WI_Start</code> after the <span class=code><a href="WbStartStruct.html">WbStartStruct</a></span> is populated, sounds
+are stopped and the screen blend is set to black. Sets up initial
+values and runs <span class=code><a href="#mthd-InitStats">InitStats</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-StartMusic">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-StartMusic">StartMusic</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called in the first tick by <span class=code><a href="#mthd-Ticker">Ticker</a></span> to set the intermission music.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-Ticker">
+<code class="language-zsc">
+<p>virtual void <a href="#mthd-Ticker">Ticker</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <code>WI_Ticker</code>, which is called every game tick when
+<span class=code><a href="../Globals.html#memb-GameState">GameState</a></span> is <span class=code><a href="../Base/EGameState.html#memb-GS_INTERMISSION">GS_INTERMISSION</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-DrawNoState">
+<code class="language-zsc">
+<p>protected virtual void <a href="#mthd-DrawNoState">DrawNoState</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <code>Drawer</code> when <span class=code><a href="#memb-CurState">CurState</a></span> is <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-NOSTATE">NOSTATE</a></span> or
+any other non-state.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-DrawShowNextLoc">
+<code class="language-zsc">
+<p>protected virtual void <a href="#mthd-DrawShowNextLoc">DrawShowNextLoc</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <span class=code><a href="#mthd-Drawer">Drawer</a></span> when <span class=code><a href="#memb-CurState">CurState</a></span> is <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-SHOWNEXTLOC">SHOWNEXTLOC</a></span>
+and, by default, <span class=code><a href="#mthd-DrawNoState">DrawNoState</a></span> after setting <span class=code><a href="#memb-Snl_PointerOn">Snl_PointerOn</a></span> to
+<code>true</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-DrawStats">
+<code class="language-zsc">
+<p>protected virtual void <a href="#mthd-DrawStats">DrawStats</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <span class=code><a href="#mthd-Drawer">Drawer</a></span> directly after drawing the animated background
+when <span class=code><a href="#memb-CurState">CurState</a></span> is <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-InitNoState">
+<code class="language-zsc">
+<p>protected virtual void <a href="#mthd-InitNoState">InitNoState</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <span class=code><a href="#mthd-UpdateShowNextLoc">UpdateShowNextLoc</a></span> to initiate the
+<span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-NOSTATE">NOSTATE</a></span> stage.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-InitShowNextLoc">
+<code class="language-zsc">
+<p>protected virtual void <a href="#mthd-InitShowNextLoc">InitShowNextLoc</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <span class=code><a href="#mthd-UpdateStats">UpdateStats</a></span> to initiate the <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-SHOWNEXTLOC">SHOWNEXTLOC</a></span>
+stage.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-InitStats">
+<code class="language-zsc">
+<p>protected virtual void <a href="#mthd-InitStats">InitStats</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <span class=code><a href="#mthd-Start">Start</a></span> to initiate the <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></span> stage.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-UpdateNoState">
+<code class="language-zsc">
+<p>protected virtual void <a href="#mthd-UpdateNoState">UpdateNoState</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <span class=code><a href="#mthd-Ticker">Ticker</a></span> when <span class=code><a href="#memb-CurState">CurState</a></span> is <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-NOSTATE">NOSTATE</a></span> or
+any other non-state. Exits the intermission by calling <span class=code><a href="#mthd-End">End</a></span> and
+<span class=code><a href="../Level/LevelLocals.html">LevelLocals</a>.<a href="../Level/LevelLocals.html#mthd-WorldDone">WorldDone</a></span> when appropriate.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-UpdateShowNextLoc">
+<code class="language-zsc">
+<p>protected virtual void <a href="#mthd-UpdateShowNextLoc">UpdateShowNextLoc</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <span class=code><a href="#mthd-Ticker">Ticker</a></span> when <span class=code><a href="#memb-CurState">CurState</a></span> is
+<span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-SHOWNEXTLOC">SHOWNEXTLOC</a></span>. Runs <span class=code><a href="#mthd-InitNoState">InitNoState</a></span> when appropriate
+and alternates <span class=code><a href="#memb-Snl_PointerOn">Snl_PointerOn</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-UpdateStats">
+<code class="language-zsc">
+<p>protected virtual void <a href="#mthd-UpdateStats">UpdateStats</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Called by <span class=code><a href="#mthd-Ticker">Ticker</a></span> when <span class=code><a href="#memb-CurState">CurState</a></span> is <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></span>.
+Runs <span class=code><a href="#mthd-InitShowNextLoc">InitShowNextLoc</a></span> when appropriate.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-CheckForAccelerate">
+<code class="language-zsc">
+<p>protected void <a href="#mthd-CheckForAccelerate">CheckForAccelerate</a>()</p>
+</code>
+</dt>
+<dd>
+<p>Updates the values of <span class=code><a href="#memb-AccelerateStage">AccelerateStage</a></span> and <span class=code><a href="#memb-PlayerReady">PlayerReady</a></span>
+according to each player's inputs.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="mthd-FragSum">
+<code class="language-zsc">
+<p>protected int <a href="#mthd-FragSum">FragSum</a>(int playerNum)</p>
+</code>
+</dt>
+<dd>
+<p>Returns the number of frags player <code>playerNum</code> has accumulated against
+all currently in-game players. This is different from
+<span class=code><a href="WbPlayerStruct.html">WbPlayerStruct</a>.<a href="WbPlayerStruct.html#memb-FragCount">FragCount</a></span> because it is counted dynamically, i.e.
+if a player leaves the count will be changed. This is only useful for
+game modes where frags do not count as score.</p>
+</dd>
+</dl>
+<details><summary>Overview of instance methods</summary><p><span class=code><a href="#mthd-AutoSkip">AutoSkip</a></span>, <span class=code><a href="#mthd-CheckForAccelerate">CheckForAccelerate</a></span>, <span class=code><a href="#mthd-DrawAuthor">DrawAuthor</a></span>, <span class=code><a href="#mthd-DrawCharPatch">DrawCharPatch</a></span>, <span class=code><a href="#mthd-DrawEl">DrawEl</a></span>, <span class=code><a href="#mthd-DrawLf">DrawLf</a></span>, <span class=code><a href="#mthd-DrawName">DrawName</a></span>, <span class=code><a href="#mthd-DrawNoState">DrawNoState</a></span>, <span class=code><a href="#mthd-DrawNum">DrawNum</a></span>, <span class=code><a href="#mthd-DrawNumScaled">DrawNumScaled</a></span>, <span class=code><a href="#mthd-DrawPatchOrText">DrawPatchOrText</a></span>, <span class=code><a href="#mthd-DrawPatchText">DrawPatchText</a></span>, <span class=code><a href="#mthd-DrawPercent">DrawPercent</a></span>, <span class=code><a href="#mthd-DrawPercentScaled">DrawPercentScaled</a></span>, <span class=code><a href="#mthd-DrawShowNextLoc">DrawShowNextLoc</a></span>, <span class=code><a href="#mthd-DrawStats">DrawStats</a></span>, <span class=code><a href="#mthd-DrawText">DrawText</a></span>, <span class=code><a href="#mthd-DrawTextScaled">DrawTextScaled</a></span>, <span class=code><a href="#mthd-DrawTexture">DrawTexture</a></span>, <span class=code><a href="#mthd-DrawTime">DrawTime</a></span>, <span class=code><a href="#mthd-DrawTimeFont">DrawTimeFont</a></span>, <span class=code><a href="#mthd-DrawTimeScaled">DrawTimeScaled</a></span>, <span class=code><a href="#mthd-Drawer">Drawer</a></span>, <span class=code><a href="#mthd-End">End</a></span>, <span class=code><a href="#mthd-FragSum">FragSum</a></span>, <span class=code><a href="#mthd-InitNoState">InitNoState</a></span>, <span class=code><a href="#mthd-InitShowNextLoc">InitShowNextLoc</a></span>, <span class=code><a href="#mthd-InitStats">InitStats</a></span>, <span class=code><a href="#mthd-SetSize">SetSize</a></span>, <span class=code><a href="#mthd-Start">Start</a></span>, <span class=code><a href="#mthd-StartMusic">StartMusic</a></span>, <span class=code><a href="#mthd-Ticker">Ticker</a></span>, <span class=code><a href="#mthd-UpdateNoState">UpdateNoState</a></span>, <span class=code><a href="#mthd-UpdateShowNextLoc">UpdateShowNextLoc</a></span>, <span class=code><a href="#mthd-UpdateStats">UpdateStats</a></span></p></details>
+<h2 id="instance-members"><a class="header" href="#instance-members">Instance Members</a></h2>
+<dl class="api"><dt id="memb-Bg">
+<code class="language-zsc">
+<p><a href="InterBackground.html">InterBackground</a> <a href="#memb-Bg">Bg</a></p>
+</code>
+</dt>
+<dd>
+<p>The background for this intermission, set by <span class=code><a href="#mthd-Start">Start</a></span> with the
+initial <span class=code><a href="WbStartStruct.html">WbStartStruct</a></span> object.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-AccelerateStage">
+<code class="language-zsc">
+<p>int <a href="#memb-AccelerateStage">AccelerateStage</a></p>
+</code>
+</dt>
+<dd>
+<p>Used to signify to the current stage that it should go quicker or be
+skipped entirely.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-PlayerReady">
+<code class="language-zsc">
+<p>bool[<a href="../Globals.html#memb-MAXPLAYERS">MAXPLAYERS</a>] <a href="#memb-PlayerReady">PlayerReady</a></p>
+</code>
+</dt>
+<dd>
+<p>Used in networked games to signify when each player is ready to
+continue to the next map. Set by <span class=code><a href="#mthd-CheckForAccelerate">CheckForAccelerate</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Me">
+<code class="language-zsc">
+<p>int <a href="#memb-Me">Me</a></p>
+</code>
+</dt>
+<dd>
+<p>The value of <span class=code><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-PNum">PNum</a></span> when <span class=code><a href="#mthd-Start">Start</a></span> was called. Usually not
+changed, so essentially equivalent to <span class=code><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-PNum">PNum</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-BCnt">
+<code class="language-zsc">
+<p>int <a href="#memb-BCnt">BCnt</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label red">TO-DO — This section is not finished yet</span></p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-CurState">
+<code class="language-zsc">
+<p>int <a href="#memb-CurState">CurState</a></p>
+</code>
+</dt>
+<dd>
+<p>The current stage the intermission is in.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Wbs">
+<code class="language-zsc">
+<p><a href="WbStartStruct.html">WbStartStruct</a> <a href="#memb-Wbs">Wbs</a></p>
+</code>
+</dt>
+<dd>
+<p>The <span class=code><a href="WbStartStruct.html">WbStartStruct</a></span> passed to this class via the <span class=code><a href="#mthd-Start">Start</a></span> function.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Plrs">
+<code class="language-zsc">
+<p><a href="WbPlayerStruct.html">WbPlayerStruct</a>[<a href="../Globals.html#memb-MAXPLAYERS">MAXPLAYERS</a>] <a href="#memb-Plrs">Plrs</a></p>
+</code>
+</dt>
+<dd>
+<p>The value of <span class=code><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-Plyr">Plyr</a></span> when <span class=code><a href="#mthd-Start">Start</a></span> was called. Usually not
+changed, so essentially equivalent to <span class=code><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-Plyr">Plyr</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-OtherKills">
+<code class="language-zsc">
+<p>int <a href="#memb-OtherKills">OtherKills</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt">
+<code class="language-zsc">
+<p>int <a href="#memb-Cnt">Cnt</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt_OtherKills">
+<code class="language-zsc">
+<p>int <a href="#memb-Cnt_OtherKills">Cnt_OtherKills</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt_Kills">
+<code class="language-zsc">
+<p>int[<a href="../Globals.html#memb-MAXPLAYERS">MAXPLAYERS</a>] <a href="#memb-Cnt_Kills">Cnt_Kills</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt_Items">
+<code class="language-zsc">
+<p>int[<a href="../Globals.html#memb-MAXPLAYERS">MAXPLAYERS</a>] <a href="#memb-Cnt_Items">Cnt_Items</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt_Secret">
+<code class="language-zsc">
+<p>int[<a href="../Globals.html#memb-MAXPLAYERS">MAXPLAYERS</a>] <a href="#memb-Cnt_Secret">Cnt_Secret</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt_Frags">
+<code class="language-zsc">
+<p>int[<a href="../Globals.html#memb-MAXPLAYERS">MAXPLAYERS</a>] <a href="#memb-Cnt_Frags">Cnt_Frags</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt_Deaths">
+<code class="language-zsc">
+<p>int[<a href="../Globals.html#memb-MAXPLAYERS">MAXPLAYERS</a>] <a href="#memb-Cnt_Deaths">Cnt_Deaths</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt_Time">
+<code class="language-zsc">
+<p>int <a href="#memb-Cnt_Time">Cnt_Time</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt_Total_Time">
+<code class="language-zsc">
+<p>int <a href="#memb-Cnt_Total_Time">Cnt_Total_Time</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt_Par">
+<code class="language-zsc">
+<p>int <a href="#memb-Cnt_Par">Cnt_Par</a></p>
+</code>
+</dt>
+<dt id="memb-Cnt_Pause">
+<code class="language-zsc">
+<p>int <a href="#memb-Cnt_Pause">Cnt_Pause</a></p>
+</code>
+</dt>
+<dt id="memb-Total_Frags">
+<code class="language-zsc">
+<p>int <a href="#memb-Total_Frags">Total_Frags</a></p>
+</code>
+</dt>
+<dt id="memb-Total_Deaths">
+<code class="language-zsc">
+<p>int <a href="#memb-Total_Deaths">Total_Deaths</a></p>
+</code>
+</dt>
+<dt id="memb-NoAutoStartMap">
+<code class="language-zsc">
+<p>bool <a href="#memb-NoAutoStartMap">NoAutoStartMap</a></p>
+</code>
+</dt>
+<dt id="memb-DoFrags">
+<code class="language-zsc">
+<p>int <a href="#memb-DoFrags">DoFrags</a></p>
+</code>
+</dt>
+<dt id="memb-Ng_State">
+<code class="language-zsc">
+<p>int <a href="#memb-Ng_State">Ng_State</a></p>
+</code>
+</dt>
+<dt id="memb-ShadowAlpha">
+<code class="language-zsc">
+<p>float <a href="#memb-ShadowAlpha">ShadowAlpha</a></p>
+</code>
+</dt>
+<dt id="memb-MapName">
+<code class="language-zsc">
+<p><a href="PatchInfo.html">PatchInfo</a> <a href="#memb-MapName">MapName</a></p>
+</code>
+</dt>
+<dt id="memb-Finished">
+<code class="language-zsc">
+<p><a href="PatchInfo.html">PatchInfo</a> <a href="#memb-Finished">Finished</a></p>
+</code>
+</dt>
+<dt id="memb-Entering">
+<code class="language-zsc">
+<p><a href="PatchInfo.html">PatchInfo</a> <a href="#memb-Entering">Entering</a></p>
+</code>
+</dt>
+<dt id="memb-Content">
+<code class="language-zsc">
+<p><a href="PatchInfo.html">PatchInfo</a> <a href="#memb-Content">Content</a></p>
+</code>
+</dt>
+<dt id="memb-Author">
+<code class="language-zsc">
+<p><a href="PatchInfo.html">PatchInfo</a> <a href="#memb-Author">Author</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label red">TO-DO — This section is not finished yet</span></p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-P_Secret">
+<code class="language-zsc">
+<p>textureId <a href="#memb-P_Secret">P_Secret</a></p>
+</code>
+</dt>
+<dd>
+<p>The &quot;SECRET&quot; (default <code>WISCRT2</code>) graphic.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Kills">
+<code class="language-zsc">
+<p>textureId <a href="#memb-Kills">Kills</a></p>
+</code>
+</dt>
+<dd>
+<p>The &quot;KILLS&quot; (default <code>WIOSTK</code>) graphic.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Secret">
+<code class="language-zsc">
+<p>textureId <a href="#memb-Secret">Secret</a></p>
+</code>
+</dt>
+<dd>
+<p>The &quot;SCRT&quot; (default <code>WIOSTS</code>) graphic.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Items">
+<code class="language-zsc">
+<p>textureId <a href="#memb-Items">Items</a></p>
+</code>
+</dt>
+<dd>
+<p>The &quot;ITEMS&quot; (default <code>WIOSTI</code>) graphic.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-TimePic">
+<code class="language-zsc">
+<p>textureId <a href="#memb-TimePic">TimePic</a></p>
+</code>
+</dt>
+<dd>
+<p>The &quot;TIME&quot; (default <code>WITIME</code>) graphic.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Par">
+<code class="language-zsc">
+<p>textureId <a href="#memb-Par">Par</a></p>
+</code>
+</dt>
+<dd>
+<p>The &quot;PAR&quot; (default <code>WIPAR</code>) graphic.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Sucks">
+<code class="language-zsc">
+<p>textureId <a href="#memb-Sucks">Sucks</a></p>
+</code>
+</dt>
+<dd>
+<p>The &quot;SUCKS&quot; (default <code>WISUCKS</code>) graphic.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-FinishedPatch">
+<code class="language-zsc">
+<p>textureId <a href="#memb-FinishedPatch">FinishedPatch</a></p>
+</code>
+</dt>
+<dt id="memb-EnteringPatch">
+<code class="language-zsc">
+<p>textureId <a href="#memb-EnteringPatch">EnteringPatch</a></p>
+</code>
+</dt>
+<dt id="memb-LNameTexts">
+<code class="language-zsc">
+<p>string[2] <a href="#memb-LNameTexts">LNameTexts</a></p>
+</code>
+</dt>
+<dt id="memb-AuthorTexts">
+<code class="language-zsc">
+<p>string[2] <a href="#memb-AuthorTexts">AuthorTexts</a></p>
+</code>
+</dt>
+<dt id="memb-Snl_PointerOn">
+<code class="language-zsc">
+<p>bool <a href="#memb-Snl_PointerOn">Snl_PointerOn</a></p>
+</code>
+</dt>
+<dt id="memb-Player_Deaths">
+<code class="language-zsc">
+<p>int[<a href="../Globals.html#memb-MAXPLAYERS">MAXPLAYERS</a>] <a href="#memb-Player_Deaths">Player_Deaths</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label red">TO-DO — This section is not finished yet</span></p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-Sp_State">
+<code class="language-zsc">
+<p>int <a href="#memb-Sp_State">Sp_State</a></p>
+</code>
+</dt>
+<dd>
+<p>Used in single-player status screens during the <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></span> stage
+for indicating the current round of statistics to count up.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-CWidth">
+<code class="language-zsc">
+<p>int <a href="#memb-CWidth">CWidth</a></p>
+</code>
+</dt>
+<dt id="memb-CHeight">
+<code class="language-zsc">
+<p>int <a href="#memb-CHeight">CHeight</a></p>
+</code>
+</dt>
+<dt id="memb-ScaleMode">
+<code class="language-zsc">
+<p>int <a href="#memb-ScaleMode">ScaleMode</a></p>
+</code>
+</dt>
+<dt id="memb-WrapWidth">
+<code class="language-zsc">
+<p>int <a href="#memb-WrapWidth">WrapWidth</a></p>
+</code>
+</dt>
+<dt id="memb-ScaleFactorX">
+<code class="language-zsc">
+<p>int <a href="#memb-ScaleFactorX">ScaleFactorX</a></p>
+</code>
+</dt>
+<dt id="memb-ScaleFactorY">
+<code class="language-zsc">
+<p>int <a href="#memb-ScaleFactorY">ScaleFactorY</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label red">TO-DO — This section is not finished yet</span></p>
+</dd>
+</dl>
+<details><summary>Overview of instance members</summary><p><span class=code><a href="#memb-AccelerateStage">AccelerateStage</a></span>, <span class=code><a href="#memb-Author">Author</a></span>, <span class=code><a href="#memb-AuthorTexts">AuthorTexts</a></span>, <span class=code><a href="#memb-BCnt">BCnt</a></span>, <span class=code><a href="#memb-Bg">Bg</a></span>, <span class=code><a href="#memb-CHeight">CHeight</a></span>, <span class=code><a href="#memb-CWidth">CWidth</a></span>, <span class=code><a href="#memb-Cnt">Cnt</a></span>, <span class=code><a href="#memb-Cnt_Deaths">Cnt_Deaths</a></span>, <span class=code><a href="#memb-Cnt_Frags">Cnt_Frags</a></span>, <span class=code><a href="#memb-Cnt_Items">Cnt_Items</a></span>, <span class=code><a href="#memb-Cnt_Kills">Cnt_Kills</a></span>, <span class=code><a href="#memb-Cnt_OtherKills">Cnt_OtherKills</a></span>, <span class=code><a href="#memb-Cnt_Par">Cnt_Par</a></span>, <span class=code><a href="#memb-Cnt_Pause">Cnt_Pause</a></span>, <span class=code><a href="#memb-Cnt_Secret">Cnt_Secret</a></span>, <span class=code><a href="#memb-Cnt_Time">Cnt_Time</a></span>, <span class=code><a href="#memb-Cnt_Total_Time">Cnt_Total_Time</a></span>, <span class=code><a href="#memb-Content">Content</a></span>, <span class=code><a href="#memb-CurState">CurState</a></span>, <span class=code><a href="#memb-DoFrags">DoFrags</a></span>, <span class=code><a href="#memb-Entering">Entering</a></span>, <span class=code><a href="#memb-EnteringPatch">EnteringPatch</a></span>, <span class=code><a href="#memb-Finished">Finished</a></span>, <span class=code><a href="#memb-FinishedPatch">FinishedPatch</a></span>, <span class=code><a href="#memb-Items">Items</a></span>, <span class=code><a href="#memb-Kills">Kills</a></span>, <span class=code><a href="#memb-LNameTexts">LNameTexts</a></span>, <span class=code><a href="#memb-MapName">MapName</a></span>, <span class=code><a href="#memb-Me">Me</a></span>, <span class=code><a href="#memb-Ng_State">Ng_State</a></span>, <span class=code><a href="#memb-NoAutoStartMap">NoAutoStartMap</a></span>, <span class=code><a href="#memb-OtherKills">OtherKills</a></span>, <span class=code><a href="#memb-P_Secret">P_Secret</a></span>, <span class=code><a href="#memb-Par">Par</a></span>, <span class=code><a href="#memb-PlayerReady">PlayerReady</a></span>, <span class=code><a href="#memb-Player_Deaths">Player_Deaths</a></span>, <span class=code><a href="#memb-Plrs">Plrs</a></span>, <span class=code><a href="#memb-ScaleFactorX">ScaleFactorX</a></span>, <span class=code><a href="#memb-ScaleFactorY">ScaleFactorY</a></span>, <span class=code><a href="#memb-ScaleMode">ScaleMode</a></span>, <span class=code><a href="#memb-Secret">Secret</a></span>, <span class=code><a href="#memb-ShadowAlpha">ShadowAlpha</a></span>, <span class=code><a href="#memb-Snl_PointerOn">Snl_PointerOn</a></span>, <span class=code><a href="#memb-Sp_State">Sp_State</a></span>, <span class=code><a href="#memb-Sucks">Sucks</a></span>, <span class=code><a href="#memb-TimePic">TimePic</a></span>, <span class=code><a href="#memb-Total_Deaths">Total_Deaths</a></span>, <span class=code><a href="#memb-Total_Frags">Total_Frags</a></span>, <span class=code><a href="#memb-Wbs">Wbs</a></span>, <span class=code><a href="#memb-WrapWidth">WrapWidth</a></span></p></details>
+<h2 id="constants"><a class="header" href="#constants">Constants</a></h2>
+<dl class="api"><dt id="memb-TITLEY">
+<code class="language-zsc">
+<p>const int <a href="#memb-TITLEY">TITLEY</a></p>
+</code>
+</dt>
+<dd>
+<p>The Y position (in 320x200 pixels) to draw the top of the &quot;finished&quot;
+and &quot;entering&quot; text. Used by <span class=code><a href="#mthd-DrawEl">DrawEl</a></span> and <span class=code><a href="#mthd-DrawLf">DrawLf</a></span>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="memb-SP_STATSX">
+<code class="language-zsc">
+<p>const int <a href="#memb-SP_STATSX">SP_STATSX</a></p>
+</code>
+</dt>
+<dt id="memb-SP_STATSY">
+<code class="language-zsc">
+<p>const int <a href="#memb-SP_STATSY">SP_STATSY</a></p>
+</code>
+</dt>
+<dt id="memb-SP_TIMEX">
+<code class="language-zsc">
+<p>const int <a href="#memb-SP_TIMEX">SP_TIMEX</a></p>
+</code>
+</dt>
+<dt id="memb-SP_TIMEY">
+<code class="language-zsc">
+<p>const int <a href="#memb-SP_TIMEY">SP_TIMEY</a></p>
+</code>
+</dt>
+<dt id="memb-NG_STATSY">
+<code class="language-zsc">
+<p>const int <a href="#memb-NG_STATSY">NG_STATSY</a></p>
+</code>
+</dt>
+<dt id="memb-SHOWNEXTLOCDELAY">
+<code class="language-zsc">
+<p>const int <a href="#memb-SHOWNEXTLOCDELAY">SHOWNEXTLOCDELAY</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label red">TO-DO — This section is not finished yet</span></p>
+</dd>
+</dl>
+<!-- EOF -->
+<details><summary>Overview of constants</summary><p><span class=code><a href="#memb-NG_STATSY">NG_STATSY</a></span>, <span class=code><a href="#memb-SHOWNEXTLOCDELAY">SHOWNEXTLOCDELAY</a></span>, <span class=code><a href="#memb-SP_STATSX">SP_STATSX</a></span>, <span class=code><a href="#memb-SP_STATSY">SP_STATSY</a></span>, <span class=code><a href="#memb-SP_TIMEX">SP_TIMEX</a></span>, <span class=code><a href="#memb-SP_TIMEY">SP_TIMEY</a></span>, <span class=code><a href="#memb-TITLEY">TITLEY</a></span></p></details>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="https://github.com/marrub--/zdoom-doc/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="https://github.com/marrub--/zdoom-doc">contribute to the project!</a> Originally authored by Alison G. Watson (e/he/they) and fira watson (they/them.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../Api/Inter/PatchInfo.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../Api/Inter/StatusScreen/ESpState.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../Api/Inter/PatchInfo.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../Api/Inter/StatusScreen/ESpState.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+    </body>
+</html>
