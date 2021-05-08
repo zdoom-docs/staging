@@ -41,7 +41,7 @@ Sets the texture index to `0`.
 
 The proper way to zero-initialize a textureId is:
 
-```
+```zsc
 textureId tex;
 tex.SetNull();
 ```
