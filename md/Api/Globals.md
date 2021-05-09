@@ -562,25 +562,25 @@ change.
 ### Ranges
 
 #-
-const float {DEFMELEERANGE}
+const double {DEFMELEERANGE}
 
 The default melee range for monsters and the player's melee attacks.
 -#
 
 #-
-const float {SAWRANGE}
+const double {SAWRANGE}
 
 The range of Doom's chainsaw.
 -#
 
 #-
-const float {MISSILERANGE}
+const double {MISSILERANGE}
 
 The maximum range for monster hitscan attacks.
 -#
 
 #-
-const float {PLAYERMISSILERANGE}
+const double {PLAYERMISSILERANGE}
 
 The maximum range for player hitscan attacks.
 -#
@@ -590,25 +590,25 @@ The maximum range for player hitscan attacks.
 Preset attenuation values for various purposes.
 
 #-
-const float {ATTN_NONE}
+const double {ATTN_NONE}
 
 An attenuation at which the sound can be heard from any distance.
 -#
 
 #-
-const float {ATTN_NORM}
+const double {ATTN_NORM}
 
 The default attenuation, which uses the distances defined in [SNDINFO].
 -#
 
 #-
-const float {ATTN_IDLE}
+const double {ATTN_IDLE}
 
 The default attenuation used by Doom.
 -#
 
 #-
-const float {ATTN_STATIC}
+const double {ATTN_STATIC}
 
 An attenuation with which sounds fade fully at 512 map units away.
 -#
