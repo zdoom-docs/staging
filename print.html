@@ -755,8 +755,8 @@ specific type, you must cast the value to that type.</p>
 array. Static arrays cannot be multi-dimensional, unlike normal
 fixed arrays.</p>
 <dl class="syn"><dt>StaticArrayDefinition</dt><dd>
-<p><code>static</code> <code>const</code> <a href="ZScript/Types.html#types">Type</a> <a href="ZScript/Types.html#variable-names">VariableName</a> <code>=</code> <code>{</code> (<a href="ZScript/Expressions.html#constant-expressions">ConstantExpression</a>
-(<code>,</code> <a href="ZScript/Expressions.html#constant-expressions">ConstantExpression</a>)*)? <code>}</code> <code>;</code></p>
+<p><code>static</code> <code>const</code> <a href="ZScript/Types.html#types">Type</a> <a href="ZScript/Types.html#variable-names">VariableName</a> <code>=</code> <code>{</code> <a href="ZScript/Expressions.html#constant-expressions">ConstantExpression</a>
+(<code>,</code> <a href="ZScript/Expressions.html#constant-expressions">ConstantExpression</a>)* <code>}</code> <code>;</code></p>
 </dd></dl>
 <h2 id="examples-1"><a class="header" href="#examples-1">Examples</a></h2>
 <h3 id="constant-definitions-1"><a class="header" href="#constant-definitions-1">Constant Definitions</a></h3>
@@ -1761,13 +1761,15 @@ The statement for when the loop begins (which is scoped to the loop,)
 one expression for checking if the loop should break, and one which is
 executed every time the loop iterates.</p>
 <dl class="syn"><dt>ForLoopStatement</dt><dd>
-<p><code>for</code> <code>(</code> <a href="ZScript/Statements.html#for-loop-statements">ForLoopInitializer</a>? <code>;</code> <a href="ZScript/Expressions.html#expressions">Expression</a>? <code>;</code> <a href="ZScript/Expressions.html#expressions">Expression</a>?
+<p><code>for</code> <code>(</code> <a href="ZScript/Statements.html#for-loop-statements">ForLoopInitializer</a>? <code>;</code> <a href="ZScript/Statements.html#for-loop-statements">ForLoopUpdate</a>? <code>;</code> <a href="ZScript/Expressions.html#expressions">Expression</a>?
 <code>)</code> <a href="ZScript/Statements.html#statements">Statement</a></p>
 </dd><dt>ForLoopInitializer</dt><dd>
 <ul>
-<li><a href="ZScript/Expressions.html#expressions">Expression</a></li>
 <li><a href="ZScript/Statements.html#local-variable-statements">LocalVariableStatement</a></li>
+<li><a href="ZScript/Statements.html#for-loop-statements">ForLoopUpdate</a></li>
 </ul>
+</dd><dt>ForLoopUpdate</dt><dd>
+<p><a href="ZScript/Expressions.html#expressions">Expression</a> (<code>,</code> <a href="ZScript/Expressions.html#expressions">Expression</a>)*</p>
 </dd></dl>
 <h3 id="while-loop-statements"><a class="header" href="#while-loop-statements">While Loop Statements</a></h3>
 <p>The <code>while</code> loop simply takes one expression for checking if the loop
@@ -1821,16 +1823,10 @@ comma-separated list for each expression returned.</p>
 <p><code>return</code> (<a href="ZScript/Expressions.html#expressions">Expression</a> (<code>,</code> <a href="ZScript/Expressions.html#expressions">Expression</a>)*)? <code>;</code></p>
 </dd></dl>
 <h2 id="local-variable-statements"><a class="header" href="#local-variable-statements">Local Variable Statements</a></h2>
-<p>Local variable statements are formed in one of 2 ways. The <code>let</code>
-keyword can be used to automatically determine the type of the
-variable from the initializer, while the regular syntax uses an
-explicit type, and initialization is optional.</p>
+<p>Local variable statements define one or more variables in the current
+scope.</p>
 <dl class="syn"><dt>LocalVariableStatement</dt><dd>
-<ul>
-<li><code>let</code> <a href="ZScript/Fundamentals.html#identifiers">Identifier</a> <code>=</code> <a href="ZScript/Expressions.html#expressions">Expression</a> <code>;</code></li>
-<li><a href="ZScript/Types.html#types">Type</a> <a href="ZScript/Statements.html#local-variable-statements">LocalVariableInitializer</a> (<code>,</code>
-<a href="ZScript/Statements.html#local-variable-statements">LocalVariableInitializer</a>)* <code>;</code></li>
-</ul>
+<p><a href="ZScript/Types.html#types">Type</a> <a href="ZScript/Statements.html#local-variable-statements">LocalVariableInitializer</a> (<code>,</code> <a href="ZScript/Statements.html#local-variable-statements">LocalVariableInitializer</a>)* <code>;</code></p>
 </dd><dt>LocalVariableInitializer</dt><dd>
 <ul>
 <li><a href="ZScript/Types.html#variable-names">VariableName</a></li>
@@ -2098,6 +2094,7 @@ unknown why this exists, and is likely an implementation error.</p>
 <li><a href="ZScript/Types.html#integer-like-reference-types">IntegerLikeReferenceType</a></li>
 <li><a href="ZScript/Types.html#string-like-reference-types">StringLikeReferenceType</a></li>
 <li><a href="ZScript/Types.html#color-types">ColorType</a></li>
+<li><a href="ZScript/Types.html#let-types">LetType</a></li>
 <li><a href="ZScript/Types.html#vector-types">VectorType</a></li>
 <li><a href="ZScript/Types.html#fixed-array-types">FixedArrayType</a></li>
 <li><a href="ZScript/Types.html#dynamic-array-types">DynamicArrayType</a></li>
@@ -2123,6 +2120,7 @@ unknown why this exists, and is likely an implementation error.</p>
 <li><a href="ZScript/Types.html#integer-like-reference-types">Integer-like Reference Types</a></li>
 <li><a href="ZScript/Types.html#string-like-reference-types">String-like Reference Types</a></li>
 <li><a href="ZScript/Types.html#color-types">Color Types</a></li>
+<li><a href="ZScript/Types.html#let-types">Let Types</a></li>
 <li><a href="ZScript/Types.html#vector-types">Vector Types</a></li>
 <li><a href="ZScript/Types.html#fixed-array-types">Fixed Array Types</a></li>
 <li><a href="ZScript/Types.html#dynamic-array-types">Dynamic Array Types</a></li>
@@ -2249,6 +2247,13 @@ lump or a hex color in the format <code>#RRGGBB</code> or <code>#RGB</code>.</p>
 <dl class="syn"><dt>ColorType</dt><dd>
 <p><code>color</code></p>
 </dd></dl>
+<h2 id="let-types"><a class="header" href="#let-types">Let Types</a></h2>
+<p>The <code>let</code> type automatically determines the type of a variable by its
+initializer. <em>This type may only be used in
+<a href="ZScript/Statements.html#local-variable-statements">LocalVariableStatement</a>s.</em></p>
+<dl class="syn"><dt>LetType</dt><dd>
+<p><code>let</code></p>
+</dd></dl>
 <h2 id="vector-types"><a class="header" href="#vector-types">Vector Types</a></h2>
 <p>There are two vector types in ZScript, <code>vector2</code> and <code>vector3</code>, which
 hold two and three members, respectively. Their members can be
@@ -2348,10 +2353,10 @@ case.</p>
 <h2 id="instance-types"><a class="header" href="#instance-types">Instance Types</a></h2>
 <p>Any other identifier used as a type will resolve to a class, structure
 or enumeration instance.</p>
-<p>An instance type that is nested within another type can be accessed
-through a similar syntax to member access. If the nested type is
-prefixed with a <code>.</code> it will always be from global namespace, otherwise
-it will be from the current namespace.</p>
+<p>An instance type that is nested within another type could be accessed
+through a similar syntax to member access according to the grammar,
+however, this won't actually work, and only the first identifier will
+be used.</p>
 <table><thead><tr><th align="left">Type</th><th align="center">Argument</th></tr></thead><tbody>
 <tr><td align="left">Class Instance</td><td align="center">OK</td></tr>
 <tr><td align="left">Enumeration Instance</td><td align="center">OK</td></tr>
@@ -2359,7 +2364,10 @@ it will be from the current namespace.</p>
 <tr><td align="left">Normal Structure Instance</td><td align="center">No</td></tr>
 </tbody></table>
 <dl class="syn"><dt>InstanceType</dt><dd>
-<p><code>.</code>? <a href="ZScript/Fundamentals.html#identifiers">Identifier</a> (<code>.</code> <a href="ZScript/Fundamentals.html#identifiers">Identifier</a>)*</p>
+<ul>
+<li><a href="ZScript/Fundamentals.html#identifiers">Identifier</a></li>
+<li><code>.</code> <a href="ZScript/Fundamentals.html#identifiers">Identifier</a> (<code>.</code> <a href="ZScript/Fundamentals.html#identifiers">Identifier</a>)*</li>
+</ul>
 </dd></dl>
 <h2 id="variable-names"><a class="header" href="#variable-names">Variable Names</a></h2>
 <p>Variable names can have an array's size on them, instead of on the
@@ -7295,7 +7303,7 @@ change.</p>
 <h3 id="ranges"><a class="header" href="#ranges">Ranges</a></h3>
 <dl class="api"><dt id="memb-DEFMELEERANGE">
 <code class="language-zsc">
-<p>const float <a href="Api/Globals.html#memb-DEFMELEERANGE">DEFMELEERANGE</a></p>
+<p>const double <a href="Api/Globals.html#memb-DEFMELEERANGE">DEFMELEERANGE</a></p>
 </code>
 </dt>
 <dd>
@@ -7304,7 +7312,7 @@ change.</p>
 </dl>
 <dl class="api"><dt id="memb-SAWRANGE">
 <code class="language-zsc">
-<p>const float <a href="Api/Globals.html#memb-SAWRANGE">SAWRANGE</a></p>
+<p>const double <a href="Api/Globals.html#memb-SAWRANGE">SAWRANGE</a></p>
 </code>
 </dt>
 <dd>
@@ -7313,7 +7321,7 @@ change.</p>
 </dl>
 <dl class="api"><dt id="memb-MISSILERANGE">
 <code class="language-zsc">
-<p>const float <a href="Api/Globals.html#memb-MISSILERANGE">MISSILERANGE</a></p>
+<p>const double <a href="Api/Globals.html#memb-MISSILERANGE">MISSILERANGE</a></p>
 </code>
 </dt>
 <dd>
@@ -7322,7 +7330,7 @@ change.</p>
 </dl>
 <dl class="api"><dt id="memb-PLAYERMISSILERANGE">
 <code class="language-zsc">
-<p>const float <a href="Api/Globals.html#memb-PLAYERMISSILERANGE">PLAYERMISSILERANGE</a></p>
+<p>const double <a href="Api/Globals.html#memb-PLAYERMISSILERANGE">PLAYERMISSILERANGE</a></p>
 </code>
 </dt>
 <dd>
@@ -7333,7 +7341,7 @@ change.</p>
 <p>Preset attenuation values for various purposes.</p>
 <dl class="api"><dt id="memb-ATTN_NONE">
 <code class="language-zsc">
-<p>const float <a href="Api/Globals.html#memb-ATTN_NONE">ATTN_NONE</a></p>
+<p>const double <a href="Api/Globals.html#memb-ATTN_NONE">ATTN_NONE</a></p>
 </code>
 </dt>
 <dd>
@@ -7342,7 +7350,7 @@ change.</p>
 </dl>
 <dl class="api"><dt id="memb-ATTN_NORM">
 <code class="language-zsc">
-<p>const float <a href="Api/Globals.html#memb-ATTN_NORM">ATTN_NORM</a></p>
+<p>const double <a href="Api/Globals.html#memb-ATTN_NORM">ATTN_NORM</a></p>
 </code>
 </dt>
 <dd>
@@ -7351,7 +7359,7 @@ change.</p>
 </dl>
 <dl class="api"><dt id="memb-ATTN_IDLE">
 <code class="language-zsc">
-<p>const float <a href="Api/Globals.html#memb-ATTN_IDLE">ATTN_IDLE</a></p>
+<p>const double <a href="Api/Globals.html#memb-ATTN_IDLE">ATTN_IDLE</a></p>
 </code>
 </dt>
 <dd>
@@ -7360,7 +7368,7 @@ change.</p>
 </dl>
 <dl class="api"><dt id="memb-ATTN_STATIC">
 <code class="language-zsc">
-<p>const float <a href="Api/Globals.html#memb-ATTN_STATIC">ATTN_STATIC</a></p>
+<p>const double <a href="Api/Globals.html#memb-ATTN_STATIC">ATTN_STATIC</a></p>
 </code>
 </dt>
 <dd>

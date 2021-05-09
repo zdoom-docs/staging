@@ -149,6 +149,7 @@ unknown why this exists, and is likely an implementation error.</p>
 <li><a href="#integer-like-reference-types">IntegerLikeReferenceType</a></li>
 <li><a href="#string-like-reference-types">StringLikeReferenceType</a></li>
 <li><a href="#color-types">ColorType</a></li>
+<li><a href="#let-types">LetType</a></li>
 <li><a href="#vector-types">VectorType</a></li>
 <li><a href="#fixed-array-types">FixedArrayType</a></li>
 <li><a href="#dynamic-array-types">DynamicArrayType</a></li>
@@ -174,6 +175,7 @@ unknown why this exists, and is likely an implementation error.</p>
 <li><a href="#integer-like-reference-types">Integer-like Reference Types</a></li>
 <li><a href="#string-like-reference-types">String-like Reference Types</a></li>
 <li><a href="#color-types">Color Types</a></li>
+<li><a href="#let-types">Let Types</a></li>
 <li><a href="#vector-types">Vector Types</a></li>
 <li><a href="#fixed-array-types">Fixed Array Types</a></li>
 <li><a href="#dynamic-array-types">Dynamic Array Types</a></li>
@@ -300,6 +302,13 @@ lump or a hex color in the format <code>#RRGGBB</code> or <code>#RGB</code>.</p>
 <dl class="syn"><dt>ColorType</dt><dd>
 <p><code>color</code></p>
 </dd></dl>
+<h2 id="let-types"><a class="header" href="#let-types">Let Types</a></h2>
+<p>The <code>let</code> type automatically determines the type of a variable by its
+initializer. <em>This type may only be used in
+<a href="Statements.html#local-variable-statements">LocalVariableStatement</a>s.</em></p>
+<dl class="syn"><dt>LetType</dt><dd>
+<p><code>let</code></p>
+</dd></dl>
 <h2 id="vector-types"><a class="header" href="#vector-types">Vector Types</a></h2>
 <p>There are two vector types in ZScript, <code>vector2</code> and <code>vector3</code>, which
 hold two and three members, respectively. Their members can be
@@ -399,10 +408,10 @@ case.</p>
 <h2 id="instance-types"><a class="header" href="#instance-types">Instance Types</a></h2>
 <p>Any other identifier used as a type will resolve to a class, structure
 or enumeration instance.</p>
-<p>An instance type that is nested within another type can be accessed
-through a similar syntax to member access. If the nested type is
-prefixed with a <code>.</code> it will always be from global namespace, otherwise
-it will be from the current namespace.</p>
+<p>An instance type that is nested within another type could be accessed
+through a similar syntax to member access according to the grammar,
+however, this won't actually work, and only the first identifier will
+be used.</p>
 <table><thead><tr><th align="left">Type</th><th align="center">Argument</th></tr></thead><tbody>
 <tr><td align="left">Class Instance</td><td align="center">OK</td></tr>
 <tr><td align="left">Enumeration Instance</td><td align="center">OK</td></tr>
@@ -410,7 +419,10 @@ it will be from the current namespace.</p>
 <tr><td align="left">Normal Structure Instance</td><td align="center">No</td></tr>
 </tbody></table>
 <dl class="syn"><dt>InstanceType</dt><dd>
-<p><code>.</code>? <a href="Fundamentals.html#identifiers">Identifier</a> (<code>.</code> <a href="Fundamentals.html#identifiers">Identifier</a>)*</p>
+<ul>
+<li><a href="Fundamentals.html#identifiers">Identifier</a></li>
+<li><code>.</code> <a href="Fundamentals.html#identifiers">Identifier</a> (<code>.</code> <a href="Fundamentals.html#identifiers">Identifier</a>)*</li>
+</ul>
 </dd></dl>
 <h2 id="variable-names"><a class="header" href="#variable-names">Variable Names</a></h2>
 <p>Variable names can have an array's size on them, instead of on the

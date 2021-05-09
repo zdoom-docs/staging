@@ -223,13 +223,15 @@ The statement for when the loop begins (which is scoped to the loop,)
 one expression for checking if the loop should break, and one which is
 executed every time the loop iterates.</p>
 <dl class="syn"><dt>ForLoopStatement</dt><dd>
-<p><code>for</code> <code>(</code> <a href="#for-loop-statements">ForLoopInitializer</a>? <code>;</code> <a href="Expressions.html#expressions">Expression</a>? <code>;</code> <a href="Expressions.html#expressions">Expression</a>?
+<p><code>for</code> <code>(</code> <a href="#for-loop-statements">ForLoopInitializer</a>? <code>;</code> <a href="#for-loop-statements">ForLoopUpdate</a>? <code>;</code> <a href="Expressions.html#expressions">Expression</a>?
 <code>)</code> <a href="#statements">Statement</a></p>
 </dd><dt>ForLoopInitializer</dt><dd>
 <ul>
-<li><a href="Expressions.html#expressions">Expression</a></li>
 <li><a href="#local-variable-statements">LocalVariableStatement</a></li>
+<li><a href="#for-loop-statements">ForLoopUpdate</a></li>
 </ul>
+</dd><dt>ForLoopUpdate</dt><dd>
+<p><a href="Expressions.html#expressions">Expression</a> (<code>,</code> <a href="Expressions.html#expressions">Expression</a>)*</p>
 </dd></dl>
 <h3 id="while-loop-statements"><a class="header" href="#while-loop-statements">While Loop Statements</a></h3>
 <p>The <code>while</code> loop simply takes one expression for checking if the loop
@@ -283,16 +285,10 @@ comma-separated list for each expression returned.</p>
 <p><code>return</code> (<a href="Expressions.html#expressions">Expression</a> (<code>,</code> <a href="Expressions.html#expressions">Expression</a>)*)? <code>;</code></p>
 </dd></dl>
 <h2 id="local-variable-statements"><a class="header" href="#local-variable-statements">Local Variable Statements</a></h2>
-<p>Local variable statements are formed in one of 2 ways. The <code>let</code>
-keyword can be used to automatically determine the type of the
-variable from the initializer, while the regular syntax uses an
-explicit type, and initialization is optional.</p>
+<p>Local variable statements define one or more variables in the current
+scope.</p>
 <dl class="syn"><dt>LocalVariableStatement</dt><dd>
-<ul>
-<li><code>let</code> <a href="Fundamentals.html#identifiers">Identifier</a> <code>=</code> <a href="Expressions.html#expressions">Expression</a> <code>;</code></li>
-<li><a href="Types.html#types">Type</a> <a href="#local-variable-statements">LocalVariableInitializer</a> (<code>,</code>
-<a href="#local-variable-statements">LocalVariableInitializer</a>)* <code>;</code></li>
-</ul>
+<p><a href="Types.html#types">Type</a> <a href="#local-variable-statements">LocalVariableInitializer</a> (<code>,</code> <a href="#local-variable-statements">LocalVariableInitializer</a>)* <code>;</code></p>
 </dd><dt>LocalVariableInitializer</dt><dd>
 <ul>
 <li><a href="Types.html#variable-names">VariableName</a></li>
