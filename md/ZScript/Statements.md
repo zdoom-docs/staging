@@ -93,13 +93,17 @@ executed every time the loop iterates.
 
 <dl class="syn"><dt>ForLoopStatement</dt><dd>
 
-`for` `(` [ForLoopInitializer]? `;` [Expression]? `;` [Expression]?
+`for` `(` [ForLoopInitializer]? `;` [ForLoopUpdate]? `;` [Expression]?
 `)` [Statement]
 
 </dd><dt>ForLoopInitializer</dt><dd>
 
-* [Expression]
 * [LocalVariableStatement]
+* [ForLoopUpdate]
+
+</dd><dt>ForLoopUpdate</dt><dd>
+
+[Expression] (`,` [Expression])*
 
 </dd></dl>
 
@@ -181,16 +185,12 @@ comma-separated list for each expression returned.
 
 ## Local Variable Statements
 
-Local variable statements are formed in one of 2 ways. The `let`
-keyword can be used to automatically determine the type of the
-variable from the initializer, while the regular syntax uses an
-explicit type, and initialization is optional.
+Local variable statements define one or more variables in the current
+scope.
 
 <dl class="syn"><dt>LocalVariableStatement</dt><dd>
 
-* `let` [Identifier] `=` [Expression] `;`
-* [Type] [LocalVariableInitializer] (`,`
-  [LocalVariableInitializer])* `;`
+[Type] [LocalVariableInitializer] (`,` [LocalVariableInitializer])* `;`
 
 </dd><dt>LocalVariableInitializer</dt><dd>
 
@@ -356,6 +356,7 @@ Actor mo; bool spawned; [spawned, mo] = A_SpawnItemEx("MyCoolActor");
 [FlowStatement]: #flow-statements
 [ForLoopInitializer]: #for-loop-statements
 [ForLoopStatement]: #for-loop-statements
+[ForLoopUpdate]: #for-loop-statements
 [LocalVariableInitializer]: #local-variable-statements
 [LocalVariableStatement]: #local-variable-statements
 [LoopStatement]: #loop-statements

@@ -27,6 +27,7 @@ unknown why this exists, and is likely an implementation error.
 * [IntegerLikeReferenceType]
 * [StringLikeReferenceType]
 * [ColorType]
+* [LetType]
 * [VectorType]
 * [FixedArrayType]
 * [DynamicArrayType]
@@ -203,6 +204,18 @@ Colors are usable as arguments.
 
 </dd></dl>
 
+## Let Types
+
+The `let` type automatically determines the type of a variable by its
+initializer. *This type may only be used in
+[LocalVariableStatement]s.*
+
+<dl class="syn"><dt>LetType</dt><dd>
+
+`let`
+
+</dd></dl>
+
 ## Vector Types
 
 There are two vector types in ZScript, `vector2` and `vector3`, which
@@ -346,10 +359,10 @@ Read-only objects are usable as arguments.
 Any other identifier used as a type will resolve to a class, structure
 or enumeration instance.
 
-An instance type that is nested within another type can be accessed
-through a similar syntax to member access. If the nested type is
-prefixed with a `.` it will always be from global namespace, otherwise
-it will be from the current namespace.
+An instance type that is nested within another type could be accessed
+through a similar syntax to member access according to the grammar,
+however, this won't actually work, and only the first identifier will
+be used.
 
 | Type                      | Argument |
 | :---                      | :------: |
@@ -360,7 +373,8 @@ it will be from the current namespace.
 
 <dl class="syn"><dt>InstanceType</dt><dd>
 
-`.`? [Identifier] (`.` [Identifier])*
+* [Identifier]
+* `.` [Identifier] (`.` [Identifier])*
 
 </dd></dl>
 
@@ -377,6 +391,7 @@ type, or none at all for normal variables.
 
 [ConstantExpression]: Expressions.md#constant-expressions
 [Identifier]: Fundamentals.md#identifiers
+[LocalVariableStatement]: Statements.md#local-variable-statements
 
 [BooleanType]: #boolean-types
 [ClassReferenceType]: #class-reference-types
@@ -387,6 +402,7 @@ type, or none at all for normal variables.
 [InstanceType]: #instance-types
 [IntegerLikeReferenceType]: #integer-like-reference-types
 [IntegerType]: #integer-types
+[LetType]: #let-types
 [MapType]: #map-types
 [NameType]: #name-types
 [NativePointerType]: #native-pointer-types

@@ -21,8 +21,8 @@ fixed arrays.
 
 <dl class="syn"><dt>StaticArrayDefinition</dt><dd>
 
-`static` `const` [Type] [VariableName] `=` `{` ([ConstantExpression]
-(`,` [ConstantExpression])*)? `}` `;`
+`static` `const` [Type] [VariableName] `=` `{` [ConstantExpression]
+(`,` [ConstantExpression])* `}` `;`
 
 </dd></dl>
 
