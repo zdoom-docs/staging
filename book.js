@@ -11,7 +11,8 @@ hljs.registerLanguage('zscript', () => {
 			+ 'virtual virtualScope volatile while',
 		type: 'array bool byte char color double float int int16 int8 '
 			+ 'long map name none sbyte short sound state string uint '
-			+ 'uint16 uint8 ulong ushort vector2 vector3 void',
+			+ 'uint16 uint8 ulong ushort vector2 vector3 void '
+			+ 'textureId spriteId',
 		literal: 'true false null',
 	};
 

@@ -132,13 +132,13 @@
 </details>
 <p>Static event handlers handle events on a per-instance level. This
 means that they are registered when you start GZDoom, and un-register
-when you exit GZDoom. This is unlike <span class=code><a href="EventHandler.html">EventHandler</a></span>, which registers
+when you exit GZDoom. This is unlike <code class=borderless><a href="EventHandler.html">EventHandler</a></code>, which registers
 when a new game or map is started, and un-registers when it ends.</p>
 <p>All of the virtual functions on StaticEventHandler have empty
 implementations by default, so you only need to override the events
 your event handler needs to override.</p>
 <p>Differences in virtual function behaviour are listed in the
-<span class=code><a href="EventHandler.html">EventHandler</a></span> documentation.</p>
+<code class=borderless><a href="EventHandler.html">EventHandler</a></code> documentation.</p>
 <p><span class="label yellow">Nondeterministic — Do not rely on its outcome</span> Because static event
 handlers are per-instance rather than per-game, care should be taken
 to make sure that variables kept in a static event handler don't
@@ -155,7 +155,7 @@ and cause a desync.</p>
 is registered, or <code>null</code> if it does not exist.</p>
 </dd>
 </dl>
-<details><summary>Overview of class methods</summary><p><span class=code><a href="#mthd-Find">Find</a></span></p></details>
+<details><summary>Overview of class methods</summary><p><code class=borderless><a href="#mthd-Find">Find</a></code></p></details>
 <h2 id="instance-methods"><a class="header" href="#instance-methods">Instance Methods</a></h2>
 <dl class="api"><dt id="mthd-OnRegister">
 <code class="language-zsc">
@@ -164,7 +164,7 @@ is registered, or <code>null</code> if it does not exist.</p>
 </dt>
 <dd>
 <p>Called when this type is registered. This is where you should call
-<span class=code><a href="#mthd-SetOrder">SetOrder</a></span>, and set <span class=code><a href="#memb-IsUiProcessor">IsUiProcessor</a></span> and <span class=code><a href="#memb-RequireMouse">RequireMouse</a></span>.</p>
+<code class=borderless><a href="#mthd-SetOrder">SetOrder</a></code>, and set <code class=borderless><a href="#memb-IsUiProcessor">IsUiProcessor</a></code> and <code class=borderless><a href="#memb-RequireMouse">RequireMouse</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-OnUnregister">
@@ -205,7 +205,7 @@ is changed.</p>
 </code>
 </dt>
 <dd>
-<p>Called directly after <span class=code><a href="../Base/Thinker.html">Thinker</a>.<a href="../Base/Thinker.html#mthd-PostBeginPlay">PostBeginPlay</a></span>.</p>
+<p>Called directly after <code class=borderless><a href="../Base/Thinker.html">Thinker</a>.<a href="../Base/Thinker.html#mthd-PostBeginPlay">PostBeginPlay</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-WorldThingDied">
@@ -214,7 +214,7 @@ is changed.</p>
 </code>
 </dt>
 <dd>
-<p>Called after <span class=code><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-MorphedDeath">MorphedDeath</a></span>, <span class=code><a href="../Inventory.html">Inventory</a>.<a href="../Inventory.html#mthd-OwnerDied">OwnerDied</a></span>, and the
+<p>Called after <code class=borderless><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-MorphedDeath">MorphedDeath</a></code>, <code class=borderless><a href="../Inventory.html">Inventory</a>.<a href="../Inventory.html#mthd-OwnerDied">OwnerDied</a></code>, and the
 target is set to the damage source, just before Kill ACS scripts are
 called and the rest of the death handling is done.</p>
 </dd>
@@ -234,8 +234,8 @@ called and the rest of the death handling is done.</p>
 </code>
 </dt>
 <dd>
-<p>Called directly directly after <span class=code><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-DamageMobj">DamageMobj</a></span> finishes, or
-directly before <span class=code><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-Die">Die</a></span>.</p>
+<p>Called directly directly after <code class=borderless><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-DamageMobj">DamageMobj</a></code> finishes, or
+directly before <code class=borderless><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-Die">Die</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-WorldThingDestroyed">
@@ -244,7 +244,7 @@ directly before <span class=code><a href="../Base/Actor.html">Actor</a>.<a href=
 </code>
 </dt>
 <dd>
-<p>Called at the beginning of <span class=code><a href="../Base/Object.html">Object</a>.<a href="../Base/Object.html#mthd-OnDestroy">OnDestroy</a></span> on <span class=code><a href="../Base/Actor.html">Actor</a></span>s.</p>
+<p>Called at the beginning of <code class=borderless><a href="../Base/Object.html">Object</a>.<a href="../Base/Object.html#mthd-OnDestroy">OnDestroy</a></code> on <code class=borderless><a href="../Base/Actor.html">Actor</a></code>s.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-WorldLinePreActivated">
@@ -305,11 +305,11 @@ just before Lightning ACS scripts are called.</p>
 </code>
 </dt>
 <dd>
-<p>Called on every world tick, after interpolators are updated, world
+<p>Called on every world tic, after interpolators are updated, world
 freeze is updated, sight counters are reset, particles have run their
 thinkers, and players have run their thinkers, just before the status
-bar is ticked, the level ticks, thinkers are ticked, and the level
-time is updated. This is not called when the game is paused, and its
+bar is ticked, the level tics, thinkers are ticked, and the level time
+is updated. This is not called when the game is paused, and its
 execution is entirely deterministic regardless of how this event
 handler is applied.</p>
 </dd>
@@ -321,9 +321,9 @@ handler is applied.</p>
 </dt>
 <dd>
 <p>Despite the name, this is actually run on the status bar, specifically
-in <span class=code><a href="../Ui/BaseStatusBar.html">BaseStatusBar</a>.<a href="../Ui/BaseStatusBar.html#mthd-DrawTopStuff">DrawTopStuff</a></span>. It is run after <span class=code><a href="../Ui/HudMessage.html">HudMessage</a></span>s are
+in <code class=borderless><a href="../Ui/BaseStatusBar.html">BaseStatusBar</a>.<a href="../Ui/BaseStatusBar.html#mthd-DrawTopStuff">DrawTopStuff</a></code>. It is run after <code class=borderless><a href="../Ui/HudMessage.html">HudMessage</a></code>s are
 drawn and power-ups are drawn, just before the log is drawn. You may
-use <span class=code><a href="../Drawing/Screen.html">Screen</a></span> functions in this function.</p>
+use <code class=borderless><a href="../Drawing/Screen.html">Screen</a></code> functions in this function.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-RenderUnderlay">
@@ -333,8 +333,8 @@ use <span class=code><a href="../Drawing/Screen.html">Screen</a></span> function
 </dt>
 <dd>
 <p>Despite the name, this is actually run on the status bar, specifically
-in the currently-not-exposed <span class=code><a href="../Ui/BaseStatusBar.html">BaseStatusBar</a></span>.DrawBottomStuff. It is
-run just before <span class=code><a href="../Ui/HudMessage.html">HudMessage</a></span>s are drawn. You may use <span class=code><a href="../Drawing/Screen.html">Screen</a></span>
+in the currently-not-exposed <code class=borderless><a href="../Ui/BaseStatusBar.html">BaseStatusBar</a></code>.DrawBottomStuff. It is
+run just before <code class=borderless><a href="../Ui/HudMessage.html">HudMessage</a></code>s are drawn. You may use <code class=borderless><a href="../Drawing/Screen.html">Screen</a></code>
 functions in this function.</p>
 </dd>
 </dl>
@@ -356,8 +356,8 @@ camera is set but just before Return ACS scripts are called.</p>
 <dd>
 <p>Called when a player spawns, directly after the teleport fog is
 spanwed and just before Respawn ACS scripts are called. Also called
-similarly at the end of the <span class=code><a href="../Players/PlayerPawn.html">PlayerPawn</a>.<a href="../Players/PlayerPawn.html#mthd-OnRespawn">OnRespawn</a></span> function, for
-example when the <span class=code><a href="../../ConsoleCommands.html#ccmd-resurrect">resurrect</a></span> cheat is used.</p>
+similarly at the end of the <code class=borderless><a href="../Players/PlayerPawn.html">PlayerPawn</a>.<a href="../Players/PlayerPawn.html#mthd-OnRespawn">OnRespawn</a></code> function, for
+example when the <code class=borderless><a href="../../ConsoleCommands.html#ccmd-resurrect">resurrect</a></code> cheat is used.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-PlayerDied">
@@ -366,7 +366,7 @@ example when the <span class=code><a href="../../ConsoleCommands.html#ccmd-resur
 </code>
 </dt>
 <dd>
-<p>Called after <span class=code><a href="#mthd-WorldThingDied">WorldThingDied</a></span> and <span class=code><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-GetDeathHeight">GetDeathHeight</a></span>, and
+<p>Called after <code class=borderless><a href="#mthd-WorldThingDied">WorldThingDied</a></code> and <code class=borderless><a href="../Base/Actor.html">Actor</a>.<a href="../Base/Actor.html#mthd-GetDeathHeight">GetDeathHeight</a></code>, and
 after the actor's thing special is activated, when the obituary has
 been displayed, just before Death ACS scripts have been called.</p>
 </dd>
@@ -387,10 +387,10 @@ before <code>DISCONNECT</code> ACS scripts are called.</p>
 </code>
 </dt>
 <dd>
-<p>Called only if <span class=code><a href="#memb-IsUiProcessor">IsUiProcessor</a></span> is <code>true</code>. Called when a GUI event is
+<p>Called only if <code class=borderless><a href="#memb-IsUiProcessor">IsUiProcessor</a></code> is <code>true</code>. Called when a GUI event is
 dispatched by the engine, for example when the UI is active and the
 player has pressed a key or moved the mouse. Mouse movements will only
-be captured if <span class=code><a href="#memb-RequireMouse">RequireMouse</a></span> is <code>true</code>. Because this interacts
+be captured if <code class=borderless><a href="#memb-RequireMouse">RequireMouse</a></code> is <code>true</code>. Because this interacts
 directly with the OS it is not part of the game simulation, therefore
 has UI scope and must dispatch commands to the game as networked
 events. If the return value is <code>true</code>, the function will block any
@@ -417,7 +417,7 @@ this, it is UI scope, so it should be used to process UI code.</p>
 </code>
 </dt>
 <dd>
-<p>Similar to <span class=code><a href="#mthd-UiTick">UiTick</a></span>, this is also deterministic, but called after
+<p>Similar to <code class=borderless><a href="#mthd-UiTick">UiTick</a></code>, this is also deterministic, but called after
 all other tickers.</p>
 </dd>
 </dl>
@@ -427,9 +427,9 @@ all other tickers.</p>
 </code>
 </dt>
 <dd>
-<p>The same as <span class=code><a href="#mthd-UiProcess">UiProcess</a></span>, but this is only called when inputs are
+<p>The same as <code class=borderless><a href="#mthd-UiProcess">UiProcess</a></code>, but this is only called when inputs are
 being directed to the game, rather than to the GUI. All of the same
-restrictions apply to this as they do to <span class=code><a href="#mthd-UiProcess">UiProcess</a></span>, and the return
+restrictions apply to this as they do to <code class=borderless><a href="#mthd-UiProcess">UiProcess</a></code>, and the return
 value acts the same.</p>
 </dd>
 </dl>
@@ -493,10 +493,10 @@ before the level is set up.</p>
 </dt>
 <dd>
 <p>Sets the ordering of this event handler, which can be read from
-<span class=code><a href="#memb-Order">Order</a></span>.</p>
+<code class=borderless><a href="#memb-Order">Order</a></code>.</p>
 </dd>
 </dl>
-<details><summary>Overview of instance methods</summary><p><span class=code><a href="#mthd-CheckReplacee">CheckReplacee</a></span>, <span class=code><a href="#mthd-CheckReplacement">CheckReplacement</a></span>, <span class=code><a href="#mthd-ConsoleProcess">ConsoleProcess</a></span>, <span class=code><a href="#mthd-InputProcess">InputProcess</a></span>, <span class=code><a href="#mthd-NetworkProcess">NetworkProcess</a></span>, <span class=code><a href="#mthd-NewGame">NewGame</a></span>, <span class=code><a href="#mthd-OnRegister">OnRegister</a></span>, <span class=code><a href="#mthd-OnUnregister">OnUnregister</a></span>, <span class=code><a href="#mthd-PlayerDied">PlayerDied</a></span>, <span class=code><a href="#mthd-PlayerDisconnected">PlayerDisconnected</a></span>, <span class=code><a href="#mthd-PlayerEntered">PlayerEntered</a></span>, <span class=code><a href="#mthd-PlayerRespawned">PlayerRespawned</a></span>, <span class=code><a href="#mthd-PostUiTick">PostUiTick</a></span>, <span class=code><a href="#mthd-RenderOverlay">RenderOverlay</a></span>, <span class=code><a href="#mthd-RenderUnderlay">RenderUnderlay</a></span>, <span class=code><a href="#mthd-SetOrder">SetOrder</a></span>, <span class=code><a href="#mthd-UiProcess">UiProcess</a></span>, <span class=code><a href="#mthd-UiTick">UiTick</a></span>, <span class=code><a href="#mthd-WorldLightning">WorldLightning</a></span>, <span class=code><a href="#mthd-WorldLineActivated">WorldLineActivated</a></span>, <span class=code><a href="#mthd-WorldLineDamaged">WorldLineDamaged</a></span>, <span class=code><a href="#mthd-WorldLinePreActivated">WorldLinePreActivated</a></span>, <span class=code><a href="#mthd-WorldLoaded">WorldLoaded</a></span>, <span class=code><a href="#mthd-WorldSectorDamaged">WorldSectorDamaged</a></span>, <span class=code><a href="#mthd-WorldThingDamaged">WorldThingDamaged</a></span>, <span class=code><a href="#mthd-WorldThingDestroyed">WorldThingDestroyed</a></span>, <span class=code><a href="#mthd-WorldThingDied">WorldThingDied</a></span>, <span class=code><a href="#mthd-WorldThingRevived">WorldThingRevived</a></span>, <span class=code><a href="#mthd-WorldThingSpawned">WorldThingSpawned</a></span>, <span class=code><a href="#mthd-WorldTick">WorldTick</a></span>, <span class=code><a href="#mthd-WorldUnloaded">WorldUnloaded</a></span></p></details>
+<details><summary>Overview of instance methods</summary><p><code class=borderless><a href="#mthd-CheckReplacee">CheckReplacee</a></code>, <code class=borderless><a href="#mthd-CheckReplacement">CheckReplacement</a></code>, <code class=borderless><a href="#mthd-ConsoleProcess">ConsoleProcess</a></code>, <code class=borderless><a href="#mthd-InputProcess">InputProcess</a></code>, <code class=borderless><a href="#mthd-NetworkProcess">NetworkProcess</a></code>, <code class=borderless><a href="#mthd-NewGame">NewGame</a></code>, <code class=borderless><a href="#mthd-OnRegister">OnRegister</a></code>, <code class=borderless><a href="#mthd-OnUnregister">OnUnregister</a></code>, <code class=borderless><a href="#mthd-PlayerDied">PlayerDied</a></code>, <code class=borderless><a href="#mthd-PlayerDisconnected">PlayerDisconnected</a></code>, <code class=borderless><a href="#mthd-PlayerEntered">PlayerEntered</a></code>, <code class=borderless><a href="#mthd-PlayerRespawned">PlayerRespawned</a></code>, <code class=borderless><a href="#mthd-PostUiTick">PostUiTick</a></code>, <code class=borderless><a href="#mthd-RenderOverlay">RenderOverlay</a></code>, <code class=borderless><a href="#mthd-RenderUnderlay">RenderUnderlay</a></code>, <code class=borderless><a href="#mthd-SetOrder">SetOrder</a></code>, <code class=borderless><a href="#mthd-UiProcess">UiProcess</a></code>, <code class=borderless><a href="#mthd-UiTick">UiTick</a></code>, <code class=borderless><a href="#mthd-WorldLightning">WorldLightning</a></code>, <code class=borderless><a href="#mthd-WorldLineActivated">WorldLineActivated</a></code>, <code class=borderless><a href="#mthd-WorldLineDamaged">WorldLineDamaged</a></code>, <code class=borderless><a href="#mthd-WorldLinePreActivated">WorldLinePreActivated</a></code>, <code class=borderless><a href="#mthd-WorldLoaded">WorldLoaded</a></code>, <code class=borderless><a href="#mthd-WorldSectorDamaged">WorldSectorDamaged</a></code>, <code class=borderless><a href="#mthd-WorldThingDamaged">WorldThingDamaged</a></code>, <code class=borderless><a href="#mthd-WorldThingDestroyed">WorldThingDestroyed</a></code>, <code class=borderless><a href="#mthd-WorldThingDied">WorldThingDied</a></code>, <code class=borderless><a href="#mthd-WorldThingRevived">WorldThingRevived</a></code>, <code class=borderless><a href="#mthd-WorldThingSpawned">WorldThingSpawned</a></code>, <code class=borderless><a href="#mthd-WorldTick">WorldTick</a></code>, <code class=borderless><a href="#mthd-WorldUnloaded">WorldUnloaded</a></code></p></details>
 <h2 id="instance-members"><a class="header" href="#instance-members">Instance Members</a></h2>
 <dl class="api"><dt id="memb-Order">
 <code class="language-zsc">
@@ -506,7 +506,7 @@ before the level is set up.</p>
 <dd>
 <p>The arbitrary ordering of this event handler relative to other ones.
 Event handlers with lower ordering numbers have their functions
-executed first. You can set this variable with <span class=code><a href="#mthd-SetOrder">SetOrder</a></span>.</p>
+executed first. You can set this variable with <code class=borderless><a href="#mthd-SetOrder">SetOrder</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="memb-IsUiProcessor">
@@ -516,7 +516,7 @@ executed first. You can set this variable with <span class=code><a href="#mthd-S
 </dt>
 <dd>
 <p>If <code>true</code>, GUI events will be sent to this event handler through
-<span class=code><a href="#mthd-UiProcess">UiProcess</a></span>. This is mainly for optimization purposes.</p>
+<code class=borderless><a href="#mthd-UiProcess">UiProcess</a></code>. This is mainly for optimization purposes.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="memb-RequireMouse">
@@ -526,11 +526,11 @@ executed first. You can set this variable with <span class=code><a href="#mthd-S
 </dt>
 <dd>
 <p>If <code>true</code>, mouse events will be sent to this event handler through
-<span class=code><a href="#mthd-InputProcess">InputProcess</a></span> and/or <span class=code><a href="#mthd-UiProcess">UiProcess</a></span>. This is mainly for optimization
+<code class=borderless><a href="#mthd-InputProcess">InputProcess</a></code> and/or <code class=borderless><a href="#mthd-UiProcess">UiProcess</a></code>. This is mainly for optimization
 purposes.</p>
 </dd>
 </dl>
-<details><summary>Overview of instance members</summary><p><span class=code><a href="#memb-IsUiProcessor">IsUiProcessor</a></span>, <span class=code><a href="#memb-Order">Order</a></span>, <span class=code><a href="#memb-RequireMouse">RequireMouse</a></span></p></details>
+<details><summary>Overview of instance members</summary><p><code class=borderless><a href="#memb-IsUiProcessor">IsUiProcessor</a></code>, <code class=borderless><a href="#memb-Order">Order</a></code>, <code class=borderless><a href="#memb-RequireMouse">RequireMouse</a></code></p></details>
 
 
                         <hr>

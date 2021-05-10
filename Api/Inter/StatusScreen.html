@@ -134,8 +134,8 @@
 by <a href="../../Data/MapInfo.html#gameinfo">MAPINFO GameInfo</a> must be derived from this class.</p>
 <div class="toc types">
 <ul>
-<li><span class=code><a href="StatusScreen/ESpState.html">ESpState</a></span></li>
-<li><span class=code><a href="StatusScreen/EState.html">EState</a></span></li>
+<li><code class=borderless><a href="StatusScreen/ESpState.html">ESpState</a></code></li>
+<li><code class=borderless><a href="StatusScreen/EState.html">EState</a></code></li>
 </ul>
 </div>
 <h2 id="class-methods"><a class="header" href="#class-methods">Class Methods</a></h2>
@@ -164,10 +164,10 @@ by <a href="../../Data/MapInfo.html#gameinfo">MAPINFO GameInfo</a> must be deriv
 </code>
 </dt>
 <dd>
-<p>Plays a UI sound at full volume using <span class=code><a href="../Base/Object.html#mthd-S_StartSound">S_StartSound</a></span>.</p>
+<p>Plays a UI sound at full volume using <code class=borderless><a href="../Base/Object.html#mthd-S_StartSound">S_StartSound</a></code>.</p>
 </dd>
 </dl>
-<details><summary>Overview of class methods</summary><p><span class=code><a href="#mthd-GetPlayerWidths">GetPlayerWidths</a></span>, <span class=code><a href="#mthd-GetRowColor">GetRowColor</a></span>, <span class=code><a href="#mthd-GetSortedPlayers">GetSortedPlayers</a></span>, <span class=code><a href="#mthd-PlaySound">PlaySound</a></span></p></details>
+<details><summary>Overview of class methods</summary><p><code class=borderless><a href="#mthd-GetPlayerWidths">GetPlayerWidths</a></code>, <code class=borderless><a href="#mthd-GetRowColor">GetRowColor</a></code>, <code class=borderless><a href="#mthd-GetSortedPlayers">GetSortedPlayers</a></code>, <code class=borderless><a href="#mthd-PlaySound">PlaySound</a></code></p></details>
 <h2 id="instance-methods"><a class="header" href="#instance-methods">Instance Methods</a></h2>
 <dl class="api"><dt id="mthd-SetSize">
 <code class="language-zsc">
@@ -274,8 +274,8 @@ by <a href="../../Data/MapInfo.html#gameinfo">MAPINFO GameInfo</a> must be deriv
 </code>
 </dt>
 <dd>
-<p>Called by <code>WI_Drawer</code>, which is called every frame when <span class=code><a href="../Globals.html#memb-GameState">GameState</a></span>
-is <span class=code><a href="../Base/EGameState.html#memb-GS_INTERMISSION">GS_INTERMISSION</a></span>.</p>
+<p>Called by <code>WI_Drawer</code>, which is called every frame when <code class=borderless><a href="../Globals.html#memb-GameState">GameState</a></code>
+is <code class=borderless><a href="../Base/EGameState.html#memb-GS_INTERMISSION">GS_INTERMISSION</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-End">
@@ -285,8 +285,8 @@ is <span class=code><a href="../Base/EGameState.html#memb-GS_INTERMISSION">GS_IN
 </dt>
 <dd>
 <p>Called when the intermission should end. Default behaviour is to set
-<span class=code><a href="#memb-CurState">CurState</a></span> to <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-LEAVINGINTERMISSION">LEAVINGINTERMISSION</a></span> and remove bots
-in death-match. Generally, <span class=code><a href="../Level/LevelLocals.html">LevelLocals</a>.<a href="../Level/LevelLocals.html#mthd-WorldDone">WorldDone</a></span> should be called
+<code class=borderless><a href="#memb-CurState">CurState</a></code> to <code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-LEAVINGINTERMISSION">LEAVINGINTERMISSION</a></code> and remove bots
+in death-match. Generally, <code class=borderless><a href="../Level/LevelLocals.html">LevelLocals</a>.<a href="../Level/LevelLocals.html#mthd-WorldDone">WorldDone</a></code> should be called
 directly after this.</p>
 </dd>
 </dl>
@@ -296,9 +296,9 @@ directly after this.</p>
 </code>
 </dt>
 <dd>
-<p>Called by <code>WI_Start</code> after the <span class=code><a href="WbStartStruct.html">WbStartStruct</a></span> is populated, sounds
+<p>Called by <code>WI_Start</code> after the <code class=borderless><a href="WbStartStruct.html">WbStartStruct</a></code> is populated, sounds
 are stopped and the screen blend is set to black. Sets up initial
-values and runs <span class=code><a href="#mthd-InitStats">InitStats</a></span>.</p>
+values and runs <code class=borderless><a href="#mthd-InitStats">InitStats</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-StartMusic">
@@ -307,7 +307,7 @@ values and runs <span class=code><a href="#mthd-InitStats">InitStats</a></span>.
 </code>
 </dt>
 <dd>
-<p>Called in the first tick by <span class=code><a href="#mthd-Ticker">Ticker</a></span> to set the intermission music.</p>
+<p>Called in the first tic by <code class=borderless><a href="#mthd-Ticker">Ticker</a></code> to set the intermission music.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-Ticker">
@@ -316,8 +316,8 @@ values and runs <span class=code><a href="#mthd-InitStats">InitStats</a></span>.
 </code>
 </dt>
 <dd>
-<p>Called by <code>WI_Ticker</code>, which is called every game tick when
-<span class=code><a href="../Globals.html#memb-GameState">GameState</a></span> is <span class=code><a href="../Base/EGameState.html#memb-GS_INTERMISSION">GS_INTERMISSION</a></span>.</p>
+<p>Called by <code>WI_Ticker</code>, which is called every game tic when
+<code class=borderless><a href="../Globals.html#memb-GameState">GameState</a></code> is <code class=borderless><a href="../Base/EGameState.html#memb-GS_INTERMISSION">GS_INTERMISSION</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-DrawNoState">
@@ -326,7 +326,7 @@ values and runs <span class=code><a href="#mthd-InitStats">InitStats</a></span>.
 </code>
 </dt>
 <dd>
-<p>Called by <code>Drawer</code> when <span class=code><a href="#memb-CurState">CurState</a></span> is <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-NOSTATE">NOSTATE</a></span> or
+<p>Called by <code>Drawer</code> when <code class=borderless><a href="#memb-CurState">CurState</a></code> is <code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-NOSTATE">NOSTATE</a></code> or
 any other non-state.</p>
 </dd>
 </dl>
@@ -336,8 +336,8 @@ any other non-state.</p>
 </code>
 </dt>
 <dd>
-<p>Called by <span class=code><a href="#mthd-Drawer">Drawer</a></span> when <span class=code><a href="#memb-CurState">CurState</a></span> is <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-SHOWNEXTLOC">SHOWNEXTLOC</a></span>
-and, by default, <span class=code><a href="#mthd-DrawNoState">DrawNoState</a></span> after setting <span class=code><a href="#memb-Snl_PointerOn">Snl_PointerOn</a></span> to
+<p>Called by <code class=borderless><a href="#mthd-Drawer">Drawer</a></code> when <code class=borderless><a href="#memb-CurState">CurState</a></code> is <code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-SHOWNEXTLOC">SHOWNEXTLOC</a></code>
+and, by default, <code class=borderless><a href="#mthd-DrawNoState">DrawNoState</a></code> after setting <code class=borderless><a href="#memb-Snl_PointerOn">Snl_PointerOn</a></code> to
 <code>true</code>.</p>
 </dd>
 </dl>
@@ -347,8 +347,8 @@ and, by default, <span class=code><a href="#mthd-DrawNoState">DrawNoState</a></s
 </code>
 </dt>
 <dd>
-<p>Called by <span class=code><a href="#mthd-Drawer">Drawer</a></span> directly after drawing the animated background
-when <span class=code><a href="#memb-CurState">CurState</a></span> is <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></span>.</p>
+<p>Called by <code class=borderless><a href="#mthd-Drawer">Drawer</a></code> directly after drawing the animated background
+when <code class=borderless><a href="#memb-CurState">CurState</a></code> is <code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-InitNoState">
@@ -357,8 +357,8 @@ when <span class=code><a href="#memb-CurState">CurState</a></span> is <span clas
 </code>
 </dt>
 <dd>
-<p>Called by <span class=code><a href="#mthd-UpdateShowNextLoc">UpdateShowNextLoc</a></span> to initiate the
-<span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-NOSTATE">NOSTATE</a></span> stage.</p>
+<p>Called by <code class=borderless><a href="#mthd-UpdateShowNextLoc">UpdateShowNextLoc</a></code> to initiate the
+<code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-NOSTATE">NOSTATE</a></code> stage.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-InitShowNextLoc">
@@ -367,7 +367,7 @@ when <span class=code><a href="#memb-CurState">CurState</a></span> is <span clas
 </code>
 </dt>
 <dd>
-<p>Called by <span class=code><a href="#mthd-UpdateStats">UpdateStats</a></span> to initiate the <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-SHOWNEXTLOC">SHOWNEXTLOC</a></span>
+<p>Called by <code class=borderless><a href="#mthd-UpdateStats">UpdateStats</a></code> to initiate the <code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-SHOWNEXTLOC">SHOWNEXTLOC</a></code>
 stage.</p>
 </dd>
 </dl>
@@ -377,7 +377,7 @@ stage.</p>
 </code>
 </dt>
 <dd>
-<p>Called by <span class=code><a href="#mthd-Start">Start</a></span> to initiate the <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></span> stage.</p>
+<p>Called by <code class=borderless><a href="#mthd-Start">Start</a></code> to initiate the <code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></code> stage.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-UpdateNoState">
@@ -386,9 +386,9 @@ stage.</p>
 </code>
 </dt>
 <dd>
-<p>Called by <span class=code><a href="#mthd-Ticker">Ticker</a></span> when <span class=code><a href="#memb-CurState">CurState</a></span> is <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-NOSTATE">NOSTATE</a></span> or
-any other non-state. Exits the intermission by calling <span class=code><a href="#mthd-End">End</a></span> and
-<span class=code><a href="../Level/LevelLocals.html">LevelLocals</a>.<a href="../Level/LevelLocals.html#mthd-WorldDone">WorldDone</a></span> when appropriate.</p>
+<p>Called by <code class=borderless><a href="#mthd-Ticker">Ticker</a></code> when <code class=borderless><a href="#memb-CurState">CurState</a></code> is <code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-NOSTATE">NOSTATE</a></code> or
+any other non-state. Exits the intermission by calling <code class=borderless><a href="#mthd-End">End</a></code> and
+<code class=borderless><a href="../Level/LevelLocals.html">LevelLocals</a>.<a href="../Level/LevelLocals.html#mthd-WorldDone">WorldDone</a></code> when appropriate.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-UpdateShowNextLoc">
@@ -397,9 +397,9 @@ any other non-state. Exits the intermission by calling <span class=code><a href=
 </code>
 </dt>
 <dd>
-<p>Called by <span class=code><a href="#mthd-Ticker">Ticker</a></span> when <span class=code><a href="#memb-CurState">CurState</a></span> is
-<span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-SHOWNEXTLOC">SHOWNEXTLOC</a></span>. Runs <span class=code><a href="#mthd-InitNoState">InitNoState</a></span> when appropriate
-and alternates <span class=code><a href="#memb-Snl_PointerOn">Snl_PointerOn</a></span>.</p>
+<p>Called by <code class=borderless><a href="#mthd-Ticker">Ticker</a></code> when <code class=borderless><a href="#memb-CurState">CurState</a></code> is
+<code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-SHOWNEXTLOC">SHOWNEXTLOC</a></code>. Runs <code class=borderless><a href="#mthd-InitNoState">InitNoState</a></code> when appropriate
+and alternates <code class=borderless><a href="#memb-Snl_PointerOn">Snl_PointerOn</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-UpdateStats">
@@ -408,8 +408,8 @@ and alternates <span class=code><a href="#memb-Snl_PointerOn">Snl_PointerOn</a><
 </code>
 </dt>
 <dd>
-<p>Called by <span class=code><a href="#mthd-Ticker">Ticker</a></span> when <span class=code><a href="#memb-CurState">CurState</a></span> is <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></span>.
-Runs <span class=code><a href="#mthd-InitShowNextLoc">InitShowNextLoc</a></span> when appropriate.</p>
+<p>Called by <code class=borderless><a href="#mthd-Ticker">Ticker</a></code> when <code class=borderless><a href="#memb-CurState">CurState</a></code> is <code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></code>.
+Runs <code class=borderless><a href="#mthd-InitShowNextLoc">InitShowNextLoc</a></code> when appropriate.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="mthd-CheckForAccelerate">
@@ -418,7 +418,7 @@ Runs <span class=code><a href="#mthd-InitShowNextLoc">InitShowNextLoc</a></span>
 </code>
 </dt>
 <dd>
-<p>Updates the values of <span class=code><a href="#memb-AccelerateStage">AccelerateStage</a></span> and <span class=code><a href="#memb-PlayerReady">PlayerReady</a></span>
+<p>Updates the values of <code class=borderless><a href="#memb-AccelerateStage">AccelerateStage</a></code> and <code class=borderless><a href="#memb-PlayerReady">PlayerReady</a></code>
 according to each player's inputs.</p>
 </dd>
 </dl>
@@ -430,12 +430,12 @@ according to each player's inputs.</p>
 <dd>
 <p>Returns the number of frags player <code>playerNum</code> has accumulated against
 all currently in-game players. This is different from
-<span class=code><a href="WbPlayerStruct.html">WbPlayerStruct</a>.<a href="WbPlayerStruct.html#memb-FragCount">FragCount</a></span> because it is counted dynamically, i.e.
+<code class=borderless><a href="WbPlayerStruct.html">WbPlayerStruct</a>.<a href="WbPlayerStruct.html#memb-FragCount">FragCount</a></code> because it is counted dynamically, i.e.
 if a player leaves the count will be changed. This is only useful for
 game modes where frags do not count as score.</p>
 </dd>
 </dl>
-<details><summary>Overview of instance methods</summary><p><span class=code><a href="#mthd-AutoSkip">AutoSkip</a></span>, <span class=code><a href="#mthd-CheckForAccelerate">CheckForAccelerate</a></span>, <span class=code><a href="#mthd-DrawAuthor">DrawAuthor</a></span>, <span class=code><a href="#mthd-DrawCharPatch">DrawCharPatch</a></span>, <span class=code><a href="#mthd-DrawEl">DrawEl</a></span>, <span class=code><a href="#mthd-DrawLf">DrawLf</a></span>, <span class=code><a href="#mthd-DrawName">DrawName</a></span>, <span class=code><a href="#mthd-DrawNoState">DrawNoState</a></span>, <span class=code><a href="#mthd-DrawNum">DrawNum</a></span>, <span class=code><a href="#mthd-DrawNumScaled">DrawNumScaled</a></span>, <span class=code><a href="#mthd-DrawPatchOrText">DrawPatchOrText</a></span>, <span class=code><a href="#mthd-DrawPatchText">DrawPatchText</a></span>, <span class=code><a href="#mthd-DrawPercent">DrawPercent</a></span>, <span class=code><a href="#mthd-DrawPercentScaled">DrawPercentScaled</a></span>, <span class=code><a href="#mthd-DrawShowNextLoc">DrawShowNextLoc</a></span>, <span class=code><a href="#mthd-DrawStats">DrawStats</a></span>, <span class=code><a href="#mthd-DrawText">DrawText</a></span>, <span class=code><a href="#mthd-DrawTextScaled">DrawTextScaled</a></span>, <span class=code><a href="#mthd-DrawTexture">DrawTexture</a></span>, <span class=code><a href="#mthd-DrawTime">DrawTime</a></span>, <span class=code><a href="#mthd-DrawTimeFont">DrawTimeFont</a></span>, <span class=code><a href="#mthd-DrawTimeScaled">DrawTimeScaled</a></span>, <span class=code><a href="#mthd-Drawer">Drawer</a></span>, <span class=code><a href="#mthd-End">End</a></span>, <span class=code><a href="#mthd-FragSum">FragSum</a></span>, <span class=code><a href="#mthd-InitNoState">InitNoState</a></span>, <span class=code><a href="#mthd-InitShowNextLoc">InitShowNextLoc</a></span>, <span class=code><a href="#mthd-InitStats">InitStats</a></span>, <span class=code><a href="#mthd-SetSize">SetSize</a></span>, <span class=code><a href="#mthd-Start">Start</a></span>, <span class=code><a href="#mthd-StartMusic">StartMusic</a></span>, <span class=code><a href="#mthd-Ticker">Ticker</a></span>, <span class=code><a href="#mthd-UpdateNoState">UpdateNoState</a></span>, <span class=code><a href="#mthd-UpdateShowNextLoc">UpdateShowNextLoc</a></span>, <span class=code><a href="#mthd-UpdateStats">UpdateStats</a></span></p></details>
+<details><summary>Overview of instance methods</summary><p><code class=borderless><a href="#mthd-AutoSkip">AutoSkip</a></code>, <code class=borderless><a href="#mthd-CheckForAccelerate">CheckForAccelerate</a></code>, <code class=borderless><a href="#mthd-DrawAuthor">DrawAuthor</a></code>, <code class=borderless><a href="#mthd-DrawCharPatch">DrawCharPatch</a></code>, <code class=borderless><a href="#mthd-DrawEl">DrawEl</a></code>, <code class=borderless><a href="#mthd-DrawLf">DrawLf</a></code>, <code class=borderless><a href="#mthd-DrawName">DrawName</a></code>, <code class=borderless><a href="#mthd-DrawNoState">DrawNoState</a></code>, <code class=borderless><a href="#mthd-DrawNum">DrawNum</a></code>, <code class=borderless><a href="#mthd-DrawNumScaled">DrawNumScaled</a></code>, <code class=borderless><a href="#mthd-DrawPatchOrText">DrawPatchOrText</a></code>, <code class=borderless><a href="#mthd-DrawPatchText">DrawPatchText</a></code>, <code class=borderless><a href="#mthd-DrawPercent">DrawPercent</a></code>, <code class=borderless><a href="#mthd-DrawPercentScaled">DrawPercentScaled</a></code>, <code class=borderless><a href="#mthd-DrawShowNextLoc">DrawShowNextLoc</a></code>, <code class=borderless><a href="#mthd-DrawStats">DrawStats</a></code>, <code class=borderless><a href="#mthd-DrawText">DrawText</a></code>, <code class=borderless><a href="#mthd-DrawTextScaled">DrawTextScaled</a></code>, <code class=borderless><a href="#mthd-DrawTexture">DrawTexture</a></code>, <code class=borderless><a href="#mthd-DrawTime">DrawTime</a></code>, <code class=borderless><a href="#mthd-DrawTimeFont">DrawTimeFont</a></code>, <code class=borderless><a href="#mthd-DrawTimeScaled">DrawTimeScaled</a></code>, <code class=borderless><a href="#mthd-Drawer">Drawer</a></code>, <code class=borderless><a href="#mthd-End">End</a></code>, <code class=borderless><a href="#mthd-FragSum">FragSum</a></code>, <code class=borderless><a href="#mthd-InitNoState">InitNoState</a></code>, <code class=borderless><a href="#mthd-InitShowNextLoc">InitShowNextLoc</a></code>, <code class=borderless><a href="#mthd-InitStats">InitStats</a></code>, <code class=borderless><a href="#mthd-SetSize">SetSize</a></code>, <code class=borderless><a href="#mthd-Start">Start</a></code>, <code class=borderless><a href="#mthd-StartMusic">StartMusic</a></code>, <code class=borderless><a href="#mthd-Ticker">Ticker</a></code>, <code class=borderless><a href="#mthd-UpdateNoState">UpdateNoState</a></code>, <code class=borderless><a href="#mthd-UpdateShowNextLoc">UpdateShowNextLoc</a></code>, <code class=borderless><a href="#mthd-UpdateStats">UpdateStats</a></code></p></details>
 <h2 id="instance-members"><a class="header" href="#instance-members">Instance Members</a></h2>
 <dl class="api"><dt id="memb-Bg">
 <code class="language-zsc">
@@ -443,8 +443,8 @@ game modes where frags do not count as score.</p>
 </code>
 </dt>
 <dd>
-<p>The background for this intermission, set by <span class=code><a href="#mthd-Start">Start</a></span> with the
-initial <span class=code><a href="WbStartStruct.html">WbStartStruct</a></span> object.</p>
+<p>The background for this intermission, set by <code class=borderless><a href="#mthd-Start">Start</a></code> with the
+initial <code class=borderless><a href="WbStartStruct.html">WbStartStruct</a></code> object.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="memb-AccelerateStage">
@@ -464,7 +464,7 @@ skipped entirely.</p>
 </dt>
 <dd>
 <p>Used in networked games to signify when each player is ready to
-continue to the next map. Set by <span class=code><a href="#mthd-CheckForAccelerate">CheckForAccelerate</a></span>.</p>
+continue to the next map. Set by <code class=borderless><a href="#mthd-CheckForAccelerate">CheckForAccelerate</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="memb-Me">
@@ -473,8 +473,8 @@ continue to the next map. Set by <span class=code><a href="#mthd-CheckForAcceler
 </code>
 </dt>
 <dd>
-<p>The value of <span class=code><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-PNum">PNum</a></span> when <span class=code><a href="#mthd-Start">Start</a></span> was called. Usually not
-changed, so essentially equivalent to <span class=code><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-PNum">PNum</a></span>.</p>
+<p>The value of <code class=borderless><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-PNum">PNum</a></code> when <code class=borderless><a href="#mthd-Start">Start</a></code> was called. Usually not
+changed, so essentially equivalent to <code class=borderless><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-PNum">PNum</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="memb-BCnt">
@@ -501,7 +501,7 @@ changed, so essentially equivalent to <span class=code><a href="#memb-Wbs">Wbs</
 </code>
 </dt>
 <dd>
-<p>The <span class=code><a href="WbStartStruct.html">WbStartStruct</a></span> passed to this class via the <span class=code><a href="#mthd-Start">Start</a></span> function.</p>
+<p>The <code class=borderless><a href="WbStartStruct.html">WbStartStruct</a></code> passed to this class via the <code class=borderless><a href="#mthd-Start">Start</a></code> function.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="memb-Plrs">
@@ -510,8 +510,8 @@ changed, so essentially equivalent to <span class=code><a href="#memb-Wbs">Wbs</
 </code>
 </dt>
 <dd>
-<p>The value of <span class=code><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-Plyr">Plyr</a></span> when <span class=code><a href="#mthd-Start">Start</a></span> was called. Usually not
-changed, so essentially equivalent to <span class=code><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-Plyr">Plyr</a></span>.</p>
+<p>The value of <code class=borderless><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-Plyr">Plyr</a></code> when <code class=borderless><a href="#mthd-Start">Start</a></code> was called. Usually not
+changed, so essentially equivalent to <code class=borderless><a href="#memb-Wbs">Wbs</a>.<a href="WbStartStruct.html#memb-Plyr">Plyr</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="memb-OtherKills">
@@ -736,7 +736,7 @@ changed, so essentially equivalent to <span class=code><a href="#memb-Wbs">Wbs</
 </code>
 </dt>
 <dd>
-<p>Used in single-player status screens during the <span class=code><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></span> stage
+<p>Used in single-player status screens during the <code class=borderless><a href="#statusscreen">StatusScreen</a>.<a href="StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></code> stage
 for indicating the current round of statistics to count up.</p>
 </dd>
 </dl>
@@ -774,7 +774,7 @@ for indicating the current round of statistics to count up.</p>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
 </dd>
 </dl>
-<details><summary>Overview of instance members</summary><p><span class=code><a href="#memb-AccelerateStage">AccelerateStage</a></span>, <span class=code><a href="#memb-Author">Author</a></span>, <span class=code><a href="#memb-AuthorTexts">AuthorTexts</a></span>, <span class=code><a href="#memb-BCnt">BCnt</a></span>, <span class=code><a href="#memb-Bg">Bg</a></span>, <span class=code><a href="#memb-CHeight">CHeight</a></span>, <span class=code><a href="#memb-CWidth">CWidth</a></span>, <span class=code><a href="#memb-Cnt">Cnt</a></span>, <span class=code><a href="#memb-Cnt_Deaths">Cnt_Deaths</a></span>, <span class=code><a href="#memb-Cnt_Frags">Cnt_Frags</a></span>, <span class=code><a href="#memb-Cnt_Items">Cnt_Items</a></span>, <span class=code><a href="#memb-Cnt_Kills">Cnt_Kills</a></span>, <span class=code><a href="#memb-Cnt_OtherKills">Cnt_OtherKills</a></span>, <span class=code><a href="#memb-Cnt_Par">Cnt_Par</a></span>, <span class=code><a href="#memb-Cnt_Pause">Cnt_Pause</a></span>, <span class=code><a href="#memb-Cnt_Secret">Cnt_Secret</a></span>, <span class=code><a href="#memb-Cnt_Time">Cnt_Time</a></span>, <span class=code><a href="#memb-Cnt_Total_Time">Cnt_Total_Time</a></span>, <span class=code><a href="#memb-Content">Content</a></span>, <span class=code><a href="#memb-CurState">CurState</a></span>, <span class=code><a href="#memb-DoFrags">DoFrags</a></span>, <span class=code><a href="#memb-Entering">Entering</a></span>, <span class=code><a href="#memb-EnteringPatch">EnteringPatch</a></span>, <span class=code><a href="#memb-Finished">Finished</a></span>, <span class=code><a href="#memb-FinishedPatch">FinishedPatch</a></span>, <span class=code><a href="#memb-Items">Items</a></span>, <span class=code><a href="#memb-Kills">Kills</a></span>, <span class=code><a href="#memb-LNameTexts">LNameTexts</a></span>, <span class=code><a href="#memb-MapName">MapName</a></span>, <span class=code><a href="#memb-Me">Me</a></span>, <span class=code><a href="#memb-Ng_State">Ng_State</a></span>, <span class=code><a href="#memb-NoAutoStartMap">NoAutoStartMap</a></span>, <span class=code><a href="#memb-OtherKills">OtherKills</a></span>, <span class=code><a href="#memb-P_Secret">P_Secret</a></span>, <span class=code><a href="#memb-Par">Par</a></span>, <span class=code><a href="#memb-PlayerReady">PlayerReady</a></span>, <span class=code><a href="#memb-Player_Deaths">Player_Deaths</a></span>, <span class=code><a href="#memb-Plrs">Plrs</a></span>, <span class=code><a href="#memb-ScaleFactorX">ScaleFactorX</a></span>, <span class=code><a href="#memb-ScaleFactorY">ScaleFactorY</a></span>, <span class=code><a href="#memb-ScaleMode">ScaleMode</a></span>, <span class=code><a href="#memb-Secret">Secret</a></span>, <span class=code><a href="#memb-ShadowAlpha">ShadowAlpha</a></span>, <span class=code><a href="#memb-Snl_PointerOn">Snl_PointerOn</a></span>, <span class=code><a href="#memb-Sp_State">Sp_State</a></span>, <span class=code><a href="#memb-Sucks">Sucks</a></span>, <span class=code><a href="#memb-TimePic">TimePic</a></span>, <span class=code><a href="#memb-Total_Deaths">Total_Deaths</a></span>, <span class=code><a href="#memb-Total_Frags">Total_Frags</a></span>, <span class=code><a href="#memb-Wbs">Wbs</a></span>, <span class=code><a href="#memb-WrapWidth">WrapWidth</a></span></p></details>
+<details><summary>Overview of instance members</summary><p><code class=borderless><a href="#memb-AccelerateStage">AccelerateStage</a></code>, <code class=borderless><a href="#memb-Author">Author</a></code>, <code class=borderless><a href="#memb-AuthorTexts">AuthorTexts</a></code>, <code class=borderless><a href="#memb-BCnt">BCnt</a></code>, <code class=borderless><a href="#memb-Bg">Bg</a></code>, <code class=borderless><a href="#memb-CHeight">CHeight</a></code>, <code class=borderless><a href="#memb-CWidth">CWidth</a></code>, <code class=borderless><a href="#memb-Cnt">Cnt</a></code>, <code class=borderless><a href="#memb-Cnt_Deaths">Cnt_Deaths</a></code>, <code class=borderless><a href="#memb-Cnt_Frags">Cnt_Frags</a></code>, <code class=borderless><a href="#memb-Cnt_Items">Cnt_Items</a></code>, <code class=borderless><a href="#memb-Cnt_Kills">Cnt_Kills</a></code>, <code class=borderless><a href="#memb-Cnt_OtherKills">Cnt_OtherKills</a></code>, <code class=borderless><a href="#memb-Cnt_Par">Cnt_Par</a></code>, <code class=borderless><a href="#memb-Cnt_Pause">Cnt_Pause</a></code>, <code class=borderless><a href="#memb-Cnt_Secret">Cnt_Secret</a></code>, <code class=borderless><a href="#memb-Cnt_Time">Cnt_Time</a></code>, <code class=borderless><a href="#memb-Cnt_Total_Time">Cnt_Total_Time</a></code>, <code class=borderless><a href="#memb-Content">Content</a></code>, <code class=borderless><a href="#memb-CurState">CurState</a></code>, <code class=borderless><a href="#memb-DoFrags">DoFrags</a></code>, <code class=borderless><a href="#memb-Entering">Entering</a></code>, <code class=borderless><a href="#memb-EnteringPatch">EnteringPatch</a></code>, <code class=borderless><a href="#memb-Finished">Finished</a></code>, <code class=borderless><a href="#memb-FinishedPatch">FinishedPatch</a></code>, <code class=borderless><a href="#memb-Items">Items</a></code>, <code class=borderless><a href="#memb-Kills">Kills</a></code>, <code class=borderless><a href="#memb-LNameTexts">LNameTexts</a></code>, <code class=borderless><a href="#memb-MapName">MapName</a></code>, <code class=borderless><a href="#memb-Me">Me</a></code>, <code class=borderless><a href="#memb-Ng_State">Ng_State</a></code>, <code class=borderless><a href="#memb-NoAutoStartMap">NoAutoStartMap</a></code>, <code class=borderless><a href="#memb-OtherKills">OtherKills</a></code>, <code class=borderless><a href="#memb-P_Secret">P_Secret</a></code>, <code class=borderless><a href="#memb-Par">Par</a></code>, <code class=borderless><a href="#memb-PlayerReady">PlayerReady</a></code>, <code class=borderless><a href="#memb-Player_Deaths">Player_Deaths</a></code>, <code class=borderless><a href="#memb-Plrs">Plrs</a></code>, <code class=borderless><a href="#memb-ScaleFactorX">ScaleFactorX</a></code>, <code class=borderless><a href="#memb-ScaleFactorY">ScaleFactorY</a></code>, <code class=borderless><a href="#memb-ScaleMode">ScaleMode</a></code>, <code class=borderless><a href="#memb-Secret">Secret</a></code>, <code class=borderless><a href="#memb-ShadowAlpha">ShadowAlpha</a></code>, <code class=borderless><a href="#memb-Snl_PointerOn">Snl_PointerOn</a></code>, <code class=borderless><a href="#memb-Sp_State">Sp_State</a></code>, <code class=borderless><a href="#memb-Sucks">Sucks</a></code>, <code class=borderless><a href="#memb-TimePic">TimePic</a></code>, <code class=borderless><a href="#memb-Total_Deaths">Total_Deaths</a></code>, <code class=borderless><a href="#memb-Total_Frags">Total_Frags</a></code>, <code class=borderless><a href="#memb-Wbs">Wbs</a></code>, <code class=borderless><a href="#memb-WrapWidth">WrapWidth</a></code></p></details>
 <h2 id="constants"><a class="header" href="#constants">Constants</a></h2>
 <dl class="api"><dt id="memb-TITLEY">
 <code class="language-zsc">
@@ -783,7 +783,7 @@ for indicating the current round of statistics to count up.</p>
 </dt>
 <dd>
 <p>The Y position (in 320x200 pixels) to draw the top of the &quot;finished&quot;
-and &quot;entering&quot; text. Used by <span class=code><a href="#mthd-DrawEl">DrawEl</a></span> and <span class=code><a href="#mthd-DrawLf">DrawLf</a></span>.</p>
+and &quot;entering&quot; text. Used by <code class=borderless><a href="#mthd-DrawEl">DrawEl</a></code> and <code class=borderless><a href="#mthd-DrawLf">DrawLf</a></code>.</p>
 </dd>
 </dl>
 <dl class="api"><dt id="memb-SP_STATSX">
@@ -821,7 +821,7 @@ and &quot;entering&quot; text. Used by <span class=code><a href="#mthd-DrawEl">D
 </dd>
 </dl>
 <!-- EOF -->
-<details><summary>Overview of constants</summary><p><span class=code><a href="#memb-NG_STATSY">NG_STATSY</a></span>, <span class=code><a href="#memb-SHOWNEXTLOCDELAY">SHOWNEXTLOCDELAY</a></span>, <span class=code><a href="#memb-SP_STATSX">SP_STATSX</a></span>, <span class=code><a href="#memb-SP_STATSY">SP_STATSY</a></span>, <span class=code><a href="#memb-SP_TIMEX">SP_TIMEX</a></span>, <span class=code><a href="#memb-SP_TIMEY">SP_TIMEY</a></span>, <span class=code><a href="#memb-TITLEY">TITLEY</a></span></p></details>
+<details><summary>Overview of constants</summary><p><code class=borderless><a href="#memb-NG_STATSY">NG_STATSY</a></code>, <code class=borderless><a href="#memb-SHOWNEXTLOCDELAY">SHOWNEXTLOCDELAY</a></code>, <code class=borderless><a href="#memb-SP_STATSX">SP_STATSX</a></code>, <code class=borderless><a href="#memb-SP_STATSY">SP_STATSY</a></code>, <code class=borderless><a href="#memb-SP_TIMEX">SP_TIMEX</a></code>, <code class=borderless><a href="#memb-SP_TIMEY">SP_TIMEY</a></code>, <code class=borderless><a href="#memb-TITLEY">TITLEY</a></code></p></details>
 
 
                         <hr>
