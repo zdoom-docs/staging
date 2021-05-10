@@ -1,10 +1,6 @@
 /* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-span.code {
-	font-family: monospace;
-}
-
 h1, .chapter li.chapter-item {
 	font-family: Ubuntu, Consolas, serif;
 }
@@ -14,7 +10,7 @@ html {
 	overflow-y: scroll;
 }
 
-pre, :not(pre) > code {
+pre, :not(pre) > code:not(.borderless) {
 	padding: 0.2em 0.15em;
 	font-weight: 400;
 	background-color: var(--fira-secondary);

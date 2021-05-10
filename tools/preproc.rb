@@ -89,7 +89,7 @@ def mod_chapter_api chapter
 			types = ret.split(",\n").map do |type| type.chomp end
 			types.delete("")
 			ret = types.reduce(%(<div class="toc types">\n\n)) do |s, type|
-				s + "* <span class=code>[#{type}]</span>\n"
+				s + "* <code class=borderless>[#{type}]</code>\n"
 			end + "\n</div>\n\n"
 		when MTHD_CLS, MTHD_INS, MEMBERS, CONSTNTS, VARIANTS
 			after = [SUB_TYPS, DEFINITN]
@@ -153,7 +153,7 @@ def mod_chapter_api chapter
 				name = a[0]
 				link = a[1]
 				backlinks[name] = link
-				%(<span class=code><a href="#{link}">#{name}</a></span>)
+				%(<code class=borderless><a href="#{link}">#{name}</a></code>)
 			end.join ", "
 			link_refs = links.map do |a|
 				"[#{a[0]}]: #{a[1]}\n"
@@ -199,7 +199,7 @@ end
 def mod_chapter_lnk chapter
 	chapter["content"].gsub! /\[`([a-zA-Z][a-zA-Z0-9._]*)`\]/ do |match|
 		links = $1.split(".").map do |s| "[" + s + "]" end
-		"<span class=code>#{links.join "."}</span>"
+		"<code class=borderless>#{links.join "."}</code>"
 	end
 end
 
