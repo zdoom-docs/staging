@@ -418,7 +418,7 @@ The current game state.
 #-
 readOnly int {GameTic}
 
-The current game tick.
+The current game tic.
 -#
 
 #-

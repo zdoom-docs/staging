@@ -107,13 +107,13 @@ values and runs [`InitStats`].
 #-
 virtual void {StartMusic}()
 
-Called in the first tick by [`Ticker`] to set the intermission music.
+Called in the first tic by [`Ticker`] to set the intermission music.
 -#
 
 #-
 virtual void {Ticker}()
 
-Called by `WI_Ticker`, which is called every game tick when
+Called by `WI_Ticker`, which is called every game tic when
 [`GameState`] is [`GS_INTERMISSION`].
 -#
 

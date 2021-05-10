@@ -31,8 +31,8 @@ The number of secrets this player found.
 #-
 int {STime}
 
-The time this player finished the level at, in ticks. (This is the
-same for all players.)
+The time this player finished the level at, in tics. (This is the same
+for all players.)
 -#
 
 #-

@@ -164,11 +164,11 @@ just before Lightning ACS scripts are called.
 #-
 virtual void {WorldTick}()
 
-Called on every world tick, after interpolators are updated, world
+Called on every world tic, after interpolators are updated, world
 freeze is updated, sight counters are reset, particles have run their
 thinkers, and players have run their thinkers, just before the status
-bar is ticked, the level ticks, thinkers are ticked, and the level
-time is updated. This is not called when the game is paused, and its
+bar is ticked, the level tics, thinkers are ticked, and the level time
+is updated. This is not called when the game is paused, and its
 execution is entirely deterministic regardless of how this event
 handler is applied.
 -#

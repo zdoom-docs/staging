@@ -116,7 +116,7 @@ The maximum number of found secrets in the map.
 #-
 int {ParTime}
 
-The par time of the map, in ticks.
+The par time of the map, in tics.
 -#
 
 #-
@@ -128,5 +128,5 @@ The suck time of the map, in minutes.
 #-
 int {TotalTime}
 
-The total time for the whole game, in ticks.
+The total time for the whole game, in tics.
 -#

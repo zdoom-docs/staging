@@ -42,7 +42,7 @@ The roll angle of the camera.
 readOnly double {FracTic}
 
 A value between 0 and 1 (exclusive) representing the time between the
-last game tick and the next game tick. This is most useful for
+last game tic and the next game tic. This is most useful for
 interpolation, and you can add it to the current game tick to get the
 real time at which this event has been called. Precision is not
 specified.
