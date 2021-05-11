@@ -22,11 +22,46 @@ code > p > a {
 	color: var(--fg) !important;
 }
 
+pre code a {
+	text-decoration: underline dotted !important;
+}
+
 .content > main > p {
 	line-height: 1.6;
 }
 
+.content h2::after,
+.content h3::after,
+.content h4::after,
+.content h5::after {
+	content: "";
+	display: inline-block;
+	border-bottom: 1px solid var(--fira-border);
+	margin-bottom: 0.5ch;
+	margin-left: 0.5em;
+}
+
+.content h2::after {
+	width: 16em;
+}
+
+.content h3::after {
+	width: 8em;
+}
+
+.content h4::after {
+	width: 4em;
+}
+
+.content h5::after {
+	width: 2em;
+}
+
 /* misc elements */
+li::marker {
+	color: var(--fira-border);
+}
+
 details {
 	border-left: 4px solid var(--fira-border);
 	padding: 0 1ch;
@@ -45,18 +80,18 @@ details summary:hover {
 
 details summary::marker,
 details summary::-webkit-details-marker {
-	content: '';
+	content: "";
 }
 
 details summary::before {
-	content: '❱';
+	content: "❱";
 	display: inline-block;
 	margin-right: 0.25em;
 	position: relative;
 	top: -0.125em;
 	transform: none;
 	transform-origin: center;
-	transition: transform 0.25s cubic-bezier(0.5, 1, 0.89, 1);
+	transition: transform 0.25s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 details[open] summary::before {
@@ -66,25 +101,20 @@ details[open] summary::before {
 details > :not(summary) {
 	position: relative;
 	left: 2ch;
-	max-height: 0;
 	opacity: 0;
 }
 
 details:not([open]) > :not(summary) {
-	margin: 0;
-	margin-block: 0;
+	font-size: 0;
 }
 
 details[open] > :not(summary) {
 	overflow: hidden;
 	transition:
-		left         0.25s cubic-bezier(0.5, 1, 0.89, 1),
-		opacity      0.25s cubic-bezier(0.5, 1, 0.89, 1),
-		margin       0.5s  cubic-bezier(0.5, 1, 0.89, 1),
-		margin-block 0.5s  cubic-bezier(0.5, 1, 0.89, 1),
-		max-height   0.5s  cubic-bezier(0.5, 1, 0.89, 1);
+		left      0.25s cubic-bezier(0.76, 0, 0.24, 1),
+		opacity   0.25s cubic-bezier(0.76, 0, 0.24, 1),
+		font-size 0.5s  cubic-bezier(0.76, 0, 0.24, 1);
 	left: 0;
-	max-height: 5em;
 	opacity: 100%;
 }
 

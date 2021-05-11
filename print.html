@@ -132,9 +132,9 @@ Language documentation</a> and working your way
 from there. Also recommended is looking at existing mods using ZScript
 and modifying them. Try experimenting with features if you don't know
 what they do.</p>
-<h1 id="meta"><a class="header" href="#meta">Meta</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="meta"><a class="header" href="#meta">Meta</a></h1>
 <p>This section describes things relating to the documentation itself.</p>
-<h1 id="style"><a class="header" href="#style">Style</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="style"><a class="header" href="#style">Style</a></h1>
 <p>This is a style guide for the ZScript documentation to encourage
 best-practice coding with it, focused on clarity and consistency of
 formatting. It is also intended to be a general style guide for
@@ -375,7 +375,7 @@ it is unnecessary, and can be harmful.</p>
 used by end users. Its main purpose is to make ZScript easier to port
 from C++. On the other hand, placing a comma at the end of the last
 enumeration in a set is a common practice.</p>
-<h1 id="zscript-language"><a class="header" href="#zscript-language">ZScript Language</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="zscript-language"><a class="header" href="#zscript-language">ZScript Language</a></h1>
 <p>ZScript is a scripting language that has sprung from the ceasing of
 ZDoom and the subsequent reprisal of GZDoom as mainline. It is similar
 to Java, though it has many deficiencies, oddities and other such
@@ -421,7 +421,7 @@ describing all syntax element spellings:</p>
 <pre><code class="language-zsc">keyword example;
 keyword example2, example3;
 </code></pre>
-<h1 id="class-definitions"><a class="header" href="#class-definitions">Class Definitions</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="class-definitions"><a class="header" href="#class-definitions">Class Definitions</a></h1>
 <p>A class defines an object type within ZScript, and is most of what
 you'll be creating within the language.</p>
 <p>All classes inherit from other classes. The base class can be set
@@ -729,7 +729,7 @@ class MyCoolActorWithFlags : Actor
 	}
 }
 </code></pre>
-<h1 id="constant-definitions"><a class="header" href="#constant-definitions">Constant Definitions</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="constant-definitions"><a class="header" href="#constant-definitions">Constant Definitions</a></h1>
 <p>Constants are simple named values. Constants are not assignable. Their
 type is inferred from their value, so if you wish for them to have a
 specific type, you must cast the value to that type.</p>
@@ -770,7 +770,7 @@ const MY_COOL_NUMBER_FROM_BEYOND = int(777.7777);
 <pre><code class="language-zsc">// Making an array of integers.
 static const int MY_COOL_INTEGERS[] = { 0, 1, 2, 3 };
 </code></pre>
-<h1 id="enumeration-definitions"><a class="header" href="#enumeration-definitions">Enumeration Definitions</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="enumeration-definitions"><a class="header" href="#enumeration-definitions">Enumeration Definitions</a></h1>
 <p>An enumeration is a list of named numbers. By default they decay to
 the type <code>int</code>, but the default decay type can be set manually.</p>
 <dl class="syn"><dt>EnumerationDefinition</dt><dd>
@@ -822,7 +822,7 @@ enum MyCoolerEnum : int16
 	E, // and 202.
 }
 </code></pre>
-<h1 id="expressions"><a class="header" href="#expressions">Expressions</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="expressions"><a class="header" href="#expressions">Expressions</a></h1>
 <p>Expressions contain literals or other such <em>expressions</em> of objects,
 including arithmetic and various conditions.</p>
 <dl class="syn"><dt>Expression</dt><dd>
@@ -1158,7 +1158,7 @@ expression is <code>true</code>, or the right hand side if it is <code>false</co
 <dl class="syn"><dt>TernaryExpression</dt><dd>
 <p><a href="ZScript/Expressions.html#expressions">Expression</a> <code>?</code> <a href="ZScript/Expressions.html#expressions">Expression</a> <code>:</code> <a href="ZScript/Expressions.html#expressions">Expression</a></p>
 </dd></dl>
-<h1 id="fundamentals"><a class="header" href="#fundamentals">Fundamentals</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="fundamentals"><a class="header" href="#fundamentals">Fundamentals</a></h1>
 <p>These are the fundamental building blocks of ZScript. Included here
 are basic syntax elements such as <a href="ZScript/Fundamentals.html#identifiers">Identifier</a>s, and atoms, also known
 as <a href="ZScript/Fundamentals.html#literals">Literal</a>s.</p>
@@ -1440,7 +1440,7 @@ integer literal <code>0</code>, and is more similar to C++'s <code>nullptr</code
 <dl class="syn"><dt>NullLiteral</dt><dd>
 <p><code>null</code></p>
 </dd></dl>
-<h1 id="member-declarations"><a class="header" href="#member-declarations">Member Declarations</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="member-declarations"><a class="header" href="#member-declarations">Member Declarations</a></h1>
 <p>Member declarations define data within a structure or class that can
 be accessed either within methods of the object or its derived
 classes, or indirectly from instances of it with the member access
@@ -1507,7 +1507,7 @@ private int m_CoolPrivateInt;
 <pre><code class="language-zsc">// Read-only; part of the class data, can only be seen by descendant types.
 protected meta int m_CoolMetaInt;
 </code></pre>
-<h1 id="method-definitions"><a class="header" href="#method-definitions">Method Definitions</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="method-definitions"><a class="header" href="#method-definitions">Method Definitions</a></h1>
 <p>Method definitions define functions within a structure or class that
 can be accessed directly within either other methods of the object or
 its derived classes, or indirectly from instances of it with the
@@ -1663,7 +1663,7 @@ DoSomething(7, 8, 9, 10);
 <p><span class="label red">TO-DO — This section is not finished yet</span> Sometimes. In some contexts, the
 <code>self</code> pointer will not be ambiguous.</p>
 </div>
-<h1 id="statements"><a class="header" href="#statements">Statements</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="statements"><a class="header" href="#statements">Statements</a></h1>
 <p>All functions are made up of a list of statements enclosed with left
 and right braces, which in and of itself is a statement called a
 <em>compound statement</em>, or <em>block</em>.</p>
@@ -1937,7 +1937,7 @@ void ReturnsNothing()
 <pre><code class="language-zsc">// Getting the actor out of &quot;A_SpawnItemEx.&quot;
 Actor mo; bool spawned; [spawned, mo] = A_SpawnItemEx(&quot;MyCoolActor&quot;);
 </code></pre>
-<h1 id="structure-definitions"><a class="header" href="#structure-definitions">Structure Definitions</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="structure-definitions"><a class="header" href="#structure-definitions">Structure Definitions</a></h1>
 <p>A structure is an object type that does not inherit from Object and is
 not always — though occasionally is — a reference type,
 unlike classes. Structures marked as <code>native</code> are passed by-reference
@@ -1999,7 +1999,7 @@ struct MyCoolStructure
 	int Z;
 }
 </code></pre>
-<h1 id="top-level"><a class="header" href="#top-level">Top-Level</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="top-level"><a class="header" href="#top-level">Top-Level</a></h1>
 <p>Full ZScript files are referred to as &quot;translation units.&quot; This
 terminology comes from the C standard, and refers simply to the
 entirety of a ZScript source file. ZScript files are searched for in
@@ -2070,7 +2070,7 @@ uniquely named sub-folder.</p>
 <h3 id="include-directives-1"><a class="header" href="#include-directives-1">Include Directives</a></h3>
 <pre><code class="language-zsc">#include &quot;zscript/MyCoolMod/MyCoolClasses.zsc&quot;
 </code></pre>
-<h1 id="types"><a class="header" href="#types">Types</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="types"><a class="header" href="#types">Types</a></h1>
 <p>ZScript has several categories of types: Integer types, floating-point
 (fractional) types, strings, vectors, names, classes, et al. There are
 a wide variety of ways to use these types, as well as a wide variety
@@ -2258,7 +2258,7 @@ initializer. <em>This type may only be used in
 <p>There are two vector types in ZScript, <code>vector2</code> and <code>vector3</code>, which
 hold two and three members, respectively. Their members can be
 accessed through <code>X</code>, <code>Y</code>, and for <code>vector3</code>, <code>Z</code>. <code>vector3</code> can
-additionally get the X and Y components as a <code>vector2</code> with <code>XY</code>.</p>
+additionally get the X and Y components as a <code>vector2</code> with <code>Xy</code>.</p>
 <p>Vectors can use many operators and even have special ones to
 themselves. See the Expressions and Operators section for more
 information.</p>
@@ -2375,12 +2375,12 @@ type, or none at all for normal variables.</p>
 <dl class="syn"><dt>VariableType</dt><dd>
 <p><a href="ZScript/Fundamentals.html#identifiers">Identifier</a> (<code>[</code> <a href="ZScript/Expressions.html#constant-expressions">ConstantExpression</a>? <code>]</code>)*</p>
 </dd></dl>
-<h1 id="acs"><a class="header" href="#acs">ACS</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="acs"><a class="header" href="#acs">ACS</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="zscript-api"><a class="header" href="#zscript-api">ZScript API</a></h1>
-<h1 id="base"><a class="header" href="#base">Base</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="zscript-api"><a class="header" href="#zscript-api">ZScript API</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="base"><a class="header" href="#base">Base</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="cvar"><a class="header" href="#cvar">CVar</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="cvar"><a class="header" href="#cvar">CVar</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct CVar clearScope;
 </code></pre>
@@ -2444,7 +2444,7 @@ applicable, or <code>null</code> if none is found.</p>
 </dl>
 <dl class="api"><dt id="mthd-GetRealType">
 <code class="language-zsc">
-<p>CVar.<a href="Api/Base/CVar/ECVarType.html">ECVarType</a> <a href="Api/Base/CVar.html#mthd-GetRealType">GetRealType</a>()</p>
+<p><a href="Api/Base/CVar/ECVarType.html">ECVarType</a> <a href="Api/Base/CVar.html#mthd-GetRealType">GetRealType</a>()</p>
 </code>
 </dt>
 <dd>
@@ -2488,7 +2488,7 @@ return is unknown.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance methods</summary><p><code class=borderless><a href="Api/Base/CVar.html#mthd-GetBool">GetBool</a></code>, <code class=borderless><a href="Api/Base/CVar.html#mthd-GetFloat">GetFloat</a></code>, <code class=borderless><a href="Api/Base/CVar.html#mthd-GetInt">GetInt</a></code>, <code class=borderless><a href="Api/Base/CVar.html#mthd-GetRealType">GetRealType</a></code>, <code class=borderless><a href="Api/Base/CVar.html#mthd-GetString">GetString</a></code>, <code class=borderless><a href="Api/Base/CVar.html#mthd-ResetToDefault">ResetToDefault</a></code>, <code class=borderless><a href="Api/Base/CVar.html#mthd-SetBool">SetBool</a></code>, <code class=borderless><a href="Api/Base/CVar.html#mthd-SetFloat">SetFloat</a></code>, <code class=borderless><a href="Api/Base/CVar.html#mthd-SetInt">SetInt</a></code>, <code class=borderless><a href="Api/Base/CVar.html#mthd-SetString">SetString</a></code></p></details>
-<h1 id="ecvartype"><a class="header" href="#ecvartype">ECVarType</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="ecvartype"><a class="header" href="#ecvartype">ECVarType</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">enum CVar.ECVarType;
 </code></pre>
@@ -2542,7 +2542,7 @@ other types.</p>
 </dd>
 </dl>
 <details><summary>Overview of variants</summary><p><code class=borderless><a href="Api/Base/CVar/ECVarType.html#enum-CVAR_BOOL">CVAR_BOOL</a></code>, <code class=borderless><a href="Api/Base/CVar/ECVarType.html#enum-CVAR_COLOR">CVAR_COLOR</a></code>, <code class=borderless><a href="Api/Base/CVar/ECVarType.html#enum-CVAR_FLOAT">CVAR_FLOAT</a></code>, <code class=borderless><a href="Api/Base/CVar/ECVarType.html#enum-CVAR_INT">CVAR_INT</a></code>, <code class=borderless><a href="Api/Base/CVar/ECVarType.html#enum-CVAR_STRING">CVAR_STRING</a></code></p></details>
-<h1 id="eskillproperty"><a class="header" href="#eskillproperty">ESkillProperty</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="eskillproperty"><a class="header" href="#eskillproperty">ESkillProperty</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">enum ESkillProperty;
 </code></pre>
@@ -2662,7 +2662,7 @@ the map.</p>
 </dd>
 </dl>
 <details><summary>Overview of variants</summary><p><code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_ACSRETURN">SKILLP_ACSRETURN</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_AUTOUSEHEALTH">SKILLP_AUTOUSEHEALTH</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_DISABLECHEATS">SKILLP_DISABLECHEATS</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_EASYBOSSBRAIN">SKILLP_EASYBOSSBRAIN</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_FASTMONSTERS">SKILLP_FASTMONSTERS</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_INFIGHT">SKILLP_INFIGHT</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_NOPAIN">SKILLP_NOPAIN</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_PLAYERRESPAWN">SKILLP_PLAYERRESPAWN</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_RESPAWN">SKILLP_RESPAWN</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_RESPAWNLIMIT">SKILLP_RESPAWNLIMIT</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_SLOWMONSTERS">SKILLP_SLOWMONSTERS</a></code>, <code class=borderless><a href="Api/Base/ESkillProperty.html#enum-SKILLP_SPAWNFILTER">SKILLP_SPAWNFILTER</a></code></p></details>
-<h1 id="efskillproperty"><a class="header" href="#efskillproperty">EFSkillProperty</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="efskillproperty"><a class="header" href="#efskillproperty">EFSkillProperty</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">enum EFSkillProperty;
 </code></pre>
@@ -2752,11 +2752,11 @@ the map.</p>
 </dd>
 </dl>
 <details><summary>Overview of variants</summary><p><code class=borderless><a href="Api/Base/EFSkillProperty.html#enum-SKILLP_AGGRESSIVENESS">SKILLP_AGGRESSIVENESS</a></code>, <code class=borderless><a href="Api/Base/EFSkillProperty.html#enum-SKILLP_AMMOFACTOR">SKILLP_AMMOFACTOR</a></code>, <code class=borderless><a href="Api/Base/EFSkillProperty.html#enum-SKILLP_ARMORFACTOR">SKILLP_ARMORFACTOR</a></code>, <code class=borderless><a href="Api/Base/EFSkillProperty.html#enum-SKILLP_DAMAGEFACTOR">SKILLP_DAMAGEFACTOR</a></code>, <code class=borderless><a href="Api/Base/EFSkillProperty.html#enum-SKILLP_DROPAMMOFACTOR">SKILLP_DROPAMMOFACTOR</a></code>, <code class=borderless><a href="Api/Base/EFSkillProperty.html#enum-SKILLP_FRIENDLYHEALTH">SKILLP_FRIENDLYHEALTH</a></code>, <code class=borderless><a href="Api/Base/EFSkillProperty.html#enum-SKILLP_HEALTHFACTOR">SKILLP_HEALTHFACTOR</a></code>, <code class=borderless><a href="Api/Base/EFSkillProperty.html#enum-SKILLP_KICKBACKFACTOR">SKILLP_KICKBACKFACTOR</a></code>, <code class=borderless><a href="Api/Base/EFSkillProperty.html#enum-SKILLP_MONSTERHEALTH">SKILLP_MONSTERHEALTH</a></code></p></details>
-<h1 id="esoundflags"><a class="header" href="#esoundflags">ESoundFlags</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="esoundflags"><a class="header" href="#esoundflags">ESoundFlags</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="emptytokentype"><a class="header" href="#emptytokentype">EmptyTokenType</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="emptytokentype"><a class="header" href="#emptytokentype">EmptyTokenType</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="object"><a class="header" href="#object">Object</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="object"><a class="header" href="#object">Object</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class Object clearScope;
 </code></pre>
@@ -3000,7 +3000,7 @@ linked into this list, so be careful when overriding this. Any
 </dd>
 </dl>
 <details><summary>Overview of constants</summary><p><code class=borderless><a href="Api/Base/Object.html#memb-TICRATE">TICRATE</a></code></p></details>
-<h1 id="state"><a class="header" href="#state">State</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="state"><a class="header" href="#state">State</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct State clearScope;
 </code></pre>
@@ -3198,7 +3198,7 @@ is enabled.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Base/State.html#memb-Frame">Frame</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-Misc1">Misc1</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-Misc2">Misc2</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-NextState">NextState</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-Sprite">Sprite</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-TicRange">TicRange</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-Tics">Tics</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-UseFlags">UseFlags</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-bCanRaise">bCanRaise</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-bDeHackEd">bDeHackEd</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-bFast">bFast</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-bFullBright">bFullBright</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-bNoDelay">bNoDelay</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-bSameFrame">bSameFrame</a></code>, <code class=borderless><a href="Api/Base/State.html#memb-bSlow">bSlow</a></code></p></details>
-<h1 id="stringtable"><a class="header" href="#stringtable">StringTable</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="stringtable"><a class="header" href="#stringtable">StringTable</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct StringTable clearScope;
 </code></pre>
@@ -3220,7 +3220,7 @@ visual strings anyway.</p>
 </dd>
 </dl>
 <details><summary>Overview of class methods</summary><p><code class=borderless><a href="Api/Base/StringTable.html#mthd-Localize">Localize</a></code></p></details>
-<h1 id="thinker"><a class="header" href="#thinker">Thinker</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="thinker"><a class="header" href="#thinker">Thinker</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class Thinker : Object play;
 </code></pre>
@@ -3288,7 +3288,7 @@ nondeterministic.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Base/Thinker.html#memb-Level">Level</a></code></p></details>
-<h1 id="estatnums"><a class="header" href="#estatnums">EStatNums</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="estatnums"><a class="header" href="#estatnums">EStatNums</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">enum Thinker.EStatNums;
 </code></pre>
@@ -3555,7 +3555,7 @@ stat numbers <em>except as relative to these two</em>.</p>
 </dd>
 </dl>
 <details><summary>Overview of variants</summary><p><code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-MAX_STATNUM">MAX_STATNUM</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_ACTORMOVER">STAT_ACTORMOVER</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_AUTODECAL">STAT_AUTODECAL</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_BOSSTARGET">STAT_BOSSTARGET</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_BOT">STAT_BOT</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_CORPSEPOINTER">STAT_CORPSEPOINTER</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_DECAL">STAT_DECAL</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_DECALTHINKER">STAT_DECALTHINKER</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_DEFAULT">STAT_DEFAULT</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_DLIGHT">STAT_DLIGHT</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_EARTHQUAKE">STAT_EARTHQUAKE</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_FIRST_THINKING">STAT_FIRST_THINKING</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_INFO">STAT_INFO</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_INVENTORY">STAT_INVENTORY</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_LIGHT">STAT_LIGHT</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_LIGHTNING">STAT_LIGHTNING</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_LIGHTTRANSFER">STAT_LIGHTTRANSFER</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_MAPMARKER">STAT_MAPMARKER</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_PLAYER">STAT_PLAYER</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_SCRIPTS">STAT_SCRIPTS</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_SCROLLER">STAT_SCROLLER</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_SECTOREFFECT">STAT_SECTOREFFECT</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_STATIC">STAT_STATIC</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_TRAVELLING">STAT_TRAVELLING</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_USER">STAT_USER</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_USER">STAT_USER</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_USER">STAT_USER</a></code>, <code class=borderless><a href="Api/Base/Thinker/EStatNums.html#enum-STAT_USER_MAX">STAT_USER_MAX</a></code></p></details>
-<h1 id="wads"><a class="header" href="#wads">Wads</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="wads"><a class="header" href="#wads">Wads</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct Wads clearScope;
 </code></pre>
@@ -3664,7 +3664,7 @@ exist.</p>
 </dd>
 </dl>
 <details><summary>Overview of class methods</summary><p><code class=borderless><a href="Api/Base/Wads.html#mthd-CheckNumForFullName">CheckNumForFullName</a></code>, <code class=borderless><a href="Api/Base/Wads.html#mthd-CheckNumForName">CheckNumForName</a></code>, <code class=borderless><a href="Api/Base/Wads.html#mthd-FindLump">FindLump</a></code>, <code class=borderless><a href="Api/Base/Wads.html#mthd-GetLumpFullName">GetLumpFullName</a></code>, <code class=borderless><a href="Api/Base/Wads.html#mthd-GetLumpName">GetLumpName</a></code>, <code class=borderless><a href="Api/Base/Wads.html#mthd-GetLumpNamespace">GetLumpNamespace</a></code>, <code class=borderless><a href="Api/Base/Wads.html#mthd-GetNumLumps">GetNumLumps</a></code>, <code class=borderless><a href="Api/Base/Wads.html#mthd-ReadLump">ReadLump</a></code></p></details>
-<h1 id="findlumpnamespace"><a class="header" href="#findlumpnamespace">FindLumpNamespace</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="findlumpnamespace"><a class="header" href="#findlumpnamespace">FindLumpNamespace</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">enum Wads.FindLumpNamespace;
 </code></pre>
@@ -3690,7 +3690,7 @@ exist.</p>
 </dd>
 </dl>
 <details><summary>Overview of variants</summary><p><code class=borderless><a href="Api/Base/Wads/FindLumpNamespace.html#enum-ANYNAMESPACE">ANYNAMESPACE</a></code>, <code class=borderless><a href="Api/Base/Wads/FindLumpNamespace.html#enum-GLOBALNAMESPACE">GLOBALNAMESPACE</a></code></p></details>
-<h1 id="wadnamespace"><a class="header" href="#wadnamespace">WadNamespace</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="wadnamespace"><a class="header" href="#wadnamespace">WadNamespace</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">enum Wads.WadNamespace;
 </code></pre>
@@ -3890,9 +3890,9 @@ hack.</p>
 </dd>
 </dl>
 <details><summary>Overview of variants</summary><p><code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_ACSLIBRARY">NS_ACSLIBRARY</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_BLOODMISC">NS_BLOODMISC</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_BLOODRAW">NS_BLOODRAW</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_BLOODSFX">NS_BLOODSFX</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_COLORMAPS">NS_COLORMAPS</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_FIRSTSKIN">NS_FIRSTSKIN</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_FLATS">NS_FLATS</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_GLOBAL">NS_GLOBAL</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_GRAPHICS">NS_GRAPHICS</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_HIDDEN">NS_HIDDEN</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_HIRES">NS_HIRES</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_MUSIC">NS_MUSIC</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_NEWTEXTURES">NS_NEWTEXTURES</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_PATCHES">NS_PATCHES</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_SOUNDS">NS_SOUNDS</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_SPECIALZIPDIRECTORY">NS_SPECIALZIPDIRECTORY</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_SPRITES">NS_SPRITES</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_STRIFEVOICES">NS_STRIFEVOICES</a></code>, <code class=borderless><a href="Api/Base/Wads/WadNamespace.html#enum-NS_VOXELS">NS_VOXELS</a></code></p></details>
-<h1 id="basic-types"><a class="header" href="#basic-types">Basic Types</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="basic-types"><a class="header" href="#basic-types">Basic Types</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="t"><a class="header" href="#t">T[]</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="t"><a class="header" href="#t">T[]</a></h1>
 <p>The built-in fixed-size array type.</p>
 <h2 id="instance-methods-4"><a class="header" href="#instance-methods-4">Instance Methods</a></h2>
 <dl class="api"><dt id="mthd-Size">
@@ -3905,7 +3905,7 @@ hack.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance methods</summary><p><code class=borderless><a href="Api/Basic/FixedArray.html#mthd-Size">Size</a></code></p></details>
-<h1 id="arrayt"><a class="header" href="#arrayt">array&lt;T&gt;</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="arrayt"><a class="header" href="#arrayt">array&lt;T&gt;</a></h1>
 <p>The built-in dynamic-size array type.</p>
 <h2 id="instance-methods-5"><a class="header" href="#instance-methods-5">Instance Methods</a></h2>
 <dl class="api"><dt id="mthd-Size">
@@ -4051,7 +4051,7 @@ array, it will initialize the leading elements to their null value.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance methods</summary><p><code class=borderless><a href="Api/Basic/Array.html#mthd-Append">Append</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Clear">Clear</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Copy">Copy</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Delete">Delete</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Find">Find</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Grow">Grow</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Insert">Insert</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Max">Max</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Move">Move</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Pop">Pop</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Push">Push</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Reserve">Reserve</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Resize">Resize</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-ShrinkToFit">ShrinkToFit</a></code>, <code class=borderless><a href="Api/Basic/Array.html#mthd-Size">Size</a></code></p></details>
-<h1 id="color"><a class="header" href="#color">color</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="color"><a class="header" href="#color">color</a></h1>
 <p>The <code>color</code> built-in type.</p>
 <h2 id="instance-members-3"><a class="header" href="#instance-members-3">Instance Members</a></h2>
 <dl class="api"><dt id="memb-R">
@@ -4080,7 +4080,7 @@ range of 0 to 255, inclusive.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Basic/Color.html#memb-A">A</a></code>, <code class=borderless><a href="Api/Basic/Color.html#memb-B">B</a></code>, <code class=borderless><a href="Api/Basic/Color.html#memb-G">G</a></code>, <code class=borderless><a href="Api/Basic/Color.html#memb-R">R</a></code></p></details>
-<h1 id="float-types"><a class="header" href="#float-types">float types</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="float-types"><a class="header" href="#float-types">float types</a></h1>
 <p>Floating-point types, i.e. <code>float</code>, <code>double</code>, etc.</p>
 <h2 id="constants-1"><a class="header" href="#constants-1">Constants</a></h2>
 <dl class="api"><dt id="memb-Min_Normal">
@@ -4195,7 +4195,7 @@ loss.</p>
 </dd>
 </dl>
 <details><summary>Overview of constants</summary><p><code class=borderless><a href="Api/Basic/Floats.html#memb-Dig">Dig</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-Epsilon">Epsilon</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-Infinity">Infinity</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-Mant_Dig">Mant_Dig</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-Max">Max</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-Max_10_Exp">Max_10_Exp</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-Max_Exp">Max_Exp</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-Min_10_Exp">Min_10_Exp</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-Min_Denormal">Min_Denormal</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-Min_Exp">Min_Exp</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-Min_Normal">Min_Normal</a></code>, <code class=borderless><a href="Api/Basic/Floats.html#memb-NaN">NaN</a></code></p></details>
-<h1 id="int-types"><a class="header" href="#int-types">int types</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="int-types"><a class="header" href="#int-types">int types</a></h1>
 <p>Integral types, i.e. <code>int</code>, <code>uint8</code>, etc.</p>
 <h2 id="constants-2"><a class="header" href="#constants-2">Constants</a></h2>
 <dl class="api"><dt id="memb-Min">
@@ -4217,7 +4217,7 @@ loss.</p>
 </dd>
 </dl>
 <details><summary>Overview of constants</summary><p><code class=borderless><a href="Api/Basic/Integers.html#memb-Max">Max</a></code>, <code class=borderless><a href="Api/Basic/Integers.html#memb-Min">Min</a></code></p></details>
-<h1 id="string"><a class="header" href="#string">string</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="string"><a class="header" href="#string">string</a></h1>
 <p>Strings have many methods attached to them for manipulating text.</p>
 <p>A string is composed of <em>bytes</em> which make up <em>characters</em>. Every
 character is at least one byte, but a character may also be more than
@@ -4555,7 +4555,7 @@ for(int i = 0, j = 0, n = str.CodePointCount(); i &lt; n; j++)
 if(theThirdCharacter == -1)
 	return;
 </code></pre>
-<h1 id="textureid"><a class="header" href="#textureid">textureId</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="textureid"><a class="header" href="#textureid">textureId</a></h1>
 <p>Texture IDs can be explicitly converted to integers, but not the other
 way around. You can add and subtract integers with a <code>textureId</code>,
 however. (This only works with the integer on the right hand side.)</p>
@@ -4611,7 +4611,7 @@ however. (This only works with the integer on the right hand side.)</p>
 <pre><code class="language-zsc">textureId tex;
 tex.SetNull();
 </code></pre>
-<h1 id="vector2"><a class="header" href="#vector2">vector2</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="vector2"><a class="header" href="#vector2">vector2</a></h1>
 <p>The <code>vector2</code> built-in type.</p>
 <h2 id="instance-methods-8"><a class="header" href="#instance-methods-8">Instance Methods</a></h2>
 <dl class="api"><dt id="mthd-Length">
@@ -4649,7 +4649,7 @@ tex.SetNull();
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Basic/Vector2.html#memb-X">X</a></code>, <code class=borderless><a href="Api/Basic/Vector2.html#memb-Y">Y</a></code></p></details>
-<h1 id="vector3"><a class="header" href="#vector3">vector3</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="vector3"><a class="header" href="#vector3">vector3</a></h1>
 <p>The <code>vector3</code> built-in type.</p>
 <h2 id="instance-methods-9"><a class="header" href="#instance-methods-9">Instance Methods</a></h2>
 <dl class="api"><dt id="mthd-Length">
@@ -4691,19 +4691,19 @@ tex.SetNull();
 <p>The X, Y, and Z components of this vector.</p>
 </dd>
 </dl>
-<dl class="api"><dt id="memb-XY">
+<dl class="api"><dt id="memb-Xy">
 <code class="language-zsc">
-<p><a href="Api/Basic/Vector2.html">vector2</a> <a href="Api/Basic/Vector3.html#memb-XY">XY</a></p>
+<p><a href="Api/Basic/Vector2.html">vector2</a> <a href="Api/Basic/Vector3.html#memb-Xy">Xy</a></p>
 </code>
 </dt>
 <dd>
 <p>The <code class=borderless><a href="Api/Basic/Vector3.html#memb-X">X</a></code> and <code class=borderless><a href="Api/Basic/Vector3.html#memb-Y">Y</a></code> components of this vector as a <code class=borderless><a href="Api/Basic/Vector2.html">vector2</a></code>.</p>
 </dd>
 </dl>
-<details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Basic/Vector3.html#memb-X">X</a></code>, <code class=borderless><a href="Api/Basic/Vector3.html#memb-XY">XY</a></code>, <code class=borderless><a href="Api/Basic/Vector3.html#memb-Y">Y</a></code>, <code class=borderless><a href="Api/Basic/Vector3.html#memb-Z">Z</a></code></p></details>
-<h1 id="drawing"><a class="header" href="#drawing">Drawing</a></h1>
+<details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Basic/Vector3.html#memb-X">X</a></code>, <code class=borderless><a href="Api/Basic/Vector3.html#memb-Xy">Xy</a></code>, <code class=borderless><a href="Api/Basic/Vector3.html#memb-Y">Y</a></code>, <code class=borderless><a href="Api/Basic/Vector3.html#memb-Z">Z</a></code></p></details>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="drawing"><a class="header" href="#drawing">Drawing</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="brokenlines"><a class="header" href="#brokenlines">BrokenLines</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="brokenlines"><a class="header" href="#brokenlines">BrokenLines</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class BrokenLines : Object clearScope;
 </code></pre>
@@ -4739,7 +4739,7 @@ broken up to fit the screen and clipping region.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance methods</summary><p><code class=borderless><a href="Api/Drawing/BrokenLines.html#mthd-Count">Count</a></code>, <code class=borderless><a href="Api/Drawing/BrokenLines.html#mthd-StringAt">StringAt</a></code>, <code class=borderless><a href="Api/Drawing/BrokenLines.html#mthd-StringWidth">StringWidth</a></code></p></details>
-<h1 id="console"><a class="header" href="#console">Console</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="console"><a class="header" href="#console">Console</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct Console clearScope;
 </code></pre>
@@ -4781,7 +4781,7 @@ bold messages.</p>
 </dd>
 </dl>
 <details><summary>Overview of class methods</summary><p><code class=borderless><a href="Api/Drawing/Console.html#mthd-HideConsole">HideConsole</a></code>, <code class=borderless><a href="Api/Drawing/Console.html#mthd-MidPrint">MidPrint</a></code>, <code class=borderless><a href="Api/Drawing/Console.html#mthd-PrintF">PrintF</a></code></p></details>
-<h1 id="font"><a class="header" href="#font">Font</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="font"><a class="header" href="#font">Font</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct Font clearScope;
 </code></pre>
@@ -5076,7 +5076,7 @@ maximum width in pixels of <code>maxLen</code>.</p>
 </dd>
 </dl>
 <details><summary>Overview of constants</summary><p><code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_BLACK">TEXTCOLOR_BLACK</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_BLUE">TEXTCOLOR_BLUE</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_BOLD">TEXTCOLOR_BOLD</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_BRICK">TEXTCOLOR_BRICK</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_BROWN">TEXTCOLOR_BROWN</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_CHAT">TEXTCOLOR_CHAT</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_CREAM">TEXTCOLOR_CREAM</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_CYAN">TEXTCOLOR_CYAN</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_DARKBROWN">TEXTCOLOR_DARKBROWN</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_DARKGRAY">TEXTCOLOR_DARKGRAY</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_DARKGREEN">TEXTCOLOR_DARKGREEN</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_DARKRED">TEXTCOLOR_DARKRED</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_FIRE">TEXTCOLOR_FIRE</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_GOLD">TEXTCOLOR_GOLD</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_GRAY">TEXTCOLOR_GRAY</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_GREEN">TEXTCOLOR_GREEN</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_GREY">TEXTCOLOR_GREY</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_ICE">TEXTCOLOR_ICE</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_LIGHTBLUE">TEXTCOLOR_LIGHTBLUE</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_NORMAL">TEXTCOLOR_NORMAL</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_OLIVE">TEXTCOLOR_OLIVE</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_ORANGE">TEXTCOLOR_ORANGE</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_PURPLE">TEXTCOLOR_PURPLE</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_RED">TEXTCOLOR_RED</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_SAPPHIRE">TEXTCOLOR_SAPPHIRE</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_TAN">TEXTCOLOR_TAN</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_TEAL">TEXTCOLOR_TEAL</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_TEAMCHAT">TEXTCOLOR_TEAMCHAT</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_UNTRANSLATED">TEXTCOLOR_UNTRANSLATED</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_WHITE">TEXTCOLOR_WHITE</a></code>, <code class=borderless><a href="Api/Drawing/Font.html#memb-TEXTCOLOR_YELLOW">TEXTCOLOR_YELLOW</a></code></p></details>
-<h1 id="gifont"><a class="header" href="#gifont">GiFont</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="gifont"><a class="header" href="#gifont">GiFont</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct GiFont clearScope;
 </code></pre>
@@ -5102,7 +5102,7 @@ maximum width in pixels of <code>maxLen</code>.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Drawing/GiFont.html#memb-Color">Color</a></code>, <code class=borderless><a href="Api/Drawing/GiFont.html#memb-FontName">FontName</a></code></p></details>
-<h1 id="screen"><a class="header" href="#screen">Screen</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="screen"><a class="header" href="#screen">Screen</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct Screen clearScope;
 </code></pre>
@@ -5360,7 +5360,7 @@ used with <code class=borderless><a href="Api/Drawing/Screen.html#mthd-DrawTextu
 <tr><td><code>DTA_WINDOWLEFTF</code>, <code>DTA_WINDOWRIGHTF</code></td><td><code>double size</code></td><td>Same as <code>DTA_WINDOWLEFT</code>/<code>DTA_WINDOWRIGHT</code>, but with decimal arguments.</td></tr>
 <tr><td><code>DTA_WINDOWLEFT</code>, <code>DTA_WINDOWRIGHT</code></td><td><code>int size</code></td><td>Crops <code>size</code> pixels from the left or right.</td></tr>
 </tbody></table>
-<h1 id="shape2d"><a class="header" href="#shape2d">Shape2D</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="shape2d"><a class="header" href="#shape2d">Shape2D</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class Shape2D : Object clearScope;
 </code></pre>
@@ -5418,7 +5418,7 @@ used with <code class=borderless><a href="Api/Drawing/Screen.html#mthd-DrawTextu
 </dd>
 </dl>
 <details><summary>Overview of instance methods</summary><p><code class=borderless><a href="Api/Drawing/Shape2D.html#mthd-Clear">Clear</a></code>, <code class=borderless><a href="Api/Drawing/Shape2D.html#mthd-PushCoord">PushCoord</a></code>, <code class=borderless><a href="Api/Drawing/Shape2D.html#mthd-PushTriangle">PushTriangle</a></code>, <code class=borderless><a href="Api/Drawing/Shape2D.html#mthd-PushVertex">PushVertex</a></code>, <code class=borderless><a href="Api/Drawing/Shape2D.html#mthd-SetTransform">SetTransform</a></code></p></details>
-<h1 id="texman"><a class="header" href="#texman">TexMan</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="texman"><a class="header" href="#texman">TexMan</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct TexMan clearScope;
 </code></pre>
@@ -5523,9 +5523,9 @@ instead.</p>
 </dd>
 </dl>
 <details><summary>Overview of class methods</summary><p><code class=borderless><a href="Api/Drawing/TexMan.html#mthd-CheckForTexture">CheckForTexture</a></code>, <code class=borderless><a href="Api/Drawing/TexMan.html#mthd-CheckRealHeight">CheckRealHeight</a></code>, <code class=borderless><a href="Api/Drawing/TexMan.html#mthd-GetName">GetName</a></code>, <code class=borderless><a href="Api/Drawing/TexMan.html#mthd-GetScaledOffset">GetScaledOffset</a></code>, <code class=borderless><a href="Api/Drawing/TexMan.html#mthd-GetScaledSize">GetScaledSize</a></code>, <code class=borderless><a href="Api/Drawing/TexMan.html#mthd-GetSize">GetSize</a></code>, <code class=borderless><a href="Api/Drawing/TexMan.html#mthd-OkForLocalization">OkForLocalization</a></code>, <code class=borderless><a href="Api/Drawing/TexMan.html#mthd-ReplaceTextures">ReplaceTextures</a></code>, <code class=borderless><a href="Api/Drawing/TexMan.html#mthd-SetCameraToTexture">SetCameraToTexture</a></code></p></details>
-<h1 id="event-handling"><a class="header" href="#event-handling">Event Handling</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="event-handling"><a class="header" href="#event-handling">Event Handling</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="consoleevent"><a class="header" href="#consoleevent">ConsoleEvent</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="consoleevent"><a class="header" href="#consoleevent">ConsoleEvent</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct ConsoleEvent clearScope version(&quot;2.4&quot;);
 </code></pre>
@@ -5577,7 +5577,7 @@ console command.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Events/ConsoleEvent.html#memb-Args">Args</a></code>, <code class=borderless><a href="Api/Events/ConsoleEvent.html#memb-IsManual">IsManual</a></code>, <code class=borderless><a href="Api/Events/ConsoleEvent.html#memb-Name">Name</a></code>, <code class=borderless><a href="Api/Events/ConsoleEvent.html#memb-Player">Player</a></code></p></details>
-<h1 id="eventhandler"><a class="header" href="#eventhandler">EventHandler</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="eventhandler"><a class="header" href="#eventhandler">EventHandler</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class EventHandler : StaticEventHandler play version(&quot;2.4&quot;);
 </code></pre>
@@ -5612,7 +5612,7 @@ be overridden on this type.</p>
 </dd>
 </dl>
 <details><summary>Overview of class methods</summary><p><code class=borderless><a href="Api/Events/EventHandler.html#mthd-Find">Find</a></code>, <code class=borderless><a href="Api/Events/EventHandler.html#mthd-SendNetworkEvent">SendNetworkEvent</a></code></p></details>
-<h1 id="inputevent"><a class="header" href="#inputevent">InputEvent</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="inputevent"><a class="header" href="#inputevent">InputEvent</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct InputEvent play version(&quot;2.4&quot;);
 </code></pre>
@@ -5688,7 +5688,7 @@ can be represented as one.</p>
 <div class="footnote-definition" id="delta"><sup class="footnote-definition-label">1</sup>
 <p>The difference between the last known position and the current position.</p>
 </div>
-<h1 id="playerevent"><a class="header" href="#playerevent">PlayerEvent</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="playerevent"><a class="header" href="#playerevent">PlayerEvent</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct PlayerEvent play version(&quot;2.4&quot;);
 </code></pre>
@@ -5718,7 +5718,7 @@ by re-entering a hub level.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Events/PlayerEvent.html#memb-IsReturn">IsReturn</a></code>, <code class=borderless><a href="Api/Events/PlayerEvent.html#memb-PlayerNumber">PlayerNumber</a></code></p></details>
-<h1 id="renderevent"><a class="header" href="#renderevent">RenderEvent</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="renderevent"><a class="header" href="#renderevent">RenderEvent</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct RenderEvent ui version(&quot;2.4&quot;);
 </code></pre>
@@ -5785,7 +5785,7 @@ specified.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Events/RenderEvent.html#memb-Camera">Camera</a></code>, <code class=borderless><a href="Api/Events/RenderEvent.html#memb-FracTic">FracTic</a></code>, <code class=borderless><a href="Api/Events/RenderEvent.html#memb-ViewAngle">ViewAngle</a></code>, <code class=borderless><a href="Api/Events/RenderEvent.html#memb-ViewPitch">ViewPitch</a></code>, <code class=borderless><a href="Api/Events/RenderEvent.html#memb-ViewPos">ViewPos</a></code>, <code class=borderless><a href="Api/Events/RenderEvent.html#memb-ViewRoll">ViewRoll</a></code></p></details>
-<h1 id="replaceevent"><a class="header" href="#replaceevent">ReplaceEvent</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="replaceevent"><a class="header" href="#replaceevent">ReplaceEvent</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct ReplaceEvent clearScope version(&quot;2.4&quot;);
 </code></pre>
@@ -5827,7 +5827,7 @@ replacement chain, and will directly replace the actor with
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Events/ReplaceEvent.html#memb-IsFinal">IsFinal</a></code>, <code class=borderless><a href="Api/Events/ReplaceEvent.html#memb-Replacee">Replacee</a></code>, <code class=borderless><a href="Api/Events/ReplaceEvent.html#memb-Replacement">Replacement</a></code></p></details>
-<h1 id="replacedevent"><a class="header" href="#replacedevent">ReplacedEvent</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="replacedevent"><a class="header" href="#replacedevent">ReplacedEvent</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct ReplacedEvent clearScope version(&quot;3.7&quot;);
 </code></pre>
@@ -5868,7 +5868,7 @@ replacement chain, and will directly replace the actor with
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Events/ReplacedEvent.html#memb-IsFinal">IsFinal</a></code>, <code class=borderless><a href="Api/Events/ReplacedEvent.html#memb-Replacee">Replacee</a></code>, <code class=borderless><a href="Api/Events/ReplacedEvent.html#memb-Replacement">Replacement</a></code></p></details>
-<h1 id="staticeventhandler"><a class="header" href="#staticeventhandler">StaticEventHandler</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="staticeventhandler"><a class="header" href="#staticeventhandler">StaticEventHandler</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class StaticEventHandler : Object play version(&quot;2.4&quot;);
 </code></pre>
@@ -6274,7 +6274,7 @@ purposes.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Events/StaticEventHandler.html#memb-IsUiProcessor">IsUiProcessor</a></code>, <code class=borderless><a href="Api/Events/StaticEventHandler.html#memb-Order">Order</a></code>, <code class=borderless><a href="Api/Events/StaticEventHandler.html#memb-RequireMouse">RequireMouse</a></code></p></details>
-<h1 id="uievent"><a class="header" href="#uievent">UiEvent</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="uievent"><a class="header" href="#uievent">UiEvent</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct UiEvent ui version(&quot;2.4&quot;);
 </code></pre>
@@ -6366,7 +6366,7 @@ be represented as one. This value may also be one of
 <div class="footnote-definition" id="delta"><sup class="footnote-definition-label">1</sup>
 <p>The difference between the last known position and the current position.</p>
 </div>
-<h1 id="worldevent"><a class="header" href="#worldevent">WorldEvent</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="worldevent"><a class="header" href="#worldevent">WorldEvent</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct WorldEvent play version(&quot;2.4&quot;);
 </code></pre>
@@ -6510,7 +6510,7 @@ be represented as one. This value may also be one of
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Events/WorldEvent.html#memb-ActivatedLine">ActivatedLine</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-ActivationType">ActivationType</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-Damage">Damage</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-DamageAngle">DamageAngle</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-DamageFlags">DamageFlags</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-DamageIsRadius">DamageIsRadius</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-DamageLine">DamageLine</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-DamageLineSide">DamageLineSide</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-DamagePosition">DamagePosition</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-DamageSector">DamageSector</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-DamageSectorPart">DamageSectorPart</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-DamageSource">DamageSource</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-DamageType">DamageType</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-Inflictor">Inflictor</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-IsReopen">IsReopen</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-IsSaveGame">IsSaveGame</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-NewDamage">NewDamage</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-ShouldActivate">ShouldActivate</a></code>, <code class=borderless><a href="Api/Events/WorldEvent.html#memb-Thing">Thing</a></code></p></details>
-<h1 id="globals"><a class="header" href="#globals">Globals</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="globals"><a class="header" href="#globals">Globals</a></h1>
 <p>These functions and variables are accessible from any context.</p>
 <div class="toc contents">
 <ol>
@@ -7376,9 +7376,9 @@ change.</p>
 </dd>
 </dl>
 <details><summary>Overview of constants</summary><p><code class=borderless><a href="Api/Globals.html#memb-ATTN_IDLE">ATTN_IDLE</a></code>, <code class=borderless><a href="Api/Globals.html#memb-ATTN_NONE">ATTN_NONE</a></code>, <code class=borderless><a href="Api/Globals.html#memb-ATTN_NORM">ATTN_NORM</a></code>, <code class=borderless><a href="Api/Globals.html#memb-ATTN_STATIC">ATTN_STATIC</a></code>, <code class=borderless><a href="Api/Globals.html#memb-DEFMELEERANGE">DEFMELEERANGE</a></code>, <code class=borderless><a href="Api/Globals.html#memb-FLAG_NO_CHANGE">FLAG_NO_CHANGE</a></code>, <code class=borderless><a href="Api/Globals.html#memb-MAXPLAYERS">MAXPLAYERS</a></code>, <code class=borderless><a href="Api/Globals.html#memb-MISSILERANGE">MISSILERANGE</a></code>, <code class=borderless><a href="Api/Globals.html#memb-PLAYERMISSILERANGE">PLAYERMISSILERANGE</a></code>, <code class=borderless><a href="Api/Globals.html#memb-SAWRANGE">SAWRANGE</a></code></p></details>
-<h1 id="intermissions"><a class="header" href="#intermissions">Intermissions</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="intermissions"><a class="header" href="#intermissions">Intermissions</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="interbackground"><a class="header" href="#interbackground">InterBackground</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="interbackground"><a class="header" href="#interbackground">InterBackground</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class InterBackground play version(&quot;2.5&quot;);
 </code></pre>
@@ -7416,7 +7416,7 @@ change.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance methods</summary><p><code class=borderless><a href="Api/Inter/InterBackground.html#mthd-DrawBackground">DrawBackground</a></code>, <code class=borderless><a href="Api/Inter/InterBackground.html#mthd-LoadBackground">LoadBackground</a></code>, <code class=borderless><a href="Api/Inter/InterBackground.html#mthd-UpdateAnimatedBack">UpdateAnimatedBack</a></code></p></details>
-<h1 id="patchinfo"><a class="header" href="#patchinfo">PatchInfo</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="patchinfo"><a class="header" href="#patchinfo">PatchInfo</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct PatchInfo play version(&quot;2.5&quot;)
 </code></pre>
@@ -7463,7 +7463,7 @@ an invalid texture. Ignored after 3.8.0.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Inter/PatchInfo.html#memb-MColor">MColor</a></code>, <code class=borderless><a href="Api/Inter/PatchInfo.html#memb-MFont">MFont</a></code>, <code class=borderless><a href="Api/Inter/PatchInfo.html#memb-MPatch">MPatch</a></code></p></details>
-<h1 id="statusscreen"><a class="header" href="#statusscreen">StatusScreen</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="statusscreen"><a class="header" href="#statusscreen">StatusScreen</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class StatusScreen abstract play version(&quot;2.5&quot;);
 </code></pre>
@@ -8160,7 +8160,7 @@ and &quot;entering&quot; text. Used by <code class=borderless><a href="Api/Inter
 </dl>
 <!-- EOF -->
 <details><summary>Overview of constants</summary><p><code class=borderless><a href="Api/Inter/StatusScreen.html#memb-NG_STATSY">NG_STATSY</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen.html#memb-SHOWNEXTLOCDELAY">SHOWNEXTLOCDELAY</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen.html#memb-SP_STATSX">SP_STATSX</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen.html#memb-SP_STATSY">SP_STATSY</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen.html#memb-SP_TIMEX">SP_TIMEX</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen.html#memb-SP_TIMEY">SP_TIMEY</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen.html#memb-TITLEY">TITLEY</a></code></p></details>
-<h1 id="espstate"><a class="header" href="#espstate">ESpState</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="espstate"><a class="header" href="#espstate">ESpState</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">enum StatusScreen.ESpState;
 </code></pre>
@@ -8197,7 +8197,7 @@ and &quot;entering&quot; text. Used by <code class=borderless><a href="Api/Inter
 </dd>
 </dl>
 <details><summary>Overview of variants</summary><p><code class=borderless><a href="Api/Inter/StatusScreen/ESpState.html#enum-SP_FRAGS">SP_FRAGS</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen/ESpState.html#enum-SP_ITEMS">SP_ITEMS</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen/ESpState.html#enum-SP_KILLS">SP_KILLS</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen/ESpState.html#enum-SP_SECRET">SP_SECRET</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen/ESpState.html#enum-SP_TIME">SP_TIME</a></code></p></details>
-<h1 id="estate"><a class="header" href="#estate">EState</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="estate"><a class="header" href="#estate">EState</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">enum StatusScreen.EState;
 </code></pre>
@@ -8244,7 +8244,7 @@ the status screen has been exited.</p>
 </dd>
 </dl>
 <details><summary>Overview of variants</summary><p><code class=borderless><a href="Api/Inter/StatusScreen/EState.html#enum-LEAVINGINTERMISSION">LEAVINGINTERMISSION</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen/EState.html#enum-NOSTATE">NOSTATE</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen/EState.html#enum-SHOWNEXTLOC">SHOWNEXTLOC</a></code>, <code class=borderless><a href="Api/Inter/StatusScreen/EState.html#enum-STATCOUNT">STATCOUNT</a></code></p></details>
-<h1 id="wbplayerstruct"><a class="header" href="#wbplayerstruct">WbPlayerStruct</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="wbplayerstruct"><a class="header" href="#wbplayerstruct">WbPlayerStruct</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct WbPlayerStruct version(&quot;2.4&quot;)
 </code></pre>
@@ -8307,7 +8307,7 @@ for all players.)</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Inter/WbPlayerStruct.html#memb-FragCount">FragCount</a></code>, <code class=borderless><a href="Api/Inter/WbPlayerStruct.html#memb-Frags">Frags</a></code>, <code class=borderless><a href="Api/Inter/WbPlayerStruct.html#memb-SItems">SItems</a></code>, <code class=borderless><a href="Api/Inter/WbPlayerStruct.html#memb-SKills">SKills</a></code>, <code class=borderless><a href="Api/Inter/WbPlayerStruct.html#memb-SSecret">SSecret</a></code>, <code class=borderless><a href="Api/Inter/WbPlayerStruct.html#memb-STime">STime</a></code></p></details>
-<h1 id="wbstartstruct"><a class="header" href="#wbstartstruct">WbStartStruct</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="wbstartstruct"><a class="header" href="#wbstartstruct">WbStartStruct</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct WbStartStruct version(&quot;2.4&quot;)
 </code></pre>
@@ -8489,9 +8489,9 @@ for all players.)</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-Current">Current</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-Finished_Ep">Finished_Ep</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-LName0">LName0</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-LName1">LName1</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-MaxFrags">MaxFrags</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-MaxItems">MaxItems</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-MaxKills">MaxKills</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-MaxSecret">MaxSecret</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-Next">Next</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-NextAuthor">NextAuthor</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-NextName">NextName</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-Next_Ep">Next_Ep</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-PNum">PNum</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-ParTime">ParTime</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-Plyr">Plyr</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-SuckTime">SuckTime</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-ThisAuthor">ThisAuthor</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-ThisName">ThisName</a></code>, <code class=borderless><a href="Api/Inter/WbStartStruct.html#memb-TotalTime">TotalTime</a></code></p></details>
-<h1 id="level-data"><a class="header" href="#level-data">Level Data</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="level-data"><a class="header" href="#level-data">Level Data</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="f3dfloor"><a class="header" href="#f3dfloor">F3DFloor</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="f3dfloor"><a class="header" href="#f3dfloor">F3DFloor</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct F3DFloor play;
 </code></pre>
@@ -8575,7 +8575,7 @@ for all players.)</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Level/F3DFloor.html#memb-Alpha">Alpha</a></code>, <code class=borderless><a href="Api/Level/F3DFloor.html#memb-Bottom">Bottom</a></code>, <code class=borderless><a href="Api/Level/F3DFloor.html#memb-Flags">Flags</a></code>, <code class=borderless><a href="Api/Level/F3DFloor.html#memb-Master">Master</a></code>, <code class=borderless><a href="Api/Level/F3DFloor.html#memb-Model">Model</a></code>, <code class=borderless><a href="Api/Level/F3DFloor.html#memb-Target">Target</a></code>, <code class=borderless><a href="Api/Level/F3DFloor.html#memb-Top">Top</a></code></p></details>
-<h1 id="fcolormap"><a class="header" href="#fcolormap">FColorMap</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="fcolormap"><a class="header" href="#fcolormap">FColorMap</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct FColorMap clearScope;
 </code></pre>
@@ -8619,9 +8619,9 @@ for all players.)</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Level/FColorMap.html#memb-BlendFactor">BlendFactor</a></code>, <code class=borderless><a href="Api/Level/FColorMap.html#memb-Desaturation">Desaturation</a></code>, <code class=borderless><a href="Api/Level/FColorMap.html#memb-FadeColor">FadeColor</a></code>, <code class=borderless><a href="Api/Level/FColorMap.html#memb-LightColor">LightColor</a></code></p></details>
-<h1 id="levellocals"><a class="header" href="#levellocals">LevelLocals</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="levellocals"><a class="header" href="#levellocals">LevelLocals</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="lineiditerator"><a class="header" href="#lineiditerator">LineIdIterator</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="lineiditerator"><a class="header" href="#lineiditerator">LineIdIterator</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class LineIdIterator : Object clearScope;
 </code></pre>
@@ -8652,7 +8652,7 @@ Returns <code>-1</code> when the list is exhausted.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance methods</summary><p><code class=borderless><a href="Api/Level/LineIdIterator.html#mthd-Next">Next</a></code></p></details>
-<h1 id="sectoreffect"><a class="header" href="#sectoreffect">SectorEffect</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="sectoreffect"><a class="header" href="#sectoreffect">SectorEffect</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class SectorEffect : Thinker play;
 </code></pre>
@@ -8680,7 +8680,7 @@ Returns <code>-1</code> when the list is exhausted.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Level/SectorEffect.html#memb-m_Sector">m_Sector</a></code></p></details>
-<h1 id="sectortagiterator"><a class="header" href="#sectortagiterator">SectorTagIterator</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="sectortagiterator"><a class="header" href="#sectortagiterator">SectorTagIterator</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class SectorTagIterator : Object clearScope;
 </code></pre>
@@ -8723,7 +8723,7 @@ compatible with Doom's stair builders.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance methods</summary><p><code class=borderless><a href="Api/Level/SectorTagIterator.html#mthd-Next">Next</a></code>, <code class=borderless><a href="Api/Level/SectorTagIterator.html#mthd-NextCompat">NextCompat</a></code></p></details>
-<h1 id="vertex"><a class="header" href="#vertex">Vertex</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="vertex"><a class="header" href="#vertex">Vertex</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct Vertex play;
 </code></pre>
@@ -8751,9 +8751,9 @@ compatible with Doom's stair builders.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Level/Vertex.html#memb-P">P</a></code></p></details>
-<h1 id="players-1"><a class="header" href="#players-1">Players</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="players-1"><a class="header" href="#players-1">Players</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="eplayergender"><a class="header" href="#eplayergender">EPlayerGender</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="eplayergender"><a class="header" href="#eplayergender">EPlayerGender</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">enum EPlayerGender;
 </code></pre>
@@ -8798,7 +8798,7 @@ are 251 unused genders.</p>
 </dd>
 </dl>
 <details><summary>Overview of variants</summary><p><code class=borderless><a href="Api/Players/EPlayerGender.html#enum-GENDER_FEMALE">GENDER_FEMALE</a></code>, <code class=borderless><a href="Api/Players/EPlayerGender.html#enum-GENDER_MALE">GENDER_MALE</a></code>, <code class=borderless><a href="Api/Players/EPlayerGender.html#enum-GENDER_NEUTRAL">GENDER_NEUTRAL</a></code>, <code class=borderless><a href="Api/Players/EPlayerGender.html#enum-GENDER_OTHER">GENDER_OTHER</a></code></p></details>
-<h1 id="eplayerstate"><a class="header" href="#eplayerstate">EPlayerState</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="eplayerstate"><a class="header" href="#eplayerstate">EPlayerState</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">enum EPlayerState;
 </code></pre>
@@ -8855,7 +8855,7 @@ set to <code class=borderless><a href="Api/Players/EPlayerState.html#enum-PST_LI
 </dd>
 </dl>
 <details><summary>Overview of variants</summary><p><code class=borderless><a href="Api/Players/EPlayerState.html#enum-PST_DEAD">PST_DEAD</a></code>, <code class=borderless><a href="Api/Players/EPlayerState.html#enum-PST_ENTER">PST_ENTER</a></code>, <code class=borderless><a href="Api/Players/EPlayerState.html#enum-PST_GONE">PST_GONE</a></code>, <code class=borderless><a href="Api/Players/EPlayerState.html#enum-PST_LIVE">PST_LIVE</a></code>, <code class=borderless><a href="Api/Players/EPlayerState.html#enum-PST_REBORN">PST_REBORN</a></code></p></details>
-<h1 id="playerclass"><a class="header" href="#playerclass">PlayerClass</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="playerclass"><a class="header" href="#playerclass">PlayerClass</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct PlayerClass clearScope;
 </code></pre>
@@ -8916,7 +8916,7 @@ ZScript, but its value is <code>1</code> if you need to check for that.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Players/PlayerClass.html#memb-Flags">Flags</a></code>, <code class=borderless><a href="Api/Players/PlayerClass.html#memb-Skins">Skins</a></code>, <code class=borderless><a href="Api/Players/PlayerClass.html#memb-Type">Type</a></code></p></details>
-<h1 id="playerskin"><a class="header" href="#playerskin">PlayerSkin</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="playerskin"><a class="header" href="#playerskin">PlayerSkin</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct PlayerSkin clearScope;
 </code></pre>
@@ -9017,7 +9017,7 @@ sprite's color.</p>
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Players/PlayerSkin.html#memb-CrouchSprite">CrouchSprite</a></code>, <code class=borderless><a href="Api/Players/PlayerSkin.html#memb-Face">Face</a></code>, <code class=borderless><a href="Api/Players/PlayerSkin.html#memb-Gender">Gender</a></code>, <code class=borderless><a href="Api/Players/PlayerSkin.html#memb-NameSpc">NameSpc</a></code>, <code class=borderless><a href="Api/Players/PlayerSkin.html#memb-OtherGame">OtherGame</a></code>, <code class=borderless><a href="Api/Players/PlayerSkin.html#memb-Range0End">Range0End</a></code>, <code class=borderless><a href="Api/Players/PlayerSkin.html#memb-Range0Start">Range0Start</a></code>, <code class=borderless><a href="Api/Players/PlayerSkin.html#memb-Scale">Scale</a></code>, <code class=borderless><a href="Api/Players/PlayerSkin.html#memb-SkinName">SkinName</a></code>, <code class=borderless><a href="Api/Players/PlayerSkin.html#memb-Sprite">Sprite</a></code></p></details>
-<h1 id="team"><a class="header" href="#team">Team</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="team"><a class="header" href="#team">Team</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct Team clearScope;
 </code></pre>
@@ -9054,7 +9054,7 @@ sprite's color.</p>
 </dd>
 </dl>
 <details><summary>Overview of constants</summary><p><code class=borderless><a href="Api/Players/Team.html#memb-MAX">MAX</a></code>, <code class=borderless><a href="Api/Players/Team.html#memb-NOTEAM">NOTEAM</a></code></p></details>
-<h1 id="usercmd"><a class="header" href="#usercmd">UserCmd</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="usercmd"><a class="header" href="#usercmd">UserCmd</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct UserCmd clearScope;
 </code></pre>
@@ -9116,9 +9116,9 @@ specified in <a href="Api/Players/../../Data/MapInfo.html#gameinfo">MAPINFO Game
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Players/UserCmd.html#memb-Buttons">Buttons</a></code>, <code class=borderless><a href="Api/Players/UserCmd.html#memb-ForwardMove">ForwardMove</a></code>, <code class=borderless><a href="Api/Players/UserCmd.html#memb-Pitch">Pitch</a></code>, <code class=borderless><a href="Api/Players/UserCmd.html#memb-Roll">Roll</a></code>, <code class=borderless><a href="Api/Players/UserCmd.html#memb-SideMove">SideMove</a></code>, <code class=borderless><a href="Api/Players/UserCmd.html#memb-UpMove">UpMove</a></code>, <code class=borderless><a href="Api/Players/UserCmd.html#memb-Yaw">Yaw</a></code></p></details>
-<h1 id="sound"><a class="header" href="#sound">Sound</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="sound"><a class="header" href="#sound">Sound</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="musplayinginfo"><a class="header" href="#musplayinginfo">MusPlayingInfo</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="musplayinginfo"><a class="header" href="#musplayinginfo">MusPlayingInfo</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">struct MusPlayingInfo clearScope;
 </code></pre>
@@ -9153,7 +9153,7 @@ specified in <a href="Api/Players/../../Data/MapInfo.html#gameinfo">MAPINFO Game
 </dd>
 </dl>
 <details><summary>Overview of instance members</summary><p><code class=borderless><a href="Api/Sound/MusPlayingInfo.html#memb-BaseOrder">BaseOrder</a></code>, <code class=borderless><a href="Api/Sound/MusPlayingInfo.html#memb-Loop">Loop</a></code>, <code class=borderless><a href="Api/Sound/MusPlayingInfo.html#memb-Name">Name</a></code></p></details>
-<h1 id="seqnode"><a class="header" href="#seqnode">SeqNode</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="seqnode"><a class="header" href="#seqnode">SeqNode</a></h1>
 <details><summary>Show declaration</summary>
 <pre><code class="language-zsc">class SeqNode : Object clearScope;
 </code></pre>
@@ -9206,9 +9206,9 @@ specified in <a href="Api/Players/../../Data/MapInfo.html#gameinfo">MAPINFO Game
 </dd>
 </dl>
 <details><summary>Overview of instance methods</summary><p><code class=borderless><a href="Api/Sound/SeqNode.html#mthd-GetSequenceSlot">GetSequenceSlot</a></code>, <code class=borderless><a href="Api/Sound/SeqNode.html#mthd-MarkPrecacheSounds">MarkPrecacheSounds</a></code></p></details>
-<h1 id="concepts"><a class="header" href="#concepts">Concepts</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="concepts"><a class="header" href="#concepts">Concepts</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="action-scoping"><a class="header" href="#action-scoping">Action Scoping</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="action-scoping"><a class="header" href="#action-scoping">Action Scoping</a></h1>
 <p>On classes derived from <code class=borderless><a href="Concepts/../Api/Base/Actor.html">Actor</a></code>, states and methods can be scoped to
 a certain subset of uses. This is mainly to differentiate actions
 which take place in inventory items and weapons, and actions which
@@ -9222,9 +9222,9 @@ pointer usage. The available scopes are:</p>
 </tbody></table>
 <p>These can be defined either in the <code>states</code> block header as-is, or in
 <code class=borderless><a href="Concepts/../Api/Base/Actor.html">Actor</a>.<a href="Concepts/../Api/Base/Actor.html#memb-DefaultStateUsage">DefaultStateUsage</a></code>.</p>
-<h1 id="angles"><a class="header" href="#angles">Angles</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="angles"><a class="header" href="#angles">Angles</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="cvars"><a class="header" href="#cvars">CVars</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="cvars"><a class="header" href="#cvars">CVars</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
 <h2 id="conversions-1"><a class="header" href="#conversions-1">Conversions</a></h2>
 <h3 id="into-bool"><a class="header" href="#into-bool">Into <code>bool</code></a></h3>
@@ -9259,17 +9259,17 @@ pointer usage. The available scopes are:</p>
 <tr><td align="left"><code>string</code></td><td align="left">No change</td></tr>
 <tr><td align="left"><code>color</code></td><td align="left">&quot;RR GG BB&quot; octet pair</td></tr>
 </tbody></table>
-<h1 id="caching"><a class="header" href="#caching">Caching</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="caching"><a class="header" href="#caching">Caching</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="filters"><a class="header" href="#filters">Filters</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="filters"><a class="header" href="#filters">Filters</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="format-strings"><a class="header" href="#format-strings">Format Strings</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="format-strings"><a class="header" href="#format-strings">Format Strings</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="object-scoping"><a class="header" href="#object-scoping">Object Scoping</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="object-scoping"><a class="header" href="#object-scoping">Object Scoping</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="skins"><a class="header" href="#skins">Skins</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="skins"><a class="header" href="#skins">Skins</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="virtual-file-system"><a class="header" href="#virtual-file-system">Virtual File System</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="virtual-file-system"><a class="header" href="#virtual-file-system">Virtual File System</a></h1>
 <p>Files of various kinds are loaded from <em>archives</em> into a structure of
 <em>lumps</em> and <em>namespaces</em>.</p>
 <p><em>Archives</em> are any storage medium used for holding files. There are
@@ -9305,21 +9305,21 @@ lumps for determining lump namespaces.</li>
 determining lump namespaces, and also store fully qualified paths
 for files.</li>
 </ul>
-<h1 id="data-formats"><a class="header" href="#data-formats">Data Formats</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="data-formats"><a class="header" href="#data-formats">Data Formats</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="boom-color-maps"><a class="header" href="#boom-color-maps">BOOM Color Maps</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="boom-color-maps"><a class="header" href="#boom-color-maps">BOOM Color Maps</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="cvarinfo"><a class="header" href="#cvarinfo">CVarInfo</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="cvarinfo"><a class="header" href="#cvarinfo">CVarInfo</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="dehacked"><a class="header" href="#dehacked">DeHackEd</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="dehacked"><a class="header" href="#dehacked">DeHackEd</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="deprecated-hirestex"><a class="header" href="#deprecated-hirestex">Deprecated HiResTex</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="deprecated-hirestex"><a class="header" href="#deprecated-hirestex">Deprecated HiResTex</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="graphics"><a class="header" href="#graphics">Graphics</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="graphics"><a class="header" href="#graphics">Graphics</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="language"><a class="header" href="#language">Language</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="language"><a class="header" href="#language">Language</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="music-1"><a class="header" href="#music-1">Music</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="music-1"><a class="header" href="#music-1">Music</a></h1>
 <p>There are many music formats supported by GZDoom. Currently, all of
 the music code is in its own submodule, <em>ZMusic</em>. The music system
 supports many types of MIDI, tracker, emulated chip, OPL, and PCM
@@ -9734,11 +9734,11 @@ MP3)<sup class="footnote-reference"><a href="#mpeg-spec">7</a></sup><sup class="
 <div class="footnote-definition" id="xmi-spec"><sup class="footnote-definition-label">99</sup>
 <p><a href="http://www.shikadi.net/moddingwiki/XMI_Format">http://www.shikadi.net/moddingwiki/XMI_Format</a></p>
 </div>
-<h1 id="sounds-1"><a class="header" href="#sounds-1">Sounds</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="sounds-1"><a class="header" href="#sounds-1">Sounds</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="voices"><a class="header" href="#voices">Voices</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="voices"><a class="header" href="#voices">Voices</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
-<h1 id="voxels"><a class="header" href="#voxels">Voxels</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="voxels"><a class="header" href="#voxels">Voxels</a></h1>
 <p><span class="label red">TO-DO — This section is not finished yet</span></p>
 
 
