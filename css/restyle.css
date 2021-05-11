@@ -26,6 +26,33 @@ code > p > a {
 	line-height: 1.6;
 }
 
+.content h2::after,
+.content h3::after,
+.content h4::after,
+.content h5::after {
+	content: "";
+	display: inline-block;
+	border-bottom: 1px solid var(--fira-border);
+	margin-bottom: 0.5ch;
+	margin-left: 0.5em;
+}
+
+.content h2::after {
+	width: 16em;
+}
+
+.content h3::after {
+	width: 8em;
+}
+
+.content h4::after {
+	width: 4em;
+}
+
+.content h5::after {
+	width: 2em;
+}
+
 /* misc elements */
 details {
 	border-left: 4px solid var(--fira-border);
