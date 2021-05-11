@@ -58,6 +58,10 @@ pre code a {
 }
 
 /* misc elements */
+li::marker {
+	color: var(--fira-border);
+}
+
 details {
 	border-left: 4px solid var(--fira-border);
 	padding: 0 1ch;
