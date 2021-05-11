@@ -22,6 +22,10 @@ code > p > a {
 	color: var(--fg) !important;
 }
 
+pre code a {
+	text-decoration: underline dotted !important;
+}
+
 .content > main > p {
 	line-height: 1.6;
 }
