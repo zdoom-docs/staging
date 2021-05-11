@@ -48,7 +48,7 @@ Returns a representation of the value of the CVar.
 -#
 
 #-
-CVar.[ECVarType] {GetRealType}()
+[ECVarType] {GetRealType}()
 
 Returns the type of the CVar as it was defined.
 -#

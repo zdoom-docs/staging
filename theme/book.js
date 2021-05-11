@@ -10,21 +10,26 @@ hljs.registerLanguage('zscript', () => {
 			+ 'struct super switch transient ui until var varArg version '
 			+ 'virtual virtualScope volatile while',
 		type: 'array bool byte char color double float int int16 int8 '
-			+ 'long map name none sbyte short sound state string uint '
-			+ 'uint16 uint8 ulong ushort vector2 vector3 void '
+			+ 'long map name none sbyte short sound string uint '
+			+ 'uint16 uint8 ulong ushort vector2 vector3 void voidPtr '
 			+ 'textureId spriteId',
 		literal: 'true false null',
 	};
 
 	const FUNC_TITLE_RE = hljs.UNDERSCORE_IDENT_RE + '\\s*\\(';
-	const TYPE_NAME_RE = hljs.UNDERSCORE_IDENT_RE + '(\\.'
-		+ hljs.UNDERSCORE_IDENT_RE + ')*(<[^>]*>)?';
+	const TYPE_NAME_RE = hljs.UNDERSCORE_IDENT_RE + '(<[^>]*>)?';
 	const NUMBER_MODE = hljs.C_NUMBER_MODE;
 	const STRING_MODE = {
 		variants: [hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE]
 	};
 	const COMMENT_MODE = {
 		variants: [hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE]
+	};
+	const FUNC_KW_MODE = {
+		className: 'keyword',
+		begin: /(version|deprecated)\(/,
+		end:   /\)/,
+		contains: [STRING_MODE, COMMENT_MODE],
 	};
 
 	return {
@@ -44,6 +49,7 @@ hljs.registerLanguage('zscript', () => {
 				begin: /^version/,
 				end:   /\n/,
 			},
+			FUNC_KW_MODE,
 			{
 				beginKeywords: 'struct class',
 				end:           /[{;]/,
@@ -54,11 +60,7 @@ hljs.registerLanguage('zscript', () => {
 					{
 						beginKeywords: 'abstract clearScope native play replaces ui',
 					},
-					{
-						beginKeywords: 'version',
-						end:           /\)/,
-						contains: [STRING_MODE, COMMENT_MODE],
-					},
+					FUNC_KW_MODE,
 					hljs.UNDERSCORE_TITLE_MODE,
 				],
 			},
@@ -67,8 +69,7 @@ hljs.registerLanguage('zscript', () => {
 			},
 			{
 				className: 'function',
-				begin: TYPE_NAME_RE + '(\\s*,\\s*' + TYPE_NAME_RE + ')*\\s+'
-					+ FUNC_TITLE_RE,
+				begin: TYPE_NAME_RE + '\\s+' + FUNC_TITLE_RE,
 				end:   /[{;]/,
 				returnBegin: true,
 				excludeEnd:  true,

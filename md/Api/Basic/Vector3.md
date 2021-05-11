@@ -28,7 +28,7 @@ The X, Y, and Z components of this vector.
 -#
 
 #-
-[vector2] {XY}
+[vector2] {Xy}
 
 The [`X`] and [`Y`] components of this vector as a [`vector2`].
 -#

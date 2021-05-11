@@ -221,7 +221,7 @@ initializer. *This type may only be used in
 There are two vector types in ZScript, `vector2` and `vector3`, which
 hold two and three members, respectively. Their members can be
 accessed through `X`, `Y`, and for `vector3`, `Z`. `vector3` can
-additionally get the X and Y components as a `vector2` with `XY`.
+additionally get the X and Y components as a `vector2` with `Xy`.
 
 Vectors can use many operators and even have special ones to
 themselves. See the Expressions and Operators section for more
