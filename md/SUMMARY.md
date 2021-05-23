@@ -17,6 +17,7 @@
 - [ACS](Acs.md)
 - [ZScript API](Api.md)
   - [Base](Api/Base.md)
+    - [Actor](Api/Base/Actor.md)
     - [CVar](Api/Base/CVar.md)
       - [ECVarType](Api/Base/CVar/ECVarType.md)
     - [ESkillProperty](Api/Base/ESkillProperty.md)
