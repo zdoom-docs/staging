@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'json'
-require 'stringio'
 
 WORD    = /[a-zA-Z_]\w*/
 HEADING = /^ {,3}(\#{1,6})\s+(.+)\s*$/

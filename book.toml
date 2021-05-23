@@ -13,7 +13,8 @@ additional-css = [
 	"css/restyle.css",
 ]
 no-section-label = true
-git-repository-url = "http://github.com/marrub--/zdoom-doc"
+git-repository-url = "http://github.com/zdoom-docs/staging"
+site-url = "/staging/"
 
 [output.html.fold]
 enable = true
