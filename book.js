@@ -12,7 +12,7 @@ hljs.registerLanguage('zscript', () => {
 		type: 'array bool byte char color double float int int16 int8 '
 			+ 'long map name none sbyte short sound string uint '
 			+ 'uint16 uint8 ulong ushort vector2 vector3 void voidPtr '
-			+ 'textureId spriteId',
+			+ 'textureId spriteId stateLabel',
 		literal: 'true false null',
 	};
 

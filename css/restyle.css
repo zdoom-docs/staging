@@ -23,6 +23,7 @@ code > p > a {
 }
 
 pre code a {
+	color: var(--fg) !important;
 	text-decoration: underline dotted !important;
 }
 
@@ -227,6 +228,11 @@ ol li::before {
 
 .chapter li > a.toggle {
 	margin-left: unset;
+}
+
+.chapter li a {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 .section {
