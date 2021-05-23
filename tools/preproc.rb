@@ -7,19 +7,27 @@ WORD    = /[a-zA-Z_]\w*/
 HEADING = /\s{,3}(\#{1,6})\s+(.+)\s*$/ # NOTE: does not match trailing #
 API_PAT = /^<!-- api-([-a-z]+) -->$/
 TOC_PAT = /^<!-- toc -->$/
+DBG_PAT = /^<!-- debug-print -->$/
 
+API_DECL = /#-((?:(?!-#).)+)-#/m
+API_SBLK = /#\{((?:(?!\}#).)+)\}#/m
+API_NNAM = /^((?:(?!\{#{WORD}\}).|\n)+)$/
+API_NAME = /(.*){(#{WORD})}(.*)/
+
+CONSTNTS = "constants"
 DECLARTN = "declaration"
 DEFINITN = "definition"
+FLAGS    = "flags"
 FOOTER   = "footer"
-SUB_TYPS = "sub-types"
+MEMBERS  = "members"
 MTHD_CLS = "class-methods"
 MTHD_INS = "instance-methods"
-MEMBERS  = "members"
-CONSTNTS = "constants"
+PROPS    = "properties"
+STATES   = "states"
+SUB_TYPS = "sub-types"
 VARIANTS = "variants"
 
-Heading = Struct.new :level, :title, :link
-Offset  = Struct.new :file, :line, :colu, :strn
+Offset = Struct.new :file, :line, :colu, :strn
 
 def raise_ofs ofs, msg
 	raise "#{ofs.file} line #{ofs.line}: #{msg}\n#{ofs.strn.chomp}\n#{" " * ofs.colu[0]}^#{"~" * (ofs.colu[1] - ofs.colu[0] - 1)}"
@@ -64,8 +72,7 @@ def chapter_pat chapter, pattern
 end
 
 def mod_chapter_api chapter
-	backlinks = {}
-	last      = nil
+	last = nil
 
 	chapter["content"] = chapter_pat chapter, API_PAT do |ret, type, ofs|
 		case type
@@ -82,90 +89,150 @@ def mod_chapter_api chapter
 			_end_
 		when DEFINITN
 			must_be_after ofs, last, type, nil, DECLARTN
-		when FOOTER
-			# nothing
 		when SUB_TYPS
 			must_be_after ofs, last, type, DEFINITN
 			types = ret.split(",\n").map do |type| type.chomp end
 			types.delete("")
-			ret = types.reduce(%(<div class="toc types">\n\n)) do |s, type|
-				s + "* <code class=borderless>[#{type}]</code>\n"
-			end + "\n</div>\n\n"
-		when MTHD_CLS, MTHD_INS, MEMBERS, CONSTNTS, VARIANTS
+			ret = %(<div class="toc types">\n\n) + types.map do |type|
+				"* [`#{type}`]"
+			end.join("\n") + "\n</div>\n\n"
+		when
+			MTHD_CLS,
+			VARIANTS,
+			MTHD_INS,
+			MEMBERS,
+			CONSTNTS,
+			PROPS,
+			FLAGS,
+			STATES
+			pri =
+				case type
+				when MTHD_CLS, VARIANTS then 0
+				when MTHD_INS           then 1
+				when MEMBERS            then 2
+				when CONSTNTS           then 3
+				when PROPS              then 4
+				when FLAGS              then 5
+				when STATES             then 6
+				end
 			after = [SUB_TYPS, DEFINITN]
-			case type
-			when MTHD_CLS, VARIANTS
-			when MTHD_INS
-				after.push MTHD_CLS
-			when MEMBERS
-				after.push MTHD_CLS, MTHD_INS
-			when CONSTNTS
-				after.push MTHD_CLS, MTHD_INS, MEMBERS
-			end
+			after.push MTHD_CLS if pri > 0
+			after.push MTHD_INS if pri > 1
+			after.push MEMBERS  if pri > 2
+			after.push CONSTNTS if pri > 3
+			after.push PROPS    if pri > 4
+			after.push FLAGS    if pri > 5
+			after.push STATES   if pri > 6
 			must_be_after ofs, last, type, *after
-			links = []
+
 			pfx =
 				case type
 				when MTHD_CLS, MTHD_INS then "mthd-"
 				when MEMBERS,  CONSTNTS then "memb-"
+				when PROPS,    FLAGS    then "prop-"
 				when VARIANTS           then "enum-"
+				when STATES             then "stat-"
 				end
 			title =
 				case type
 				when MTHD_CLS then "Class Methods"
+				when VARIANTS then "Variants"
 				when MTHD_INS then "Instance Methods"
 				when MEMBERS  then "Instance Members"
+				when PROPS    then "Properties"
+				when FLAGS    then "Flags"
 				when CONSTNTS then "Constants"
-				when VARIANTS then "Variants"
+				when STATES   then "States"
 				end
-			ret.gsub! /#-((?:(?!-#).)+)-#/m do |_|
+
+			links = []
+
+			ret.gsub! API_SBLK do |_|
+				slns = $1.lines
+				slns.shift if slns.first == "\n"
+
+				shead = slns.shift
+				slns.shift if slns.first == "\n"
+
+				sblk = slns.join
+
+				<<~_end_
+				<pre><code class="language-zsc">#{shead.strip}
+				{</code></pre>
+				#{sblk.strip}
+				<pre><code class="language-zsc">} // #{shead.strip}</code></pre>
+				_end_
+			end if type == STATES
+
+			ret.gsub! API_DECL do |_|
 				match = $1.strip
-				match.gsub! /^((?:(?!\{#{WORD}\}).|\n)+)$/ do |match|
-					<<~_end_
+
+				if type == STATES
+					label = nil
+					decl = String.new
+					desc = nil
+					for ln in match.lines
+						ln = ln.chomp
+						if ln == ""
+							desc = String.new
+						elsif desc != nil
+							desc.concat ln, "\n"
+						elsif label == nil
+							label = ln.delete_suffix ":"
+						else
+							decl.concat ln, "\n"
+						end
+					end
+					a = [label, {link: label, id: "state-" + label}]
+					links.push a
+					match = <<~_end_
+					<dt id="#{a[1][:id]}">
+					<pre><code class="language-zsc"><a href="##{a[1][:id]}">#{a[0]}</a>:
+					#{decl.chomp}</code></pre>
+					</dt>
 					<dd>
 
-					#{match.strip}
+					#{desc.strip}
 
 					</dd>
 					_end_
+				else
+					match.gsub! API_NNAM do |match|
+						%(<dd>\n\n#{match.strip}\n\n</dd>)
+					end
+					match.gsub! API_NAME do |_|
+						link = $2
+						link = "b" + link if type == FLAGS
+						id = pfx + link
+						a = [$2, {link: link, id: id}]
+						links.push a
+						<<~_end_
+						<dt id="#{a[1][:id]}">
+						<code class="language-zsc">
+
+						#{$1}<a href="##{a[1][:id]}">#{a[0]}</a>#{$3}
+
+						</code>
+						</dt>
+						_end_
+					end
 				end
-				match.gsub! /(.*){(#{WORD})}(.*)/ do |_|
-					id = pfx + $2
-					links.push [$2, "#" + id]
-					<<~_end_
-					<dt id="#{id}">
-					<code class="language-zsc">
-
-					#{$1}<a href="##{id}">#{$2}</a>#{$3}
-
-					</code>
-					</dt>
-					_end_
-				end
-				<<~_end_
-				<dl class="api">#{match}
-
-				</dl>
-				_end_
+				%(<dl class="api">) + match + "\n\n</dl>"
 			end
+
 			links.sort!
-			link_spans = links.map do |a|
-				name = a[0]
-				link = a[1]
-				backlinks[name] = link
-				%(<code class=borderless><a href="#{link}">#{name}</a></code>)
-			end.join ", "
-			link_refs = links.map do |a|
-				"[#{a[0]}]: #{a[1]}\n"
-			end.join
-			summary = "<summary>Overview of #{title.downcase}</summary>"
+			link_spans = links.map do |a| %(<code class="borderless"><a href="##{a[1][:id]}">#{a[0]}</a></code>) end.join ", "
+			link_refs  = links.map do |a| "[#{a[1][:link]}]: ##{a[1][:id]}\n" end.join
+
 			ret = <<~_end_
 			## #{title}
 
-			#{ret}<details>#{summary}<p>#{link_spans}</p></details>
+			#{ret}<details><summary>Overview of #{title.downcase}</summary>#{link_spans}</details>
 
 			#{link_refs}
 			_end_
+		when FOOTER
+			# do nothing
 		else
 			raise_ofs ofs, "unknown api block '#{type}'"
 		end
@@ -175,31 +242,43 @@ def mod_chapter_api chapter
 end
 
 def mod_chapter_toc chapter
-	headings = []
+	hd_title = {}
+	hd_order = []
 
 	chapter["content"].scan HEADING do |level, title|
-		num  = headings.count do |hd| hd.title == title end
+		num  = hd_title[title] && hd_title[title].count
 		link = title.downcase.gsub " ", "-"
-		link = if num > 0 then link + "-#{num}" else link end
-		hd   = Heading.new level.length - 1, title, link
-		headings.push hd
+		link = if num then link + "-#{num}" else link end
+		hd   = { level: level.length - 1, title: title, link: link }
+		hd_title[title] = [] unless hd_title[title]
+		hd_title[title].push hd
+		hd_order.push hd
 	end
 
-	chapter["content"] = chapter_pat chapter, TOC_PAT do |content|
-		headings.reduce(%(<div class="toc contents">\n\n)) do |s, hd|
-			if (level = hd.level - 1) >= 0
-				s + "#{"   " * level}1. [#{hd.title}](##{hd.link})\n"
+	toc =
+		hd_order.reduce(%(<div class="toc contents">\n\n)) do |s, hd|
+			if (level = hd[:level] - 1) >= 0
+				s + "#{"   " * level}1. [#{hd[:title]}](##{hd[:link]})\n"
 			else
 				s
 			end
-		end + "\n</div>\n\n" + content
+		end + "\n</div>\n\n"
+
+	chapter["content"] = chapter_pat chapter, TOC_PAT do |content|
+		toc + content
 	end
 end
 
 def mod_chapter_lnk chapter
 	chapter["content"].gsub! /\[`([a-zA-Z][a-zA-Z0-9._]*)`\]/ do |match|
 		links = $1.split(".").map do |s| "[" + s + "]" end
-		"<code class=borderless>#{links.join "."}</code>"
+		%(<code class="borderless">#{links.join "."}</code>)
+	end
+end
+
+def mod_chapter_dbg chapter
+	chapter["content"] = chapter["content"].sub DBG_PAT do |_|
+		"\n\n" + chapter["content"].gsub(/^/, "\t")
 	end
 end
 
@@ -207,6 +286,7 @@ def mod_chapter chapter
 	mod_chapter_api chapter
 	mod_chapter_toc chapter
 	mod_chapter_lnk chapter
+	mod_chapter_dbg chapter
 
 	for section in chapter["sub_items"]
 		mod_chapter section["Chapter"]

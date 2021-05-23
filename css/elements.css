@@ -56,6 +56,10 @@ dl.api dt a {
 	text-decoration: underline dotted;
 }
 
+dl.api dt pre {
+	margin-block: 0;
+}
+
 /* table of contents */
 .toc {
 	border: 1px solid var(--fira-border);

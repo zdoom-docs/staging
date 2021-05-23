@@ -23,6 +23,7 @@ code > p > a {
 }
 
 pre code a {
+	color: var(--fg) !important;
 	text-decoration: underline dotted !important;
 }
 
