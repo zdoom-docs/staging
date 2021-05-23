@@ -4,7 +4,7 @@ require 'json'
 require 'stringio'
 
 WORD    = /[a-zA-Z_]\w*/
-HEADING = /\s{,3}(\#{1,6})\s+(.+)\s*$/ # NOTE: does not match trailing #
+HEADING = /^ {,3}(\#{1,6})\s+(.+)\s*$/
 API_PAT = /^<!-- api-([-a-z]+) -->$/
 TOC_PAT = /^<!-- toc -->$/
 DBG_PAT = /^<!-- debug-print -->$/
