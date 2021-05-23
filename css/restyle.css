@@ -230,6 +230,11 @@ ol li::before {
 	margin-left: unset;
 }
 
+.chapter li a {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
 .section {
 	padding-left: 0;
 }
