@@ -42,7 +42,7 @@
 [translation string]: ../../Concepts/Translations.md
 
 <!-- api-declaration -->
-class Actor : Thinker
+class Actor : Thinker;
 
 <!-- api-definition -->
 A [`Thinker`] capable of existing within 3D space.

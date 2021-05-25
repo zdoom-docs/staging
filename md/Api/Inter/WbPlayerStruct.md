@@ -4,7 +4,7 @@
 [StatusScreen]: StatusScreen.md
 
 <!-- api-declaration -->
-struct WbPlayerStruct version("2.4")
+struct WbPlayerStruct version("2.4");
 
 <!-- api-definition -->
 Information for each individual player for a [`StatusScreen`].

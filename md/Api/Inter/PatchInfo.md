@@ -3,7 +3,7 @@
 [GiFont]: ../Drawing/GiFont.md
 
 <!-- api-declaration -->
-struct PatchInfo play version("2.5")
+struct PatchInfo play version("2.5");
 
 <!-- api-definition -->
 Either a patch or string depending on external configurations.

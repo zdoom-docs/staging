@@ -77,12 +77,11 @@ def mod_chapter_api chapter
 		case type
 		when DECLARTN
 			must_be_after ofs, last, type, nil
+			ret = ret.strip
+			raise_ofs ofs, "declaration must end with `;'" unless ret.end_with? ?;
 			ret = <<~_end_
 			<details><summary>Show declaration</summary>
-
-			```zsc
-			#{ret.strip}
-			```
+			<pre><code class="language-zsc">#{ret.strip}</code></pre>
 			</details>
 
 			_end_
@@ -106,13 +105,14 @@ def mod_chapter_api chapter
 			STATES
 			pri =
 				case type
-				when MTHD_CLS, VARIANTS then 0
-				when MTHD_INS           then 1
-				when MEMBERS            then 2
-				when CONSTNTS           then 3
-				when PROPS              then 4
-				when FLAGS              then 5
-				when STATES             then 6
+				when MTHD_CLS then 0
+				when MTHD_INS then 1
+				when MEMBERS  then 2
+				when CONSTNTS then 3
+				when PROPS    then 4
+				when FLAGS    then 5
+				when STATES   then 6
+				when VARIANTS then 7
 				end
 			after = [SUB_TYPS, DEFINITN]
 			after.push MTHD_CLS if pri > 0
@@ -122,6 +122,7 @@ def mod_chapter_api chapter
 			after.push PROPS    if pri > 4
 			after.push FLAGS    if pri > 5
 			after.push STATES   if pri > 6
+			after.push VARIANTS if pri > 7
 			must_be_after ofs, last, type, *after
 
 			pfx =
@@ -166,7 +167,8 @@ def mod_chapter_api chapter
 			ret.gsub! API_DECL do |_|
 				match = $1.strip
 
-				if type == STATES
+				case type
+				when STATES
 					label = nil
 					decl = String.new
 					desc = nil
