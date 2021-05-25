@@ -369,7 +369,7 @@ integer literal `0`, and is more similar to C++'s `nullptr`.
 [Exponent]: #floating-point-literals
 [FloatSuffix]: #floating-point-literals
 [FloatingPointLiteral]: #floating-point-literals
-[FontLiteral]: #font-literals
+[FontLiteral]: #string-like-literals
 [IdentifierCharacter]: #character-types
 [IdentifierStartCharacter]: #character-types
 [Identifier]: #identifiers
@@ -383,7 +383,7 @@ integer literal `0`, and is more similar to C++'s `nullptr`.
 [NewLine]: #character-types
 [NullLiteral]: #null-literals
 [RegionComment]: #comments
-[SoundLiteral]: #sound-literals
+[SoundLiteral]: #string-like-literals
 [StringCharacter]: #string-literals
 [StringLikeLiteral]: #string-like-literals
 [StringLiteralEscape]: #string-literal-escapes
