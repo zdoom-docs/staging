@@ -13,8 +13,9 @@ pointer usage. The available scopes are:
 | `overlay` | Actions are called from a weapon overlay.     |
 | `weapon`  | Actions are called from a weapon.             |
 
-These can be defined either in the `states` block header as-is, or in
-[`Actor.DefaultStateUsage`].
+These can be defined either in the `states` block header as-is,
+{{#include ../Labels/Internal.md}} or with [`Actor`]'s
+[`DefaultStateUsage`] property.
 
 [Actor]: ../Api/Base/Actor.md
-[DefaultStateUsage]: ../Api/Base/Actor.md#memb-DefaultStateUsage
+[DefaultStateUsage]: ../Api/Base/Actor.md#prop-DefaultStateUsage

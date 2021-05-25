@@ -5,7 +5,7 @@
 [A_VileChase]: Actor.md#mthd-A_VileChase
 
 [Actor]: Actor.md
-[DefaultStateUsage]: DefaultStateUsage.md
+[EStateUseFlags]: EStateUseFlags.md
 
 <!-- api-declaration -->
 struct State clearScope;
@@ -90,7 +90,7 @@ compatibility.
 -#
 
 #-
-readOnly [DefaultStateUsage] {UseFlags}
+readOnly [EStateUseFlags] {UseFlags}
 
 The action scope of this state.
 -#

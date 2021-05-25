@@ -8,6 +8,7 @@
 [Actor]: #actor
 [CHAN_BODY]: ESoundFlags.md#enum-CHAN_BODY
 [CHAN_VOICE]: ESoundFlags.md#enum-CHAN_VOICE
+[EStateUseFlags]: EStateUseFlags.md
 [FCheckPosition]: FCheckPosition.md
 [FLAG_NO_CHANGE]: ../Globals.md#memb-FLAG_NO_CHANGE
 [FLineTraceData]: FLineTraceData.md
@@ -36,10 +37,9 @@
 [Thinker]: Thinker.md
 
 [decals]: ../../Concepts/Decals.md
-[default state usage]: DefaultStateUsage.md
-[legacy render style]: ../../Concepts/RenderStyle.md
+[legacy render style]: ../../Concepts/RenderStyles.md
 [translatable string]: ../../Concepts/Localization.md
-[translation string]: ../../Concepts/Translation.md
+[translation string]: ../../Concepts/Translations.md
 
 <!-- api-declaration -->
 class Actor : Thinker
@@ -1298,7 +1298,7 @@ Adds a dropped item (see [`GetDropItems`]) to the actor, either:
 #-
 property {DefaultStateUsage}
 
-{{#include ../../Labels/Internal.md}} The [default state usage] of the
+{{#include ../../Labels/Internal.md}} The [`EStateUseFlags`] of the
 actor. Not to be used by user code.
 -#
 
