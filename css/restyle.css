@@ -31,31 +31,34 @@ pre code a {
 	line-height: 1.6;
 }
 
-.content h2::after,
-.content h3::after,
-.content h4::after,
-.content h5::after {
-	content: "";
+.content h1::before,
+.content h2::before,
+.content h3::before,
+.content h4::before,
+.content h5::before {
 	display: inline-block;
-	border-bottom: 1px solid var(--fira-border);
-	margin-bottom: 0.5ch;
-	margin-left: 0.5em;
+	color: var(--fira-border);
+	margin-right: 1rem;
 }
 
-.content h2::after {
-	width: 16em;
+.content h1::before {
+	content: "#";
 }
 
-.content h3::after {
-	width: 8em;
+.content h2::before {
+	content: "##";
 }
 
-.content h4::after {
-	width: 4em;
+.content h3::before {
+	content: "###";
 }
 
-.content h5::after {
-	width: 2em;
+.content h4::before {
+	content: "####";
+}
+
+.content h5::before {
+	content: "#####";
 }
 
 /* misc elements */
@@ -117,6 +120,10 @@ details[open] > :not(summary) {
 		font-size 0.5s  cubic-bezier(0.76, 0, 0.24, 1);
 	left: 0;
 	opacity: 100%;
+}
+
+details > p {
+	margin-block: 0;
 }
 
 footer {

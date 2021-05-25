@@ -226,7 +226,7 @@ def mod_chapter_api chapter
 			ret = <<~_end_
 			## #{title}
 
-			#{ret}<details><summary>Overview of #{title.downcase}</summary>#{link_spans}</details>
+			#{ret}<details><summary>Overview of #{title.downcase}</summary><p>#{link_spans}</p></details>
 
 			#{link_refs}
 			_end_
