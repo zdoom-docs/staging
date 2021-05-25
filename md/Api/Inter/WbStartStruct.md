@@ -5,7 +5,7 @@
 [WbPlayerStruct]: WbPlayerStruct.md
 
 <!-- api-declaration -->
-struct WbStartStruct version("2.4");
+struct WbStartStruct clearScope version("2.4");
 
 <!-- api-definition -->
 Information passed into the [`StatusScreen`] class when an intermission starts.

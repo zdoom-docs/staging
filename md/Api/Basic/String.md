@@ -6,6 +6,7 @@
 [replace charcodeat]: #replacing-charcodeat
 
 [EmptyTokenType]: ../Base/EmptyTokenType.md
+[TOK_KEEPEMPTY]: ../Base/EmptyTokenType.md#enum-TOK_KEEPEMPTY
 
 <!-- api-definition -->
 Strings have many methods attached to them for manipulating text.
@@ -111,7 +112,7 @@ string.
 -#
 
 #-
-void {Split}(out array\<string> tokens, string delimiter, [EmptyTokenType] keepEmpty = TOK_KEEPEMPTY) const
+void {Split}(out array\<string> tokens, string delimiter, [EmptyTokenType] keepEmpty = [TOK_KEEPEMPTY]) const
 
 Splits the string by each delimiter into tokens. `keepEmpty` describes
 whether the function should keep or discard empty strings found while

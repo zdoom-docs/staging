@@ -18,9 +18,8 @@ deprecated("3.8") static SectorTagIterator {Create}(int tag, [Line] defLine = nu
 {{#include ../../Labels/Legacy.md}} Use
 [`LevelLocals.CreateSectorTagIterator`] instead.
 
-Creates a new iterator over sectors with tag `tag`. {{#include
-../../Labels/Todo.md}} I can't find where `defLine` is actually used.
-It is a mystery.
+Creates a new iterator over sectors with the tag `tag`, starting at
+the back-sector of `defLine`, if it's not `null` and `tag` is 0.
 -#
 
 <!-- api-instance-methods -->

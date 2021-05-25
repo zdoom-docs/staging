@@ -105,7 +105,7 @@ clearScope double {Distance2DSquared}([Actor] other) const
 clearScope double {Distance3DSquared}([Actor] other) const
 clearScope [Actor] {GetPointer}(int aaPtr)
 clearScope bool {CountsAsKill}() const
-clearscope [State] {FindState}(stateLabel st, bool exact = false) const
+clearScope [State] {FindState}(stateLabel st, bool exact = false) const
 clearScope double {AngleTo}([Actor] target, bool absolute = false) const
 clearScope vector2 {Vec2To}([Actor] other) const
 clearScope vector3 {Vec3To}([Actor] other) const

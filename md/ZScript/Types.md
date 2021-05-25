@@ -326,8 +326,9 @@ Class references are usable as arguments.
 
 Types prefixed with `@` are native pointers to objects, as opposed to
 objects placed directly in the structure's data. This is not usable in
-user code. There is also a `voidPtr` type that is usable in user code,
-which refers to a real memory address.
+user code and will not be exposed by the API documentation as its
+usage is not relevant. There is also a `voidPtr` type that is usable
+in user code, which refers to a real memory address.
 
 Native pointers are usable as arguments.
 
