@@ -6,26 +6,34 @@
 [AAPTR_TARGET]: EPointerFlags.md#enum-AAPTR_TARGET
 [ATTN_NORM]: ../Globals.md#memb-ATTN_NORM
 [Actor]: #actor
+[Ammo]: ../Weapons/Ammo.md
 [CHAN_BODY]: ESoundFlags.md#enum-CHAN_BODY
 [CHAN_VOICE]: ESoundFlags.md#enum-CHAN_VOICE
+[Console]: ../Drawing/Console.md
 [EStateUseFlags]: EStateUseFlags.md
+[ExecuteSpecial]: ../Level/LevelLocals.md#mthd-ExecuteSpecial
 [FCheckPosition]: FCheckPosition.md
 [FLAG_NO_CHANGE]: ../Globals.md#memb-FLAG_NO_CHANGE
 [FLineTraceData]: FLineTraceData.md
 [FRailParams]: FRailParams.md
 [FTranslatedLineTarget]: FTranslatedLineTarget.md
+[GetId]: ../Drawing/Translation.md#mthd-GetId
 [HR_SHADOW]: ../Globals.md#memb-HR_SHADOW
 [HX_SHADOW]: ../Globals.md#memb-HX_SHADOW
 [Inventory]: ../Inventory/Inventory.md
+[LOF_NOSIGHTCHECK]: ELookFlags.md#enum-LOF_NOSIGHTCHECK
+[LevelLocals]: ../Level/LevelLocals.md
 [Lightning]: ../Hexen/Lightning.md
 [Line]: ../Level/Line.md
 [LinkContext]: LinkContext.md
 [LookExParams]: LookExParams.md
+[MidPrint]: ../Drawing/Console.md#mthd-MidPrint
 [NO_REPLACE]: EReplace.md#enum-NO_REPLACE
 [Object]: Object.md
 [PSP_WEAPON]: ../Weapons/EPspLayers.md#enum-PSP_WEAPON
 [PlayerInfo]: ../Players/PlayerInfo.md
 [PlayerPawn]: ../Players/PlayerPawn.md
+[PrintF]: ../Drawing/Console.md#mthd-PrintF
 [RADF_HURTSOURCE]: RadiusDamageFlags.md#enum-RADF_HURTSOURCE
 [RSF_FOG]: ERespawnFlags.md#enum-RSF_FOG
 [Sector]: ../Level/Sector.md
@@ -35,6 +43,8 @@
 [TICRATE]: Object.md#memb-TICRATE
 [TerrainDef]: ../Level/TerrainDef.md
 [Thinker]: Thinker.md
+[Weapon]: ../Weapons/Weapon.md
+[struct-Translation]: ../Drawing/Translation.md
 
 [decals]: ../../Concepts/Decals.md
 [legacy render style]: ../../Concepts/RenderStyles.md
@@ -72,8 +82,9 @@ static class<[Actor]\> {GetReplacement}(class<[Actor]\> cls)
 static class<[Actor]\> {GetReplacee}(class<[Actor]\> cls)
 static class<[Actor]\> {GetSpawnableType}(int spawnNum)
 static int {GetSpriteIndex}(name sprite)
-static int {ApplyDamageFactors}(class<[Inventory]\> itemClass, name damageType, int damage, int defDamage)
+static int {ApplyDamageFactors}(class<[Inventory]\> itemType, name damageType, int damage, int defDamage)
 static [Actor] {Spawn}(class<[Actor]\> type, vector3 pos = (0.0, 0.0, 0.0), int replace = [NO_REPLACE])
+static bool {DoGiveInventory}([Actor] receiver, bool orResult, class<[Inventory]\> itemType, int amount, int setReceiver)
 
 {{#include ../../Labels/Todo.md}}
 -#
@@ -126,6 +137,8 @@ clearScope double {AccuracyFactor}() const
 clearScope [Inventory] {FindInventory}(class<[Inventory]\> itemType, bool subClass = false) const
 clearScope int {GetSpawnHealth}() const
 clearScope bool {IsActorPlayingSound}(int channel, sound snd = 0)
+clearScope [Inventory] {FirstInv}()
+clearScope int {CountInv}(class<[Inventory]\> itemType, int ptr_Select = [AAPTR_DEFAULT]) const
 
 {{#include ../../Labels/Todo.md}}
 -#
@@ -138,8 +151,6 @@ void {A_ClearTarget}()
 void {A_ChangeLinkFlags}(int blockMap = [FLAG_NO_CHANGE], int sector = [FLAG_NO_CHANGE])
 void {A_Die}(name damageType = 'none')
 void {A_Face}([Actor] faceTo, double max_Turn = 0.0, double max_Pitch = 270.0, double ang_Offset = 0.0, double pitch_Offset = 0.0, int flags = 0, double z_Ofs = 0.0)
-bool {A_LineEffect}(int boomSpecial = 0, int tag = 0)
-void {A_MonsterRail}()
 void {A_Pain}()
 void {A_NoBlocking}(bool drop = true)
 void {A_Chase}(stateLabel melee = '_a_chase_default', stateLabel missile = '_a_chase_default', int flags = 0)
@@ -169,11 +180,13 @@ void {A_SpawnParticle}(color color1, int flags = 0, int lifeTime = [Object].[TIC
 void {A_DropInventory}(class<[Inventory]\> itemType, int amount = -1)
 void {A_SetBlend}(double color1, double alpha, int tics, color color2 = 0, double alpha2 = 0.0)
 void {A_ChangeCountFlags}(int kill = [FLAG_NO_CHANGE], int item = [FLAG_NO_CHANGE], int secret = [FLAG_NO_CHANGE])
+void {A_RaiseChildren}(int flags = 0)
+void {A_RaiseSiblings}(int flags = 0)
 void {A_Weave}(int xSpeed, int ySpeed, double xDist, double yDist)
 action [State], bool {A_Teleport}(stateLabel teleportState = null, class<[SpecialSpot]\> targetType = "BossSpot", class<[Actor]\> fogType = "TeleportFog", int flags = 0, double minDist = 128.0, double maxDist = 0.0, int ptr = [AAPTR_DEFAULT])
 action [State], bool {A_Warp}(int ptr_Destination, double xOfs = 0.0, double yOfs = 0.0, double zOfs = 0.0, double angle = 0.0, int flags = 0, stateLabel success_State = null, double heightOffset = 0.0, double radiusOffset = 0.0, double pitch = 0.0)
 [State] {A_MonsterReFire}(int chance, stateLabel label)
-void {A_LookEx}(int flags = 0, double minSeeDist = 0.0, double maxSeeDist = 0.0, double maxHearDist = 0.0, double fov = 0.0, stateLabel label = null)
+void {A_LookEx}(ELookFlags flags = 0, double minSeeDist = 0.0, double maxSeeDist = 0.0, double maxHearDist = 0.0, double fov = 0.0, stateLabel label = null)
 void {A_Recoil}(double xyVel)
 int {A_RadiusGive}(class<[Inventory]\> itemType, double distance, int flags, int amount = 0, class<[Actor]\> filter = null, name species = 'None', double minDist = 0, int limit = 0)
 void {A_CustomMeleeAttack}(int damage = 0, sound meleeSound = "", sound missSound = "", name damageType = 'none', bool bleed = true)
@@ -222,7 +235,16 @@ void {A_Scream}()
 void {A_XScream}()
 void {A_ActiveSound}()
 void {A_CheckPlayerDone}()
-action state {ResolveState}(stateLabel st)
+int {A_GiveToChildren}(class<[Inventory]\> itemType, int amount = 0)
+int {A_GiveToSiblings}(class<[Inventory]\> itemType, int amount = 0)
+bool {A_TakeFromChildren}(class<[Inventory]\> itemType, int amount = 0)
+bool {A_TakeFromSiblings}(class<[Inventory]\> itemType, int amount = 0)
+bool {A_SetInventory}(class<[Inventory]\> itemType, int amount, int ptr = [AAPTR_DEFAULT], bool beyondMax = false)
+[Actor] {A_DropItem}(class<[Actor]\> itemType, int dropAmount = -1, int chance = 256)
+bool {A_SelectWeapon}(class<[Weapon]\> whichWeapon, int flags = 0)
+action [State] {A_JumpIf}(bool expression, stateLabel label)
+action [State] {ResolveState}(stateLabel st)
+int {GetMissileDamage}(int mask, int add, int ptr = [AAPTR_DEFAULT])
 action int {OverlayId}()
 action double {OverlayX}(int layer = 0)
 action double {OverlayY}(int layer = 0)
@@ -346,6 +368,16 @@ void {Revive}()
 int {GetRadiusDamage}([Actor] thing, int damage, int distance, int fullDmgDistance = 0, bool oldRadiusDmg = false)
 int {RadiusAttack}([Actor] bombSource, int bombDamage, int bombDistance, name bombMod = 'none', int flags = [RADF_HURTSOURCE], int fullDamageDistance = 0, name species = 'None')
 void {CopyBloodColor}([Actor] other)
+bool {GiveInventory}(class<[Inventory]\> type, int amount, bool giveCheat = false)
+bool {TakeInventory}(class<[Inventory]\> itemClass, int amount, bool fromDecorate = false, bool noTakeInfinite = false)
+bool {SetInventory}(class<[Inventory]\> itemClass, int amount, bool beyondMax = false)
+[Inventory] {DropInventory}([Inventory] item, int amt = 1)
+bool {GiveAmmo}(class<[Ammo]\> type, int amount)
+bool {DoTakeInventory}([Actor] receiver, bool orResult, class<[Inventory]\> itemType, int amount, int flags, int setReceiver)
+void {TossItem}()
+bool {CheckInventory}(class<[Inventory]\> itemType, int amount, int owner = [AAPTR_DEFAULT])
+void {ObtainInventory}([Actor] other)
+bool {CheckIfCloser}([Actor] targ, double distance, bool noZ = false)
 int {ACS_NamedExecute}(name script, int mapNum = 0, int arg1 = 0, int arg2 = 0, int arg3 = 0)
 int {ACS_NamedSuspend}(name script, int mapNum = 0)
 int {ACS_NamedTerminate}(name script, int mapNum = 0)
@@ -389,120 +421,549 @@ virtual bool {Grind}(bool items)
 virtual int {DamageMobj}([Actor] inflictor, [Actor] source, int damage, name mod, int flags = 0, double angle = 0.0)
 virtual clearScope int {GetMaxHealth}(bool withUpgrades = false) const
 virtual bool {ShouldSpawn}()
+virtual void {AddInventory}([Inventory] item)
+virtual void {RemoveInventory}([Inventory] item)
+virtual bool {UseInventory}([Inventory] item)
+virtual void {ClearInventory}()
 
 {{#include ../../Labels/Todo.md}}
 -#
 
-### Decorate Compatibility
+### Deprecated
+
+{{#include ../../Labels/Legacy.md}} All of these functions are
+needless as they're either for DeHackEd compatibility, Decorate
+compatibility, or their functionality is supplanted entirely by
+another function.
 
 #-
 void {A_Light0}()
 void {A_Light1}()
 void {A_Light2}()
 void {A_LightInverse}()
+
+Equivalent to [`A_Light`] with an argument of 0, 1, 2, and -1
+respectively.
+-#
+
+#-
 void {A_SetMass}(int newMass)
+
+Equivalent to setting [`Mass`].
+-#
+
+#-
 void {A_SetInvulnerable}()
 void {A_UnSetInvulnerable}()
+
+Equivalent to (un-)setting [`bINVULNERABLE`].
+-#
+
+#-
 void {A_SetReflective}()
 void {A_UnSetReflective}()
+
+Equivalent to (un-)setting [`bREFLECTIVE`].
+-#
+
+#-
 void {A_SetReflectiveInvulnerable}()
 void {A_UnSetReflectiveInvulnerable}()
+
+Equivalent to (un-)setting [`bINVULNERABLE`] and [`bREFLECTIVE`].
+-#
+
+#-
 void {A_SetShootable}()
+
+Equivalent to setting [`bSHOOTABLE`] and un-setting [`bNONSHOOTABLE`].
+-#
+
+#-
 void {A_UnSetShootable}()
+
+Equivalent to un-setting [`bSHOOTABLE`] and setting [`bNONSHOOTABLE`].
+-#
+
+#-
 void {A_NoGravity}()
+
+Equivalent to setting [`bNOGRAVITY`].
+-#
+
+#-
 void {A_Gravity}()
+
+Equivalent to un-setting [`bNOGRAVITY`] and setting [`Gravity`] to
+1.0.
+-#
+
+#-
 void {A_LowGravity}()
+
+Equivalent to un-setting [`bNOGRAVITY`] and setting [`Gravity`] to
+0.125.
+-#
+
+#-
 void {A_SetGravity}(double newGravity)
+
+Equivalent to setting [`Gravity`] to `Clamp(newGravity, 0.0, 10.0)`.
+-#
+
+#-
 void {A_SetFloorClip}()
+
+Equivalent to setting [`bFLOORCLIP`] and calling [`AdjustFloorClip`].
+-#
+
+#-
 void {A_UnSetFloorClip}()
+
+Equivalent to un-setting [`bFLOORCLIP`] and setting [`FloorClip`] to
+0.0.
+-#
+
+#-
 void {A_HideThing}()
 void {A_UnHideThing}()
+
+Equivalent to (un-)setting [`bINVISIBLE`].
+-#
+
+#-
 void {A_SetArg}(int arg, int val)
+
+Equivalent to setting [`Args`]' `arg`-th element if `arg` is >= 0 and
+<= 4.
+-#
+
+#-
 void {A_Turn}(double turn = 0.0)
+
+Equivalent to adding `turn` to [`Angle`].
+-#
+
+#-
 void {A_SetDamageType}(name newDamageType)
+
+Equivalent to setting [`DamageType`].
+-#
+
+#-
 void {A_SetSolid}()
 void {A_UnSetSolid}()
+
+Equivalent to (un-)setting [`bSOLID`].
+-#
+
+#-
 void {A_SetFloat}()
 void {A_UnSetFloat}()
+
+Equivalent to (un-)setting [`bFLOAT`].
+-#
+
+#-
 void {A_SetFloatBobPhase}(int bob)
+
+Equivalent to setting [`FloatBobPhase`] if `bob` is >= 0 and <= 63.
+-#
+
+#-
 void {A_SetRipperLevel}(int level)
+
+Equivalent to setting [`RipperLevel`].
+-#
+
+#-
 void {A_SetRipMin}(int minimum)
+
+Equivalent to setting [`RipLevelMin`].
+-#
+
+#-
 void {A_SetRipMax}(int maximum)
+
+Equivalent to setting [`RipLevelMax`].
+-#
+
+#-
+void {A_SetTeleFog}(class<[Actor]\> oldPos, class<[Actor]\> newPos)
+
+Equivalent to setting [`TeleFogSourceType`] and [`TeleFogDestType`].
+-#
+
+#-
+void {A_SwapTeleFog}()
+
+Equivalent to swapping [`TeleFogSourceType`] and [`TeleFogDestType`].
+-#
+
+#-
 void {A_ScreamAndUnblock}()
+
+Equivalent to [`A_Scream`] followed by [`A_NoBlocking`].
+-#
+
+#-
 void {A_ActiveAndUnblock}()
+
+Equivalent to [`A_ActiveSound`] followed by [`A_NoBlocking`].
+-#
+
+#-
 void {A_SetScale}(double scaleX, double scaleY = 0, int ptr = [AAPTR_DEFAULT], bool useZero = false)
+
+Equivalent to setting [`Scale`].
+-#
+
+#-
 void {A_SetSpeed}(double speed, int ptr = [AAPTR_DEFAULT])
+
+Equivalent to setting [`Speed`].
+-#
+
+#-
 void {A_SetFloatSpeed}(double speed, int ptr = [AAPTR_DEFAULT])
+
+Equivalent to setting [`FloatSpeed`].
+-#
+
+#-
 void {A_SetPainThreshold}(int threshold, int ptr = [AAPTR_DEFAULT])
+
+Equivalent to setting [`PainThreshold`].
+-#
+
+#-
 bool {A_SetSpriteAngle}(double angle = 0, int ptr = [AAPTR_DEFAULT])
+
+Equivalent to setting [`SpriteAngle`].
+-#
+
+#-
 bool {A_SetSpriteRotation}(double angle = 0, int ptr = [AAPTR_DEFAULT])
+
+Equivalent to setting [`SpriteRotation`].
+-#
+
+#-
 deprecated("2.3") void {A_FaceConsolePlayer}(double maxTurnAngle = 0)
+
+Does nothing. Exists only for *Zandronum* compatibility.
+-#
+
+#-
 void {A_SetSpecial}(int spec, int arg0 = 0, int arg1 = 0, int arg2 = 0, int arg3 = 0, int arg4 = 0)
+
+Equivalent to setting [`Special`] and [`Args`].
+-#
+
+#-
 void {A_FaceTarget}(double max_Turn = 0.0, double max_Pitch = 270.0, double ang_Offset = 0.0, double pitch_Offset = 0.0, int flags = 0, double z_Ofs = 0.0)
 void {A_FaceTracer}(double max_Turn = 0.0, double max_Pitch = 270.0, double ang_Offset = 0.0, double pitch_Offset = 0.0, int flags = 0, double z_Ofs = 0.0)
 void {A_FaceMaster}(double max_Turn = 0.0, double max_Pitch = 270.0, double ang_Offset = 0.0, double pitch_Offset = 0.0, int flags = 0, double z_Ofs = 0.0)
+
+Equivalent to [`A_Face`] with [`Target`], [`Tracer`], or [`Master`] as
+the first argument.
+-#
+
+#-
+bool {A_LineEffect}(int boomSpecial = 0, int tag = 0)
+
+Calls an action special. Unnecessary as action specials are already
+callable natively. Exists for DeHackEd compatibility.
+-#
+
+#-
+void {A_MonsterRail}()
+
+Use [`A_CustomRailgun`] instead.
+-#
+
+#-
 void {A_Fall}()
+
+Equivalent to [`A_NoBlocking`].
+-#
+
+#-
 bool {A_CallSpecial}(int special, int arg1 = 0, int arg2 = 0, int arg3 = 0, int arg4 = 0, int arg5 = 0)
+
+Equivalent to [`LevelLocals.ExecuteSpecial`].
+-#
+
+#-
 void {A_Look}()
+
+Equivalent to [`A_LookEx`].
+-#
+
+#-
 void {A_Look2}()
+
+Equivalent to [`A_LookEx`] with the [`LOF_NOSIGHTCHECK`] flag and some
+really weird behaviour. Exists for Strife compatibility.
+-#
+
+#-
 deprecated("2.3") void {A_BulletAttack}()
+
+Use [`A_CustomBulletAttack`] instead.
+-#
+
+#-
 deprecated("4.3") clearScope void {A_PlaySound}(sound whatToPlay = "weapons/pistol", int slot = [CHAN_BODY], double volume = 1.0, bool looping = false, double attenuation = [ATTN_NORM], bool local = false, double pitch = 0.0)
 deprecated("2.3") void {A_PlayWeaponSound}(sound whatToPlay)
 deprecated("2.3") void {A_PlaySoundEx}(sound whatToPlay, name slot, bool looping = false, int attenuation = 0)
+
+Use [`A_StartSound`] instead.
+-#
+
+#-
 deprecated("2.3") void {A_StopSoundEx}(name slot)
+
+Use [`A_StopSound`] instead.
+-#
+
+#-
 void {A_Print}(string whatToPrint, double time = 0.0, name fontName = 'none')
 void {A_PrintBold}(string whatToPrint, double time = 0.0, name fontName = 'none')
+
+Use [`Console.MidPrint`] instead.
+-#
+
+#-
 void {A_Log}(string whatToPrint, bool local = false)
 void {A_LogInt}(int whatToPrint, bool local = false)
 void {A_LogFloat}(double whatToPrint, bool local = false)
+
+Use [`Console.PrintF`] instead.
+-#
+
+#-
 void {A_SetTranslucent}(double alpha, int style = 0)
+
+Use [`A_SetRenderStyle`] instead.
+-#
+
+#-
 void {A_SpawnDebris}(class<[Actor]\> spawnType, bool transfer_Translation = false, double mult_H = 1.0, double mult_V = 1.0)
+
+Use a spawning function directly instead.
+-#
+
+#-
 void {A_ExtChase}(bool useMelee, bool useMissile, bool playActive = true, bool nightmareFast = false)
+
+Use [`A_Chase`] instead.
+-#
+
+#-
 deprecated("2.3") void {A_ChangeFlag}(string flagName, bool value)
+
+Set the flag directly instead.
+-#
+
+#-
 void {A_RaiseMaster}(int flags = 0)
-void {A_RaiseChildren}(int flags = 0)
-void {A_RaiseSiblings}(int flags = 0)
 void {A_RaiseSelf}(int flags = 0)
-void {A_CountdownArg}(int argNum, stateLabel targState = null)
+
+Use [`RaiseActor`] instead.
+-#
+
+#-
+void {A_CountdownArg}(int arg, stateLabel targState = null)
+
+Destroys the actor if the `arg`-th element of [`Args`] is zero, or
+decrements it. Use member variables and call [`A_Die`] instead.
+-#
+
+#-
 void {A_ClearLastHeard}()
+
+Equivalent to setting [`LastHeard`] to `null`.
+-#
+
+#-
 void {A_ClassBossHealth}()
+
+If [`Special1`] is 0 and the game is co-operative multi-player, sets
+[`Special1`] to 1 and multiplies [`Health`] by 5. Set [`Health`]
+directly instead.
+-#
+
+#-
 deprecated("2.3") void {A_SetUserVar}(name varName, int value)
 deprecated("2.3") void {A_SetUserArray}(name varName, int index, int value)
 deprecated("2.3") void {A_SetUserVarFloat}(name varName, double value)
 deprecated("2.3") void {A_SetUserArrayFloat}(name varName, int index, double value)
+
+Equivalent to directly setting member variables.
+-#
+
+#-
 void {A_Quake}(int intensity, int duration, int damageRadius, int tremorRadius, sound sfx = "world/quake")
+
+Use [`A_QuakeEx`] instead.
+-#
+
+#-
 void {A_DamageSelf}(int amount, name damageType = 'none', int flags = 0, class<[Actor]\> filter = null, name species = 'None', int src = [AAPTR_DEFAULT], int inflict = [AAPTR_DEFAULT])
 void {A_DamageTarget}(int amount, name damageType = 'none', int flags = 0, class<[Actor]\> filter = null, name species = 'None', int src = [AAPTR_DEFAULT], int inflict = [AAPTR_DEFAULT])
 void {A_DamageMaster}(int amount, name damageType = 'none', int flags = 0, class<[Actor]\> filter = null, name species = 'None', int src = [AAPTR_DEFAULT], int inflict = [AAPTR_DEFAULT])
 void {A_DamageTracer}(int amount, name damageType = 'none', int flags = 0, class<[Actor]\> filter = null, name species = 'None', int src = [AAPTR_DEFAULT], int inflict = [AAPTR_DEFAULT])
+
+Equivalent to [`DamageMobj`] (for positive `amount`s) or [`GiveBody`]
+(for negative `amount`s) with flags.
+-#
+
+#-
 void {A_KillTarget}(name damageType = 'none', int flags = 0, class<[Actor]\> filter = null, name species = 'None', int src = [AAPTR_DEFAULT], int inflict = [AAPTR_DEFAULT])
 void {A_KillMaster}(name damageType = 'none', int flags = 0, class<[Actor]\> filter = null, name species = 'None', int src = [AAPTR_DEFAULT], int inflict = [AAPTR_DEFAULT])
 void {A_KillTracer}(name damageType = 'none', int flags = 0, class<[Actor]\> filter = null, name species = 'None', int src = [AAPTR_DEFAULT], int inflict = [AAPTR_DEFAULT])
+
+Equivalent to [`ExplodeMissile`] or [`DamageMobj`] with flags.
+-#
+
+#-
 void {A_RemoveTarget}(int flags = 0, class<[Actor]\> filter = null, name species = 'None')
 void {A_RemoveMaster}(int flags = 0, class<[Actor]\> filter = null, name species = 'None')
 void {A_RemoveTracer}(int flags = 0, class<[Actor]\> filter = null, name species = 'None')
-void {A_SetTeleFog}(class<[Actor]\> oldPos, class<[Actor]\> newPos)
-void {A_SwapTeleFog}()
+
+Use [`A_Remove`] instead.
+-#
+
+#-
 void {A_SetHealth}(int health, int ptr = [AAPTR_DEFAULT])
 void {A_ResetHealth}(int ptr = [AAPTR_DEFAULT])
+
+Set [`Health`] (and potentially `Player.Mo.Health`) directly
+instead.
+-#
+
+#-
 void {A_SetSpecies}(name species, int ptr = [AAPTR_DEFAULT])
+
+Equivalent to setting [`Species`].
+-#
+
+#-
 void {A_SetChaseThreshold}(int threshold, bool def = false, int ptr = [AAPTR_DEFAULT])
+
+Equivalent to setting [`DefThreshold`] or [`Threshold`].
+-#
+
+#-
 bool {A_CopySpriteFrame}(int from, int to, int flags = 0)
+
+Equivalent to setting [`Sprite`] and [`Frame`].
+-#
+
+#-
 bool {A_SetVisibleRotation}(double angleStart = 0.0, double angleEnd = 0.0, double pitchStart = 0.0, double pitchEnd = 0.0, int flags = 0, int ptr = [AAPTR_DEFAULT])
+
+Equivalent to setting [`VisibleStartAngle`], [`VisibleEndAngle`],
+[`VisibleStartPitch`], and [`VisibleEndPitch`].
+-#
+
+#-
 void {A_SetTranslation}(name transName)
+
+Equivalent to setting [`Translation`] to the result of
+[`Translation:struct-Translation.GetId`].
+-#
+
+#-
 void {A_RearrangePointers}(int newTarget, int newMaster = [AAPTR_DEFAULT], int newTracer = [AAPTR_DEFAULT], int flags = 0)
 void {A_TransferPointer}(int ptrSource, int ptrRecipient, int sourceField, int recipientField = [AAPTR_DEFAULT], int flags = 0)
+
+Equivalent to just setting the [`Target`], [`Master`] and [`Tracer`]
+members.
+-#
+
+#-
 void {A_CopyFriendliness}(int ptr_Source = [AAPTR_MASTER])
+
+Use [`CopyFriendliness`] instead.
+-#
+
+#-
 void {A_WeaponOffset}(double wx = 0.0, double wy = 32.0, int flags = 0)
+
+Equivalent to [`A_OverlayOffset`] with [`PSP_WEAPON`] as its first
+argument.
+-#
+
+#-
+bool {A_GiveInventory}(class<[Inventory]\> itemType, int amount = 0, int giveTo = [AAPTR_DEFAULT])
+bool {A_GiveToTarget}(class<[Inventory]\> itemType, int amount = 0, int giveTo = [AAPTR_DEFAULT])
+
+Calls [`DoGiveInventory`] with `self` or [`Target`] as the first
+argument.
+-#
+
+#-
+bool {A_TakeInventory}(class<[Inventory]\> itemType, int amount = 0, int flags = 0, int giveTo = AAPTR_DEFAULT)
+bool {A_TakeFromTarget}(class<[Inventory]\> itemType, int amount = 0, int flags = 0, int giveTo = AAPTR_DEFAULT)
+
+Calls [`DoTakeInventory`] with `self` or [`Target`] as the first
+argument.
+-#
+
+#-
 double {GetCrouchFactor}(int ptr = [AAPTR_PLAYER1])
+
+Returns `Player.CrouchFactor`.
+-#
+
+#-
 double {GetCVar}(string cVar)
+
+Equivalent to `CVar.GetCVar(cVar, Player).GetFloat()`.
+-#
+
+#-
 double {GetCVarString}(string cVar)
+
+Equivalent to `CVar.GetCVar(cVar, Player).GetString()`.
+-#
+
+#-
 int {GetPlayerInput}(int inputNum, int ptr = [AAPTR_DEFAULT])
+
+Use [`Player`]'s various input variables instead.
+-#
+
+#-
 int {CountProximity}(class<[Actor]\> className, double distance, int flags = 0, int ptr = [AAPTR_DEFAULT])
-int {GetMissileDamage}(int mask, int add, int ptr = [AAPTR_DEFAULT])
 
+Equivalent to [`CheckProximity`].
+-#
 
-{{#include ../../Labels/Legacy.md}} {{#include ../../Labels/Todo.md}}
+#-
+action [State] {A_JumpIfHealthLower}(int amount, stateLabel label, int ptr_Selector = [AAPTR_DEFAULT])
+
+Equivalent to [`A_JumpIf`] with `p && p.Health < amount` as the first
+argument.
+-#
+
+#-
+action [State] {A_JumpIfCloser}(double distance, stateLabel label, bool noZ = false)
+action [State] {A_JumpIfTracerCloser}(double distance, stateLabel label, bool noZ = false)
+action [State] {A_JumpIfMasterCloser}(double distance, stateLabel label, bool noZ = false)
+
+Equivalent to [`A_JumpIf`] with ={`[CheckIfCloser](p, distance, noZ)`}=
+as the first argument.
+-#
+
+#-
+action [State] {A_JumpIfTargetOutsideMeleeRange}(stateLabel label)
+action [State] {A_JumpIfTargetInsideMeleeRange}(stateLabel label)
+
+Equivalent to [`A_JumpIf`] with ={`[CheckMeleeRange]\()`}= (negated for
+the first function) as the first argument.
 -#
 
 <!-- api-members -->
