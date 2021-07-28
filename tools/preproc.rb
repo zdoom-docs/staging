@@ -2,11 +2,13 @@
 
 require 'json'
 
-WORD    = /[a-zA-Z_]\w*/
+WORD    = /[a-zA-Z_][a-zA-Z0-9_]*/
 HEADING = /^ {,3}(\#{1,6})\s+(.+)\s*$/
 API_PAT = /^<!-- api-([-a-z]+) -->$/
 TOC_PAT = /^<!-- toc -->$/
 DBG_PAT = /^<!-- debug-print -->$/
+LNK_PAT = /\[`([^` ]+)`\]/
+INL_PAT = /={`((?:(?!`}=).|\n)+)`}=/
 
 API_DECL = /#-((?:(?!-#).)+)-#/m
 API_SBLK = /#\{((?:(?!\}#).)+)\}#/m
@@ -270,9 +272,21 @@ def mod_chapter_toc chapter
 	end
 end
 
+def mod_chapter_inl chapter
+	chapter["content"].gsub! INL_PAT do |match|
+		%(<code class="language-zsc">#{$1}</code>)
+	end
+end
+
 def mod_chapter_lnk chapter
-	chapter["content"].gsub! /\[`([a-zA-Z][a-zA-Z0-9._]*)`\]/ do |match|
-		links = $1.split(".").map do |s| "[" + s + "]" end
+	chapter["content"].gsub! LNK_PAT do |match|
+		links = $1.split(".").map do |s|
+			if (xs = s.split(":")).count != 2
+				"[#{s}]"
+			else
+				"[#{xs[0]}][#{xs[1]}]"
+			end
+		end
 		%(<code class="borderless">#{links.join "."}</code>)
 	end
 end
@@ -286,6 +300,7 @@ end
 def mod_chapter chapter
 	mod_chapter_api chapter
 	mod_chapter_toc chapter
+	mod_chapter_inl chapter
 	mod_chapter_lnk chapter
 	mod_chapter_dbg chapter
 

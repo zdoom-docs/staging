@@ -92,9 +92,15 @@ readOnly int {LevelNum}
 readOnly string {MapName}
 readOnly int {Cluster}
 readOnly int {MapType}
-readOnly int {ClusterFlags}
 
 {{#include ../../Labels/Todo.md}}
+-#
+
+#-
+readOnly int {ClusterFlags}
+
+Flags for this cluster. May contain the following flags:
+* [`CLUSTER_HUB`]: This cluster is a hub.
 -#
 
 #### Meta-data
@@ -151,7 +157,6 @@ readOnly bool {RemoveItems}
 readOnly double {TeamDamage}
 play int {AirSupply}
 bool {AllMap}
-deprecated("3.8") bool {Frozen}
 
 {{#include ../../Labels/Todo.md}}
 -#
@@ -161,6 +166,12 @@ readOnly bool {SndSeqTotalCtrl}
 
 Sets all sectors' [`SeqType`] to `-1`. Set by the *NoAutoSequences*
 flag in [MapInfo].
+-#
+
+#-
+deprecated("3.8") bool {Frozen}
+
+{{#include ../../Labels/Legacy.md}} Use [`IsFrozen`] instead.
 -#
 
 #### Physics

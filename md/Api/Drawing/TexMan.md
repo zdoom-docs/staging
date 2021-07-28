@@ -78,9 +78,8 @@ static bool {OkForLocalization}(textureId patch, string textSubstitute)
 #-
 deprecated("3.8") static void {ReplaceTextures}(string from, string to, TexMan.[ETexReplaceFlags] flags)
 
-{{#include ../../Labels/Legacy.md}} Use <span
-class=code>[LevelLocals].[ReplaceTextures][ll-ReplaceTextures]</span>
-instead.
+{{#include ../../Labels/Legacy.md}} Use
+[`LevelLocals.ReplaceTextures:ll-ReplaceTextures`] instead.
 
 Replaces textures named `from` with `to` within the map.
 -#
