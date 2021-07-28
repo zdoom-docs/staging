@@ -133,6 +133,7 @@ void {Remove}(int index, int amount)
 Removes `amount` bytes starting at `index` in-place.
 -#
 
+#-
 void {Replace}(string pattern, string replacement)
 
 Replaces all instances of `pattern` with `replacement` in-place.

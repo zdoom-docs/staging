@@ -142,8 +142,8 @@ block with `default` at the beginning.
 
 </dd><dt>DefaultFlag</dt><dd>
 
-+ [Identifier] `;`?
-- [Identifier] `;`?
+* `+` [Identifier] `;`?
+* `-` [Identifier] `;`?
 
 </dd><dt>DefaultProperty</dt><dd>
 
