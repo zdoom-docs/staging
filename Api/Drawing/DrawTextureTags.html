@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>DrawTextureTags - ZDoom Docs</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for ZDoom, GZDoom, and ZScript.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../css/elements.css">
+        <link rel="stylesheet" href="../../css/hljs.css">
+        <link rel="stylesheet" href="../../css/restyle.css">
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Provide site root to javascript
+            var path_to_root = "../../";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+
+            // Set the js flag
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.add('js');
+
+            // Hide / unhide sidebar before it is displayed
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <h1 class="menu-title">ZDoom Docs</h1>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../Introduction.html">Introduction</a></li><li class="chapter-item "><a href="../../Meta.html">Meta</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Meta/Style.html">Style</a></li></ol></li><li class="chapter-item "><a href="../../ZScript.html">ZScript Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ZScript/Classes.html">Class Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Constants.html">Constant Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Enumerations.html">Enumeration Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Expressions.html">Expressions</a></li><li class="chapter-item "><a href="../../ZScript/Fundamentals.html">Fundamentals</a></li><li class="chapter-item "><a href="../../ZScript/Members.html">Member Declarations</a></li><li class="chapter-item "><a href="../../ZScript/Methods.html">Method Definitions</a></li><li class="chapter-item "><a href="../../ZScript/Statements.html">Statements</a></li><li class="chapter-item "><a href="../../ZScript/Structures.html">Structure Definitions</a></li><li class="chapter-item "><a href="../../ZScript/TopLevel.html">Top-Level</a></li><li class="chapter-item "><a href="../../ZScript/Types.html">Types</a></li></ol></li><li class="chapter-item "><a href="../../Acs.html">ACS</a></li><li class="chapter-item expanded "><a href="../../Api.html">ZScript API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base.html">Base</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Actor.html">Actor</a></li><li class="chapter-item "><a href="../../Api/Base/CVar.html">CVar</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/CVar/ECVarType.html">ECVarType</a></li></ol></li><li class="chapter-item "><a href="../../Api/Base/EFSkillProperty.html">EFSkillProperty</a></li><li class="chapter-item "><a href="../../Api/Base/ESkillProperty.html">ESkillProperty</a></li><li class="chapter-item "><a href="../../Api/Base/ESoundFlags.html">ESoundFlags</a></li><li class="chapter-item "><a href="../../Api/Base/EStateUseFlags.html">EStateUseFlags</a></li><li class="chapter-item "><a href="../../Api/Base/EmptyTokenType.html">EmptyTokenType</a></li><li class="chapter-item "><a href="../../Api/Base/Object.html">Object</a></li><li class="chapter-item "><a href="../../Api/Base/State.html">State</a></li><li class="chapter-item "><a href="../../Api/Base/StringTable.html">StringTable</a></li><li class="chapter-item "><a href="../../Api/Base/Thinker.html">Thinker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Thinker/EStatNums.html">EStatNums</a></li></ol></li><li class="chapter-item "><a href="../../Api/Base/Wads.html">Wads</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Base/Wads/FindLumpNamespace.html">FindLumpNamespace</a></li><li class="chapter-item "><a href="../../Api/Base/Wads/WadNamespace.html">WadNamespace</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Api/Basic.html">Basic Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Basic/FixedArray.html">T[]</a></li><li class="chapter-item "><a href="../../Api/Basic/Array.html">array</a></li><li class="chapter-item "><a href="../../Api/Basic/Color.html">color</a></li><li class="chapter-item "><a href="../../Api/Basic/Floats.html">float types</a></li><li class="chapter-item "><a href="../../Api/Basic/Integers.html">int types</a></li><li class="chapter-item "><a href="../../Api/Basic/String.html">string</a></li><li class="chapter-item "><a href="../../Api/Basic/TextureId.html">textureId</a></li><li class="chapter-item "><a href="../../Api/Basic/Vector2.html">vector2</a></li><li class="chapter-item "><a href="../../Api/Basic/Vector3.html">vector3</a></li></ol></li><li class="chapter-item expanded "><a href="../../Api/Drawing.html">Drawing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Drawing/BrokenLines.html">BrokenLines</a></li><li class="chapter-item "><a href="../../Api/Drawing/Console.html">Console</a></li><li class="chapter-item expanded "><a href="../../Api/Drawing/DrawTextureTags.html" class="active">DrawTextureTags</a></li><li class="chapter-item "><a href="../../Api/Drawing/Font.html">Font</a></li><li class="chapter-item "><a href="../../Api/Drawing/GiFont.html">GiFont</a></li><li class="chapter-item "><a href="../../Api/Drawing/Screen.html">Screen</a></li><li class="chapter-item "><a href="../../Api/Drawing/Shape2D.html">Shape2D</a></li><li class="chapter-item "><a href="../../Api/Drawing/TexMan.html">TexMan</a></li></ol></li><li class="chapter-item "><a href="../../Api/Events.html">Event Handling</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Events/ConsoleEvent.html">ConsoleEvent</a></li><li class="chapter-item "><a href="../../Api/Events/EventHandler.html">EventHandler</a></li><li class="chapter-item "><a href="../../Api/Events/InputEvent.html">InputEvent</a></li><li class="chapter-item "><a href="../../Api/Events/PlayerEvent.html">PlayerEvent</a></li><li class="chapter-item "><a href="../../Api/Events/RenderEvent.html">RenderEvent</a></li><li class="chapter-item "><a href="../../Api/Events/ReplaceEvent.html">ReplaceEvent</a></li><li class="chapter-item "><a href="../../Api/Events/ReplacedEvent.html">ReplacedEvent</a></li><li class="chapter-item "><a href="../../Api/Events/StaticEventHandler.html">StaticEventHandler</a></li><li class="chapter-item "><a href="../../Api/Events/UiEvent.html">UiEvent</a></li><li class="chapter-item "><a href="../../Api/Events/WorldEvent.html">WorldEvent</a></li></ol></li><li class="chapter-item "><a href="../../Api/Globals.html">Globals</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Globals/DeHInfo.html">DeHInfo</a></li></ol></li><li class="chapter-item "><a href="../../Api/Inter.html">Intermissions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Inter/InterBackground.html">InterBackground</a></li><li class="chapter-item "><a href="../../Api/Inter/PatchInfo.html">PatchInfo</a></li><li class="chapter-item "><a href="../../Api/Inter/StatusScreen.html">StatusScreen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Inter/StatusScreen/ESpState.html">ESpState</a></li><li class="chapter-item "><a href="../../Api/Inter/StatusScreen/EState.html">EState</a></li></ol></li><li class="chapter-item "><a href="../../Api/Inter/WbPlayerStruct.html">WbPlayerStruct</a></li><li class="chapter-item "><a href="../../Api/Inter/WbStartStruct.html">WbStartStruct</a></li></ol></li><li class="chapter-item "><a href="../../Api/Level.html">Level Data</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Level/F3DFloor.html">F3DFloor</a></li><li class="chapter-item "><a href="../../Api/Level/FColorMap.html">FColorMap</a></li><li class="chapter-item "><a href="../../Api/Level/LevelLocals.html">LevelLocals</a></li><li class="chapter-item "><a href="../../Api/Level/LineIdIterator.html">LineIdIterator</a></li><li class="chapter-item "><a href="../../Api/Level/SectorEffect.html">SectorEffect</a></li><li class="chapter-item "><a href="../../Api/Level/SectorTagIterator.html">SectorTagIterator</a></li><li class="chapter-item "><a href="../../Api/Level/Vertex.html">Vertex</a></li></ol></li><li class="chapter-item "><a href="../../Api/Players.html">Players</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Players/EPlayerGender.html">EPlayerGender</a></li><li class="chapter-item "><a href="../../Api/Players/EPlayerState.html">EPlayerState</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerClass.html">PlayerClass</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerPawn.html">PlayerPawn</a></li><li class="chapter-item "><a href="../../Api/Players/PlayerSkin.html">PlayerSkin</a></li><li class="chapter-item "><a href="../../Api/Players/Team.html">Team</a></li><li class="chapter-item "><a href="../../Api/Players/UserCmd.html">UserCmd</a></li></ol></li><li class="chapter-item "><a href="../../Api/Sound.html">Sound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Api/Sound/MusPlayingInfo.html">MusPlayingInfo</a></li><li class="chapter-item "><a href="../../Api/Sound/SeqNode.html">SeqNode</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Concepts.html">Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Concepts/ActionScoping.html">Action Scoping</a></li><li class="chapter-item "><a href="../../Concepts/Angles.html">Angles</a></li><li class="chapter-item "><a href="../../Concepts/CVars.html">CVars</a></li><li class="chapter-item "><a href="../../Concepts/Caching.html">Caching</a></li><li class="chapter-item "><a href="../../Concepts/Decals.html">Decals</a></li><li class="chapter-item "><a href="../../Concepts/Filters.html">Filters</a></li><li class="chapter-item "><a href="../../Concepts/FormatStrings.html">Format Strings</a></li><li class="chapter-item "><a href="../../Concepts/Localization.html">Localization</a></li><li class="chapter-item "><a href="../../Concepts/ObjectScoping.html">Object Scoping</a></li><li class="chapter-item "><a href="../../Concepts/RenderStyles.html">Render Styles</a></li><li class="chapter-item "><a href="../../Concepts/Skins.html">Skins</a></li><li class="chapter-item "><a href="../../Concepts/TextColors.html">Text Colors</a></li><li class="chapter-item "><a href="../../Concepts/Translations.html">Translations</a></li><li class="chapter-item "><a href="../../Concepts/Vfs.html">Virtual File-System</a></li></ol></li><li class="chapter-item "><a href="../../Data.html">Data Formats</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Data/BoomColorMap.html">BOOM Color Maps</a></li><li class="chapter-item "><a href="../../Data/CVarInfo.html">CVarInfo</a></li><li class="chapter-item "><a href="../../Data/DeHackEd.html">DeHackEd</a></li><li class="chapter-item "><a href="../../Data/HiResTex.html">Deprecated HiResTex</a></li><li class="chapter-item "><a href="../../Data/Graphics.html">Graphics</a></li><li class="chapter-item "><a href="../../Data/KeyConf.html">KeyConf</a></li><li class="chapter-item "><a href="../../Data/Language.html">Language</a></li><li class="chapter-item "><a href="../../Data/MapInfo.html">MapInfo</a></li><li class="chapter-item "><a href="../../Data/Music.html">Music</a></li><li class="chapter-item "><a href="../../Data/Skins.html">Skins</a></li><li class="chapter-item "><a href="../../Data/SndInfo.html">SndInfo</a></li><li class="chapter-item "><a href="../../Data/SndSeq.html">SndSeq</a></li><li class="chapter-item "><a href="../../Data/Sounds.html">Sounds</a></li><li class="chapter-item "><a href="../../Data/TeamInfo.html">TeamInfo</a></li><li class="chapter-item "><a href="../../Data/Voices.html">Voices</a></li><li class="chapter-item "><a href="../../Data/Voxels.html">Voxels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <a href="https://forum.zdoom.org/viewtopic.php?f=122&t=59770" title="Forum thread" aria-label="Forum thread">
+                            <i id="forum-button" class="fa fa-comments"></i>
+                        </a>
+                        <a href="http://github.com/zdoom-docs/staging" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <i title="Go to top" id="top-button" class="top-button fa fa-arrow-up"></i>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="drawtexturetags"><a class="header" href="#drawtexturetags">DrawTextureTags</a></h1>
+<details><summary>Show declaration</summary>
+<pre><code class="language-zsc">struct Screen clearScope;</code></pre>
+</details>
+<p>Tagged functions for drawing textures to the screen.</p>
+<h3 id="internal-variables"><a class="header" href="#internal-variables">Internal Variables</a></h3>
+<h4 id="virtualwidth-virtualheight"><a class="header" href="#virtualwidth-virtualheight">VirtualWidth, VirtualHeight</a></h4>
+<p>The target resolution to transform into a coordinate space.</p>
+<h4 id="cleanmode"><a class="header" href="#cleanmode">CleanMode</a></h4>
+<p>After all arguments are parsed, the <code class="borderless"><a href="#cleanmode">CleanMode</a></code> internal variable is
+used along with <code class="borderless"><a href="#virtualwidth-virtualheight">VirtualWidth</a></code>/<code class="borderless"><a href="#virtualwidth-virtualheight">VirtualHeight</a></code> to determine how to
+finally transform positions.</p>
+<h2 id="variants"><a class="header" href="#variants">Variants</a></h2>
+<dl class="api"><dt id="enum-DTA_BASE">
+<code class="language-zsc">
+<p><a href="#enum-DTA_BASE">DTA_BASE</a></p>
+</code>
+</dt>
+<dd>
+<p>(<code class="language-zsc">bool use</code>) Sets <code class="borderless"><a href="#cleanmode">CleanMode</a></code> to perform no position scaling.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="enum-DTA_CLEAN">
+<code class="language-zsc">
+<p><a href="#enum-DTA_CLEAN">DTA_CLEAN</a></p>
+</code>
+</dt>
+<dd>
+<p>(<code class="language-zsc">bool use</code>) Scales all positions by <code class="language-zsc">[Clean] * [Fac]</code>. See
+the documentation for those variables for more information.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="enum-DTA_CLEANNOMOVE">
+<code class="language-zsc">
+<p><a href="#enum-DTA_CLEANNOMOVE">DTA_CLEANNOMOVE</a></p>
+</code>
+</dt>
+<dd>
+<p>(<code class="language-zsc">bool use</code>) Scales the destination width and height by
+<code class="language-zsc">[Clean] * [Fac]</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="enum-DTA_CLEANNOMOVE_1">
+<code class="language-zsc">
+<p><a href="#enum-DTA_CLEANNOMOVE_1">DTA_CLEANNOMOVE_1</a></p>
+</code>
+</dt>
+<dd>
+<p>(<code class="language-zsc">bool use</code>) Scales the destination width and height by
+<code class="language-zsc">[Clean] * [Fac_1]</code>.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="enum-DTA_FULLSCREEN">
+<code class="language-zsc">
+<p><a href="#enum-DTA_FULLSCREEN">DTA_FULLSCREEN</a></p>
+</code>
+</dt>
+<dd>
+<p>(<code class="language-zsc">bool use</code>) Sets the X and Y positions to 0. (Yes, really, this
+is all it does.)</p>
+</dd>
+</dl>
+<dl class="api"><dt id="enum-DTA_HUDRULES">
+<code class="language-zsc">
+<p><a href="#enum-DTA_HUDRULES">DTA_HUDRULES</a></p>
+</code>
+</dt>
+<dd>
+<p>(<code class="language-zsc">int type</code>) Scales all positions by the current status bar's
+scaling rules.</p>
+</dd>
+</dl>
+<dl class="api"><dt id="enum-DTA_HUDRULESC">
+<code class="language-zsc">
+<p><a href="#enum-DTA_HUDRULESC">DTA_HUDRULESC</a></p>
+</code>
+</dt>
+<dd>
+<p><span class="label yellow">Internal — Do not use</span> Scales all positions by the
+current status bar's scaling rules and centers the X position.</p>
+</dd>
+</dl>
+<h4 id="pre-sets"><a class="header" href="#pre-sets">Pre-sets</a></h4>
+<p>These essentially just set <code class="borderless"><a href="#cleanmode">CleanMode</a></code> and some other stuff.</p>
+<dl class="api"><dt id="enum-DTA_320X200">
+<code class="language-zsc">
+<p><a href="#enum-DTA_320X200">DTA_320X200</a></p>
+</code>
+</dt>
+<dd>
+<p>(<code class="language-zsc">bool use</code>) Sets <code class="borderless"><a href="#cleanmode">CleanMode</a></code> to <code class="borderless"><a href="#enum-DTA_BASE">DTA_BASE</a></code> and the virtual
+width/height to 320/200. Note that 320x200 does not scale properly to
+the screen, as it must be 320x240 to do so.</p>
+</dd>
+</dl>
+<h3 id="drawtexture-arguments"><a class="header" href="#drawtexture-arguments">DrawTexture Arguments</a></h3>
+<p>Here is a list of tags and their respective arguments which may be
+used with <code class="borderless">[DrawTexture]</code>:</p>
+<p>{DTA_ALPHACHANNEL}</p>
+<p><code class="language-zsc">bool use</code> Does nothing unless <code>DTA_FILLCOLOR</code> is used and the render style is unspecified, in which case it will set the render style to &quot;shaded&quot; if <code>use</code> is <code>true</code>.
+{DTA_ALPHA}</p>
+<p><code class="language-zsc">double alpha</code> Sets the alpha of the drawn texture to <code>alpha</code>.
+{DTA_BOTTOM320X200}</p>
+<p><code class="language-zsc">bool use</code> Same as <code>DTA_320X200</code>, but also enables position transformation as if a call to <code>VirtualToRealCoords</code> with <code>vbottom</code> to <code>true</code>. Note that this is the only way to actually set this, but it may be overridden by following arguments to effectively toggle only this flag.
+{DTA_CENTERBOTTOMOFFSET}</p>
+<p><code class="language-zsc">bool use</code> Same as <code>DTA_CENTERBOTTOMOFFSET</code>, but the Y offset is aligned to the bottom instead of the center.
+{DTA_CENTEROFFSET}</p>
+<p><code class="language-zsc">bool use</code> Overrides the texture's X and Y offsets, centering them between the texture's height and width if <code>use</code> is <code>true</code>.
+{DTA_CLIPBOTTOM}
+{DTA_CLIPTOP}</p>
+<p><code class="language-zsc">int length</code> Sets the vertical clipping for the texture.
+{DTA_CLIPLEFT}
+{DTA_CLIPRIGHT}</p>
+<p><code class="language-zsc">int length</code> Sets the horizontal clipping for the texture.
+{DTA_COLOROVERLAY}</p>
+<p><code class="language-zsc">color cr</code> Multiplies <code>cr</code> with the texture. Alpha determines the intensity of this overlay. Applied before render styles.
+{DTA_COLOR}</p>
+<p><code class="language-zsc">color cr</code> Multiplies <code>cr</code> with the texture. Applied after render styles change the color.
+{DTA_DESATURATE}</p>
+<p><code class="language-zsc">int amount</code> Desaturates the texture by <code>amount</code> (range 0-255.)
+{DTA_DESTHEIGHTF}
+{DTA_DESTWIDTHF}</p>
+<p><code class="language-zsc">double size</code> Same as <code>DTA_DESTHEIGHT</code>/<code>DTA_DESTWIDTH</code>, but with decimal arguments.
+{DTA_DESTHEIGHT}
+{DTA_DESTWIDTH}</p>
+<p><code class="language-zsc">int size</code> Sets the resulting width or height on screen of the texture and sets <code>CleanMode</code> to <code>DTA_BASE</code>.
+{DTA_FILLCOLOR}</p>
+<p><code class="language-zsc">color cr</code> Sets the render style to &quot;stencil&quot; if one is not specified and the fill color to <code>cr</code>.
+{DTA_FLIPX}
+{DTA_FLIPY}</p>
+<p><code class="language-zsc">bool use</code> Flips the X or Y position if <code>use</code> is <code>true</code>.
+{DTA_KEEPRATIO}</p>
+<p><code class="language-zsc">bool on</code> Enables aspect ratio correction if <code>on</code> is <code>true</code>.
+{DTA_LEFTOFFSETF}
+{DTA_TOPOFFSETF}</p>
+<p><code class="language-zsc">double ofs</code> Same as <code>DTA_LEFTOFFSET</code>/<code>DTA_TOPOFFSETF</code>, but with decimal arguments.
+{DTA_LEFTOFFSET}
+{DTA_TOPOFFSET}</p>
+<p><code class="language-zsc">int ofs</code> Overrides the texture's X or Y offset.
+{DTA_LEGACYRENDERSTYLE}</p>
+<p><code class="language-zsc">int style</code> Overrides the render style. Note that there is also a <code>DTA_RENDERSTYLE</code> which cannot be used because the engine does not expose <code>FRenderStyle</code> yet.
+{DTA_MASKED}</p>
+<p><code class="language-zsc">bool on</code> Turns the texture fully opaque (no alpha mask) if <code>on</code> is <code>false</code>. Default value is on.
+{DTA_SRCHEIGHT}
+{DTA_SRCWIDTH}</p>
+<p><code class="language-zsc">int size</code> Sets the width or height of the source image. Will cut the texture if lower than the original size. If the size is larger than the original, it will cause UV clamping, repeating the pixels at the image borders.
+{DTA_SRCX}
+{DTA_SRCY}</p>
+<p><code class="language-zsc">int pos</code> Sets the X or Y on the source image to start the texture at. Texture wrapping will cause a UV clamping effect, repeating the pixels at the image borders.
+{DTA_TRANSLATIONINDEX}</p>
+<p><code class="language-zsc">int index</code> Remaps colors in the destination texture with translation table <code>index</code>.
+{DTA_VIRTUALHEIGHTF}
+{DTA_VIRTUALWIDTHF}</p>
+<p><code class="language-zsc">double size</code> Same as <code>DTA_VIRTUALHEIGHT</code>/<code>DTA_VIRTUALWIDTH</code>, but with decimal arguments.
+{DTA_VIRTUALHEIGHT}
+{DTA_VIRTUALWIDTH}</p>
+<p><code class="language-zsc">int size</code> Sets the virtual width or height to <code>size</code>.
+{DTA_WINDOWLEFTF}
+{DTA_WINDOWRIGHTF}</p>
+<p><code class="language-zsc">double size</code> Same as <code>DTA_WINDOWLEFT</code>/<code>DTA_WINDOWRIGHT</code>, but with decimal arguments.
+{DTA_WINDOWLEFT}
+{DTA_WINDOWRIGHT}</p>
+<p><code class="language-zsc">int size</code> Crops <code>size</code> pixels from the left or right.</p>
+<details><summary>Overview of variants</summary><p><code class="borderless"><a href="#enum-DTA_320X200">DTA_320X200</a></code>, <code class="borderless"><a href="#enum-DTA_BASE">DTA_BASE</a></code>, <code class="borderless"><a href="#enum-DTA_CLEAN">DTA_CLEAN</a></code>, <code class="borderless"><a href="#enum-DTA_CLEANNOMOVE">DTA_CLEANNOMOVE</a></code>, <code class="borderless"><a href="#enum-DTA_CLEANNOMOVE_1">DTA_CLEANNOMOVE_1</a></code>, <code class="borderless"><a href="#enum-DTA_FULLSCREEN">DTA_FULLSCREEN</a></code>, <code class="borderless"><a href="#enum-DTA_HUDRULES">DTA_HUDRULES</a></code>, <code class="borderless"><a href="#enum-DTA_HUDRULESC">DTA_HUDRULESC</a></code></p></details>
+
+
+                        <hr>
+                        <footer>
+                            <p>This documentation is public domain under the <a href="http://github.com/zdoom-docs/staging/tree/master/LICENSE.txt">CC0 license.</a> Please <a href="http://github.com/zdoom-docs/staging">contribute to the project!</a> Originally authored by Alison G. Watson (they/them) and fira watson (she/they.)</p>
+                        </footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../Api/Drawing/Console.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../Api/Drawing/Font.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../Api/Drawing/Console.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../Api/Drawing/Font.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
