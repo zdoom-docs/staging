@@ -366,14 +366,14 @@ ratio differences.
 readOnly int {CleanWidth}
 readOnly int {CleanHeight}
 
-The current screan size divided by ([`CleanXFac`],[`CleanYFac`]).
+The current screen size divided by ([`CleanXFac`],[`CleanYFac`]).
 -#
 
 #-
 readOnly int {CleanWidth_1}
 readOnly int {CleanHeight_1}
 
-The current screan size divided by ([`CleanXFac_1`],[`CleanYFac_1`]).
+The current screen size divided by ([`CleanXFac_1`],[`CleanYFac_1`]).
 -#
 
 #-

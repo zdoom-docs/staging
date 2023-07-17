@@ -77,7 +77,7 @@ Thinkers persistent across maps.
 
 ### Thinking
 
-Thinkers which do think and are mandatory to many checks.
+Thinkers which do think and are subject to many checks.
 
 #-
 [Thinker].{STAT_FIRST_THINKING}
