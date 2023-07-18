@@ -2,7 +2,7 @@
 
 [[instance-methods.groups."Class Handling"]]
 decl = "clearscope Object {New}(class<Object> type = ThisClass)"
-docs = """
+doc = """
 Creates an object with the specified type. Defaults to using the class of the calling object.
 
 For `Actor`s, use `Actor.Spawn` instead.
@@ -10,7 +10,7 @@ For `Actor`s, use `Actor.Spawn` instead.
 
 [[instance-methods.groups."Class Handling"]]
 decl = "[Actor] {GetDefaultByType}(class\\<[Actor]> type)"
-docs = """
+doc = """
 Returns an object containing the default values for each member of the [`Actor`]
 type provided as they would be set in [`Actor.BeginPlay`].
 The returned object is a pseudo-object which is stored only in-memory.
@@ -20,125 +20,125 @@ The returned object is a pseudo-object which is stored only in-memory.
 
 [[instance-methods.groups.Math]]
 decl = "[NumericType] {Abs}([NumericType] n)"
-docs = """
+doc = """
 Returns `|n|` (absolute of `n`.)
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {ACos}(double n)"
-docs = """
+doc = """
 Returns the arc-cosine of `n`.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {ASin}(double n)"
-docs = """
+doc = """
 Returns the arc-sine of `n`.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {ATan}(double n)"
-docs = """
+doc = """
 Returns the arc-tangent of `n`.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {ATan2}(double y, double x)"
-docs = """
+doc = """
 Returns the arc-tangent of `y / x` using the arguments' signs to
 determine the correct quadrant.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {Ceil}(double n)"
-docs = """
+doc = """
 Returns the integral portion of `n`, rounded up.
 """
 
 [[instance-methods.groups.Math]]
 decl = "[NumericType] {Clamp}([NumericType] n, [NumericType] minimum, [NumericType] maximum)"
-docs = """
+doc = """
 Returns `n` if `n` is more than `minimum` and less than `maximum`, or
 either of those values if it is not.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {Cos}(double n)"
-docs = """
+doc = """
 Returns the cosine of `n`.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {CosH}(double n)"
-docs = """
+doc = """
 Returns the hyperbolic cosine of `n`.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {Exp}(double n)"
-docs = """
+doc = """
 Returns the natural exponent of `n`. Note that there is a `**` binary
 operator for exponentation, which is generally more useful.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {Floor}(double n)"
-docs = """
+doc = """
 Returns the integral portion of `n`, rounded down.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {Log}(double n)"
-docs = """
+doc = """
 Returns the natural logarithm of `n`.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {Log10}(double n)"
-docs = """
+doc = """
 Returns the common (base 10) logarithm of `n`. This is most useful for
 calculating the number of decimal digits in a number.
 """
 
 [[instance-methods.groups.Math]]
 decl = "[NumericType] {Max}([NumericType] n, [NumericType] maximum)"
-docs = """
+doc = """
 Returns `n` if `n` is less than `maximum`, or `maximum` if it is not.
 """
 
 [[instance-methods.groups.Math]]
 decl = "[NumericType] {Min}([NumericType] n, [NumericType] minimum)"
-docs = """
+doc = """
 Returns `n` if `n` is more than `minimum`, or `minimum` if it is not.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {Sin}(double n)"
-docs = """
+doc = """
 Returns the sine of `n`.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {SqRt}(double n)"
-docs = """
+doc = """
 Returns the square root of `n`.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {Tan}(double n)"
-docs = """
+doc = """
 Returns the tangent of `n`.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {TanH}(double n)"
-docs = """
+doc = """
 Returns the hyperbolic tangent of `n`.
 """
 
 [[instance-methods.groups.Math]]
 decl = "double {VectorAngle}(double x, double y)"
-docs = """
+doc = """
 Equivalent to `ATan2(y, x)`.
 """
 
@@ -146,25 +146,25 @@ Equivalent to `ATan2(y, x)`.
 
 [[instance-methods.groups."Random Number Generation"]]
 decl = "double {FRandom}(double min, double max)"
-docs = """
+doc = """
 Returns a random `double` between `min` and `max`.
 """
 
 [[instance-methods.groups."Random Number Generation"]]
 decl = "double {FRandomPick}(double ...)"
-docs = """
+doc = """
 Returns one of the arguments provided randomly.
 """
 
 [[instance-methods.groups."Random Number Generation"]]
 decl = "int {Random}(int min = 0, int max = 255)"
-docs = """
+doc = """
 Returns a random `int` between `min` and `max`.
 """
 
 [[instance-methods.groups."Random Number Generation"]]
 decl = "int {Random2}(uint mask = uint.Max)"
-docs = """
+doc = """
 Returns a random `int` between `-mask` and `mask`. `mask` is used as a
 bit mask, so it is recommended to use a value of one less than a power
 of two (i.e. 3, 7, 15, 31, 63, 127, 255...)
@@ -172,13 +172,13 @@ of two (i.e. 3, 7, 15, 31, 63, 127, 255...)
 
 [[instance-methods.groups."Random Number Generation"]]
 decl = "int {RandomPick}(int ...)"
-docs = """
+doc = """
 Returns one of the arguments provided randomly.
 """
 
 [[instance-methods.groups."Random Number Generation"]]
 decl = "void {SetRandomSeed}(uint num)"
-docs = """
+doc = """
 Sets the seed of the RNG table to `num`.
 """
 
@@ -186,31 +186,31 @@ Sets the seed of the RNG table to `num`.
 
 [[instance-members.groups.Definitions]]
 decl = "readOnly array\\<class> {AllClasses}"
-docs = """
+doc = """
 Every class registered to the engine.
 """
 
 [[instance-members.groups.Definitions]]
 decl = "readOnly array\\<class\\<[Actor]> > {AllActorClasses}"
-docs = """
+doc = """
 Every [`Actor`]-derived class registered to the engine.
 """
 
 [[instance-members.groups.Definitions]]
 decl = "readOnly array\\<[PlayerClass]> {PlayerClasses}"
-docs = """
+doc = """
 Every [`PlayerClass`] registered to the engine.
 """
 
 [[instance-members.groups.Definitions]]
 decl = "readOnly array\\<[PlayerSkin]> {PlayerSkins}"
-docs = """
+doc = """
 Every [`PlayerSkin`] registered to the engine.
 """
 
 [[instance-members.groups.Definitions]]
 decl = "readOnly array\\<[Team]> {Teams}"
-docs = """
+doc = """
 Every [`Team`] registered to the engine.
 """
 
@@ -218,14 +218,14 @@ Every [`Team`] registered to the engine.
 
 [[instance-members.groups.Players]]
 decl = "play [PlayerInfo]\\[[MAXPLAYERS]\\] {Players}"
-docs = """
+doc = """
 The [`PlayerInfo`] for each player. These may be invalid data if the
 corresponding entry in [`PlayerInGame`] is not `true`.
 """
 
 [[instance-members.groups.Players]]
 decl = "readOnly bool[[MAXPLAYERS]\\] {PlayerInGame}"
-docs = """
+doc = """
 The status of each player as a boolean. If `false` then the
 corresponding player is not in-game.
 """
@@ -237,28 +237,28 @@ decl = ["[KeyBindings] {AutomapBindings}", "[KeyBindings] {Bindings}"]
 
 [[instance-members.groups."Game Information"]]
 decl = "readOnly bool {MultiPlayer}"
-docs = """
+doc = """
 Whether the game is running in multi-player or not. Does not
 necessarily mean there is network communication happening.
 """
 
 [[instance-members.groups."Game Information"]]
 decl = "readOnly ui bool {NetGame}"
-docs = """
+doc = """
 Whether the game is running in non-local multi-player or not. Must be
 a networked game with more than one player to be true.
 """
 
 [[instance-members.groups."Game Information"]]
 decl = "readOnly int {Net_Arbitrator}"
-docs = """
+doc = """
 In a [`NetGame`], the number of the player that is currently
 arbitrating ("hosting") the game.
 """
 
 [[instance-members.groups."Game Information"]]
 decl = "readOnly bool {DemoPlayback}"
-docs = """
+doc = """
 Whether the game is actually a demo playing or not.
 """
 
@@ -266,38 +266,38 @@ Whether the game is actually a demo playing or not.
 
 [[instance-members.groups."Client State"]]
 decl = "readOnly int {ConsolePlayer}"
-docs = """
+doc = """
 Index of the player running the client.
 """
 
 [[instance-members.groups."Client State"]]
 decl = "readOnly bool {AutoMapActive}"
-docs = """
+doc = """
 Whether the auto-map is visible for the current player.
 """
 
 [[instance-members.groups."Client State"]]
 decl = "int {ValidCount}"
-docs = """
+doc = """
 The number of line segments to be drawn in the scene.
 """
 
 [[instance-members.groups."Client State"]]
 decl = "int {LocalViewPitch}"
-docs = """
+doc = """
 [`ConsolePlayer`]'s view.
 """
 
 [[instance-members.groups."Client State"]]
 decl = ["readOnly int {CleanXFac}", "readOnly int {CleanYFac}"]
-docs = """
+doc = """
 An integral scaling factor for horizontal and vertical positions to
 scale from 320x200 to the current virtual resolution.
 """
 
 [[instance-members.groups."Client State"]]
 decl = ["readOnly int {CleanXFac_1}", "readOnly int {CleanYFac_1}"]
-docs = """
+doc = """
 Integral scaling factor for horizontal and vertical positions to scale
 from 320x200 to the current virtual resolution, accounting for aspect
 ratio differences.
@@ -305,37 +305,37 @@ ratio differences.
 
 [[instance-members.groups."Client State"]]
 decl = ["readOnly int {CleanWidth}", "readOnly int {CleanHeight}"]
-docs = """
+doc = """
 The current screen size divided by ([`CleanXFac`], [`CleanYFac`]).
 """
 
 [[instance-members.groups."Client State"]]
 decl = ["readOnly int {CleanWidth_1}", "readOnly int {CleanHeight_1}"]
-docs = """
+doc = """
 The current screen size divided by ([`CleanXFac_1`], [`CleanYFac_1`]).
 """
 
 [[instance-members.groups."Client State"]]
 decl = "ui [Menu].[EMenuState] {MenuActive}"
-docs = """
+doc = """
 The current global menu state.
 """
 
 [[instance-members.groups."Client State"]]
 decl = "ui float {BackButtonAlpha}"
-docs = """
+doc = """
 The transparency of the back button in menus.
 """
 
 [[instance-members.groups."Client State"]]
 decl = "ui int {BackButtonTime}"
-docs = """
+doc = """
 The time until the back button starts fading out in menus.
 """
 
 [[instance-members.groups."Client State"]]
 decl = "ui [BaseStatusBar] {StatusBar}"
-docs = """
+doc = """
 The current status bar being used by the client.
 """
 
@@ -343,37 +343,37 @@ The current status bar being used by the client.
 
 [[instance-members.groups."Game State"]]
 decl = "readOnly [EGameAction] {GameAction}"
-docs = """
+doc = """
 The current game action.
 """
 
 [[instance-members.groups."Game State"]]
 decl = "readOnly [EGameState] {GameState}"
-docs = """
+doc = """
 The current game state.
 """
 
 [[instance-members.groups."Game State"]]
 decl = "readOnly int {GameTic}"
-docs = """
+doc = """
 The current game tic.
 """
 
 [[instance-members.groups."Game State"]]
 decl = "readOnly [MusPlayingInfo] {MusPlaying}"
-docs = """
+doc = """
 Information about the currently playing music.
 """
 
 [[instance-members.groups."Game State"]]
 decl = "play [LevelLocals] {Level}"
-docs = """
+doc = """
 The current level's local data.
 """
 
 [[instance-members.groups."Game State"]]
 decl = "deprecated(\"3.8\") readOnly bool {GlobalFreeze}"
-docs = """
+doc = """
 Indicates whether all actors are frozen or not.
 """
 
@@ -381,19 +381,19 @@ Indicates whether all actors are frozen or not.
 
 [[instance-members.groups."Static Game Information"]]
 decl = "play [DeHInfo] {DeH}"
-docs = """
+doc = """
 Static [DeHackEd] information.
 """
 
 [[instance-members.groups."Static Game Information"]]
 decl = "readOnly [GameInfoStruct] {GameInfo}"
-docs = """
+doc = """
 Static information from [MAPINFO GameInfo].
 """
 
 [[instance-members.groups."Static Game Information"]]
 decl = "readOnly [Weapon] {Wp_NoChange}"
-docs = """
+doc = """
 A non-weapon that denotes the weapon the player is holding should not
 be swapped for another weapon.
 """
@@ -402,67 +402,67 @@ be swapped for another weapon.
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly textureId {SkyFlatNum}"
-docs = """
+doc = """
 The `textureId` of the sky texture.
 """
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [Font] {SmallFont}"
-docs = """
+doc = """
 The small font for the current game.
 """
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [Font] {SmallFont2}"
-docs = """
+doc = """
 The small font for strife status bars.
 """
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [Font] {BigFont}"
-docs = """
+doc = """
 The big font for the current game.
 """
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [Font] {ConFont}"
-docs = """
+doc = """
 The console font for the current game.
 """
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [Font] {IntermissionFont}"
-docs = """
+doc = """
 The intermission font for the current game.
 """
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [Font] {NewConsoleFont}"
-docs = """
+doc = """
 The universal unicode small font used by the console.
 """
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [Font] {NewSmallFont}"
-docs = """
+doc = """
 The universal unicode small font used by most things in the engine.
 """
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [Font] {OriginalSmallFont}"
-docs = """
+doc = """
 The small font defined by the IWAD.
 """
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [Font] {OriginalBigFont}"
-docs = """
+doc = """
 The big font defined by the IWAD.
 """
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [Font] {AlternativeSmallFont}"
-docs = """
+doc = """
 If [`Generic_Ui`] is true, this font will be defined as either
 [`SmallFont`], [`OriginalSmallFont`], or [`NewSmallFont`] (in that
 order) depending on which is complete.
@@ -470,7 +470,7 @@ order) depending on which is complete.
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly bool {Generic_Ui}"
-docs = """
+doc = """
 Will be `true` if the [language] defines `USE_GENERIC_FONT` as a
 non-zero value. This indicates what the [`AlternativeSmallFont`] will
 be.
@@ -478,7 +478,7 @@ be.
 
 [[instance-members.groups."Static Client Information"]]
 decl = "readOnly [FOptionMenuSettings] {OptionMenuSettings}"
-docs = """
+doc = """
 The settings used for option menus.
 """
 
@@ -486,13 +486,13 @@ The settings used for option menus.
 
 [constants.ungrouped.MAXPLAYERS]
 decl = "const MAXPLAYERS = 8"
-docs = """
+doc = """
 The maximum amount of players allowed in a networked game.
 """
 
 [constants.ungrouped.FLAG_NO_CHANGE]
 decl = "const int {FLAG_NO_CHANGE}"
-docs = """
+doc = """
 A constant for flag changer functions denoting that there should be no change.
 """
 
@@ -500,25 +500,25 @@ A constant for flag changer functions denoting that there should be no change.
 
 [[constants.groups.Ranges]]
 decl = "const double {DEFMELEERANGE}"
-docs = """
+doc = """
 The default melee range for monsters and the player's melee attacks.
 """
 
 [[constants.groups.Ranges]]
 decl = "const double {SAWRANGE}"
-docs = """
+doc = """
 The range of Doom's chainsaw.
 """
 
 [[constants.groups.Ranges]]
 decl = "const double {MISSILERANGE}"
-docs = """
+doc = """
 The maximum range for monster hitscan attacks.
 """
 
 [[constants.groups.Ranges]]
 decl = "const double {PLAYERMISSILERANGE}"
-docs = """
+doc = """
 The maximum range for player hitscan attacks.
 """
 
@@ -526,24 +526,24 @@ The maximum range for player hitscan attacks.
 
 [[constants.groups.Attenuations]]
 decl = "const double {ATTN_NONE}"
-docs = """
+doc = """
 An attenuation at which the sound can be heard from any distance.
 """
 
 [[constants.groups.Attenuations]]
 decl = "const double {ATTN_NORM}"
-docs = """
+doc = """
 The default attenuation, which uses the distances defined in [SNDINFO].
 """
 
 [[constants.groups.Attenuations]]
 decl = "const double {ATTN_IDLE}"
-docs = """
+doc = """
 The default attenuation used by Doom.
 """
 
 [[constants.groups.Attenuations]]
 decl = "const double {ATTN_STATIC}"
-docs = """
+doc = """
 An attenuation with which sounds fade fully at 512 map units away.
 """
