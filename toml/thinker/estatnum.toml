@@ -5,10 +5,7 @@ The number of statnums available to the engine.
 """
 
 [[variants.groups.Users]]
-decl = [
-	"[Thinker].{STAT_USER_MAX}",
-	"[Thinker].{STAT_USER}"
-]
+decl = ["[Thinker].{STAT_USER_MAX}", "[Thinker].{STAT_USER}"]
 docs = """
 The user-defined stat numbers begin at [`Thinker.STAT_USER`] and end
 at [`Thinker.STAT_USER_MAX`]. Do not attempt to use normal integers as

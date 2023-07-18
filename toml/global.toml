@@ -45,6 +45,7 @@ Returns the arc-tangent of `n`.
 [[instance-methods.groups.Math]]
 decl = "double {ATan2}(double y, double x)"
 docs = """
+Returns the arc-tangent of `y / x` using the arguments' signs to
 determine the correct quadrant.
 """
 
@@ -57,6 +58,7 @@ Returns the integral portion of `n`, rounded up.
 [[instance-methods.groups.Math]]
 decl = "[NumericType] {Clamp}([NumericType] n, [NumericType] minimum, [NumericType] maximum)"
 docs = """
+Returns `n` if `n` is more than `minimum` and less than `maximum`, or
 either of those values if it is not.
 """
 
@@ -75,6 +77,7 @@ Returns the hyperbolic cosine of `n`.
 [[instance-methods.groups.Math]]
 decl = "double {Exp}(double n)"
 docs = """
+Returns the natural exponent of `n`. Note that there is a `**` binary
 operator for exponentation, which is generally more useful.
 """
 
@@ -93,6 +96,7 @@ Returns the natural logarithm of `n`.
 [[instance-methods.groups.Math]]
 decl = "double {Log10}(double n)"
 docs = """
+Returns the common (base 10) logarithm of `n`. This is most useful for
 calculating the number of decimal digits in a number.
 """
 
@@ -227,22 +231,21 @@ corresponding player is not in-game.
 """
 
 [[instance-members.groups.Players]]
-decl = [
-	"[KeyBindings] {AutomapBindings}",
-	"[KeyBindings] {Bindings}",
-]
+decl = ["[KeyBindings] {AutomapBindings}", "[KeyBindings] {Bindings}"]
 
 # Instance members, game information ###########################################
 
 [[instance-members.groups."Game Information"]]
 decl = "readOnly bool {MultiPlayer}"
 docs = """
+Whether the game is running in multi-player or not. Does not
 necessarily mean there is network communication happening.
 """
 
 [[instance-members.groups."Game Information"]]
 decl = "readOnly ui bool {NetGame}"
 docs = """
+Whether the game is running in non-local multi-player or not. Must be
 a networked game with more than one player to be true.
 """
 
@@ -286,20 +289,14 @@ docs = """
 """
 
 [[instance-members.groups."Client State"]]
-decl = [
-	"readOnly int {CleanXFac}",
-	"readOnly int {CleanYFac}",
-]
+decl = ["readOnly int {CleanXFac}", "readOnly int {CleanYFac}"]
 docs = """
 An integral scaling factor for horizontal and vertical positions to
 scale from 320x200 to the current virtual resolution.
 """
 
 [[instance-members.groups."Client State"]]
-decl = [
-	"readOnly int {CleanXFac_1}",
-	"readOnly int {CleanYFac_1}",
-]
+decl = ["readOnly int {CleanXFac_1}", "readOnly int {CleanYFac_1}"]
 docs = """
 Integral scaling factor for horizontal and vertical positions to scale
 from 320x200 to the current virtual resolution, accounting for aspect
@@ -307,19 +304,13 @@ ratio differences.
 """
 
 [[instance-members.groups."Client State"]]
-decl = [
-	"readOnly int {CleanWidth}",
-	"readOnly int {CleanHeight}"
-]
+decl = ["readOnly int {CleanWidth}", "readOnly int {CleanHeight}"]
 docs = """
 The current screen size divided by ([`CleanXFac`], [`CleanYFac`]).
 """
 
 [[instance-members.groups."Client State"]]
-decl = [
-	"readOnly int {CleanWidth_1}",
-	"readOnly int {CleanHeight_1}",
-]
+decl = ["readOnly int {CleanWidth_1}", "readOnly int {CleanHeight_1}"]
 docs = """
 The current screen size divided by ([`CleanXFac_1`], [`CleanYFac_1`]).
 """
