@@ -1,0 +1,130 @@
+name = "EStatNum"
+decl = "enum Thinker.EStatNums"
+doc = """
+All thinkers are grouped by their "stat" number, or "statnum," which
+specifies the ordering of which thinkers are run, first to last. There
+are [`Thinker.MAX_STATNUM`] stat numbers total, 20 of which are not
+used by the engine and may be used for any purpose.
+"""
+
+[variants.ungrouped.MAX_STAT_NUM]
+decl = "[Thinker].{MAX_STATNUM}"
+doc = """
+The number of statnums available to the engine.
+"""
+
+[[variants.groups.Users]]
+decl = ["[Thinker].{STAT_USER_MAX}", "[Thinker].{STAT_USER}"]
+doc = """
+The user-defined stat numbers begin at [`Thinker.STAT_USER`] and end
+at [`Thinker.STAT_USER_MAX`]. Do not attempt to use normal integers as
+stat numbers *except as relative to these two*.
+"""
+
+[[variants.groups.Non-Thinking]]
+decl = "[Thinker].{STAT_INFO}"
+doc = """
+Info queue used by [`SpecialSpot`] and its descendants.
+"""
+
+[[variants.groups.Non-Thinking]]
+decl = "[Thinker].{STAT_DECAL}"
+doc = """
+Decals that cannot be deleted.
+"""
+
+[[variants.groups.Non-Thinking]]
+decl = "[Thinker].{STAT_AUTODECAL}"
+doc = """
+Decals that can be deleted (were not placed by the map.)
+"""
+
+[[variants.groups.Non-Thinking]]
+decl = "[Thinker].{STAT_CORPSEPOINTER}"
+doc = """
+An entry in Hexen's corpse queue.
+"""
+
+[[variants.groups.Non-Thinking]]
+decl = "[Thinker].{STAT_TRAVELLING}"
+doc = """
+Any actor travelling between maps in a hub.
+"""
+
+[[variants.groups.Non-Thinking]]
+decl = "[Thinker].{STAT_STATIC}"
+doc = """
+Thinkers persistent across maps.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_FIRST_THINKING}"
+doc = """
+[`Thinker.STAT_SCROLLER`].
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_SCROLLER}"
+doc = """
+Texture scrollers and carriers.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_PLAYER}"
+doc = """
+All [`PlayerPawn`] actors.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_BOSSTARGET}"
+doc = """
+[`BossBrain`] targets.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_LIGHTNING}"
+doc = """
+Lightning as used by Hexen.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_DECALTHINKER}"
+doc = """
+Decal animators.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_INVENTORY}"
+doc = """
+All [`Inventory`] items.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_LIGHT}"
+doc = """
+Sector lighting thinkers.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_LIGHTTRANSFER}"
+doc = """
+Sector lighting transfer thinkers.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_EARTHQUAKE}"
+doc = """
+Quake effects.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_MAPMARKER}"
+doc = """
+All [`MapMarker`] actors.
+"""
+
+[[variants.groups.Thinking]]
+decl = "[Thinker].{STAT_DLIGHT}"
+doc = """
+Dynamic lights.
+"""
