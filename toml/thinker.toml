@@ -1,0 +1,43 @@
+name = "Thinker"
+decl = "class Thinker : Object play"
+parent = "Object"
+doc = """
+A class representing any object in the game that runs logic every game
+tic, i.e., "thinks." Most classes derive from Thinker, directly or
+indirectly. The order of which thinkers run is defined by [stat
+numbers][EStatNums].
+"""
+enums = ["thinker/estatnum.toml"]
+
+[class-methods.ungrouped.Tics2Seconds]
+decl = "static clearScope int {Tics2Seconds}(int tics)"
+doc = """
+Roughly converts a number of tics to an integral amount of seconds.
+Equivalent to dividing `tics` by [`Object.TICRATE`].
+"""
+
+[instance-methods.ungrouped.ChangeStatNum]
+decl = "void {ChangeStatNum}(Thinker.[EStatNums] stat)"
+doc = """
+Changes the [statnum][EStatNums] of this thinker.
+"""
+
+[instance-methods.ungrouped.PostBeginPlay]
+decl = "virtual void {PostBeginPlay}()"
+doc = """
+Called at the very end of this [`Thinker`]'s initialization.
+"""
+
+[instance-methods.ungrouped.Tick]
+decl = "virtual void {Tick}()"
+doc = """
+Called every game tic. The order between this thinker's [`Tick`] and
+every other thinker in the same statnum *is unspecified*. It is not
+nondeterministic.
+"""
+
+[instance-members.ungrouped.Level]
+decl = "[LevelLocals] {Level}"
+doc = """
+The local variables for the level this thinker is in.
+"""
